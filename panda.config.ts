@@ -71,6 +71,10 @@ export default defineConfig({
             dark: {value: '#570F0F'},
           },
         },
+        fonts: {
+          rubik: {value: 'var(--font-rubik), sans-serif'},
+          bricolage: {value: 'var(--font-bricolage), sans-serif'},
+        },
       },
     },
   },
