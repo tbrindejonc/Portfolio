@@ -1,4 +1,4 @@
-import localFont from 'next/dist/compiled/@next/font/dist/local';
+import localFont from 'next/font/local';
 
 export const Rubik = localFont({
   src: 'Rubik/Rubik-VariableFont_wght.ttf',
@@ -7,7 +7,7 @@ export const Rubik = localFont({
 });
 
 export const BricolageGroteske = localFont({
-  src: 'Bricolage_Groteske/BricolageGroteske-VariableFont_wght.ttf',
+  src: 'Bricolage_Groteske/BricolageGrotesque-VariableFont_wght.ttf',
   display: 'swap',
   variable: '--font-bricolage',
 });
