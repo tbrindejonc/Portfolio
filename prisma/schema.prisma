@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,82 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
+
+model Category {
+  id         Int          @id @default(autoincrement())
+  name       String
+  logo       String
+  technology Technology[]
+}
+
+model Text {
+  id                     Int          @id @default(autoincrement())
+  french                 String
+  english                String
+  technology             Technology[]
+  project                Project[]
+  experience_description Experience[] @relation(name: "experience_description")
+  experience_job         Experience[] @relation(name: "experience_job")
+}
+
+model Technology {
+  id                    Int                     @id @default(autoincrement())
+  name                  String
+  description           Text                    @relation(fields: [description_id], references: [id])
+  description_id        Int
+  logo                  String
+  color                 String
+  category              Category                @relation(fields: [category_id], references: [id])
+  category_id           Int
+  experience_technology Experience_Technology[]
+  project_technology    Project_Technology[]
+}
+
+model Project {
+  id                 Int                  @id @default(autoincrement())
+  name               String
+  description        Text                 @relation(fields: [description_id], references: [id])
+  description_id     Int
+  github             String
+  live_version       String
+  gif                String
+  Project_Technology Project_Technology[]
+}
+
+model Experience {
+  id                    Int                     @id @default(autoincrement())
+  company               String
+  description           Text                    @relation(name: "experience_description", fields: [description_id], references: [id])
+  description_id        Int
+  start_date            DateTime
+  end_date              DateTime
+  logo                  String
+  job_title             Text                    @relation(name: "experience_job", fields: [job_title_id], references: [id])
+  job_title_id          Int
+  Experience_Technology Experience_Technology[]
+}
+
+model Experience_Technology {
+  experience_id Int
+  technology_id Int
+  experience    Experience @relation(fields: [experience_id], references: [id])
+  technology    Technology @relation(fields: [technology_id], references: [id])
+
+  @@id([experience_id, technology_id])
+}
+
+model Project_Technology {
+  project_id    Int
+  technology_id Int
+  project       Project    @relation(fields: [project_id], references: [id])
+  technology    Technology @relation(fields: [technology_id], references: [id])
+
+  @@id([project_id, technology_id])
 }
