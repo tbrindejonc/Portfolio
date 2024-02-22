@@ -14,57 +14,59 @@ model Admin {
 }
 
 model Category {
-  id         Int          @id @default(autoincrement())
-  name       String
-  logo       String
-  technology Technology[]
+  id           Int          @id @default(autoincrement())
+  name         Text         @relation(fields: [name_id], references: [id])
+  name_id      Int
+  logo         String
+  technologies Technology[]
 }
 
 model Text {
-  id                     Int          @id @default(autoincrement())
-  french                 String
-  english                String
-  technology             Technology[]
-  project                Project[]
-  experience_description Experience[] @relation(name: "experience_description")
-  experience_job         Experience[] @relation(name: "experience_job")
+  id                      Int          @id @default(autoincrement())
+  french                  String
+  english                 String
+  technologies            Technology[]
+  projects                Project[]
+  experience_descriptions Experience[] @relation(name: "experience_description")
+  experience_jobs         Experience[] @relation(name: "experience_job")
+  categories              Category[]
 }
 
 model Technology {
-  id                    Int                     @id @default(autoincrement())
-  name                  String
-  description           Text                    @relation(fields: [description_id], references: [id])
-  description_id        Int
-  logo                  String
-  color                 String
-  category              Category                @relation(fields: [category_id], references: [id])
-  category_id           Int
-  experience_technology Experience_Technology[]
-  project_technology    Project_Technology[]
+  id                      Int                     @id @default(autoincrement())
+  name                    String
+  description             Text                    @relation(fields: [description_id], references: [id])
+  description_id          Int
+  logo                    String
+  color                   String
+  category                Category                @relation(fields: [category_id], references: [id])
+  category_id             Int
+  experience_technologies Experience_Technology[]
+  project_technologies    Project_Technology[]
 }
 
 model Project {
-  id                 Int                  @id @default(autoincrement())
-  name               String
-  description        Text                 @relation(fields: [description_id], references: [id])
-  description_id     Int
-  github             String
-  live_version       String
-  gif                String
-  Project_Technology Project_Technology[]
+  id                   Int                  @id @default(autoincrement())
+  name                 String
+  description          Text                 @relation(fields: [description_id], references: [id])
+  description_id       Int
+  github               String
+  live_version         String
+  gif                  String
+  Project_Technologies Project_Technology[]
 }
 
 model Experience {
-  id                    Int                     @id @default(autoincrement())
-  company               String
-  description           Text                    @relation(name: "experience_description", fields: [description_id], references: [id])
-  description_id        Int
-  start_date            DateTime
-  end_date              DateTime
-  logo                  String
-  job_title             Text                    @relation(name: "experience_job", fields: [job_title_id], references: [id])
-  job_title_id          Int
-  Experience_Technology Experience_Technology[]
+  id                      Int                     @id @default(autoincrement())
+  company                 String
+  description             Text                    @relation(name: "experience_description", fields: [description_id], references: [id])
+  description_id          Int
+  start_date              DateTime
+  end_date                DateTime
+  logo                    String
+  job_title               Text                    @relation(name: "experience_job", fields: [job_title_id], references: [id])
+  job_title_id            Int
+  Experience_Technologies Experience_Technology[]
 }
 
 model Experience_Technology {
