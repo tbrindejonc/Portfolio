@@ -4,7 +4,7 @@ services:
   database:
     image: postgres
     container_name: portfolio-database
-    restart: always
+    restart: unless-stopped
     ports:
       - "54032:5432"
     env_file:
@@ -13,6 +13,6 @@ services:
   adminer:
     image: adminer
     container_name: portfolio-adminer
-    restart: always
+    restart: unless-stopped
     ports:
       - "54080:8080"
