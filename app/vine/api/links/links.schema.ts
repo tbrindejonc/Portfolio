@@ -24,6 +24,13 @@ export const linksForCategorySchema = vine.object({
   name: baseLinkSchema.clone(),
 });
 
+// links for an experience resource
+export const linksForExperienceSchema = vine.object({
+  ...linksSchema.getProperties(),
+  description: baseLinkSchema.clone(),
+  job_title: baseLinkSchema.clone(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
