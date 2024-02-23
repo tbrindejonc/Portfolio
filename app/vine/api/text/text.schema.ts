@@ -31,6 +31,11 @@ export const textForOthersSchema = vine.object({
   id: vine.number(),
 });
 
+// text for creation or update
+export const textUpsertSchema = vine.object({
+  ...textSchema.getProperties(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
