@@ -20,6 +20,7 @@
     "paths": {
       "@/*": ["./*"],
       "@assets/*": ["./app/assets/*"],
+      "@validation/*": ["./app/vine/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
