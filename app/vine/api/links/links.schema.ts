@@ -12,7 +12,7 @@ const baseLinkSchema = vine.object({
 });
 
 // links for any simple resource from api
-const linksSchema = vine.object({
+export const linksSchema = vine.object({
   self: baseLinkSchema.clone(),
   update: baseLinkSchema.clone(),
   delete: baseLinkSchema.clone(),
