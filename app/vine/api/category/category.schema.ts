@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
-import {linksForCategorySchema} from '@/app/vine/api/links/links.schema';
-import {textForOthersSchema, textUpsertSchema} from '@/app/vine/api/text/text.schema';
+import {linksForCategorySchema} from '@schemas/api/links/links.schema';
+import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */

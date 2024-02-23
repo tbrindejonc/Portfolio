@@ -1,6 +1,6 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
-import {linksSchema} from '@/app/vine/api/links/links.schema';
+import {linksSchema} from '@schemas/api/links/links.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */
