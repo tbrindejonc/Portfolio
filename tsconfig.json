@@ -19,8 +19,9 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@app/*": ["./app/*"],
       "@assets/*": ["./app/assets/*"],
-      "@validation/*": ["./app/vine/*"],
+      "@schemas/*": ["./app/vine/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
