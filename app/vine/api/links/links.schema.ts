@@ -18,6 +18,12 @@ export const linksSchema = vine.object({
   delete: baseLinkSchema.clone(),
 });
 
+// links for a category resource
+export const linksForCategorySchema = vine.object({
+  ...linksSchema.getProperties(),
+  name: baseLinkSchema.clone(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
