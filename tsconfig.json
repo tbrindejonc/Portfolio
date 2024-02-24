@@ -21,7 +21,10 @@
       "@/*": ["./*"],
       "@app/*": ["./app/*"],
       "@assets/*": ["./app/assets/*"],
-      "@schemas/*": ["./app/vine/*"]
+      "@schemas/*": ["./app/vine/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@functions/*": ["./app/utils/functions/*"],
+      "@appTypes/*": ["./app/utils/types/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
