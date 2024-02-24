@@ -4,11 +4,11 @@ import {HTTP_SERVER_ERROR, MSG_SERVER_ERROR} from '@constants/api';
 /**
  * Construct and send an error response
  *
- * @param error the error object
+ * @param {any} error the error object
  *
- * @returns the error response in json format
+ * @returns {Response} the error response in json format
  */
-const sendErrorResponse = (error: any) => {
+const sendErrorResponse = (error: any): Response => {
   const apiError: ApiError = {
     error: {
       code: HTTP_SERVER_ERROR,
