@@ -6,3 +6,10 @@ export interface ApiError {
     details: unknown;
   };
 }
+
+// collection returned by api
+export interface ApiCollection<T> {
+  type: string;
+  count: number;
+  items: T[];
+}
