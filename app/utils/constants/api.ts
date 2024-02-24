@@ -16,3 +16,9 @@ export const HTTP_SCHEMA_ERROR = 422;
 
 // any server error
 export const HTTP_SERVER_ERROR = 500;
+
+/* -------------------------------------------------------------------------- */
+/*                           Error Response messages                          */
+/* -------------------------------------------------------------------------- */
+
+export const MSG_SERVER_ERROR = 'Internal server error';
