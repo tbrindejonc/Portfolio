@@ -13,3 +13,8 @@ export interface ApiCollection<T> {
   count: number;
   items: T[];
 }
+
+// jwt for logged admin
+export interface AdminJWT {
+  token: string;
+}
