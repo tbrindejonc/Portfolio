@@ -23,3 +23,6 @@ export const HTTP_SERVER_ERROR = 500;
 
 // any server error
 export const MSG_SERVER_ERROR = 'Internal server error';
+
+// resource is duplicated
+export const MSG_DUPLICATE_ERROR = 'Duplicate error';
