@@ -3,7 +3,14 @@ import prisma from '@utils/prisma/client';
 import {Admin, AdminFromDatabase} from '@schemas/api/admin/admin.schema';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 
-export async function GET(request: Request) {
+/**
+ * Get all admins
+ *
+ * @param {Request} request the request data object
+ *
+ * @returns {Promise<Response>} a promise containing the response in json format
+ */
+export async function GET(request: Request): Promise<Response> {
   try {
     const admins: AdminFromDatabase[] = await prisma.admin.findMany();
 
