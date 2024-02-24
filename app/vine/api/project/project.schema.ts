@@ -57,7 +57,7 @@ const projectTechnologyAssociationSchema = vine.object({
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
 
-// type for category returned by api
+// type for project returned by api
 export type ProjectFromApi = Infer<typeof projectFromApiSchema>;
 
 // type for complete category returned by api
@@ -76,7 +76,7 @@ export type ProjectTechnologyAssociation = Infer<typeof projectTechnologyAssocia
 /*                                 Validators                                 */
 /* -------------------------------------------------------------------------- */
 
-// validator for category returned by api
+// validator for project returned by api
 export const projectFromApiValidator = vine.compile(projectFromApiSchema);
 
 // validator for complete category returned by api
