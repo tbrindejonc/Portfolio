@@ -1,5 +1,5 @@
 import {ApiError} from '@appTypes/api';
-import {HTTP_OK as HTTP_SERVER_ERROR, MSG_SERVER_ERROR} from '@constants/api';
+import {HTTP_SERVER_ERROR, MSG_SERVER_ERROR} from '@constants/api';
 
 /**
  * Construct and send an error response
