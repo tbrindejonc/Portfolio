@@ -2,6 +2,7 @@ import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForExperienceSchema, technologyExperienceAssociationLinksSchema} from '@schemas/api/links/links.schema';
 import {textForOthersSchema} from '@schemas/api/text/text.schema';
+import {technologyForOthersSchema} from '@schemas/api/technology/technology.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */
@@ -30,8 +31,7 @@ const completeExperienceFromApiSchema = vine.object({
   description: textForOthersSchema.clone(),
   id: vine.number(),
   job_title: textForOthersSchema.clone(),
-  // WIP
-  technologies: vine.array(vine.string()),
+  technologies: vine.array(technologyForOthersSchema.clone()),
   links: linksForExperienceSchema.clone(),
 });
 

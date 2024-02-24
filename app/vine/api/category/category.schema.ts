@@ -2,6 +2,7 @@ import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForCategorySchema} from '@schemas/api/links/links.schema';
 import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
+import {technologyForOthersSchema} from '@schemas/api/technology/technology.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */
@@ -24,8 +25,7 @@ const categoryFromApiSchema = vine.object({
 const completeCategoryFromApiSchema = vine.object({
   ...baseCategorySchema.getProperties(),
   name: textForOthersSchema.clone(),
-  // WIP
-  technologies: vine.array(vine.string()),
+  technologies: vine.array(technologyForOthersSchema.clone()),
   links: linksForCategorySchema.clone(),
 });
 
