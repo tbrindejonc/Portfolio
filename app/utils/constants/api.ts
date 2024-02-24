@@ -45,3 +45,10 @@ export const MSG_INCORRECT_PASSWORD = 'Password is incorrect';
 
 // number of salt rounds for bcrypt password encryption
 export const SALT_ROUNDS = 10;
+
+/* -------------------------------------------------------------------------- */
+/*                                JWT variables                               */
+/* -------------------------------------------------------------------------- */
+
+// JWT encryption algorithm
+export const JWT_ALG = 'HS256';
