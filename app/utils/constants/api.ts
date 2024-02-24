@@ -21,4 +21,5 @@ export const HTTP_SERVER_ERROR = 500;
 /*                           Error Response messages                          */
 /* -------------------------------------------------------------------------- */
 
+// any server error
 export const MSG_SERVER_ERROR = 'Internal server error';
