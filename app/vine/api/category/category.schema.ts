@@ -35,6 +35,12 @@ const categoryUpsertSchema = vine.object({
   name: textUpsertSchema.clone(),
 });
 
+// category for technology
+export const categoryForTechnologySchema = vine.object({
+  ...baseCategorySchema.getProperties(),
+  name: textForOthersSchema.clone(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
