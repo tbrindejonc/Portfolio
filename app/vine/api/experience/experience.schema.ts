@@ -50,7 +50,7 @@ const experienceWhenDeletedSchema = vine.object({
   job_title_id: vine.number(),
 });
 
-// association between a category and an experience returned by api
+// association between a technology and an experience returned by api
 const experienceTechnologyAssociationSchema = vine.object({
   experience_id: vine.number(),
   technology_id: vine.number(),
@@ -73,7 +73,7 @@ export type ExperienceUpsert = Infer<typeof experienceUpsertSchema>;
 // experience when deleted
 export type ExperienceWhenDeleted = Infer<typeof experienceWhenDeletedSchema>;
 
-// association between a category and an experience returned by api
+// association between a technology and an experience returned by api
 export type ExperienceTechnologyAssociation = Infer<typeof experienceTechnologyAssociationSchema>;
 
 /* -------------------------------------------------------------------------- */
@@ -92,5 +92,5 @@ export const experienceUpsertValidator = vine.compile(experienceUpsertSchema);
 // validator for experience when deleted
 export const experienceWhenDeletedValidator = vine.compile(experienceWhenDeletedSchema);
 
-// validator for association between a category and an experience returned by api
+// validator for association between a technology and an experience returned by api
 export const experienceTechnologyAssociationValidator = vine.compile(experienceTechnologyAssociationSchema);
