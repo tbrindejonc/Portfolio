@@ -1,11 +1,12 @@
 import sendErrorResponse from '@functions/api/sendErrorResponse';
-import prisma from '@utils/prisma/client';
+import {prisma} from '@utils/prisma/client';
 import {Admin, AdminFromDatabase} from '@schemas/api/admin/admin.schema';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {HTTP_CREATED} from '@constants/api';
 import {Credentials, credentialsValidator} from '@schemas/api/admin/credentials.schema';
 import formatAdminForApi from '@functions/api/admin/formatAdminForApi';
+import encryptPassword from '@functions/bcrypt/encryptPassword';
 
 /**
  * Get all admins
@@ -41,10 +42,12 @@ export async function POST(request: Request): Promise<Response> {
 
     const parsedBody: Credentials = await credentialsValidator.validate(body);
 
+    const hashedPassword: string = await encryptPassword(parsedBody.password);
+
     const admin: AdminFromDatabase = await prisma.admin.create({
       data: {
         email: parsedBody.email,
-        password: parsedBody.password,
+        password: hashedPassword,
       },
     });
 
