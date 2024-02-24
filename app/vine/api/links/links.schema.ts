@@ -50,6 +50,13 @@ export const technologyProjectAssociationLinksSchema = vine.object({
   technology: baseLinkSchema.clone(),
 });
 
+// links for a technology resource
+export const linksForTechnologySchema = vine.object({
+  ...linksSchema.getProperties(),
+  category: baseLinkSchema.clone(),
+  description: baseLinkSchema.clone(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
