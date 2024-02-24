@@ -9,7 +9,6 @@ import * as bcrypt from 'bcrypt';
  * @return {Promise<string>} a promise containing the hashed password
  */
 const encryptPassword = async (password: string): Promise<string> => {
-  // verify that the BCRYPT_SALT environment variable is set
   if (!process.env.BCRYPT_SALT) {
     throw new Error(`${MSG_ENV_NOT_DEFINED} BCRYPT_SALT`);
   }
@@ -17,7 +16,6 @@ const encryptPassword = async (password: string): Promise<string> => {
   // add custom salt to the password
   const toHash = process.env.BCRYPT_SALT + password;
 
-  // return the hashed password
   return await bcrypt.hash(toHash, SALT_ROUNDS);
 };
 
