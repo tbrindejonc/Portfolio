@@ -7,3 +7,5 @@
 const sendJsonResponse = (data: Object, code: number) => {
   return Response.json(data, {status: code});
 };
+
+export default sendJsonResponse;
