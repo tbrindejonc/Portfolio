@@ -2,7 +2,7 @@ import sendErrorResponse from '@functions/api/sendErrorResponse';
 import {Credentials, credentialsValidator} from '@schemas/api/admin/credentials.schema';
 import {prisma} from '@utils/prisma/client';
 import {AdminFromDatabase} from '@schemas/api/admin/admin.schema';
-import {ApiError} from '@appTypes/api';
+import {AdminJWT, ApiError} from '@appTypes/api';
 import {HTTP_BAD_REQUEST, HTTP_NOT_FOUND, HTTP_OK, MSG_INCORRECT_PASSWORD, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import validatePassword from '@functions/bcrypt/validatePassword';
@@ -36,7 +36,7 @@ export async function POST(request: Request): Promise<Response> {
         },
       };
 
-      return sendJsonResponse(error, HTTP_NOT_FOUND);
+      return sendJsonResponse<ApiError>(error, HTTP_NOT_FOUND);
     }
 
     const isPasswordCorrect: boolean = await validatePassword(parsedBody.password, adminToAuthenticate.password);
@@ -50,12 +50,12 @@ export async function POST(request: Request): Promise<Response> {
         },
       };
 
-      return sendJsonResponse(error, HTTP_BAD_REQUEST);
+      return sendJsonResponse<ApiError>(error, HTTP_BAD_REQUEST);
     }
 
     const jwt: string = await createJwt(adminToAuthenticate);
 
-    return sendJsonResponse({token: jwt}, HTTP_OK);
+    return sendJsonResponse<AdminJWT>({token: jwt}, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
