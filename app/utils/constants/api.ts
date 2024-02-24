@@ -26,3 +26,10 @@ export const MSG_SERVER_ERROR = 'Internal server error';
 
 // resource is duplicated
 export const MSG_DUPLICATE_ERROR = 'Duplicate error';
+
+/* -------------------------------------------------------------------------- */
+/*                               Bcrypt variables                             */
+/* -------------------------------------------------------------------------- */
+
+// number of salt rounds for bcrypt password encryption
+export const SALT_ROUNDS = 10;
