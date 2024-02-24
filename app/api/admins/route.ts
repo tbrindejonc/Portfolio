@@ -13,7 +13,7 @@ import encryptPassword from '@functions/bcrypt/encryptPassword';
  *
  * @param {Request} request the request data object
  *
- * @returns {Promise<Response>} a promise containing the response in json format
+ * @returns {Promise<Response>} a promise containing the collection of admins in json format
  */
 export async function GET(request: Request): Promise<Response> {
   try {
@@ -34,7 +34,7 @@ export async function GET(request: Request): Promise<Response> {
  *
  * @param {Request} request the request data object
  *
- * @returns {Promise<Response>} a promise containing the response in json format
+ * @returns {Promise<Response>} a promise containing the created admin in json format
  */
 export async function POST(request: Request): Promise<Response> {
   try {
