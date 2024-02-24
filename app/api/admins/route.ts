@@ -5,6 +5,7 @@ import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {HTTP_CREATED} from '@constants/api';
 import {Credentials, credentialsValidator} from '@schemas/api/admin/credentials.schema';
+import formatAdminForApi from '@functions/api/admin/formatAdminForApi';
 
 /**
  * Get all admins
@@ -18,24 +19,7 @@ export async function GET(request: Request): Promise<Response> {
     const admins: AdminFromDatabase[] = await prisma.admin.findMany();
 
     const adminsToReturn: Admin[] = admins.map((admin: AdminFromDatabase) => {
-      return {
-        email: admin.email,
-        id: admin.id,
-        links: {
-          self: {
-            method: 'GET',
-            href: `/admins/${admin.id}`,
-          },
-          update: {
-            method: 'PUT',
-            href: `/admins/${admin.id}`,
-          },
-          delete: {
-            method: 'DELETE',
-            href: `/admins/${admin.id}`,
-          },
-        },
-      };
+      return formatAdminForApi(admin);
     });
 
     return sendCollectionResponse<Admin>(adminsToReturn);
@@ -64,24 +48,7 @@ export async function POST(request: Request): Promise<Response> {
       },
     });
 
-    const adminToReturn: Admin = {
-      email: admin.email,
-      id: admin.id,
-      links: {
-        self: {
-          method: 'GET',
-          href: `/admins/${admin.id}`,
-        },
-        update: {
-          method: 'PUT',
-          href: `/admins/${admin.id}`,
-        },
-        delete: {
-          method: 'DELETE',
-          href: `/admins/${admin.id}`,
-        },
-      },
-    };
+    const adminToReturn: Admin = formatAdminForApi(admin);
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_CREATED);
   } catch (error: any) {
