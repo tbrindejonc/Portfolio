@@ -27,6 +27,9 @@ export const MSG_SERVER_ERROR = 'Internal server error';
 // resource is duplicated
 export const MSG_DUPLICATE_ERROR = 'Duplicate error';
 
+// an environment variable is not defined
+export const MSG_ENV_NOT_DEFINED = 'The following environment variable is not defined:';
+
 /* -------------------------------------------------------------------------- */
 /*                               Bcrypt variables                             */
 /* -------------------------------------------------------------------------- */
