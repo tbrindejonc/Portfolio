@@ -44,14 +44,14 @@ export async function POST(request: Request): Promise<Response> {
 
     const hashedPassword: string = await encryptPassword(parsedBody.password);
 
-    const admin: AdminFromDatabase = await prisma.admin.create({
+    const createdAdmin: AdminFromDatabase = await prisma.admin.create({
       data: {
         email: parsedBody.email,
         password: hashedPassword,
       },
     });
 
-    const adminToReturn: Admin = formatAdminForApi(admin) as Admin;
+    const adminToReturn: Admin = formatAdminForApi(createdAdmin) as Admin;
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_CREATED);
   } catch (error: any) {

@@ -40,14 +40,14 @@ export async function POST(request: Request): Promise<Response> {
 
     const parsedBody: Text = await textValidator.validate(body);
 
-    const text: TextFromDatabase = await prisma.text.create({
+    const createdText: TextFromDatabase = await prisma.text.create({
       data: {
         english: parsedBody.english,
         french: parsedBody.french,
       },
     });
 
-    const textToReturn: TextFromApi = formatTextForApi(text) as TextFromApi;
+    const textToReturn: TextFromApi = formatTextForApi(createdText) as TextFromApi;
 
     return sendJsonResponse<TextFromApi>(textToReturn, HTTP_CREATED);
   } catch (error: any) {
