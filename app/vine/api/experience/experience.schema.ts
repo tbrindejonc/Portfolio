@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForExperienceSchema, technologyExperienceAssociationLinksSchema} from '@schemas/api/links/links.schema';
-import {textForOthersSchema} from '@schemas/api/text/text.schema';
+import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
 import {technologyForOthersSchema} from '@schemas/api/technology/technology.schema';
 
 /* -------------------------------------------------------------------------- */
@@ -21,6 +21,7 @@ const experienceFromApiSchema = vine.object({
   ...baseExperienceSchema.getProperties(),
   description_id: vine.number(),
   id: vine.number(),
+  job_description_id: vine.number(),
   job_title_id: vine.number(),
   links: linksForExperienceSchema.clone(),
 });
@@ -30,6 +31,7 @@ const completeExperienceFromApiSchema = vine.object({
   ...baseExperienceSchema.getProperties(),
   description: textForOthersSchema.clone(),
   id: vine.number(),
+  job_description: textForOthersSchema.clone(),
   job_title: textForOthersSchema.clone(),
   technologies: vine.array(technologyForOthersSchema.clone()),
   links: linksForExperienceSchema.clone(),
@@ -38,8 +40,9 @@ const completeExperienceFromApiSchema = vine.object({
 // experience for creation or update
 const experienceUpsertSchema = vine.object({
   ...baseExperienceSchema.getProperties(),
-  description_id: vine.number(),
-  job_title_id: vine.number(),
+  description: textUpsertSchema.clone(),
+  job_title: textUpsertSchema.clone(),
+  job_description: textUpsertSchema.clone(),
 });
 
 // experience when deleted
@@ -47,6 +50,7 @@ const experienceWhenDeletedSchema = vine.object({
   ...baseExperienceSchema.getProperties(),
   description_id: vine.number(),
   id: vine.number(),
+  job_description_id: vine.number(),
   job_title_id: vine.number(),
 });
 
@@ -62,6 +66,7 @@ const experienceFromDatabaseSchema = vine.object({
   ...baseExperienceSchema.getProperties(),
   description_id: vine.number(),
   id: vine.number(),
+  job_description_id: vine.number(),
   job_title_id: vine.number(),
 });
 
