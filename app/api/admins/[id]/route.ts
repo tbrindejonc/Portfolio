@@ -37,7 +37,7 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
       );
     }
 
-    const adminToReturn: Admin = formatAdminForApi(admin);
+    const adminToReturn: Admin = formatAdminForApi(admin) as Admin;
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_OK);
   } catch (error: any) {
@@ -70,7 +70,7 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
       },
     });
 
-    const adminToReturn: Admin = formatAdminForApi(updatedAdmin);
+    const adminToReturn: Admin = formatAdminForApi(updatedAdmin) as Admin;
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_OK);
   } catch (error: any) {

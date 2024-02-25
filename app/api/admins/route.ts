@@ -20,7 +20,7 @@ export async function GET(request: Request): Promise<Response> {
     const admins: AdminFromDatabase[] = await prisma.admin.findMany();
 
     const adminsToReturn: Admin[] = admins.map((admin: AdminFromDatabase) => {
-      return formatAdminForApi(admin);
+      return formatAdminForApi(admin) as Admin;
     });
 
     return sendCollectionResponse<Admin>(adminsToReturn);
@@ -51,7 +51,7 @@ export async function POST(request: Request): Promise<Response> {
       },
     });
 
-    const adminToReturn: Admin = formatAdminForApi(admin);
+    const adminToReturn: Admin = formatAdminForApi(admin) as Admin;
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_CREATED);
   } catch (error: any) {
