@@ -8,6 +8,7 @@ import {
   TechnologyFromDatabase,
   TechnologyUpsert,
   technologyUpsertValidator,
+  TechnologyWhenDeleted,
 } from '@schemas/api/technology/technology.schema';
 import formatTechnologyForApi from '@functions/api/technology/formatTechnologyForApi';
 
@@ -87,6 +88,33 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const technologyToReturn: TechnologyFromApi = formatTechnologyForApi(updatedTechnology) as TechnologyFromApi;
 
     return sendJsonResponse<TechnologyFromApi>(technologyToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete a technology by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted technology in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedTechnology: TechnologyFromDatabase = await prisma.technology.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const technologyToReturn: TechnologyWhenDeleted = formatTechnologyForApi(
+      deletedTechnology,
+      true,
+    ) as TechnologyWhenDeleted;
+
+    return sendJsonResponse<TechnologyWhenDeleted>(technologyToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
