@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForProjectSchema, technologyProjectAssociationLinksSchema} from '@schemas/api/links/links.schema';
-import {textForOthersSchema} from '@schemas/api/text/text.schema';
+import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
 import {technologyForOthersSchema} from '@schemas/api/technology/technology.schema';
 
 /* -------------------------------------------------------------------------- */
@@ -36,7 +36,7 @@ const completeProjectFromApiSchema = vine.object({
 // project for creation or update
 const projectUpsertSchema = vine.object({
   ...baseProjectSchema.getProperties(),
-  description_id: vine.number(),
+  description: textUpsertSchema.clone(),
 });
 
 // project when deleted
@@ -51,6 +51,13 @@ const projectTechnologyAssociationSchema = vine.object({
   project_id: vine.number(),
   technology_id: vine.number(),
   links: technologyProjectAssociationLinksSchema.clone(),
+});
+
+// project returned by database
+const projectFromDatabaseSchema = vine.object({
+  ...baseProjectSchema.getProperties(),
+  description_id: vine.number(),
+  id: vine.number(),
 });
 
 /* -------------------------------------------------------------------------- */
@@ -71,6 +78,9 @@ export type ProjectWhenDeleted = Infer<typeof projectWhenDeletedSchema>;
 
 // type for association between a technology and a project returned by api
 export type ProjectTechnologyAssociation = Infer<typeof projectTechnologyAssociationSchema>;
+
+// type for project returned by database
+export type ProjectFromDatabase = Infer<typeof projectFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */

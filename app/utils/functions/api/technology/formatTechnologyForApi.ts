@@ -37,15 +37,15 @@ const formatTechnologyForApi = (
     links: {
       self: {
         method: 'GET',
-        href: `/api/categories/${technology.id}`,
+        href: `/api/technologies/${technology.id}`,
       },
       update: {
         method: 'PUT',
-        href: `/api/categories/${technology.id}`,
+        href: `/api/technologies/${technology.id}`,
       },
       delete: {
         method: 'DELETE',
-        href: `/api/categories/${technology.id}`,
+        href: `/api/technologies/${technology.id}`,
       },
       category: {
         method: 'GET',

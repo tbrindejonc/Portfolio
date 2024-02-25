@@ -1,0 +1,24 @@
+meta {
+  name: create
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/projects
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "description": {
+      "english": "project",
+      "french": "projet"
+    },
+    "gif": "project.gif",
+    "github": "https://github.com/Timeuh/project",
+    "live_version": "https://project1.timeuh.fr",
+    "name": "Project"
+  }
+}
