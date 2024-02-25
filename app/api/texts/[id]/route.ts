@@ -3,7 +3,7 @@ import {prisma} from '@utils/prisma/client';
 import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {ApiError, ApiParams} from '@appTypes/api';
-import {Text, TextFromApi, TextFromDatabase, textValidator} from '@schemas/api/text/text.schema';
+import {Text, TextFromApi, TextFromDatabase, textValidator, TextWhenDeleted} from '@schemas/api/text/text.schema';
 import formatTextForApi from '@functions/api/text/formatTextForApi';
 
 /**
@@ -70,6 +70,30 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const textToReturn: TextFromApi = formatTextForApi(updatedText) as TextFromApi;
 
     return sendJsonResponse<TextFromApi>(textToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete a text by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted text in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedText: TextFromDatabase = await prisma.text.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const textToReturn: TextWhenDeleted = formatTextForApi(deletedText, true) as TextWhenDeleted;
+
+    return sendJsonResponse<TextWhenDeleted>(textToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
