@@ -8,6 +8,7 @@ import {
   ExperienceFromDatabase,
   ExperienceUpsert,
   experienceUpsertValidator,
+  ExperienceWhenDeleted,
 } from '@schemas/api/experience/experience.schema';
 import formatExperienceForApi from '@functions/api/experience/formatExperienceForApi';
 
@@ -95,6 +96,33 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const experienceToReturn: ExperienceFromApi = formatExperienceForApi(updatedExperience) as ExperienceFromApi;
 
     return sendJsonResponse<ExperienceFromApi>(experienceToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete an experience by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted experience in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedExperience: ExperienceFromDatabase = await prisma.experience.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const experienceToReturn: ExperienceWhenDeleted = formatExperienceForApi(
+      deletedExperience,
+      true,
+    ) as ExperienceWhenDeleted;
+
+    return sendJsonResponse<ExperienceWhenDeleted>(experienceToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
