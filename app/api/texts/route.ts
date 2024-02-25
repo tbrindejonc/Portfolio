@@ -1,8 +1,10 @@
 import sendErrorResponse from '@functions/api/sendErrorResponse';
 import {prisma} from '@utils/prisma/client';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
-import {TextFromApi, TextFromDatabase} from '@schemas/api/text/text.schema';
+import {Text, TextFromApi, TextFromDatabase, textValidator} from '@schemas/api/text/text.schema';
 import formatTextForApi from '@functions/api/text/formatTextForApi';
+import sendJsonResponse from '@functions/api/sendJsonResponse';
+import {HTTP_CREATED} from '@constants/api';
 
 /**
  * Get all texts
@@ -20,6 +22,34 @@ export async function GET(request: Request): Promise<Response> {
     });
 
     return sendCollectionResponse<TextFromApi>(textsToReturn);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Create a new text
+ *
+ * @param {Request} request the request data object
+ *
+ * @returns {Promise<Response>} a promise containing the created text in json format
+ */
+export async function POST(request: Request): Promise<Response> {
+  try {
+    const body = await request.json();
+
+    const parsedBody: Text = await textValidator.validate(body);
+
+    const text: TextFromDatabase = await prisma.text.create({
+      data: {
+        english: parsedBody.english,
+        french: parsedBody.french,
+      },
+    });
+
+    const textToReturn: TextFromApi = formatTextForApi(text) as TextFromApi;
+
+    return sendJsonResponse<TextFromApi>(textToReturn, HTTP_CREATED);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
