@@ -3,11 +3,16 @@ import {prisma} from '@utils/prisma/client';
 import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {ApiError, ApiParams} from '@appTypes/api';
-import {ExperienceFromApi, ExperienceFromDatabase} from '@schemas/api/experience/experience.schema';
+import {
+  ExperienceFromApi,
+  ExperienceFromDatabase,
+  ExperienceUpsert,
+  experienceUpsertValidator,
+} from '@schemas/api/experience/experience.schema';
 import formatExperienceForApi from '@functions/api/experience/formatExperienceForApi';
 
 /**
- * Get a experience by id
+ * Get an experience by id
  *
  * @param {Request} request the request data object
  * @param {ApiParams} apiParams the request parameters
@@ -36,6 +41,58 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
     }
 
     const experienceToReturn: ExperienceFromApi = formatExperienceForApi(experience) as ExperienceFromApi;
+
+    return sendJsonResponse<ExperienceFromApi>(experienceToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Update an experience by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the updated experience in json format
+ */
+export async function PUT(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const body = await request.json();
+
+    const parsedBody: ExperienceUpsert = await experienceUpsertValidator.validate(body);
+
+    const updatedExperience: ExperienceFromDatabase = await prisma.experience.update({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+      data: {
+        company: parsedBody.company,
+        description: {
+          update: {
+            english: parsedBody.description.english,
+            french: parsedBody.description.french,
+          },
+        },
+        end_date: parsedBody.end_date,
+        job_title: {
+          update: {
+            english: parsedBody.job_title.english,
+            french: parsedBody.job_title.french,
+          },
+        },
+        job_description: {
+          update: {
+            english: parsedBody.job_description.english,
+            french: parsedBody.job_description.french,
+          },
+        },
+        logo: parsedBody.logo,
+        start_date: parsedBody.start_date,
+      },
+    });
+
+    const experienceToReturn: ExperienceFromApi = formatExperienceForApi(updatedExperience) as ExperienceFromApi;
 
     return sendJsonResponse<ExperienceFromApi>(experienceToReturn, HTTP_OK);
   } catch (error: any) {
