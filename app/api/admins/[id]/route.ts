@@ -1,6 +1,6 @@
 import sendErrorResponse from '@functions/api/sendErrorResponse';
 import formatAdminForApi from '@functions/api/admin/formatAdminForApi';
-import {Admin, AdminFromDatabase} from '@schemas/api/admin/admin.schema';
+import {Admin, AdminFromDatabase, AdminWhenDeleted} from '@schemas/api/admin/admin.schema';
 import {prisma} from '@utils/prisma/client';
 import {ApiError, ApiParams} from '@appTypes/api';
 import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
@@ -73,6 +73,30 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const adminToReturn: Admin = formatAdminForApi(updatedAdmin);
 
     return sendJsonResponse<Admin>(adminToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete an admin by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted admin in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedAdmin: AdminFromDatabase = await prisma.admin.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const adminToReturn: AdminWhenDeleted = formatAdminForApi(deletedAdmin, true) as AdminWhenDeleted;
+
+    return sendJsonResponse<AdminWhenDeleted>(adminToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
