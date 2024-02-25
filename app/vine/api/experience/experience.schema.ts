@@ -57,6 +57,14 @@ const experienceTechnologyAssociationSchema = vine.object({
   links: technologyExperienceAssociationLinksSchema.clone(),
 });
 
+// experience returned by database
+const experienceFromDatabaseSchema = vine.object({
+  ...baseExperienceSchema.getProperties(),
+  description_id: vine.number(),
+  id: vine.number(),
+  job_title_id: vine.number(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -75,6 +83,9 @@ export type ExperienceWhenDeleted = Infer<typeof experienceWhenDeletedSchema>;
 
 // association between a technology and an experience returned by api
 export type ExperienceTechnologyAssociation = Infer<typeof experienceTechnologyAssociationSchema>;
+
+// experience returned by database
+export type ExperienceFromDatabase = Infer<typeof experienceFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
