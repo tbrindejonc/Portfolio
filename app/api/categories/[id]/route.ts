@@ -8,6 +8,7 @@ import {
   CategoryFromDatabase,
   CategoryUpsert,
   categoryUpsertValidator,
+  CategoryWhenDeleted,
 } from '@schemas/api/category/category.schema';
 import formatCategoryForApi from '@functions/api/category/formatCategoryForApi';
 
@@ -80,6 +81,30 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const categoryToReturn: CategoryFromApi = formatCategoryForApi(updatedCategory) as CategoryFromApi;
 
     return sendJsonResponse<CategoryFromApi>(categoryToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete a category by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted category in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedCategory: CategoryFromDatabase = await prisma.category.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const categoryToReturn: CategoryWhenDeleted = formatCategoryForApi(deletedCategory, true) as CategoryWhenDeleted;
+
+    return sendJsonResponse<CategoryWhenDeleted>(categoryToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
