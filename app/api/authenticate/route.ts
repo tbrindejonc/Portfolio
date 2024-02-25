@@ -28,29 +28,31 @@ export async function POST(request: Request): Promise<Response> {
     });
 
     if (!adminToAuthenticate) {
-      const error: ApiError = {
-        error: {
-          code: HTTP_NOT_FOUND,
-          message: MSG_NOT_FOUND,
-          details: `Admin with email ${parsedBody.email} not found`,
+      return sendJsonResponse<ApiError>(
+        {
+          error: {
+            code: HTTP_NOT_FOUND,
+            message: MSG_NOT_FOUND,
+            details: `Admin with email ${parsedBody.email} not found`,
+          },
         },
-      };
-
-      return sendJsonResponse<ApiError>(error, HTTP_NOT_FOUND);
+        HTTP_NOT_FOUND,
+      );
     }
 
     const isPasswordCorrect: boolean = await validatePassword(parsedBody.password, adminToAuthenticate.password);
 
     if (!isPasswordCorrect) {
-      const error: ApiError = {
-        error: {
-          code: HTTP_BAD_REQUEST,
-          message: MSG_INCORRECT_PASSWORD,
-          details: '',
+      return sendJsonResponse<ApiError>(
+        {
+          error: {
+            code: HTTP_BAD_REQUEST,
+            message: MSG_INCORRECT_PASSWORD,
+            details: '',
+          },
         },
-      };
-
-      return sendJsonResponse<ApiError>(error, HTTP_BAD_REQUEST);
+        HTTP_BAD_REQUEST,
+      );
     }
 
     const jwt: string = await createJwt(adminToAuthenticate);
