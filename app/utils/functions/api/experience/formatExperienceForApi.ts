@@ -22,6 +22,7 @@ const formatExperienceForApi = (
       description_id: experience.description_id,
       end_date: experience.end_date,
       id: experience.id,
+      job_description_id: experience.job_title_id,
       job_title_id: experience.job_title_id,
       logo: experience.logo,
       start_date: experience.start_date,
@@ -33,6 +34,7 @@ const formatExperienceForApi = (
     description_id: experience.description_id,
     end_date: experience.end_date,
     id: experience.id,
+    job_description_id: experience.job_title_id,
     job_title_id: experience.job_title_id,
     logo: experience.logo,
     start_date: experience.start_date,
@@ -56,6 +58,10 @@ const formatExperienceForApi = (
       job_title: {
         method: 'GET',
         href: `/api/texts/${experience.job_title_id}`,
+      },
+      job_description: {
+        method: 'GET',
+        href: `/api/texts/${experience.job_description_id}`,
       },
     },
   } as ExperienceFromApi;
