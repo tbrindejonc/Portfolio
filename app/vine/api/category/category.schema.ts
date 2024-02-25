@@ -35,12 +35,6 @@ const categoryUpsertSchema = vine.object({
   name: textUpsertSchema.clone(),
 });
 
-// category for technology
-export const categoryForTechnologySchema = vine.object({
-  ...baseCategorySchema.getProperties(),
-  name: textForOthersSchema.clone(),
-});
-
 // category when deleted
 const categoryWhenDeletedSchema = vine.object({
   ...baseCategorySchema.getProperties(),
