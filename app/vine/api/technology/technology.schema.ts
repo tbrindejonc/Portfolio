@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForTechnologySchema} from '@schemas/api/links/links.schema';
-import {textForOthersSchema} from '@schemas/api/text/text.schema';
+import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */
@@ -44,7 +44,7 @@ const completeTechnologyFromApiSchema = vine.object({
 const technologyUpsertSchema = vine.object({
   ...baseTechnologySchema.getProperties(),
   category_id: vine.number(),
-  description_id: vine.number(),
+  description: textUpsertSchema.clone(),
 });
 
 // technology when deleted
