@@ -41,6 +41,18 @@ export const categoryForTechnologySchema = vine.object({
   name: textForOthersSchema.clone(),
 });
 
+// category when deleted
+const categoryWhenDeletedSchema = vine.object({
+  ...baseCategorySchema.getProperties(),
+  name_id: vine.number(),
+});
+
+// category returned by database
+const categoryFromDatabaseSchema = vine.object({
+  ...baseCategorySchema.getProperties(),
+  name_id: vine.number(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -53,6 +65,12 @@ export type CompleteCategoryFromApi = Infer<typeof completeCategoryFromApiSchema
 
 // type for category for creation or update
 export type CategoryUpsert = Infer<typeof categoryUpsertSchema>;
+
+// type for category when deleted
+export type CategoryWhenDeleted = Infer<typeof categoryWhenDeletedSchema>;
+
+// type for category returned by database
+export type CategoryFromDatabase = Infer<typeof categoryFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
