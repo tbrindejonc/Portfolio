@@ -63,6 +63,14 @@ export const technologyForOthersSchema = vine.object({
   id: vine.number(),
 });
 
+// technology returned by database
+const technologyFromDatabaseSchema = vine.object({
+  ...baseTechnologySchema.getProperties(),
+  category_id: vine.number(),
+  description_id: vine.number(),
+  id: vine.number(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -78,6 +86,9 @@ export type TechnologyUpsert = Infer<typeof technologyUpsertSchema>;
 
 // type for technology when deleted
 export type TechnologyWhenDeleted = Infer<typeof technologyWhenDeletedSchema>;
+
+// type for technology returned by database
+export type TechnologyFromDatabase = Infer<typeof technologyFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
