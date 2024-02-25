@@ -1,0 +1,32 @@
+meta {
+  name: update
+  type: http
+  seq: 4
+}
+
+put {
+  url: http://localhost:3000/api/experiences/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "company": "company1",
+    "description": {
+      "english": "company about tech",
+      "french": "entreprise travaillant dans la tech"
+    },
+    "end_date": "2025-01-01",
+    "job_description": {
+      "english": "creation of a dedicated web application",
+      "french": "création d'une application web dédiée"
+    },
+    "job_title": {
+      "english": "junior web developer",
+      "french": "développeur web junior"
+    },
+    "logo": "company2.png",
+    "start_date": "2024-01-01"
+  }
+}
