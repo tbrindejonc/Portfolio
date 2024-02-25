@@ -53,6 +53,13 @@ const projectTechnologyAssociationSchema = vine.object({
   links: technologyProjectAssociationLinksSchema.clone(),
 });
 
+// project returned by database
+const projectFromDatabaseSchema = vine.object({
+  ...baseProjectSchema.getProperties(),
+  description_id: vine.number(),
+  id: vine.number(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -71,6 +78,9 @@ export type ProjectWhenDeleted = Infer<typeof projectWhenDeletedSchema>;
 
 // type for association between a technology and a project returned by api
 export type ProjectTechnologyAssociation = Infer<typeof projectTechnologyAssociationSchema>;
+
+// type for project returned by database
+export type ProjectFromDatabase = Infer<typeof projectFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
