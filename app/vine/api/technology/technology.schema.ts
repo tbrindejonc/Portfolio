@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine';
 import {Infer} from '@vinejs/vine/types';
 import {linksForTechnologySchema} from '@schemas/api/links/links.schema';
-import {textForOthersSchema} from '@schemas/api/text/text.schema';
+import {textForOthersSchema, textUpsertSchema} from '@schemas/api/text/text.schema';
 
 /* -------------------------------------------------------------------------- */
 /*                                  Schemas                                   */
@@ -44,7 +44,7 @@ const completeTechnologyFromApiSchema = vine.object({
 const technologyUpsertSchema = vine.object({
   ...baseTechnologySchema.getProperties(),
   category_id: vine.number(),
-  description_id: vine.number(),
+  description: textUpsertSchema.clone(),
 });
 
 // technology when deleted
@@ -57,6 +57,14 @@ const technologyWhenDeletedSchema = vine.object({
 
 // technology for others schemas
 export const technologyForOthersSchema = vine.object({
+  ...baseTechnologySchema.getProperties(),
+  category_id: vine.number(),
+  description_id: vine.number(),
+  id: vine.number(),
+});
+
+// technology returned by database
+const technologyFromDatabaseSchema = vine.object({
   ...baseTechnologySchema.getProperties(),
   category_id: vine.number(),
   description_id: vine.number(),
@@ -78,6 +86,9 @@ export type TechnologyUpsert = Infer<typeof technologyUpsertSchema>;
 
 // type for technology when deleted
 export type TechnologyWhenDeleted = Infer<typeof technologyWhenDeletedSchema>;
+
+// type for technology returned by database
+export type TechnologyFromDatabase = Infer<typeof technologyFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */

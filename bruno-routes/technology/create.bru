@@ -1,0 +1,24 @@
+meta {
+  name: create
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/technologies
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "category_id": 2,
+    "color": "#05FG26",
+    "description": {
+      "english": "techno one",
+      "french": "techno une"
+    },
+    "logo": "tech1.png",
+    "name": "tech1"
+  }
+}
