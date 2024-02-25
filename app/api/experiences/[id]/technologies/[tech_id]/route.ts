@@ -1,5 +1,5 @@
 import sendErrorResponse from '@functions/api/sendErrorResponse';
-import {ApiLinkParams, ApiParams} from '@appTypes/api';
+import {ApiLinkParams} from '@appTypes/api';
 import {prisma} from '@utils/prisma/client';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {HTTP_CREATED} from '@constants/api';
@@ -9,7 +9,7 @@ import {ExperienceTechnologyAssociation} from '@schemas/api/experience/experienc
  * Link a technology to an experience
  *
  * @param {Request} request the request data object
- * @param {ApiParams} apiParams the request parameters
+ * @param {ApiLinkParams} apiParams the request parameters
  *
  * @returns {Promise<Response>} a promise containing the link in json format
  */
