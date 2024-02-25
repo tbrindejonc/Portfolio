@@ -28,7 +28,7 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
           error: {
             code: HTTP_NOT_FOUND,
             message: MSG_NOT_FOUND,
-            details: `text with id ${apiParams.params.id} not found`,
+            details: `Text with id ${apiParams.params.id} not found`,
           },
         },
         HTTP_NOT_FOUND,
