@@ -18,3 +18,10 @@ export interface ApiCollection<T> {
 export interface AdminJWT {
   token: string;
 }
+
+// api request parameters
+export interface ApiParams {
+  params: {
+    id: string;
+  };
+}
