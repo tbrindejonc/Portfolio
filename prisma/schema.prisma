@@ -31,7 +31,6 @@ model Text {
   experience_jobs            Experience[] @relation(name: "experience_job")
   experience_job_description Experience[] @relation(name: "experience_job_description")
   categories                 Category[]
-  Experience                 Experience[]
 }
 
 model Technology {
@@ -71,8 +70,6 @@ model Experience {
   job_description         Text                    @relation(name: "experience_job_description", fields: [job_description_id], references: [id])
   job_description_id      Int
   Experience_Technologies Experience_Technology[]
-  Text                    Text?                   @relation(fields: [textId], references: [id])
-  textId                  Int?
 }
 
 model Experience_Technology {
