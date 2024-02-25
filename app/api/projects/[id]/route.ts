@@ -8,6 +8,7 @@ import {
   ProjectFromDatabase,
   ProjectUpsert,
   projectUpsertValidator,
+  ProjectWhenDeleted,
 } from '@schemas/api/project/project.schema';
 import formatProjectForApi from '@functions/api/project/formatProjectForApi';
 
@@ -83,6 +84,30 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
     const projectToReturn: ProjectFromApi = formatProjectForApi(updatedProject) as ProjectFromApi;
 
     return sendJsonResponse<ProjectFromApi>(projectToReturn, HTTP_OK);
+  } catch (error: any) {
+    return sendErrorResponse(error);
+  }
+}
+
+/**
+ * Delete a project by id
+ *
+ * @param {Request} request the request data object
+ * @param {ApiParams} apiParams the request parameters
+ *
+ * @returns {Promise<Response>} a promise containing the deleted project in json format
+ */
+export async function DELETE(request: Request, apiParams: ApiParams): Promise<Response> {
+  try {
+    const deletedProject: ProjectFromDatabase = await prisma.project.delete({
+      where: {
+        id: parseInt(apiParams.params.id),
+      },
+    });
+
+    const projectToReturn: ProjectWhenDeleted = formatProjectForApi(deletedProject, true) as ProjectWhenDeleted;
+
+    return sendJsonResponse<ProjectWhenDeleted>(projectToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
