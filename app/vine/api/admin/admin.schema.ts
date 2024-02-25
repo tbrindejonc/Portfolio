@@ -19,6 +19,13 @@ const adminWhenDeletedSchema = vine.object({
   id: vine.number(),
 });
 
+// admin return by database
+const adminFromDatabaseSchema = vine.object({
+  email: vine.string().email(),
+  id: vine.number(),
+  password: vine.string(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -28,6 +35,9 @@ export type Admin = Infer<typeof adminSchema>;
 
 // type for admin when deleted
 export type AdminWhenDeleted = Infer<typeof adminWhenDeletedSchema>;
+
+// type for admin returned by database
+export type AdminFromDatabase = Infer<typeof adminFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
