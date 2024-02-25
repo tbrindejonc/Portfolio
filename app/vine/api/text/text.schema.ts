@@ -36,6 +36,12 @@ export const textUpsertSchema = vine.object({
   ...textSchema.getProperties(),
 });
 
+// text returned by database
+const textFromDatabaseSchema = vine.object({
+  ...textSchema.getProperties(),
+  id: vine.number(),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -48,6 +54,9 @@ export type TextFromApi = Infer<typeof textFromApiSchema>;
 
 // type for text returned when deleted
 export type TextWhenDeleted = Infer<typeof textWhenDeletedSchema>;
+
+// type for text returned by database
+export type TextFromDatabase = Infer<typeof textFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */
