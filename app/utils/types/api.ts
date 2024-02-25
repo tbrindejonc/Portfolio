@@ -25,3 +25,11 @@ export interface ApiParams {
     id: string;
   };
 }
+
+// api link request parameters
+export interface ApiLinkParams {
+  params: {
+    id: string;
+    tech_id: string;
+  };
+}
