@@ -2,6 +2,8 @@ import sendErrorResponse from '@functions/api/sendErrorResponse';
 import {prisma} from '@utils/prisma/client';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 import {
+  CompleteProjectFromApi,
+  CompleteProjectFromDatabase,
   ProjectFromApi,
   ProjectFromDatabase,
   ProjectUpsert,
@@ -20,13 +22,27 @@ import sendJsonResponse from '@functions/api/sendJsonResponse';
  */
 export async function GET(request: Request): Promise<Response> {
   try {
-    const technologies: ProjectFromDatabase[] = await prisma.project.findMany();
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
 
-    const technologiesToReturn: ProjectFromApi[] = technologies.map((project: ProjectFromDatabase) => {
-      return formatProjectForApi(project) as ProjectFromApi;
+    const projects: ProjectFromDatabase[] | CompleteProjectFromDatabase[] = await prisma.project.findMany({
+      include: {
+        description: !!fullContent,
+        Project_Technologies: {
+          include: {
+            technology: !!fullContent,
+          },
+        },
+      },
     });
 
-    return sendCollectionResponse<ProjectFromApi>(technologiesToReturn);
+    const projectsToReturn: ProjectFromApi[] | CompleteProjectFromApi[] = projects.map(
+      (project: ProjectFromDatabase | CompleteProjectFromDatabase) => {
+        return formatProjectForApi(project, false, !!fullContent) as ProjectFromApi;
+      },
+    );
+
+    return sendCollectionResponse<ProjectFromApi | CompleteProjectFromDatabase>(projectsToReturn);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
