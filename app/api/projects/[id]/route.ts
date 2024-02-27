@@ -4,6 +4,8 @@ import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {ApiError, ApiParams} from '@appTypes/api';
 import {
+  CompleteProjectFromApi,
+  CompleteProjectFromDatabase,
   ProjectFromApi,
   ProjectFromDatabase,
   ProjectUpsert,
@@ -22,9 +24,20 @@ import formatProjectForApi from '@functions/api/project/formatProjectForApi';
  */
 export async function GET(request: Request, apiParams: ApiParams): Promise<Response> {
   try {
-    const project: ProjectFromDatabase | null = await prisma.project.findUnique({
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
+
+    const project: ProjectFromDatabase | CompleteProjectFromDatabase | null = await prisma.project.findUnique({
       where: {
         id: parseInt(apiParams.params.id),
+      },
+      include: {
+        description: !!fullContent,
+        Project_Technologies: {
+          include: {
+            technology: !!fullContent,
+          },
+        },
       },
     });
 
@@ -41,9 +54,13 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
       );
     }
 
-    const projectToReturn: ProjectFromApi = formatProjectForApi(project) as ProjectFromApi;
+    const projectToReturn: ProjectFromApi | CompleteProjectFromApi = formatProjectForApi(
+      project,
+      false,
+      !!fullContent,
+    ) as ProjectFromApi | CompleteProjectFromApi;
 
-    return sendJsonResponse<ProjectFromApi>(projectToReturn, HTTP_OK);
+    return sendJsonResponse<ProjectFromApi | CompleteProjectFromApi>(projectToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }
