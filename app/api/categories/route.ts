@@ -6,6 +6,8 @@ import {
   CategoryFromDatabase,
   CategoryUpsert,
   categoryUpsertValidator,
+  CompleteCategoryFromApi,
+  CompleteCategoryFromDatabase,
 } from '@schemas/api/category/category.schema';
 import formatCategoryForApi from '@functions/api/category/formatCategoryForApi';
 import {HTTP_CREATED} from '@constants/api';
@@ -20,13 +22,27 @@ import sendJsonResponse from '@functions/api/sendJsonResponse';
  */
 export async function GET(request: Request): Promise<Response> {
   try {
-    const categories: CategoryFromDatabase[] = await prisma.category.findMany();
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
 
-    const categoriesToReturn: CategoryFromApi[] = categories.map((category: CategoryFromDatabase) => {
-      return formatCategoryForApi(category) as CategoryFromApi;
+    const categories: CategoryFromDatabase[] | CompleteCategoryFromDatabase[] = await prisma.category.findMany({
+      include: {
+        name: !!fullContent,
+        technologies: {
+          include: {
+            description: !!fullContent,
+          },
+        },
+      },
     });
 
-    return sendCollectionResponse<CategoryFromApi>(categoriesToReturn);
+    const categoriesToReturn: CategoryFromApi[] | CompleteCategoryFromApi[] = categories.map(
+      (category: CategoryFromDatabase) => {
+        return formatCategoryForApi(category, false, !!fullContent) as CategoryFromApi;
+      },
+    );
+
+    return sendCollectionResponse<CategoryFromApi | CompleteCategoryFromApi>(categoriesToReturn);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

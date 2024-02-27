@@ -70,6 +70,32 @@ const experienceFromDatabaseSchema = vine.object({
   job_title_id: vine.number(),
 });
 
+// complete experience returned by database
+const completeExperienceFromDatabaseSchema = vine.object({
+  ...baseExperienceSchema.getProperties(),
+  description_id: vine.number(),
+  id: vine.number(),
+  job_description_id: vine.number(),
+  job_title_id: vine.number(),
+  description: textForOthersSchema.clone(),
+  job_description: textForOthersSchema.clone(),
+  job_title: textForOthersSchema.clone(),
+  Experience_Technologies: vine.array(
+    vine.object({
+      experience_id: vine.number(),
+      technology_id: vine.number(),
+      technology: vine.object({
+        id: vine.number(),
+        name: vine.string(),
+        description_id: vine.number(),
+        logo: vine.string(),
+        color: vine.string(),
+        category_id: vine.number(),
+      }),
+    }),
+  ),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -91,6 +117,9 @@ export type ExperienceTechnologyAssociation = Infer<typeof experienceTechnologyA
 
 // experience returned by database
 export type ExperienceFromDatabase = Infer<typeof experienceFromDatabaseSchema>;
+
+// complete experience returned by database
+export type CompleteExperienceFromDatabase = Infer<typeof completeExperienceFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */

@@ -60,6 +60,28 @@ const projectFromDatabaseSchema = vine.object({
   id: vine.number(),
 });
 
+// complete project returned by database
+const completeProjectFromDatabaseSchema = vine.object({
+  ...baseProjectSchema.getProperties(),
+  description_id: vine.number(),
+  id: vine.number(),
+  description: textForOthersSchema.clone(),
+  Project_Technologies: vine.array(
+    vine.object({
+      project_id: vine.number(),
+      technology_id: vine.number(),
+      technology: vine.object({
+        id: vine.number(),
+        name: vine.string(),
+        description_id: vine.number(),
+        logo: vine.string(),
+        color: vine.string(),
+        category_id: vine.number(),
+      }),
+    }),
+  ),
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                   Types                                    */
 /* -------------------------------------------------------------------------- */
@@ -81,6 +103,9 @@ export type ProjectTechnologyAssociation = Infer<typeof projectTechnologyAssocia
 
 // type for project returned by database
 export type ProjectFromDatabase = Infer<typeof projectFromDatabaseSchema>;
+
+// type for complete project returned by database
+export type CompleteProjectFromDatabase = Infer<typeof completeProjectFromDatabaseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /*                                 Validators                                 */

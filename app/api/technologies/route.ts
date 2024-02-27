@@ -2,6 +2,8 @@ import sendErrorResponse from '@functions/api/sendErrorResponse';
 import {prisma} from '@utils/prisma/client';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 import {
+  CompleteTechnologyFromApi,
+  CompleteTechnologyFromDatabase,
   TechnologyFromApi,
   TechnologyFromDatabase,
   TechnologyUpsert,
@@ -20,13 +22,27 @@ import sendJsonResponse from '@functions/api/sendJsonResponse';
  */
 export async function GET(request: Request): Promise<Response> {
   try {
-    const technologies: TechnologyFromDatabase[] = await prisma.technology.findMany();
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
 
-    const technologiesToReturn: TechnologyFromApi[] = technologies.map((technology: TechnologyFromDatabase) => {
-      return formatTechnologyForApi(technology) as TechnologyFromApi;
+    const technologies: TechnologyFromDatabase[] = await prisma.technology.findMany({
+      include: {
+        category: {
+          include: {
+            name: !!fullContent,
+          },
+        },
+        description: !!fullContent,
+      },
     });
 
-    return sendCollectionResponse<TechnologyFromApi>(technologiesToReturn);
+    const technologiesToReturn: TechnologyFromApi[] | CompleteTechnologyFromApi[] = technologies.map(
+      (technology: TechnologyFromDatabase) => {
+        return formatTechnologyForApi(technology, false, !!fullContent) as TechnologyFromApi;
+      },
+    );
+
+    return sendCollectionResponse<TechnologyFromApi | CompleteTechnologyFromDatabase>(technologiesToReturn);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

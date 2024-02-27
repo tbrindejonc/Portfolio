@@ -4,6 +4,8 @@ import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {ApiError, ApiParams} from '@appTypes/api';
 import {
+  CompleteExperienceFromApi,
+  CompleteExperienceFromDatabase,
   ExperienceFromApi,
   ExperienceFromDatabase,
   ExperienceUpsert,
@@ -22,11 +24,25 @@ import formatExperienceForApi from '@functions/api/experience/formatExperienceFo
  */
 export async function GET(request: Request, apiParams: ApiParams): Promise<Response> {
   try {
-    const experience: ExperienceFromDatabase | null = await prisma.experience.findUnique({
-      where: {
-        id: parseInt(apiParams.params.id),
-      },
-    });
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
+
+    const experience: ExperienceFromDatabase | CompleteExperienceFromDatabase | null =
+      await prisma.experience.findUnique({
+        where: {
+          id: parseInt(apiParams.params.id),
+        },
+        include: {
+          description: !!fullContent,
+          job_title: !!fullContent,
+          job_description: !!fullContent,
+          Experience_Technologies: {
+            include: {
+              technology: !!fullContent,
+            },
+          },
+        },
+      });
 
     if (!experience) {
       return sendJsonResponse<ApiError>(
@@ -41,9 +57,13 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
       );
     }
 
-    const experienceToReturn: ExperienceFromApi = formatExperienceForApi(experience) as ExperienceFromApi;
+    const experienceToReturn: ExperienceFromApi | CompleteExperienceFromApi = formatExperienceForApi(
+      experience,
+      false,
+      !!fullContent,
+    ) as ExperienceFromApi | CompleteExperienceFromApi;
 
-    return sendJsonResponse<ExperienceFromApi>(experienceToReturn, HTTP_OK);
+    return sendJsonResponse<ExperienceFromApi | CompleteExperienceFromApi>(experienceToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

@@ -4,6 +4,7 @@ import {
   HTTP_SCHEMA_ERROR,
   HTTP_SERVER_ERROR,
   MSG_DUPLICATE_ERROR,
+  MSG_FOREIGN_KEY_ERROR,
   MSG_NOT_FOUND,
   MSG_SERVER_ERROR,
 } from '@constants/api';
@@ -30,6 +31,18 @@ const sendErrorResponse = (error: any): Response => {
     apiError.error.details = {
       field: error.meta!.target[0],
       message: `A record for the ${error.meta!.modelName} table with this ${error.meta!.target} value already exists`,
+    };
+  }
+
+  // if the error is a foreign key error
+  if (error.code === 'P2003') {
+    apiError.error.message = MSG_FOREIGN_KEY_ERROR;
+    apiError.error.details = {
+      table: error.meta!.modelName,
+      field: error.meta!.field_name,
+      message: `Can not create a record for the ${
+        error.meta!.modelName
+      } table because the record referenced by the foreign key ${error.meta!.field_name} does not exist`,
     };
   }
 

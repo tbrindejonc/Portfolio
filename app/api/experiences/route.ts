@@ -2,6 +2,8 @@ import sendErrorResponse from '@functions/api/sendErrorResponse';
 import {prisma} from '@utils/prisma/client';
 import sendCollectionResponse from '@functions/api/sendCollectionResponse';
 import {
+  CompleteExperienceFromApi,
+  CompleteExperienceFromDatabase,
   ExperienceFromApi,
   ExperienceFromDatabase,
   ExperienceUpsert,
@@ -20,13 +22,29 @@ import {HTTP_CREATED} from '@constants/api';
  */
 export async function GET(request: Request): Promise<Response> {
   try {
-    const experiences: ExperienceFromDatabase[] = await prisma.experience.findMany();
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
 
-    const experiencesToReturn: ExperienceFromApi[] = experiences.map((experience: ExperienceFromDatabase) => {
-      return formatExperienceForApi(experience) as ExperienceFromApi;
+    const experiences: ExperienceFromDatabase[] | CompleteExperienceFromDatabase[] = await prisma.experience.findMany({
+      include: {
+        description: !!fullContent,
+        job_title: !!fullContent,
+        job_description: !!fullContent,
+        Experience_Technologies: {
+          include: {
+            technology: !!fullContent,
+          },
+        },
+      },
     });
 
-    return sendCollectionResponse<ExperienceFromApi>(experiencesToReturn);
+    const experiencesToReturn: ExperienceFromApi[] | CompleteExperienceFromApi[] = experiences.map(
+      (experience: ExperienceFromDatabase | CompleteExperienceFromDatabase) => {
+        return formatExperienceForApi(experience, false, !!fullContent) as ExperienceFromApi;
+      },
+    );
+
+    return sendCollectionResponse<ExperienceFromApi | CompleteExperienceFromApi>(experiencesToReturn);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

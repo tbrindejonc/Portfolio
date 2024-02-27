@@ -4,6 +4,8 @@ import {HTTP_NOT_FOUND, HTTP_OK, MSG_NOT_FOUND} from '@constants/api';
 import sendJsonResponse from '@functions/api/sendJsonResponse';
 import {ApiError, ApiParams} from '@appTypes/api';
 import {
+  CompleteTechnologyFromApi,
+  CompleteTechnologyFromDatabase,
   TechnologyFromApi,
   TechnologyFromDatabase,
   TechnologyUpsert,
@@ -22,11 +24,23 @@ import formatTechnologyForApi from '@functions/api/technology/formatTechnologyFo
  */
 export async function GET(request: Request, apiParams: ApiParams): Promise<Response> {
   try {
-    const technology: TechnologyFromDatabase | null = await prisma.technology.findUnique({
-      where: {
-        id: parseInt(apiParams.params.id),
-      },
-    });
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
+
+    const technology: TechnologyFromDatabase | CompleteTechnologyFromDatabase | null =
+      await prisma.technology.findUnique({
+        where: {
+          id: parseInt(apiParams.params.id),
+        },
+        include: {
+          category: {
+            include: {
+              name: !!fullContent,
+            },
+          },
+          description: !!fullContent,
+        },
+      });
 
     if (!technology) {
       return sendJsonResponse<ApiError>(
@@ -41,9 +55,13 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
       );
     }
 
-    const technologyToReturn: TechnologyFromApi = formatTechnologyForApi(technology) as TechnologyFromApi;
+    const technologyToReturn: TechnologyFromApi | CompleteTechnologyFromApi = formatTechnologyForApi(
+      technology,
+      false,
+      !!fullContent,
+    ) as TechnologyFromApi;
 
-    return sendJsonResponse<TechnologyFromApi>(technologyToReturn, HTTP_OK);
+    return sendJsonResponse<TechnologyFromApi | CompleteTechnologyFromApi>(technologyToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

@@ -9,6 +9,8 @@ import {
   CategoryUpsert,
   categoryUpsertValidator,
   CategoryWhenDeleted,
+  CompleteCategoryFromApi,
+  CompleteCategoryFromDatabase,
 } from '@schemas/api/category/category.schema';
 import formatCategoryForApi from '@functions/api/category/formatCategoryForApi';
 
@@ -22,9 +24,20 @@ import formatCategoryForApi from '@functions/api/category/formatCategoryForApi';
  */
 export async function GET(request: Request, apiParams: ApiParams): Promise<Response> {
   try {
-    const category: CategoryFromDatabase | null = await prisma.category.findUnique({
+    const {searchParams} = new URL(request.url);
+    const fullContent = searchParams.get('fullContent');
+
+    const category: CategoryFromDatabase | CompleteCategoryFromDatabase | null = await prisma.category.findUnique({
       where: {
         id: parseInt(apiParams.params.id),
+      },
+      include: {
+        name: !!fullContent,
+        technologies: {
+          include: {
+            description: !!fullContent,
+          },
+        },
       },
     });
 
@@ -41,9 +54,13 @@ export async function GET(request: Request, apiParams: ApiParams): Promise<Respo
       );
     }
 
-    const categoryToReturn: CategoryFromApi = formatCategoryForApi(category) as CategoryFromApi;
+    const categoryToReturn: CategoryFromApi | CompleteCategoryFromApi = formatCategoryForApi(
+      category,
+      false,
+      !!fullContent,
+    ) as CategoryFromApi | CompleteCategoryFromApi;
 
-    return sendJsonResponse<CategoryFromApi>(categoryToReturn, HTTP_OK);
+    return sendJsonResponse<CategoryFromApi | CompleteCategoryFromApi>(categoryToReturn, HTTP_OK);
   } catch (error: any) {
     return sendErrorResponse(error);
   }

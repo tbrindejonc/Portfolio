@@ -39,6 +39,9 @@ export const MSG_NOT_FOUND = 'Resource not found';
 // passwords does not match
 export const MSG_INCORRECT_PASSWORD = 'Password is incorrect';
 
+// foreign key error
+export const MSG_FOREIGN_KEY_ERROR = 'Foreign key error';
+
 /* -------------------------------------------------------------------------- */
 /*                               Bcrypt variables                             */
 /* -------------------------------------------------------------------------- */
