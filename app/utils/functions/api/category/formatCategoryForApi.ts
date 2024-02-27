@@ -9,7 +9,7 @@ import {
 /**
  * Format a category for the api return
  *
- * @param {CategoryFromDatabase} category the category to format
+ * @param {CategoryFromDatabase | CompleteCategoryFromDatabase} category the category to format
  * @param {boolean} isDeleted if the category is deleted
  * @param {boolean} isFull if the category is complete
  *
