@@ -26,6 +26,7 @@
       "@functions/*": ["./app/utils/functions/*"],
       "@appTypes/*": ["./app/utils/types/*"],
       "@constants/*": ["./app/utils/constants/*"],
+      "@components/*": ["./app/components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
