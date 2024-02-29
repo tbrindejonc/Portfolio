@@ -10,6 +10,10 @@ export default function LangageButton() {
         backgroundColor: 'p_blue.800',
         position: 'relative',
         borderRadius: 10,
+        transition: 'background-color 0.5s',
+        _dark: {
+          backgroundColor: 'p_blue.light',
+        },
       })}
     >
       <div className={circle({size: '22px', bgColor: 'p_blue.main', position: 'absolute', top: 1, right: 1})}></div>
@@ -29,6 +33,11 @@ export default function LangageButton() {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 1,
+          transition: 'background-color 0.5s',
+          _dark: {
+            bgColor: 'p_blue.dark/70',
+            borderColor: 'p_blue.dark/50',
+          },
         })}
       >
         <h2
@@ -36,6 +45,10 @@ export default function LangageButton() {
             fontSize: 'sm',
             fontWeight: 'bold',
             color: 'p_blue.800',
+            transition: 'color 0.5s',
+            _dark: {
+              color: 'p_blue.light',
+            },
           })}
         >
           FR

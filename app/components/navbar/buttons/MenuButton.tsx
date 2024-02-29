@@ -12,6 +12,11 @@ export default function MenuButton() {
         bgGradient: 'to-tr',
         gradientFrom: 'p_purple.800',
         gradientTo: 'p_blue.800',
+        transition: 'all 0.5s',
+        _dark: {
+          gradientFrom: 'p_purple.200',
+          gradientTo: 'p_blue.200',
+        },
       })}
     >
       <div className={circle({size: '22px', bgColor: 'p_purple.main', position: 'absolute', bottom: 1, left: 1})}></div>
@@ -32,11 +37,49 @@ export default function MenuButton() {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 1,
+          transition: 'background-color 0.5s',
+          _dark: {
+            bgColor: 'p_purple.dark/70',
+            borderColor: 'p_blue.dark/50',
+          },
         })}
       >
-        <div className={css({width: '70%', height: '3px', bgColor: 'p_purple.dark', borderRadius: 20})}></div>
-        <div className={css({width: '70%', height: '3px', bgColor: 'p_purple.dark', borderRadius: 20})}></div>
-        <div className={css({width: '70%', height: '3px', bgColor: 'p_purple.dark', borderRadius: 20})}></div>
+        <div
+          className={css({
+            width: '70%',
+            height: '3px',
+            bgColor: 'p_purple.dark',
+            borderRadius: 20,
+            transition: 'background-color 0.5s',
+            _dark: {
+              bgColor: 'p_purple.light',
+            },
+          })}
+        ></div>
+        <div
+          className={css({
+            width: '70%',
+            height: '3px',
+            bgColor: 'p_purple.dark',
+            borderRadius: 20,
+            transition: 'background-color 0.5s',
+            _dark: {
+              bgColor: 'p_purple.light',
+            },
+          })}
+        ></div>
+        <div
+          className={css({
+            width: '70%',
+            height: '3px',
+            bgColor: 'p_purple.dark',
+            borderRadius: 20,
+            transition: 'background-color 0.5s',
+            _dark: {
+              bgColor: 'p_purple.light',
+            },
+          })}
+        ></div>
       </div>
     </div>
   );

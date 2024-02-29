@@ -16,6 +16,11 @@ export default function Navbar() {
         justifyContent: 'space-around',
         paddingX: 2,
         position: 'fixed',
+        transition: 'background-color 0.5s',
+        _dark: {
+          bgColor: 'p_purple.dark',
+          shadowColor: 'p_purple.light',
+        },
       })}
     >
       <MenuButton />
@@ -26,6 +31,11 @@ export default function Navbar() {
           background: 'linear-gradient(to right, #001A38, #7DB9FF, #CF8BFF, #130823)',
           color: 'transparent',
           bgClip: 'text',
+          _dark: {
+            background: 'linear-gradient(to right, #F0F7FF, #7DB9FF, #CF8BFF, #FBF5FF)',
+            color: 'transparent',
+            bgClip: 'text',
+          },
         })}
       >
         Timothée Brindejonc
