@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import {PropsWithChildren} from 'react';
 import {BricolageGroteske, Rubik} from '@assets/fonts/fonts';
-import Navbar from '@components/Navbar';
+import Navbar from '@components/navbar/Navbar';
 import {css} from '@/styled-system/css';
 
 export const metadata: Metadata = {
