@@ -11,15 +11,14 @@ export default function Navbar() {
         bgColor: 'p_purple.light',
         height: 12,
         width: 'full',
-        shadow: '0 0 12px 0',
-        shadowColor: 'p_blue.dark/10',
+        shadow: '0px 4px 4px 0 rgba(19, 8, 35, 0.25)',
         justifyContent: 'space-around',
         paddingX: 2,
         position: 'fixed',
         transition: 'background-color 0.5s',
         _dark: {
           bgColor: 'p_purple.dark',
-          shadowColor: 'p_purple.light',
+          shadow: '0px 4px 4px 0 rgba(251, 245, 255, 0.25)',
         },
       })}
     >
