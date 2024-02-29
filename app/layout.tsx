@@ -4,6 +4,7 @@ import {PropsWithChildren} from 'react';
 import {BricolageGroteske, Rubik} from '@assets/fonts/fonts';
 import Navbar from '@components/navbar/Navbar';
 import {css} from '@/styled-system/css';
+import LangageProvider from '@providers/LangageProvider';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Portfolio',
@@ -15,7 +16,7 @@ export default function RootLayout({children}: PropsWithChildren) {
     <html lang='fr' className={`${Rubik.variable} ${BricolageGroteske.variable}`}>
       <body className={css({fontFamily: 'rubik'})}>
         <Navbar />
-        {children}
+        <LangageProvider>{children}</LangageProvider>
       </body>
     </html>
   );
