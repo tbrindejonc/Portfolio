@@ -45,10 +45,26 @@ export default function ThemeButton() {
         _dark: {
           bgColor: 'p_purple.light',
         },
+        md: {
+          height: 14,
+          width: 14,
+        },
       })}
       onClick={toggleTheme}
     >
-      <div className={circle({size: '22px', bgColor: 'p_purple.main', position: 'absolute', bottom: 1, left: 1})}></div>
+      <div
+        className={circle({
+          size: '22px',
+          bgColor: 'p_purple.main',
+          position: 'absolute',
+          bottom: 1,
+          left: 1,
+          md: {
+            height: 8,
+            width: 8,
+          },
+        })}
+      ></div>
       <div
         className={css({
           bgColor: 'p_purple.light/70',
@@ -70,6 +86,12 @@ export default function ThemeButton() {
             bgColor: 'p_purple.dark/70',
             borderColor: 'p_purple.dark/50',
           },
+          md: {
+            height: 10,
+            width: 10,
+            top: '8px',
+            right: '8px',
+          },
         })}
       >
         <svg
@@ -86,6 +108,10 @@ export default function ThemeButton() {
             stroke: 'p_purple.800',
             display: theme === 'light' ? 'block' : 'none',
             transition: 'transform 1s',
+            md: {
+              width: '30px',
+              height: '30px',
+            },
           })}`}
         >
           <path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' />
@@ -107,6 +133,10 @@ export default function ThemeButton() {
             width: '22px',
             height: '22px',
             transition: 'transform 1s',
+            md: {
+              width: '30px',
+              height: '30px',
+            },
           })}`}
         >
           <circle cx='12' cy='12' r='4' />

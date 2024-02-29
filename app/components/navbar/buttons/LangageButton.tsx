@@ -24,10 +24,26 @@ export default function LangageButton() {
         _dark: {
           backgroundColor: 'p_blue.light',
         },
+        md: {
+          height: 14,
+          width: 14,
+        },
       })}
       onClick={switchLangage}
     >
-      <div className={circle({size: '22px', bgColor: 'p_blue.main', position: 'absolute', top: 1, right: 1})}></div>
+      <div
+        className={circle({
+          size: '22px',
+          bgColor: 'p_blue.main',
+          position: 'absolute',
+          top: 1,
+          right: 1,
+          md: {
+            height: 8,
+            width: 8,
+          },
+        })}
+      ></div>
       <div
         className={css({
           bgColor: 'p_blue.light/70',
@@ -49,6 +65,12 @@ export default function LangageButton() {
             bgColor: 'p_blue.dark/70',
             borderColor: 'p_blue.dark/50',
           },
+          md: {
+            height: 10,
+            width: 10,
+            top: '8px',
+            right: '8px',
+          },
         })}
       >
         <h2
@@ -60,6 +82,9 @@ export default function LangageButton() {
             textTransform: 'uppercase',
             _dark: {
               color: 'p_blue.light',
+            },
+            md: {
+              fontSize: 'lg',
             },
           })}
         >

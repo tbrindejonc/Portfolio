@@ -20,6 +20,9 @@ export default function Navbar() {
           bgColor: 'p_purple.dark',
           shadow: '0px 4px 4px 0 rgba(251, 245, 255, 0.25)',
         },
+        md: {
+          height: 20,
+        },
       })}
     >
       <MenuButton />
@@ -34,6 +37,9 @@ export default function Navbar() {
             background: 'linear-gradient(to right, #F0F7FF, #7DB9FF, #CF8BFF, #FBF5FF)',
             color: 'transparent',
             bgClip: 'text',
+          },
+          md: {
+            fontSize: '4xl',
           },
         })}
       >

@@ -24,15 +24,41 @@ export default function MenuButton() {
             gradientFrom: 'p_purple.200',
             gradientTo: 'p_blue.200',
           },
+          md: {
+            height: 14,
+            width: 14,
+          },
         })}
         onClick={() => {
           return setIsActive(!isActive);
         }}
       >
         <div
-          className={circle({size: '22px', bgColor: 'p_purple.main', position: 'absolute', bottom: 1, left: 1})}
+          className={circle({
+            size: '22px',
+            bgColor: 'p_purple.main',
+            position: 'absolute',
+            bottom: 1,
+            left: 1,
+            md: {
+              height: 8,
+              width: 8,
+            },
+          })}
         ></div>
-        <div className={circle({size: '22px', bgColor: 'p_blue.main', position: 'absolute', top: 1, right: 1})}></div>
+        <div
+          className={circle({
+            size: '22px',
+            bgColor: 'p_blue.main',
+            position: 'absolute',
+            top: 1,
+            right: 1,
+            md: {
+              height: 8,
+              width: 8,
+            },
+          })}
+        ></div>
         <div
           className={css({
             bgColor: 'p_purple.light/70',
@@ -53,6 +79,13 @@ export default function MenuButton() {
             _dark: {
               bgColor: 'p_purple.dark/70',
               borderColor: 'p_blue.dark/50',
+            },
+            md: {
+              height: 10,
+              width: 10,
+              top: '8px',
+              right: '8px',
+              gap: '6px',
             },
           })}
         >
@@ -104,6 +137,9 @@ export default function MenuButton() {
           left: 0,
           width: 'fit-content',
           height: 'fit-content',
+          md: {
+            top: '7vh',
+          },
         })}
       >
         <NavMenu />

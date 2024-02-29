@@ -24,13 +24,16 @@ export default function NavMenu() {
           bgColor: 'p_purple.dark',
           shadow: '4px 4px 4px 0 rgba(251, 245, 255, 0.25)',
         },
+        md: {
+          width: '40vw',
+        },
       })}
     >
       {appLinks.map((link, index) => {
         return (
           <Link
             key={index}
-            href={link.href}
+            href={'/'}
             className={css({
               width: 'full',
               paddingY: 2,
@@ -41,6 +44,10 @@ export default function NavMenu() {
               transition: 'color 0.5s',
               _dark: {
                 color: active === index ? 'p_purple.400' : 'neutral.light',
+              },
+              md: {
+                fontSize: '3xl',
+                paddingY: 4,
               },
             })}
             onClick={() => {
@@ -65,6 +72,10 @@ export default function NavMenu() {
                   gradientFrom: 'p_purple.light',
                   gradientTo: 'p_purple.dark',
                   shadow: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
+                },
+                md: {
+                  height: '6.5vh',
+                  width: 4,
                 },
               })}
             ></div>
