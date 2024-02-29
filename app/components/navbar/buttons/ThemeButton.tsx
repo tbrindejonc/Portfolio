@@ -2,11 +2,19 @@
 
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {Theme} from '@appTypes/portfolio';
 
 export default function ThemeButton() {
   const [theme, setTheme] = useState<Theme>('light');
+
+  useEffect(() => {
+    // enable dark mode if user prefers it
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+      document.body.classList.add('dark');
+    }
+  }, []);
 
   const toggleTheme = () => {
     const moon = document.getElementById('moon');
