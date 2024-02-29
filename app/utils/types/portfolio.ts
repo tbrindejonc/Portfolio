@@ -9,3 +9,12 @@ export type LangageContextUtils = {
   langage: Langage;
   setLangage: (langage: Langage) => void;
 };
+
+// app links for nav menu
+export type AppLink = {
+  title: {
+    en: string;
+    fr: string;
+  };
+  href: string;
+};
