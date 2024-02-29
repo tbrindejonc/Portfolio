@@ -2,7 +2,7 @@
 export type Theme = 'light' | 'dark';
 
 // app langage
-export type Langage = 'fr' | 'en';
+export type Langage = 'FR' | 'EN';
 
 // langage context exported utilities
 export type LangageContextUtils = {

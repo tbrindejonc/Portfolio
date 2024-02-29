@@ -8,7 +8,7 @@ export default function LangageButton() {
   const {langage, setLangage} = useLangage();
 
   const switchLangage = () => {
-    setLangage(langage === 'fr' ? 'en' : 'fr');
+    setLangage(langage === 'FR' ? 'EN' : 'FR');
   };
 
   return (
