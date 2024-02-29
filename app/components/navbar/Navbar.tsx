@@ -23,6 +23,11 @@ export default function Navbar() {
         md: {
           height: 20,
         },
+        xl: {
+          height: 14,
+          justifyContent: 'space-between',
+          paddingX: 4,
+        },
       })}
     >
       <MenuButton />
@@ -40,6 +45,9 @@ export default function Navbar() {
           },
           md: {
             fontSize: '4xl',
+          },
+          xl: {
+            fontSize: '2xl',
           },
         })}
       >

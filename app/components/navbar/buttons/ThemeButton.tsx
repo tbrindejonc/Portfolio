@@ -49,6 +49,10 @@ export default function ThemeButton() {
           height: 14,
           width: 14,
         },
+        xl: {
+          height: 12,
+          width: 12,
+        },
       })}
       onClick={toggleTheme}
     >
@@ -62,6 +66,10 @@ export default function ThemeButton() {
           md: {
             height: 8,
             width: 8,
+          },
+          xl: {
+            height: 7,
+            width: 7,
           },
         })}
       ></div>
@@ -91,6 +99,12 @@ export default function ThemeButton() {
             width: 10,
             top: '8px',
             right: '8px',
+          },
+          xl: {
+            height: 9,
+            width: 9,
+            top: '6px',
+            right: '6px',
           },
         })}
       >

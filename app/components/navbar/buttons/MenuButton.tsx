@@ -28,6 +28,9 @@ export default function MenuButton() {
             height: 14,
             width: 14,
           },
+          xl: {
+            display: 'none',
+          },
         })}
         onClick={() => {
           return setIsActive(!isActive);
@@ -139,6 +142,9 @@ export default function MenuButton() {
           height: 'fit-content',
           md: {
             top: '7vh',
+          },
+          xl: {
+            display: 'none',
           },
         })}
       >
