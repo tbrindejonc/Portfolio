@@ -15,8 +15,10 @@ export default function RootLayout({children}: PropsWithChildren) {
   return (
     <html lang='fr' className={`${Rubik.variable} ${BricolageGroteske.variable}`}>
       <body className={css({fontFamily: 'rubik'})}>
-        <Navbar />
-        <LangageProvider>{children}</LangageProvider>
+        <LangageProvider>
+          <Navbar />
+          {children}
+        </LangageProvider>
       </body>
     </html>
   );
