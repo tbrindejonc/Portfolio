@@ -1,7 +1,13 @@
+'use client';
+
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
 export default function ThemeButton() {
+  const toggleTheme = () => {
+    document.body.classList.toggle('dark');
+  };
+
   return (
     <div
       className={css({
@@ -10,7 +16,10 @@ export default function ThemeButton() {
         backgroundColor: 'p_purple.800',
         position: 'relative',
         borderRadius: 10,
+        cursor: 'pointer',
+        transition: 'all ease-out 2s',
       })}
+      onClick={toggleTheme}
     >
       <div className={circle({size: '22px', bgColor: 'p_purple.main', position: 'absolute', bottom: 1, left: 1})}></div>
       <div
