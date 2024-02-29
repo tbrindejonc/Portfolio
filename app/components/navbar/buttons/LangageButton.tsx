@@ -1,7 +1,16 @@
+'use client';
+
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
+import useLangage from '@hooks/useLangage';
 
 export default function LangageButton() {
+  const {langage, setLangage} = useLangage();
+
+  const switchLangage = () => {
+    setLangage(langage === 'fr' ? 'en' : 'fr');
+  };
+
   return (
     <div
       className={css({
@@ -10,11 +19,13 @@ export default function LangageButton() {
         backgroundColor: 'p_blue.800',
         position: 'relative',
         borderRadius: 10,
+        cursor: 'pointer',
         transition: 'background-color 0.5s',
         _dark: {
           backgroundColor: 'p_blue.light',
         },
       })}
+      onClick={switchLangage}
     >
       <div className={circle({size: '22px', bgColor: 'p_blue.main', position: 'absolute', top: 1, right: 1})}></div>
       <div
@@ -51,7 +62,7 @@ export default function LangageButton() {
             },
           })}
         >
-          FR
+          {langage}
         </h2>
       </div>
     </div>
