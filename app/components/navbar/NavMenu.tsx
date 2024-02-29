@@ -19,6 +19,11 @@ export default function NavMenu() {
         textAlign: 'center',
         borderEndRadius: 'lg',
         shadow: '4px 4px 4px 0 rgba(19, 8, 35, 0.25)',
+        transition: 'background-color 0.5s',
+        _dark: {
+          bgColor: 'p_purple.dark',
+          shadow: '4px 4px 4px 0 rgba(251, 245, 255, 0.25)',
+        },
       })}
     >
       {appLinks.map((link, index) => {
@@ -33,6 +38,10 @@ export default function NavMenu() {
               fontWeight: 'bold',
               position: 'relative',
               color: active === index ? 'p_purple.800' : 'neutral.700',
+              transition: 'color 0.5s',
+              _dark: {
+                color: active === index ? 'p_purple.400' : 'neutral.light',
+              },
             })}
             onClick={() => {
               setActive(index);
@@ -51,6 +60,12 @@ export default function NavMenu() {
                 borderEndRadius: 'xl',
                 shadow: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
                 display: active === index ? 'block' : 'none',
+                transition: 'all 0.5s',
+                _dark: {
+                  gradientFrom: 'p_purple.light',
+                  gradientTo: 'p_purple.dark',
+                  shadow: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
+                },
               })}
             ></div>
             {link.title[langage]}
