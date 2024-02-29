@@ -27,6 +27,8 @@
       "@appTypes/*": ["./app/utils/types/*"],
       "@constants/*": ["./app/utils/constants/*"],
       "@components/*": ["./app/components/*"],
+      "@providers/*": ["./app/providers/*"],
+      "@hooks/*": ["./app/hooks/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
