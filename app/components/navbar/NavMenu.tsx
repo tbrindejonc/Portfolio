@@ -33,7 +33,7 @@ export default function NavMenu() {
         return (
           <Link
             key={index}
-            href={'/'}
+            href={link.href}
             className={css({
               width: 'full',
               paddingY: 2,
