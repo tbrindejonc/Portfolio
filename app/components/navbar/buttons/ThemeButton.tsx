@@ -3,10 +3,9 @@
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 import {useState} from 'react';
+import {Theme} from '@appTypes/portfolio';
 
 export default function ThemeButton() {
-  type Theme = 'light' | 'dark';
-
   const [theme, setTheme] = useState<Theme>('light');
 
   const toggleTheme = () => {
@@ -19,6 +18,7 @@ export default function ThemeButton() {
     setTimeout(() => {
       setTheme(theme === 'light' ? 'dark' : 'light');
       document.body.classList.toggle('dark');
+
       moon!.style.transform = 'rotate(0deg)';
       sun!.style.transform = 'rotate(0deg)';
     }, 500);
