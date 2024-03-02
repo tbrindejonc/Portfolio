@@ -21,6 +21,10 @@ export default function Footer() {
           fontSize: '10px',
           fontWeight: 'bold',
           fontFamily: 'bricolage',
+          shadow: {
+            base: '0px -4px 4px 0 rgba(0, 26, 56, 0.25)',
+            _dark: '0px -4px 4px 0 rgba(240, 247, 255, 0.25)',
+          },
           color: {
             base: 'neutral.dark',
             _dark: 'neutral.light',
