@@ -12,24 +12,28 @@ export default function MenuButton() {
     <>
       <div
         className={css({
-          height: 10,
-          width: 10,
+          height: {
+            base: 10,
+            md: 14,
+          },
+          width: {
+            base: 10,
+            md: 14,
+          },
           position: 'relative',
           borderRadius: 10,
           bgGradient: 'to-tr',
-          gradientFrom: 'p_purple.800',
-          gradientTo: 'p_blue.800',
+          gradientFrom: {
+            base: 'p_purple.800',
+            _dark: 'p_purple.200',
+          },
+          gradientTo: {
+            base: 'p_blue.800',
+            _dark: 'p_blue.200',
+          },
           transition: 'all 0.5s',
-          _dark: {
-            gradientFrom: 'p_purple.200',
-            gradientTo: 'p_blue.200',
-          },
-          md: {
-            height: 14,
-            width: 14,
-          },
-          xl: {
-            display: 'none',
+          display: {
+            xl: 'none',
           },
         })}
         onClick={() => {
@@ -38,94 +42,102 @@ export default function MenuButton() {
       >
         <div
           className={circle({
-            size: '22px',
+            size: {
+              base: '22px',
+              md: 8,
+            },
             bgColor: 'p_purple.main',
             position: 'absolute',
             bottom: 1,
             left: 1,
-            md: {
-              height: 8,
-              width: 8,
-            },
           })}
         ></div>
         <div
           className={circle({
-            size: '22px',
+            size: {
+              base: '22px',
+              md: 8,
+            },
             bgColor: 'p_blue.main',
             position: 'absolute',
             top: 1,
             right: 1,
-            md: {
-              height: 8,
-              width: 8,
-            },
           })}
         ></div>
         <div
           className={css({
-            bgColor: 'p_purple.light/70',
+            bgColor: {
+              base: 'p_purple.light/70',
+              _dark: 'p_purple.dark/70',
+            },
             position: 'absolute',
-            top: '6px',
-            right: '6px',
-            height: 7,
-            width: 7,
+            top: {
+              base: '6px',
+              md: '8px',
+            },
+            right: {
+              base: '6px',
+              md: '8px',
+            },
+            height: {
+              base: 7,
+              md: 10,
+            },
+            width: {
+              base: 7,
+              md: 10,
+            },
             borderRadius: 7,
-            borderColor: 'p_blue.light/50',
+            borderColor: {
+              base: 'p_blue.light/50',
+              _dark: 'p_blue.dark/50',
+            },
             border: '2px solid',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 1,
+            gap: {
+              base: 1,
+              md: '6px',
+            },
             transition: 'background-color 0.5s',
-            _dark: {
-              bgColor: 'p_purple.dark/70',
-              borderColor: 'p_blue.dark/50',
-            },
-            md: {
-              height: 10,
-              width: 10,
-              top: '8px',
-              right: '8px',
-              gap: '6px',
-            },
           })}
         >
           <div
             className={css({
               width: '70%',
               height: '3px',
-              bgColor: 'p_purple.dark',
+              bgColor: {
+                base: 'p_purple.dark',
+                _dark: 'p_purple.light',
+              },
               borderRadius: 20,
               transition: 'background-color 0.5s',
-              _dark: {
-                bgColor: 'p_purple.light',
-              },
             })}
           ></div>
           <div
             className={css({
               width: '70%',
               height: '3px',
-              bgColor: 'p_purple.dark',
+              bgColor: {
+                base: 'p_purple.dark',
+                _dark: 'p_purple.light',
+              },
               borderRadius: 20,
               transition: 'background-color 0.5s',
-              _dark: {
-                bgColor: 'p_purple.light',
-              },
             })}
           ></div>
           <div
             className={css({
               width: '70%',
               height: '3px',
-              bgColor: 'p_purple.dark',
+              bgColor: {
+                base: 'p_purple.dark',
+                _dark: 'p_purple.light',
+              },
               borderRadius: 20,
               transition: 'background-color 0.5s',
-              _dark: {
-                bgColor: 'p_purple.light',
-              },
             })}
           ></div>
         </div>
@@ -136,15 +148,15 @@ export default function MenuButton() {
           translate: 'auto',
           transition: 'all 0.5s',
           position: 'absolute',
-          top: '6.5vh',
+          top: {
+            base: '6.5vh',
+            md: '7vh',
+          },
           left: 0,
           width: 'fit-content',
           height: 'fit-content',
-          md: {
-            top: '7vh',
-          },
-          xl: {
-            display: 'none',
+          display: {
+            xl: 'none',
           },
         })}
       >

@@ -35,54 +35,72 @@ export default function ThemeButton() {
   return (
     <div
       className={css({
-        height: 10,
-        width: 10,
-        bgColor: 'p_purple.800',
+        height: {
+          base: 10,
+          md: 14,
+          xl: 12,
+        },
+        width: {
+          base: 10,
+          md: 14,
+          xl: 12,
+        },
+        bgColor: {
+          base: 'p_purple.800',
+          _dark: 'p_purple.light',
+        },
         position: 'relative',
         borderRadius: 10,
         cursor: 'pointer',
         transition: 'background-color 0.5s',
-        _dark: {
-          bgColor: 'p_purple.light',
-        },
-        md: {
-          height: 14,
-          width: 14,
-        },
-        xl: {
-          height: 12,
-          width: 12,
-        },
       })}
       onClick={toggleTheme}
     >
       <div
         className={circle({
-          size: '22px',
+          size: {
+            base: '22px',
+            md: 8,
+            xl: 7,
+          },
           bgColor: 'p_purple.main',
           position: 'absolute',
           bottom: 1,
           left: 1,
-          md: {
-            height: 8,
-            width: 8,
-          },
-          xl: {
-            height: 7,
-            width: 7,
-          },
         })}
       ></div>
       <div
         className={css({
-          bgColor: 'p_purple.light/70',
+          bgColor: {
+            base: 'p_purple.light/70',
+            _dark: 'p_purple.dark/70',
+          },
           position: 'absolute',
-          top: '6px',
-          right: '6px',
-          height: 7,
-          width: 7,
+          top: {
+            base: '6px',
+            md: '8px',
+            xl: '6px',
+          },
+          right: {
+            base: '6px',
+            md: '8px',
+            xl: '6px',
+          },
+          height: {
+            base: 7,
+            md: 10,
+            xl: 9,
+          },
+          width: {
+            base: 7,
+            md: 10,
+            xl: 9,
+          },
           borderRadius: 7,
-          borderColor: 'p_purple.light/50',
+          borderColor: {
+            base: 'p_purple.light/50',
+            _dark: 'p_purple.dark/50',
+          },
           border: '2px solid',
           display: 'flex',
           flexDirection: 'column',
@@ -90,22 +108,6 @@ export default function ThemeButton() {
           justifyContent: 'center',
           gap: 1,
           transition: 'background-color 0.5s',
-          _dark: {
-            bgColor: 'p_purple.dark/70',
-            borderColor: 'p_purple.dark/50',
-          },
-          md: {
-            height: 10,
-            width: 10,
-            top: '8px',
-            right: '8px',
-          },
-          xl: {
-            height: 9,
-            width: 9,
-            top: '6px',
-            right: '6px',
-          },
         })}
       >
         <svg
@@ -122,9 +124,11 @@ export default function ThemeButton() {
             stroke: 'p_purple.800',
             display: theme === 'light' ? 'block' : 'none',
             transition: 'transform 1s',
-            md: {
-              width: '30px',
-              height: '30px',
+            width: {
+              md: '30px',
+            },
+            height: {
+              md: '30px',
             },
           })}`}
         >
@@ -144,13 +148,15 @@ export default function ThemeButton() {
           className={`lucide lucide-sun ${css({
             stroke: 'p_purple.200',
             display: theme === 'dark' ? 'block' : 'none',
-            width: '22px',
-            height: '22px',
-            transition: 'transform 1s',
-            md: {
-              width: '30px',
-              height: '30px',
+            width: {
+              base: '22px',
+              md: '30px',
             },
+            height: {
+              base: '22px',
+              md: '30px',
+            },
+            transition: 'transform 1s',
           })}`}
         >
           <circle cx='12' cy='12' r='4' />

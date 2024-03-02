@@ -14,54 +14,72 @@ export default function LangageButton() {
   return (
     <div
       className={css({
-        height: 10,
-        width: 10,
-        backgroundColor: 'p_blue.800',
+        height: {
+          base: 10,
+          md: 14,
+          xl: 12,
+        },
+        width: {
+          base: 10,
+          md: 14,
+          xl: 12,
+        },
+        bgColor: {
+          base: 'p_blue.800',
+          _dark: 'p_blue.light',
+        },
         position: 'relative',
         borderRadius: 10,
         cursor: 'pointer',
         transition: 'background-color 0.5s',
-        _dark: {
-          backgroundColor: 'p_blue.light',
-        },
-        md: {
-          height: 14,
-          width: 14,
-        },
-        xl: {
-          height: 12,
-          width: 12,
-        },
       })}
       onClick={switchLangage}
     >
       <div
         className={circle({
-          size: '22px',
+          size: {
+            base: '22px',
+            md: 8,
+            xl: 7,
+          },
           bgColor: 'p_blue.main',
           position: 'absolute',
           top: 1,
           right: 1,
-          md: {
-            height: 8,
-            width: 8,
-          },
-          xl: {
-            height: 7,
-            width: 7,
-          },
         })}
       ></div>
       <div
         className={css({
-          bgColor: 'p_blue.light/70',
+          bgColor: {
+            base: 'p_blue.light/70',
+            _dark: 'p_blue.dark/70',
+          },
+          borderColor: {
+            base: 'p_blue.light/50',
+            _dark: 'p_blue.dark/50',
+          },
           position: 'absolute',
-          top: '6px',
-          right: '6px',
-          height: 7,
-          width: 7,
+          top: {
+            base: '6px',
+            md: '8px',
+            xl: '6px',
+          },
+          right: {
+            base: '6px',
+            md: '8px',
+            xl: '6px',
+          },
+          height: {
+            base: 7,
+            md: 10,
+            xl: 9,
+          },
+          width: {
+            base: 7,
+            md: 10,
+            xl: 9,
+          },
           borderRadius: 7,
-          borderColor: 'p_blue.light/50',
           border: '2px solid',
           display: 'flex',
           flexDirection: 'column',
@@ -69,37 +87,21 @@ export default function LangageButton() {
           justifyContent: 'center',
           gap: 1,
           transition: 'background-color 0.5s',
-          _dark: {
-            bgColor: 'p_blue.dark/70',
-            borderColor: 'p_blue.dark/50',
-          },
-          md: {
-            height: 10,
-            width: 10,
-            top: '8px',
-            right: '8px',
-          },
-          xl: {
-            height: 9,
-            width: 9,
-            top: '6px',
-            right: '6px',
-          },
         })}
       >
         <h2
           className={css({
-            fontSize: 'sm',
+            fontSize: {
+              base: 'sm',
+              md: 'lg',
+            },
             fontWeight: 'bold',
-            color: 'p_blue.800',
+            color: {
+              base: 'p_blue.800',
+              _dark: 'p_blue.light',
+            },
             transition: 'color 0.5s',
             textTransform: 'uppercase',
-            _dark: {
-              color: 'p_blue.light',
-            },
-            md: {
-              fontSize: 'lg',
-            },
           })}
         >
           {langage}

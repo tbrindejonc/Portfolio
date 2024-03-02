@@ -9,46 +9,49 @@ export default function Navbar() {
   return (
     <nav
       className={hstack({
-        bgColor: 'p_purple.light',
-        height: 12,
+        bgColor: {
+          base: 'p_purple.light',
+          _dark: 'p_purple.dark',
+        },
+        height: {
+          base: 12,
+          md: 20,
+          xl: 14,
+        },
         width: 'full',
-        shadow: '0px 4px 4px 0 rgba(19, 8, 35, 0.25)',
-        justifyContent: 'space-around',
-        paddingX: 2,
+        shadow: {
+          base: '0px 4px 4px 0 rgba(19, 8, 35, 0.25)',
+          _dark: '0px 4px 4px 0 rgba(251, 245, 255, 0.25)',
+        },
+        justifyContent: {
+          base: 'space-around',
+          xl: 'space-between',
+        },
+        paddingX: {
+          base: 2,
+          xl: 4,
+        },
         position: 'fixed',
         transition: 'background-color 0.5s',
-        _dark: {
-          bgColor: 'p_purple.dark',
-          shadow: '0px 4px 4px 0 rgba(251, 245, 255, 0.25)',
-        },
-        md: {
-          height: 20,
-        },
-        xl: {
-          height: 14,
-          justifyContent: 'space-between',
-          paddingX: 4,
-        },
       })}
     >
       <MenuButton />
       <h2
         className={css({
-          fontSize: 'lg',
+          fontSize: {
+            base: 'lg',
+            md: '4xl',
+            xl: '2xl',
+          },
           fontWeight: 'bold',
-          background: 'linear-gradient(to right, #001A38, #7DB9FF, #CF8BFF, #130823)',
+          background: {
+            base: 'linear-gradient(to right, #001A38, #7DB9FF, #CF8BFF, #130823)',
+            _dark: 'linear-gradient(to right, #F0F7FF, #7DB9FF, #CF8BFF, #FBF5FF)',
+          },
           color: 'transparent',
-          bgClip: 'text',
-          _dark: {
-            background: 'linear-gradient(to right, #F0F7FF, #7DB9FF, #CF8BFF, #FBF5FF)',
-            color: 'transparent',
-            bgClip: 'text',
-          },
-          md: {
-            fontSize: '4xl',
-          },
-          xl: {
-            fontSize: '2xl',
+          bgClip: {
+            base: 'text',
+            _dark: 'text',
           },
         })}
       >

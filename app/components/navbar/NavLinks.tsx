@@ -16,9 +16,9 @@ export default function NavLinks() {
       className={hstack({
         gap: 20,
         textAlign: 'center',
-        display: 'none',
-        xl: {
-          display: 'flex',
+        display: {
+          base: 'none',
+          xl: 'flex',
         },
       })}
     >
@@ -34,17 +34,15 @@ export default function NavLinks() {
               fontSize: '2xl',
               fontWeight: 'bold',
               position: 'relative',
-              color: active === index ? 'p_purple.800' : 'neutral.700',
-              transition: 'color 0.5s',
-              _hover: {
-                color: active === index ? 'p_purple.700' : 'p_blue.700',
-              },
-              _dark: {
-                color: active === index ? 'p_purple.400' : 'neutral.light',
-                _hover: {
-                  color: active === index ? 'p_purple.200' : 'p_blue.300',
+              color: {
+                base: active === index ? 'p_purple.800' : 'neutral.700',
+                _hover: active === index ? 'p_purple.700' : 'p_blue.700',
+                _dark: {
+                  base: active === index ? 'p_purple.400' : 'neutral.light',
+                  _hover: active === index ? 'p_purple.200' : 'p_blue.300',
                 },
               },
+              transition: 'color 0.5s',
             })}
             onClick={() => {
               setActive(index);
@@ -58,17 +56,21 @@ export default function NavLinks() {
                 left: 0,
                 bottom: 0,
                 bgGradient: 'to-t',
-                gradientFrom: 'p_purple.700',
-                gradientTo: 'p_purple.light',
+                gradientFrom: {
+                  base: 'p_purple.700',
+                  _dark: 'p_purple.light',
+                },
+                gradientTo: {
+                  base: 'p_purple.light',
+                  _dark: 'p_purple.dark',
+                },
                 borderTopRadius: 'xl',
-                shadow: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
+                shadow: {
+                  base: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
+                  _dark: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
+                },
                 display: active === index ? 'block' : 'none',
                 transition: 'all 0.5s',
-                _dark: {
-                  gradientFrom: 'p_purple.light',
-                  gradientTo: 'p_purple.dark',
-                  shadow: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
-                },
               })}
             ></div>
             {link.title[langage]}

@@ -14,19 +14,21 @@ export default function NavMenu() {
   return (
     <div
       className={vstack({
-        width: '50vw',
-        bgColor: 'p_purple.light',
+        width: {
+          base: '50vw',
+          md: '40vw',
+        },
+        bgColor: {
+          base: 'p_purple.light',
+          _dark: 'p_purple.dark',
+        },
         textAlign: 'center',
         borderEndRadius: 'lg',
-        shadow: '4px 4px 4px 0 rgba(19, 8, 35, 0.25)',
+        shadow: {
+          base: '4px 4px 4px 0 rgba(19, 8, 35, 0.25)',
+          _dark: '4px 4px 4px 0 rgba(251, 245, 255, 0.25)',
+        },
         transition: 'background-color 0.5s',
-        _dark: {
-          bgColor: 'p_purple.dark',
-          shadow: '4px 4px 4px 0 rgba(251, 245, 255, 0.25)',
-        },
-        md: {
-          width: '40vw',
-        },
       })}
     >
       {appLinks.map((link, index) => {
@@ -36,19 +38,21 @@ export default function NavMenu() {
             href={link.href}
             className={css({
               width: 'full',
-              paddingY: 2,
-              fontSize: 'lg',
+              paddingY: {
+                base: 2,
+                md: 4,
+              },
+              fontSize: {
+                base: 'lg',
+                md: '3xl',
+              },
               fontWeight: 'bold',
               position: 'relative',
-              color: active === index ? 'p_purple.800' : 'neutral.700',
+              color: {
+                base: active === index ? 'p_purple.800' : 'neutral.700',
+                _dark: active === index ? 'p_purple.400' : 'neutral.light',
+              },
               transition: 'color 0.5s',
-              _dark: {
-                color: active === index ? 'p_purple.400' : 'neutral.light',
-              },
-              md: {
-                fontSize: '3xl',
-                paddingY: 4,
-              },
             })}
             onClick={() => {
               setActive(index);
@@ -57,26 +61,32 @@ export default function NavMenu() {
             <div
               className={css({
                 position: 'absolute',
-                width: 2,
-                height: 10,
+                width: {
+                  base: 2,
+                  md: 4,
+                },
+                height: {
+                  base: 10,
+                  md: '6.5vh',
+                },
                 left: 0,
                 top: 0,
                 bgGradient: 'to-r',
-                gradientFrom: 'p_purple.700',
-                gradientTo: 'p_purple.light',
+                gradientFrom: {
+                  base: 'p_purple.700',
+                  _dark: 'p_purple.light',
+                },
+                gradientTo: {
+                  base: 'p_purple.light',
+                  _dark: 'p_purple.dark',
+                },
                 borderEndRadius: 'xl',
-                shadow: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
+                shadow: {
+                  base: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
+                  _dark: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
+                },
                 display: active === index ? 'block' : 'none',
                 transition: 'all 0.5s',
-                _dark: {
-                  gradientFrom: 'p_purple.light',
-                  gradientTo: 'p_purple.dark',
-                  shadow: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
-                },
-                md: {
-                  height: '6.5vh',
-                  width: 4,
-                },
               })}
             ></div>
             {link.title[langage]}
