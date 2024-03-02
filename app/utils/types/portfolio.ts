@@ -18,3 +18,18 @@ export type AppLink = {
   };
   href: string;
 };
+
+// footer link for footer section
+export type FooterLink = {
+  title: {
+    en: string;
+    fr: string;
+  };
+  span:
+    | {
+        text: string;
+        color: string;
+      }
+    | false;
+  href: string;
+};
