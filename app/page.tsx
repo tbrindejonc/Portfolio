@@ -1,7 +1,9 @@
+import LandingView from '@views/LandingView';
+
 export default function Home() {
   return (
     <main>
-      <h1>Portfolio</h1>
+      <LandingView />
     </main>
   );
 }
