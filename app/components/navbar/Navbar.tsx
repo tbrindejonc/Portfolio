@@ -9,6 +9,7 @@ export default function Navbar() {
   return (
     <nav
       className={hstack({
+        zIndex: 10,
         bgColor: {
           base: 'p_purple.light',
           _dark: 'p_purple.dark',
