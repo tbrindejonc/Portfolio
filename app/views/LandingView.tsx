@@ -9,8 +9,15 @@ export default function LandingView() {
       className={css({
         overflow: 'hidden',
         position: 'relative',
-        paddingTop: 20,
-        paddingX: 2,
+        paddingTop: {
+          base: 20,
+          md: 40,
+        },
+        paddingX: {
+          base: 2,
+          md: 14,
+          xl: '10em',
+        },
         height: 'screen',
         width: 'full',
         transition: 'all 0.5s',
@@ -27,15 +34,29 @@ export default function LandingView() {
     >
       <div
         className={css({
-          height: '300px',
-          width: '300px',
+          height: {
+            base: '300px',
+            md: '400px',
+            xl: '500px',
+          },
+          width: {
+            base: '300px',
+            md: '400px',
+            xl: '500px',
+          },
           overflow: 'hidden',
-          borderRadius: 10,
+          borderRadius: {
+            base: 10,
+            md: 20,
+          },
           shadow: {
             base: '0px 4px 4px 0 token(colors.p_blue.dark_25)',
             _dark: '0px 4px 4px 0 token(colors.p_blue.light_25)',
           },
           zIndex: 1,
+          top: {
+            xl: '15em',
+          },
           position: 'absolute',
         })}
       >
@@ -47,9 +68,16 @@ export default function LandingView() {
           sizes={'100vw'}
           className={css({
             height: 'auto',
-            width: '300px',
+            width: {
+              base: '300px',
+              md: '400px',
+              xl: '500px',
+            },
             backgroundSize: 'cover',
-            borderRadius: 10,
+            borderRadius: {
+              base: 10,
+              md: 20,
+            },
           })}
         />
       </div>
@@ -60,14 +88,38 @@ export default function LandingView() {
             base: 'p_purple.light',
             _dark: 'p_purple.dark',
           },
-          width: '90vw',
+          width: {
+            base: '90vw',
+            md: '45vw',
+            xl: '27vw',
+          },
           position: 'absolute',
-          top: '21em',
-          right: '-1em',
-          p: 2,
-          paddingX: 4,
-          borderRadius: 10,
+          top: {
+            base: '21em',
+            md: '9em',
+            xl: '14em',
+          },
+          right: {
+            base: '-3em',
+            md: '5em',
+            xl: '50em',
+          },
+          p: {
+            base: 2,
+            xl: 4,
+          },
+          paddingX: {
+            base: 4,
+            md: 6,
+          },
+          borderRadius: {
+            base: 10,
+            md: 20,
+          },
           zIndex: 1,
+          lineHeight: {
+            xl: '6em',
+          },
         })}
       >
         <h1
@@ -83,9 +135,12 @@ export default function LandingView() {
               base: 'text',
               _dark: 'text',
             },
-            width: 'fit-content',
             fontWeight: 'bold',
-            fontSize: '5xl',
+            fontSize: {
+              base: '5xl',
+              md: '6xl',
+              xl: '8xl',
+            },
             textShadow: {
               base: '4px 4px 3px token(colors.p_purple.dark_25)',
               _dark: '4px 4px 3px token(colors.p_purple.light_25)',
@@ -97,7 +152,11 @@ export default function LandingView() {
       </div>
       <div
         className={circle({
-          size: '130vw',
+          size: {
+            base: '130vw',
+            md: '80vw',
+            xl: '40vw',
+          },
           bgColor: {
             base: 'p_purple.light',
             _dark: 'p_purple.dark',
@@ -105,20 +164,43 @@ export default function LandingView() {
           shadow: '15px 20px 20px 0 token(colors.p_purple.main)',
           zIndex: 0,
           position: 'absolute',
-          top: '17em',
-          left: '-3em',
+          top: {
+            base: '17em',
+            md: '25em',
+            xl: '8em',
+          },
+          left: {
+            base: '-3em',
+            md: '7em',
+            xl: '75em',
+          },
         })}
       >
         <h2
           className={css({
             position: 'absolute',
-            fontSize: '3xl',
+            fontSize: {
+              base: '3xl',
+              md: '6xl',
+              xl: '7xl',
+            },
             zIndex: 1,
             textAlign: 'right',
             fontWeight: 'bold',
-            right: '3.5em',
-            top: '9em',
-            width: '2/3',
+            right: {
+              base: '3.5em',
+              md: '2em',
+              xl: '1.5em',
+            },
+            top: {
+              base: '9em',
+              md: '5em',
+              xl: '4em',
+            },
+            width: {
+              base: '2/3',
+              md: '3/4',
+            },
           })}
         >
           Étudiant et futur développeur Fullstack React
