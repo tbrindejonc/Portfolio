@@ -17,6 +17,7 @@ export default defineConfig({
         colors: {
           p_blue: {
             light: {value: '#F0F7FF'},
+            light_25: {value: 'rgba(240,247,255, 0.25)'},
             200: {value: '#CCE4FF'},
             300: {value: '#B2D6FF'},
             400: {value: '#99C9FF'},
@@ -25,9 +26,11 @@ export default defineConfig({
             700: {value: '#004799'},
             800: {value: '#053061'},
             dark: {value: '#001A38'},
+            dark_25: {value: 'rgba(0,26,56, 0.25)'},
           },
           p_purple: {
             light: {value: '#FBF5FF'},
+            light_25: {value: 'rgba(251,245,255, 0.25)'},
             200: {value: '#F4E5FF'},
             300: {value: '#EACCFF'},
             400: {value: '#DFB2FF'},
@@ -36,6 +39,7 @@ export default defineConfig({
             700: {value: '#3C0066'},
             800: {value: '#2D004D'},
             dark: {value: '#130823'},
+            dark_25: {value: 'rgba(19,8,35, 0.25)'},
           },
           neutral: {
             light: {value: '#E0E5EB'},
