@@ -4,6 +4,12 @@ export type Theme = 'light' | 'dark';
 // app langage
 export type Langage = 'fr' | 'en';
 
+// base app text
+export type AppText = {
+  en: string;
+  fr: string;
+};
+
 // langage context exported utilities
 export type LangageContextUtils = {
   langage: Langage;
@@ -12,19 +18,13 @@ export type LangageContextUtils = {
 
 // app links for nav menu
 export type AppLink = {
-  title: {
-    en: string;
-    fr: string;
-  };
+  title: AppText;
   href: string;
 };
 
 // footer link for footer section
 export type FooterLink = {
-  title: {
-    en: string;
-    fr: string;
-  };
+  title: AppText;
   span:
     | {
         text: string;
