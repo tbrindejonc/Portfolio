@@ -44,8 +44,8 @@ export default function Footer() {
         fontWeight: 'bold',
         fontFamily: 'bricolage',
         shadow: {
-          base: '0px -4px 4px 0 rgba(0, 26, 56, 0.25)',
-          _dark: '0px -4px 4px 0 rgba(240, 247, 255, 0.25)',
+          base: '0px -4px 4px 0 token(colors.p_blue.dark_25)',
+          _dark: '0px -4px 4px 0 token(colors.p_blue.light_25)',
         },
         color: {
           base: 'neutral.dark',

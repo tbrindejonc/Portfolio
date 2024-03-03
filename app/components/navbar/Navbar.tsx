@@ -20,8 +20,8 @@ export default function Navbar() {
         },
         width: 'full',
         shadow: {
-          base: '0px 4px 4px 0 rgba(19, 8, 35, 0.25)',
-          _dark: '0px 4px 4px 0 rgba(251, 245, 255, 0.25)',
+          base: '0 4px 4px 0 token(colors.p_purple.dark_25)',
+          _dark: '0 4px 4px 0 token(colors.p_purple.light_25)',
         },
         justifyContent: {
           base: 'space-around',
@@ -45,8 +45,9 @@ export default function Navbar() {
           },
           fontWeight: 'bold',
           background: {
-            base: 'linear-gradient(to right, #001A38, #7DB9FF, #CF8BFF, #130823)',
-            _dark: 'linear-gradient(to right, #F0F7FF, #7DB9FF, #CF8BFF, #FBF5FF)',
+            base: 'linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.dark))',
+            _dark:
+              'linear-gradient(to right, token(colors.p_blue.light), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.light))',
           },
           color: 'transparent',
           bgClip: {

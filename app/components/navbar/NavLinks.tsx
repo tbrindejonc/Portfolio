@@ -65,9 +65,10 @@ export default function NavLinks() {
                   _dark: 'p_purple.dark',
                 },
                 borderTopRadius: 'xl',
-                shadow: {
-                  base: '2px 0 4px 0 rgba(149, 0, 255, 0.50)',
-                  _dark: '2px 0 4px 0 rgba(244, 229, 255, 0.50)',
+                shadow: '2px 0 4px 0',
+                shadowColor: {
+                  base: 'p_purple.dark/25',
+                  _dark: 'p_purple.light/25',
                 },
                 display: active === index ? 'block' : 'none',
                 transition: 'all 0.5s',
