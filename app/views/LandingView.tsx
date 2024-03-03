@@ -1,8 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
+import roleTitle from '@app/texts/portfolio/landing/roleTitle';
+import useLangage from '@hooks/useLangage';
 
 export default function LandingView() {
+  const {langage} = useLangage();
+
   return (
     <section
       id={'landing'}
@@ -203,7 +209,7 @@ export default function LandingView() {
             },
           })}
         >
-          Étudiant et futur développeur Fullstack React
+          {roleTitle[langage]}
         </h2>
       </div>
     </section>
