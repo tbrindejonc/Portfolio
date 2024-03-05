@@ -8,6 +8,7 @@ import {
   journeyStyle,
   journeyTitleStyle,
   linkStyle,
+  paragraphStyle,
   reversedTextSectionStyle,
   textSectionStyle,
 } from '@styles/views/JourneyView.styles';
@@ -22,7 +23,7 @@ export default function JourneyView() {
       <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
       <div className={contentWrapperStyle}>
         <div className={textSectionStyle}>
-          <p>{firstParagraph[langage]}</p>
+          <p className={paragraphStyle}>{firstParagraph[langage]}</p>
           <Image
             src={'/images/portfolio/journey/scholarship.jpg'}
             alt={'me'}
@@ -33,7 +34,7 @@ export default function JourneyView() {
           />
         </div>
         <div className={reversedTextSectionStyle}>
-          <p>{secondParagraph[langage]}</p>
+          <p className={paragraphStyle}>{secondParagraph[langage]}</p>
           <Image
             src={'/images/portfolio/journey/webdev.jpg'}
             alt={'me'}

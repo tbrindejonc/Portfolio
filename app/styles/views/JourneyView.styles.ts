@@ -36,6 +36,7 @@ const imageStyle = css({
   width: {
     base: 'full',
     md: '1/2',
+    xl: '1/3',
   },
 });
 
@@ -73,6 +74,9 @@ const textSectionStyle = css({
     md: 'row',
   },
   gap: 6,
+  justifyContent: {
+    xl: 'space-around',
+  },
 });
 
 const reversedTextSectionStyle = css({
@@ -83,6 +87,9 @@ const reversedTextSectionStyle = css({
     md: 'row-reverse',
   },
   gap: 6,
+  justifyContent: {
+    xl: 'space-around',
+  },
   textAlign: 'end',
 });
 
@@ -90,6 +97,7 @@ const linkStyle = css({
   border: {
     base: '3px solid',
     md: '4px solid',
+    xl: '5px solid',
   },
   borderColor: 'transparent',
   borderRadius: {
@@ -109,11 +117,16 @@ const linkStyle = css({
   color: {
     base: 'p_blue.dark',
     _dark: 'p_blue.300',
+    _hover: {
+      base: 'p_blue.700',
+      _dark: 'p_blue.400',
+    },
   },
   fontFamily: 'bricolage',
   fontSize: {
     base: '2xl',
     md: '3xl',
+    xl: '4xl',
   },
   fontWeight: 'bold',
   p: {
@@ -125,6 +138,16 @@ const linkStyle = css({
   width: {
     base: 'full',
     md: '3/5',
+    xl: '1/3',
+  },
+});
+
+const paragraphStyle = css({
+  fontSize: {
+    xl: '4xl',
+  },
+  width: {
+    xl: '1/3',
   },
 });
 
@@ -136,4 +159,5 @@ export {
   textSectionStyle,
   linkStyle,
   reversedTextSectionStyle,
+  paragraphStyle,
 };
