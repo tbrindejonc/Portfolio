@@ -11,7 +11,10 @@ const journeyStyle = vstack({
     _dark: 'neutral.light',
   },
   gap: 4,
-  p: 4,
+  p: {
+    base: 4,
+    md: 8,
+  },
 });
 
 const journeyTitleStyle = css({
@@ -20,49 +23,79 @@ const journeyTitleStyle = css({
     _dark: 'neutral.200',
   },
   fontFamily: 'bricolage',
-  fontSize: '4xl',
+  fontSize: {
+    base: '4xl',
+    md: '6xl',
+  },
   fontWeight: 'bold',
 });
 
 const imageStyle = css({
   borderRadius: 'xl',
   height: 'auto',
-  width: 'full',
+  width: {
+    base: 'full',
+    md: '1/2',
+  },
 });
 
 const contentWrapperStyle = vstack({
   bgGradient: 'to-t',
-  borderRadius: 'xl',
-  fontSize: 'xl',
-  gap: 16,
+  borderRadius: {
+    base: 'xl',
+    md: '2xl',
+  },
+  fontSize: {
+    base: 'xl',
+    md: '2xl',
+  },
+  gap: {
+    base: 16,
+    md: 24,
+  },
   gradientFrom: 'p_purple.main',
   gradientTo: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
-  p: 4,
+  p: {
+    base: 4,
+    md: 8,
+  },
   transition: 'all 0.5s',
 });
 
 const textSectionStyle = css({
   alignItems: 'center',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    md: 'row',
+  },
   gap: 6,
 });
 
 const reversedTextSectionStyle = css({
   alignItems: 'center',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    md: 'row-reverse',
+  },
   gap: 6,
   textAlign: 'end',
 });
 
 const linkStyle = css({
-  border: '3px solid',
+  border: {
+    base: '3px solid',
+    md: '4px solid',
+  },
   borderColor: 'transparent',
-  borderRadius: 'md',
+  borderRadius: {
+    base: 'md',
+    md: 'xl',
+  },
   bg: {
     base: 'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.dark)) border-box',
     _dark:
@@ -78,12 +111,21 @@ const linkStyle = css({
     _dark: 'p_blue.300',
   },
   fontFamily: 'bricolage',
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '3xl',
+  },
   fontWeight: 'bold',
-  p: 2,
+  p: {
+    base: 2,
+    md: 4,
+  },
   textAlign: 'center',
   transition: 'all 0.5s',
-  width: 'full',
+  width: {
+    base: 'full',
+    md: '3/5',
+  },
 });
 
 export {
