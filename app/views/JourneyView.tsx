@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -8,17 +10,18 @@ import {
   linkStyle,
   textSectionStyle,
 } from '@styles/views/JourneyView.styles';
+import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/texts/portfolio/journey/journeyTexts';
+import useLangage from '@hooks/useLangage';
 
 export default function JourneyView() {
+  const {langage} = useLangage();
+
   return (
     <section id={'journey'} className={journeyStyle}>
-      <h1 className={journeyTitleStyle}>Mon parcours</h1>
+      <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
       <div className={contentWrapperStyle}>
         <div className={textSectionStyle}>
-          <p>
-            Après un Baccalauréat Scientifique, j’ai choisi de suivre un BUT Informatique, pour découvrir le
-            développement, surtout en Java.
-          </p>
+          <p>{firstParagraph[langage]}s</p>
           <Image
             src={'/images/portfolio/journey/scholarship.jpg'}
             alt={'me'}
@@ -29,10 +32,7 @@ export default function JourneyView() {
           />
         </div>
         <div className={textSectionStyle}>
-          <p>
-            En m’initiant au PHP lors de ma deuxième année, j’ai été grandement intéressé par le développement web,
-            spécifiquement le développement Javascript avec React Js.
-          </p>
+          <p>{secondParagraph[langage]}</p>
           <Image
             src={'/images/portfolio/journey/webdev.jpg'}
             alt={'me'}
@@ -43,7 +43,7 @@ export default function JourneyView() {
           />
         </div>
         <Link href={'/skills'} className={linkStyle}>
-          Voir mes compétences
+          {seeButton[langage]}
         </Link>
       </div>
     </section>
