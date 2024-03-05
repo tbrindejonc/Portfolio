@@ -22,7 +22,7 @@ export default function JourneyView() {
       <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
       <div className={contentWrapperStyle}>
         <div className={textSectionStyle}>
-          <p>{firstParagraph[langage]}s</p>
+          <p>{firstParagraph[langage]}</p>
           <Image
             src={'/images/portfolio/journey/scholarship.jpg'}
             alt={'me'}
