@@ -1,10 +1,10 @@
 'use client';
 
-import appLinks from '@app/texts/portfolio/navbar/appLinks';
 import Link from 'next/link';
 import useLangage from '@hooks/useLangage';
 import {useState} from 'react';
 import {divStyle, getLinkStyle, getSelectedLinkStyle} from '@styles/components/navbar/NavLinks.styles';
+import appLinks from '@texts/portfolio/navbar/appLinks';
 
 export default function NavLinks() {
   const {langage} = useLangage();

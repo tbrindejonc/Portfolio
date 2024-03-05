@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import roleTitle from '@app/texts/portfolio/landing/roleTitle';
 import useLangage from '@hooks/useLangage';
 import {
   circleStyle,
@@ -12,6 +11,7 @@ import {
   nameStyle,
   sectionStyle,
 } from '@styles/views/LandingView.styles';
+import roleTitle from '@texts/portfolio/landing/roleTitle';
 
 export default function LandingView() {
   const {langage} = useLangage();
