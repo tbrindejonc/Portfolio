@@ -8,6 +8,7 @@ import {
   journeyStyle,
   journeyTitleStyle,
   linkStyle,
+  reversedTextSectionStyle,
   textSectionStyle,
 } from '@styles/views/JourneyView.styles';
 import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/texts/portfolio/journey/journeyTexts';
@@ -31,7 +32,7 @@ export default function JourneyView() {
             className={imageStyle}
           />
         </div>
-        <div className={textSectionStyle}>
+        <div className={reversedTextSectionStyle}>
           <p>{secondParagraph[langage]}</p>
           <Image
             src={'/images/portfolio/journey/webdev.jpg'}

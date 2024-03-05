@@ -51,6 +51,14 @@ const textSectionStyle = css({
   gap: 6,
 });
 
+const reversedTextSectionStyle = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 6,
+  textAlign: 'end',
+});
+
 const linkStyle = css({
   border: '3px solid',
   borderColor: 'transparent',
@@ -78,4 +86,12 @@ const linkStyle = css({
   width: 'full',
 });
 
-export {journeyStyle, journeyTitleStyle, imageStyle, contentWrapperStyle, textSectionStyle, linkStyle};
+export {
+  journeyStyle,
+  journeyTitleStyle,
+  imageStyle,
+  contentWrapperStyle,
+  textSectionStyle,
+  linkStyle,
+  reversedTextSectionStyle,
+};
