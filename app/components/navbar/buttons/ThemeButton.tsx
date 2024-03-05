@@ -1,9 +1,14 @@
 'use client';
 
-import {css} from '@/styled-system/css';
-import {circle} from '@/styled-system/patterns';
 import {useEffect, useState} from 'react';
 import {Theme} from '@appTypes/portfolio';
+import {
+  circleStyle,
+  getMoonStyle,
+  getSunStyle,
+  iconContainerStyle,
+  themeButtonDivStyle,
+} from '@styles/components/navbar/buttons/ThemeButton.styles';
 
 export default function ThemeButton() {
   const [theme, setTheme] = useState<Theme>('light');
@@ -33,83 +38,9 @@ export default function ThemeButton() {
   };
 
   return (
-    <div
-      className={css({
-        height: {
-          base: 10,
-          md: 14,
-          xl: 12,
-        },
-        width: {
-          base: 10,
-          md: 14,
-          xl: 12,
-        },
-        bgColor: {
-          base: 'p_purple.800',
-          _dark: 'p_purple.light',
-        },
-        position: 'relative',
-        borderRadius: 10,
-        cursor: 'pointer',
-        transition: 'background-color 0.5s',
-      })}
-      onClick={toggleTheme}
-    >
-      <div
-        className={circle({
-          size: {
-            base: '22px',
-            md: 8,
-            xl: 7,
-          },
-          bgColor: 'p_purple.main',
-          position: 'absolute',
-          bottom: 1,
-          left: 1,
-        })}
-      ></div>
-      <div
-        className={css({
-          bgColor: {
-            base: 'p_purple.light/70',
-            _dark: 'p_purple.dark/70',
-          },
-          position: 'absolute',
-          top: {
-            base: '6px',
-            md: '8px',
-            xl: '6px',
-          },
-          right: {
-            base: '6px',
-            md: '8px',
-            xl: '6px',
-          },
-          height: {
-            base: 7,
-            md: 10,
-            xl: 9,
-          },
-          width: {
-            base: 7,
-            md: 10,
-            xl: 9,
-          },
-          borderRadius: 7,
-          borderColor: {
-            base: 'p_purple.light/50',
-            _dark: 'p_purple.dark/50',
-          },
-          border: '2px solid',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 1,
-          transition: 'background-color 0.5s',
-        })}
-      >
+    <div className={themeButtonDivStyle} onClick={toggleTheme}>
+      <div className={circleStyle}></div>
+      <div className={iconContainerStyle}>
         <svg
           id={'moon'}
           xmlns='http://www.w3.org/2000/svg'
@@ -120,17 +51,7 @@ export default function ThemeButton() {
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`lucide lucide-moon-star ${css({
-            stroke: 'p_purple.800',
-            display: theme === 'light' ? 'block' : 'none',
-            transition: 'transform 1s',
-            width: {
-              md: '30px',
-            },
-            height: {
-              md: '30px',
-            },
-          })}`}
+          className={`lucide lucide-moon-star ${getMoonStyle(theme)}`}
         >
           <path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' />
           <path d='M19 3v4' />
@@ -145,19 +66,7 @@ export default function ThemeButton() {
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`lucide lucide-sun ${css({
-            stroke: 'p_purple.200',
-            display: theme === 'dark' ? 'block' : 'none',
-            width: {
-              base: '22px',
-              md: '30px',
-            },
-            height: {
-              base: '22px',
-              md: '30px',
-            },
-            transition: 'transform 1s',
-          })}`}
+          className={`lucide lucide-sun ${getSunStyle(theme)}`}
         >
           <circle cx='12' cy='12' r='4' />
           <path d='M12 2v2' />
