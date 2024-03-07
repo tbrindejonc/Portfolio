@@ -1,11 +1,11 @@
 'use client';
 
 import {useState} from 'react';
-import {css} from '@/styled-system/css';
 import {Slide} from '@appTypes/portfolio';
 import CarouselControls from '@components/carousel/CarouselControls';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
+import carouselStyle from '@styles/components/carousel/Carousel.styles';
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
@@ -58,12 +58,6 @@ export default function Carousel() {
       setSlides(newArray);
     }, transitionDuration);
   };
-
-  const carouselStyle = css({
-    display: 'flex',
-    overflow: 'hidden',
-    flexDirection: 'row',
-  });
 
   return (
     <>
