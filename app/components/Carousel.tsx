@@ -118,10 +118,16 @@ export default function Carousel() {
 
   const slideStyle = vstack({
     bgColor: 'transparent',
-    border: '2px solid',
-    borderColor: 'p_blue.200',
+    border: '3px solid',
+    borderColor: {
+      base: 'p_blue.700',
+      _dark: 'p_blue.200',
+    },
     borderRadius: 'xl',
-    color: 'neutral.light',
+    color: {
+      base: 'neutral.700',
+      _dark: 'neutral.light',
+    },
     width: '90vw',
     p: 3,
   });
@@ -133,7 +139,10 @@ export default function Carousel() {
   });
 
   const arrowStyle = css({
-    fill: 'p_purple.light',
+    fill: {
+      base: 'p_purple.dark',
+      _dark: 'p_purple.light',
+    },
     cursor: 'pointer',
     width: 10,
     height: 10,
@@ -159,11 +168,17 @@ export default function Carousel() {
     bgGradient: 'to-r',
     gradientFrom: 'p_blue.main',
     gradientTo: 'p_purple.main',
-    shadow: '0 1px 4px 2px token(colors.p_blue.light)',
+    shadow: {
+      base: '0 1px 4px 2px token(colors.p_blue.dark)',
+      _dark: '0 1px 4px 2px token(colors.p_blue.light)',
+    },
   });
 
   const inactiveSlideItemStyle = css({
-    bgColor: 'p_purple.light',
+    bgColor: {
+      base: 'p_purple.dark',
+      _dark: 'p_purple.light',
+    },
     shadow: '0 0 4px 2px token(colors.p_purple.main)',
   });
 
@@ -182,7 +197,10 @@ export default function Carousel() {
     width: 24,
     height: 'auto',
     strokeWidth: 1,
-    stroke: 'p_purple.light',
+    stroke: {
+      base: 'p_purple.dark',
+      _dark: 'p_purple.light',
+    },
   });
 
   const paragraphStyle = css({
