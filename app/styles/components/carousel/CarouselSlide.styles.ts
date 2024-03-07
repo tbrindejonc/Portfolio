@@ -93,4 +93,45 @@ const paragraphStyle = css({
   justifySelf: 'end',
 });
 
-export {slidesStyles, slideStyle, slideTitleStyle, separatorStyle, svgStyle, paragraphStyle, slidesVariants};
+const seeMoreStyle = css({
+  border: '2px solid',
+  borderColor: {
+    base: 'p_purple.700',
+    _dark: 'p_purple.light',
+    _hover: {
+      base: 'p_purple.600',
+      _dark: 'p_purple.300',
+    },
+  },
+  borderRadius: 'xl',
+  color: {
+    base: 'p_purple.700',
+    _dark: 'p_purple.light',
+    _hover: {
+      base: 'p_purple.600',
+      _dark: 'p_purple.300',
+    },
+  },
+  fontSize: 'lg',
+  p: 2,
+  mt: 4,
+  shadow: {
+    _hover: {
+      base: '3px 3px 10px 0',
+      _dark: '3px 3px 10px 0',
+    },
+  },
+  textAlign: 'center',
+  w: 'full',
+});
+
+export {
+  slidesStyles,
+  slideStyle,
+  slideTitleStyle,
+  separatorStyle,
+  svgStyle,
+  paragraphStyle,
+  slidesVariants,
+  seeMoreStyle,
+};
