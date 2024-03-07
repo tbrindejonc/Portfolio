@@ -68,6 +68,7 @@ const slideStyle = vstack({
     base: 'neutral.700',
     _dark: 'neutral.light',
   },
+  minH: '55vh',
   width: '90vw',
   p: 3,
 });
