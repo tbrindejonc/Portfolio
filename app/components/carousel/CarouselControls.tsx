@@ -1,6 +1,13 @@
-import {hstack} from '@/styled-system/patterns';
-import {css} from '@/styled-system/css';
 import {Slide} from '@components/carousel/Carousel';
+import {
+  activeSlideItemStyle,
+  arrowStyle,
+  baseSlideItemStyle,
+  carouselControlsStyle,
+  inactiveSlideItemStyle,
+  nextStyle,
+  previousStyle,
+} from '@styles/components/carousel/CarouselControls.styles';
 
 type Props = {
   slides: Slide[];
@@ -9,56 +16,6 @@ type Props = {
 };
 
 export default function CarouselControls({slides, slide, activeSlide}: Props) {
-  const carouselControlsStyle = hstack({
-    gap: 5,
-    pt: 6,
-    pb: 12,
-  });
-
-  const arrowStyle = css({
-    fill: {
-      base: 'p_purple.dark',
-      _dark: 'p_purple.light',
-    },
-    cursor: 'pointer',
-    width: 10,
-    height: 10,
-  });
-
-  const previousStyle = css({
-    rotate: '-90deg',
-    filter: 'drop-shadow(-5px 0 5px token(colors.p_purple.main))',
-  });
-
-  const nextStyle = css({
-    rotate: '90deg',
-    filter: 'drop-shadow(5px 0 5px token(colors.p_purple.main))',
-  });
-
-  const baseSlideItemStyle = css({
-    borderRadius: 'xl',
-    height: 3,
-    width: 14,
-  });
-
-  const activeSlideItemStyle = css({
-    bgGradient: 'to-r',
-    gradientFrom: 'p_blue.main',
-    gradientTo: 'p_purple.main',
-    shadow: {
-      base: '0 1px 4px 2px token(colors.p_blue.dark)',
-      _dark: '0 1px 4px 2px token(colors.p_blue.light)',
-    },
-  });
-
-  const inactiveSlideItemStyle = css({
-    bgColor: {
-      base: 'p_purple.dark',
-      _dark: 'p_purple.light',
-    },
-    shadow: '0 0 4px 2px token(colors.p_purple.main)',
-  });
-
   return (
     <div className={carouselControlsStyle}>
       <svg
