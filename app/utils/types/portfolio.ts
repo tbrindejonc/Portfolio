@@ -33,3 +33,15 @@ export type FooterLink = {
     | false;
   href: string;
 };
+
+// carousel slide item text
+export type Slide = {
+  title: AppText;
+  content: {
+    firstPart: AppText;
+    firstSpan: AppText;
+    secondPart: AppText;
+    secondSpan: AppText;
+    lastPart: AppText;
+  };
+};

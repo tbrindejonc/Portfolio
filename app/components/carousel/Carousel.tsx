@@ -2,15 +2,10 @@
 
 import {useState} from 'react';
 import {css} from '@/styled-system/css';
-import {AppText} from '@appTypes/portfolio';
+import {Slide} from '@appTypes/portfolio';
 import CarouselControls from '@components/carousel/CarouselControls';
 import experienceSlides from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
-
-export type Slide = {
-  title: AppText;
-  content: AppText;
-};
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);

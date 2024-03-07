@@ -1,4 +1,3 @@
-import {Slide} from '@components/carousel/Carousel';
 import useLangage from '@hooks/useLangage';
 import {
   paragraphStyle,
@@ -8,6 +7,7 @@ import {
   slideTitleStyle,
   svgStyle,
 } from '@styles/components/carousel/CarouselSlide.styles';
+import {Slide} from '@appTypes/portfolio';
 
 type Props = {
   slide: Slide;
@@ -33,7 +33,11 @@ export default function CarouselSlide({slide, index}: Props) {
         <path d='M22 10v6' />
         <path d='M6 12.5V16a6 3 0 0 0 12 0v-3.5' />
       </svg>
-      <p className={paragraphStyle}>{slide.content[langage]}</p>
+      <p className={paragraphStyle}>
+        {slide.content.firstPart[langage]} <span>{slide.content.firstSpan[langage]}</span>
+        {slide.content.secondPart[langage]} <span>{slide.content.secondSpan[langage]}</span>
+        {slide.content.lastPart[langage]}
+      </p>
     </div>
   );
 }

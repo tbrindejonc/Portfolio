@@ -1,4 +1,3 @@
-import {Slide} from '@components/carousel/Carousel';
 import {
   activeSlideItemStyle,
   arrowStyle,
@@ -9,6 +8,7 @@ import {
   previousStyle,
 } from '@styles/components/carousel/CarouselControls.styles';
 import experienceSlides from '@texts/portfolio/experience/experienceSlides';
+import {Slide} from '@appTypes/portfolio';
 
 type Props = {
   changeSlide: (direction: 'prev' | 'next') => void;
