@@ -3,7 +3,7 @@ import {AppText, Slide} from '@appTypes/portfolio';
 const experienceSlides: Slide[] = [
   {
     title: {
-      en: 'Knowing more',
+      en: 'Know more',
       fr: 'Pour en savoir plus',
     },
     content: {
