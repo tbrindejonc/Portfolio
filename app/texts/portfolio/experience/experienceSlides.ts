@@ -1,4 +1,4 @@
-import {Slide} from '@appTypes/portfolio';
+import {AppText, Slide} from '@appTypes/portfolio';
 
 const experienceSlides: Slide[] = [
   {
@@ -90,4 +90,9 @@ const experienceSlides: Slide[] = [
   },
 ];
 
-export default experienceSlides;
+const seeMoreButton: AppText = {
+  en: 'Discover my experiences',
+  fr: 'Découvrir mes expériences',
+};
+
+export {experienceSlides, seeMoreButton};

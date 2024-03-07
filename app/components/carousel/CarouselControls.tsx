@@ -7,7 +7,7 @@ import {
   nextStyle,
   previousStyle,
 } from '@styles/components/carousel/CarouselControls.styles';
-import experienceSlides from '@texts/portfolio/experience/experienceSlides';
+import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import {Slide} from '@appTypes/portfolio';
 
 type Props = {

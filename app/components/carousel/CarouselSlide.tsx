@@ -10,6 +10,8 @@ import {
 } from '@styles/components/carousel/CarouselSlide.styles';
 import {Slide} from '@appTypes/portfolio';
 import {css} from '@/styled-system/css';
+import Link from 'next/link';
+import {seeMoreButton} from '@texts/portfolio/experience/experienceSlides';
 
 type Props = {
   slide: Slide;
@@ -68,6 +70,9 @@ export default function CarouselSlide({slide, index, variant}: Props) {
         </span>
         {slide.content.lastPart[langage]}
       </p>
+      <Link href={'/experiences'} className={slidesVariants({showMoreButton: variant})}>
+        {seeMoreButton[langage]}
+      </Link>
     </div>
   );
 }

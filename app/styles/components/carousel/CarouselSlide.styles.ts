@@ -34,6 +34,11 @@ const slidesVariants = cva({
       second: {color: 'p_purple.main'},
       third: {color: 'p_blue.main'},
     },
+    showMoreButton: {
+      first: {display: 'none'},
+      second: {display: 'none'},
+      third: {},
+    },
   },
 });
 

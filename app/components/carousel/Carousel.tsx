@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {css} from '@/styled-system/css';
 import {Slide} from '@appTypes/portfolio';
 import CarouselControls from '@components/carousel/CarouselControls';
-import experienceSlides from '@texts/portfolio/experience/experienceSlides';
+import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
 
 export default function Carousel() {
