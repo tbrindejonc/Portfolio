@@ -4,7 +4,7 @@ import {css} from '@/styled-system/css';
 const carouselControlsStyle = hstack({
   gap: 5,
   pb: 12,
-  pt: 6,
+  pt: 2,
 });
 
 const arrowStyle = css({
