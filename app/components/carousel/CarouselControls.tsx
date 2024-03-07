@@ -4,7 +4,7 @@ import {Slide} from '@components/carousel/Carousel';
 
 type Props = {
   slides: Slide[];
-  slide: Function;
+  slide: (direction: 'prev' | 'next') => void;
   activeSlide: number;
 };
 
