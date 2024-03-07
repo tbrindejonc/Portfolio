@@ -46,3 +46,15 @@ export type Slide = {
   };
   variant: 'first' | 'second' | 'third';
 };
+
+// experience section explanation text
+export type ExperienceExplanation = {
+  title: AppText;
+  content: {
+    firstPart: AppText;
+    firstSpan: AppText;
+    secondPart: AppText;
+    secondSpan: AppText;
+    lastPart: AppText;
+  };
+};
