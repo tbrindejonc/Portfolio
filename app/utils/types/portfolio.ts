@@ -44,4 +44,5 @@ export type Slide = {
     secondSpan: AppText;
     lastPart: AppText;
   };
+  variant: 'first' | 'second' | 'third';
 };

@@ -28,6 +28,7 @@ const experienceSlides: Slide[] = [
         fr: ' sur ce que j’ai eu l’occasion de faire durant ces expériences, vous pouvez le découvrir ci-dessous.',
       },
     },
+    variant: 'third',
   },
   {
     title: {
@@ -56,6 +57,7 @@ const experienceSlides: Slide[] = [
         fr: ' (en cours). Bien que tout seul sur mon projet d’alternance, j’ai bon espoir d’en apprendre beaucoup.',
       },
     },
+    variant: 'first',
   },
   {
     title: {
@@ -84,6 +86,7 @@ const experienceSlides: Slide[] = [
         fr: ' en Août 2023 durant lequel j’ai découvert de nouvelles notions de programmation.',
       },
     },
+    variant: 'second',
   },
 ];
 
