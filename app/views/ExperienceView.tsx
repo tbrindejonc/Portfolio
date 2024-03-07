@@ -3,8 +3,12 @@
 import {vstack} from '@/styled-system/patterns';
 import Carousel from '@components/carousel/Carousel';
 import {css} from '@/styled-system/css';
+import useLangage from '@hooks/useLangage';
+import explanation from '@texts/portfolio/experience/explanation';
 
 export default function ExperienceView() {
+  const {langage} = useLangage();
+
   const sectionStyle = vstack({
     bgColor: {
       base: 'p_purple.light',
@@ -54,11 +58,13 @@ export default function ExperienceView() {
   return (
     <section id={'experience'} className={sectionStyle}>
       <div className={explanationStyle}>
-        <h2 className={explanationTitleStyle}>Mes expériences</h2>
+        <h2 className={explanationTitleStyle}>{explanation.title[langage]}</h2>
         <p>
-          Au cours de ma <span className={firstSpanStyle}>formation</span>, et de ma{' '}
-          <span className={secondSpanStyle}>propre initiative</span>, j’ai pu acquérir de l’expérience en milieu
-          professionnel.
+          {explanation.content.firstPart[langage]}
+          <span className={firstSpanStyle}>{explanation.content.firstSpan[langage]}</span>
+          {explanation.content.secondPart[langage]}
+          <span className={secondSpanStyle}>{explanation.content.secondSpan[langage]}</span>
+          {explanation.content.lastPart[langage]}
         </p>
       </div>
       <Carousel />
