@@ -1,5 +1,41 @@
-import {css} from '@/styled-system/css';
+import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
+
+const slidesVariants = cva({
+  base: {},
+  variants: {
+    separator: {
+      first: {bgColor: 'p_blue.main'},
+      second: {bgColor: 'p_purple.main'},
+      third: {bgGradient: 'to-r', gradientFrom: 'p_blue.main', gradientTo: 'p_purple.main'},
+    },
+    showGraduation: {
+      first: {stroke: {base: 'p_blue.700', _dark: 'p_blue.200'}},
+      second: {display: 'none'},
+      third: {display: 'none'},
+    },
+    showSpeech: {
+      first: {display: 'none'},
+      second: {stroke: {base: 'p_purple.700', _dark: 'p_purple.200'}},
+      third: {display: 'none'},
+    },
+    showMore: {
+      first: {display: 'none'},
+      second: {display: 'none'},
+      third: {stroke: {base: 'neutral.700', _dark: 'neutral.200'}},
+    },
+    firstSpan: {
+      first: {color: 'p_blue.main'},
+      second: {color: 'p_purple.main'},
+      third: {color: 'p_purple.main'},
+    },
+    secondSpan: {
+      first: {color: 'p_blue.main'},
+      second: {color: 'p_purple.main'},
+      third: {color: 'p_blue.main'},
+    },
+  },
+});
 
 const slidesStyles = [
   css({
@@ -39,17 +75,12 @@ const slideTitleStyle = css({
 const separatorStyle = css({
   height: '5px',
   width: '2/3',
-  bgColor: 'p_purple.main',
 });
 
 const svgStyle = css({
   width: 24,
   height: 'auto',
   strokeWidth: 1,
-  stroke: {
-    base: 'p_purple.dark',
-    _dark: 'p_purple.light',
-  },
 });
 
 const paragraphStyle = css({
@@ -57,4 +88,4 @@ const paragraphStyle = css({
   justifySelf: 'end',
 });
 
-export {slidesStyles, slideStyle, slideTitleStyle, separatorStyle, svgStyle, paragraphStyle};
+export {slidesStyles, slideStyle, slideTitleStyle, separatorStyle, svgStyle, paragraphStyle, slidesVariants};

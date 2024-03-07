@@ -69,7 +69,7 @@ export default function Carousel() {
     <>
       <div id={'carousel'} className={carouselStyle}>
         {slides.map((slide: Slide, index: number) => {
-          return <CarouselSlide key={index} index={index} slide={slide} />;
+          return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} />;
         })}
       </div>
       <CarouselControls changeSlide={slide} activeSlide={activeSlide} />
