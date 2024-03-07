@@ -73,6 +73,7 @@ const slideStyle = vstack({
 });
 
 const slideTitleStyle = css({
+  fontFamily: 'bricolage',
   fontSize: '2xl',
   fontWeight: 'bold',
 });
