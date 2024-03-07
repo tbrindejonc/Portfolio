@@ -1,7 +1,7 @@
 'use client';
 
 import {vstack} from '@/styled-system/patterns';
-import Carousel from '@components/Carousel';
+import Carousel from '@components/carousel/Carousel';
 
 export default function ExperienceView() {
   const sectionStyle = vstack({
