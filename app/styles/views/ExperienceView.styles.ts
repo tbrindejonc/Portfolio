@@ -14,6 +14,9 @@ const sectionStyle = vstack({
     base: 4,
     md: 12,
   },
+  h: {
+    xl: 'screen',
+  },
   overflow: 'hidden',
   pt: 20,
   transition: 'all 0.5s',
@@ -36,12 +39,14 @@ const explanationStyle = vstack({
   fontSize: {
     base: 'xl',
     md: '3xl',
+    xl: '4xl',
   },
   fontWeight: 'bold',
   gap: 4,
   p: {
     base: 3,
     md: 6,
+    xl: 10,
   },
   w: '90vw',
 });
@@ -51,6 +56,7 @@ const explanationTitleStyle = css({
   fontSize: {
     base: '3xl',
     md: '5xl',
+    xl: '6xl',
   },
 });
 

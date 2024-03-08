@@ -2,6 +2,9 @@ import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const carouselControlsStyle = hstack({
+  display: {
+    xl: 'none',
+  },
   gap: {
     base: 5,
     md: 7,

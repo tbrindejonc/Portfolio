@@ -1,7 +1,10 @@
 import {css} from '@/styled-system/css';
 
 const carouselStyle = css({
-  display: 'flex',
+  display: {
+    base: 'flex',
+    xl: 'none',
+  },
   overflow: 'hidden',
   flexDirection: 'row',
 });
