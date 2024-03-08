@@ -1,4 +1,3 @@
-import useLangage from '@hooks/useLangage';
 import {
   paragraphStyle,
   seeMoreStyle,
@@ -9,7 +8,7 @@ import {
   slideTitleStyle,
   svgStyle,
 } from '@styles/components/carousel/CarouselSlide.styles';
-import {Slide} from '@appTypes/portfolio';
+import {Langage, Slide} from '@appTypes/portfolio';
 import {css} from '@/styled-system/css';
 import {seeMoreButton} from '@texts/portfolio/experience/experienceSlides';
 import Link from 'next/link';
@@ -18,11 +17,10 @@ type Props = {
   slide: Slide;
   index: number;
   variant: 'first' | 'second' | 'third';
+  langage: Langage;
 };
 
-export default function CarouselSlide({slide, index, variant}: Props) {
-  const {langage} = useLangage();
-
+export default function CarouselSlide({slide, index, variant, langage}: Props) {
   return (
     <div id={`slide-${index}`} className={`${slideStyle} ${slidesStyles[index]}`}>
       <h2 className={slideTitleStyle}>{slide.title[langage]}</h2>

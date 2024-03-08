@@ -1,15 +1,15 @@
-'use client';
-
 import {useState} from 'react';
 import {Slide} from '@appTypes/portfolio';
 import CarouselControls from '@components/carousel/CarouselControls';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
 import carouselStyle from '@styles/components/carousel/Carousel.styles';
+import useLangage from '@hooks/useLangage';
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [slides, setSlides] = useState<Slide[]>(experienceSlides);
+  const {langage} = useLangage();
 
   // in milliseconds
   const transitionDuration = 500;
@@ -63,7 +63,7 @@ export default function Carousel() {
     <>
       <div id={'carousel'} className={carouselStyle}>
         {slides.map((slide: Slide, index: number) => {
-          return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} />;
+          return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} langage={langage} />;
         })}
       </div>
       <CarouselControls changeSlide={slide} activeSlide={activeSlide} />
