@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 import {useState} from 'react';
 import {divStyle, getLinkStyle, getSelectedLinkStyle} from '@styles/components/navbar/NavLinks.styles';
 import appLinks from '@texts/portfolio/navbar/appLinks';
 
 export default function NavLinks() {
-  const {langage} = useLangage();
+  const {langage} = useLanguage();
   const [active, setActive] = useState<number>(0);
 
   return (

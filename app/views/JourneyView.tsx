@@ -13,10 +13,10 @@ import {
   textSectionStyle,
 } from '@styles/views/JourneyView.styles';
 import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/texts/portfolio/journey/journeyTexts';
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 
 export default function JourneyView() {
-  const {langage} = useLangage();
+  const {langage} = useLanguage();
 
   return (
     <section id={'journey'} className={journeyStyle}>

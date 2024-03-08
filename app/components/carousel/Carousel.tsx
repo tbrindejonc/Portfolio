@@ -4,12 +4,12 @@ import CarouselControls from '@components/carousel/CarouselControls';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
 import carouselStyle from '@styles/components/carousel/Carousel.styles';
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [slides, setSlides] = useState<Slide[]>(experienceSlides);
-  const {langage} = useLangage();
+  const {langage} = useLanguage();
 
   // in milliseconds
   const transitionDuration = 500;

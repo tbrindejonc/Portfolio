@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 import {
   circleStyle,
   circleTitleStyle,
@@ -14,7 +14,7 @@ import {
 import roleTitle from '@texts/portfolio/landing/roleTitle';
 
 export default function LandingView() {
-  const {langage} = useLangage();
+  const {langage} = useLanguage();
 
   return (
     <section id={'landing'} className={sectionStyle}>

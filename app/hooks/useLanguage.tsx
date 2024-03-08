@@ -1,12 +1,12 @@
 'use client';
 
-import {LangageContext} from '@providers/LangageProvider';
+import {LangageContext} from '@providers/LanguageProvider';
 import {useContext} from 'react';
 
 /**
  * Hook to use the langage context
  */
-const useLangage = () => {
+const useLanguage = () => {
   const langageContext = useContext(LangageContext);
   if (!langageContext) {
     throw new Error('The useLangage hook must be used within a LangageProvider');
@@ -14,4 +14,4 @@ const useLangage = () => {
   return langageContext;
 };
 
-export default useLangage;
+export default useLanguage;

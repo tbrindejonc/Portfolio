@@ -1,7 +1,7 @@
 'use client';
 
 import Carousel from '@components/carousel/Carousel';
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 import explanation from '@texts/portfolio/experience/explanation';
 import {
   explanationStyle,
@@ -12,7 +12,7 @@ import {
 } from '@styles/views/ExperienceView.styles';
 
 export default function ExperienceView() {
-  const {langage} = useLangage();
+  const {langage} = useLanguage();
 
   return (
     <section id={'experience'} className={sectionStyle}>

@@ -1,6 +1,6 @@
 'use client';
 
-import useLangage from '@hooks/useLangage';
+import useLanguage from '@hooks/useLanguage';
 import {
   circleStyle,
   langageButtonStyle,
@@ -9,7 +9,7 @@ import {
 } from '@styles/components/navbar/buttons/LangageButton.styles';
 
 export default function LangageButton() {
-  const {langage, setLangage} = useLangage();
+  const {langage, setLangage} = useLanguage();
 
   const switchLangage = () => {
     setLangage(langage === 'fr' ? 'en' : 'fr');
