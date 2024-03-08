@@ -2,9 +2,18 @@ import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const carouselControlsStyle = hstack({
-  gap: 5,
+  gap: {
+    base: 5,
+    md: 7,
+  },
   pb: 12,
-  pt: 2,
+  pt: {
+    base: 2,
+    md: 0,
+  },
+  position: {
+    md: 'relative',
+  },
 });
 
 const arrowStyle = css({
@@ -13,24 +22,51 @@ const arrowStyle = css({
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
-  height: 10,
-  width: 10,
+  height: {
+    base: 10,
+    md: 14,
+  },
+  position: {
+    md: 'absolute',
+  },
+  width: {
+    base: 10,
+    md: 14,
+  },
 });
 
 const previousStyle = css({
   filter: 'drop-shadow(-5px 0 5px token(colors.p_purple.main))',
   rotate: '-90deg',
+  top: {
+    md: '-30vh',
+  },
+  left: {
+    md: '-27vw',
+  },
 });
 
 const nextStyle = css({
   filter: 'drop-shadow(5px 0 5px token(colors.p_purple.main))',
   rotate: '90deg',
+  top: {
+    md: '-30vh',
+  },
+  right: {
+    md: '-27vw',
+  },
 });
 
 const baseSlideItemStyle = css({
   borderRadius: 'xl',
-  height: 3,
-  width: 14,
+  height: {
+    base: 3,
+    md: 4,
+  },
+  width: {
+    base: 14,
+    md: 20,
+  },
 });
 
 const activeSlideItemStyle = css({

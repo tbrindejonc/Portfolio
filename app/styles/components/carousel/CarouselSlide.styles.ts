@@ -68,14 +68,33 @@ const slideStyle = vstack({
     base: 'neutral.700',
     _dark: 'neutral.light',
   },
-  minH: '55vh',
-  width: '90vw',
-  p: 3,
+  minH: {
+    base: '55vh',
+    md: '40vh',
+  },
+  width: {
+    base: '90vw',
+    md: '70vw',
+  },
+  p: {
+    base: 3,
+    md: 6,
+  },
+  px: {
+    md: 8,
+  },
+  gap: {
+    base: 2,
+    md: 6,
+  },
 });
 
 const slideTitleStyle = css({
   fontFamily: 'bricolage',
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '4xl',
+  },
   fontWeight: 'bold',
 });
 
@@ -91,7 +110,10 @@ const svgStyle = css({
 });
 
 const paragraphStyle = css({
-  fontSize: 'lg',
+  fontSize: {
+    base: 'lg',
+    md: '2xl',
+  },
   justifySelf: 'end',
 });
 
@@ -114,7 +136,10 @@ const seeMoreStyle = css({
       _dark: 'p_purple.300',
     },
   },
-  fontSize: 'lg',
+  fontSize: {
+    base: 'lg',
+    md: 'xl',
+  },
   p: 2,
   mt: 4,
   shadow: {
@@ -124,7 +149,10 @@ const seeMoreStyle = css({
     },
   },
   textAlign: 'center',
-  w: 'full',
+  w: {
+    base: 'full',
+    md: '3/5',
+  },
 });
 
 export {

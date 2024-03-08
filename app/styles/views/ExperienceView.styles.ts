@@ -10,13 +10,19 @@ const sectionStyle = vstack({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
-  gap: 4,
+  gap: {
+    base: 4,
+    md: 12,
+  },
   overflow: 'hidden',
   pt: 20,
   transition: 'all 0.5s',
 });
 
 const explanationStyle = vstack({
+  alignItems: {
+    md: 'start',
+  },
   border: '3px solid',
   borderColor: {
     base: 'p_purple.700',
@@ -27,16 +33,25 @@ const explanationStyle = vstack({
     base: 'neutral.700',
     _dark: 'neutral.light',
   },
-  fontSize: 'xl',
+  fontSize: {
+    base: 'xl',
+    md: '3xl',
+  },
   fontWeight: 'bold',
   gap: 4,
+  p: {
+    base: 3,
+    md: 6,
+  },
   w: '90vw',
-  p: 3,
 });
 
 const explanationTitleStyle = css({
   fontFamily: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
 });
 
 const firstSpanStyle = css({
