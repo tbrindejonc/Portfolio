@@ -3,6 +3,7 @@ import {css} from '@/styled-system/css';
 
 const carouselControlsStyle = hstack({
   display: {
+    base: 'flex',
     xl: 'none',
   },
   gap: {
