@@ -46,7 +46,6 @@ const explanationStyle = vstack({
   p: {
     base: 3,
     md: 6,
-    xl: 10,
   },
   w: '90vw',
 });
