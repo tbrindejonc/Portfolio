@@ -10,6 +10,7 @@ import {
   secondSpanStyle,
   sectionStyle,
 } from '@styles/views/ExperienceView.styles';
+import ExperienceCards from '@components/experience_cards/ExperienceCards';
 
 export default function ExperienceView() {
   const {langage} = useLanguage();
@@ -27,6 +28,7 @@ export default function ExperienceView() {
         </p>
       </div>
       <Carousel />
+      <ExperienceCards />
     </section>
   );
 }
