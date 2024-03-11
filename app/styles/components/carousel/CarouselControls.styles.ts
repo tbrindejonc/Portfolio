@@ -41,23 +41,23 @@ const arrowStyle = css({
 
 const previousStyle = css({
   filter: 'drop-shadow(-5px 0 5px token(colors.p_purple.main))',
+  left: {
+    md: '-27vw',
+  },
   rotate: '-90deg',
   top: {
     md: '-30vh',
-  },
-  left: {
-    md: '-27vw',
   },
 });
 
 const nextStyle = css({
   filter: 'drop-shadow(5px 0 5px token(colors.p_purple.main))',
+  right: {
+    md: '-27vw',
+  },
   rotate: '90deg',
   top: {
     md: '-30vh',
-  },
-  right: {
-    md: '-27vw',
   },
 });
 

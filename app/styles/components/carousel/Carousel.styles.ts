@@ -5,8 +5,8 @@ const carouselStyle = css({
     base: 'flex',
     xl: 'none',
   },
-  overflow: 'hidden',
   flexDirection: 'row',
+  overflow: 'hidden',
 });
 
 export default carouselStyle;
