@@ -68,13 +68,13 @@ const slideStyle = vstack({
     base: 'neutral.700',
     _dark: 'neutral.light',
   },
+  gap: {
+    base: 2,
+    md: 6,
+  },
   minH: {
     base: '55vh',
     md: '40vh',
-  },
-  width: {
-    base: '90vw',
-    md: '70vw',
   },
   p: {
     base: 3,
@@ -83,9 +83,9 @@ const slideStyle = vstack({
   px: {
     md: 8,
   },
-  gap: {
-    base: 2,
-    md: 6,
+  width: {
+    base: '90vw',
+    md: '70vw',
   },
 });
 
@@ -104,9 +104,9 @@ const separatorStyle = css({
 });
 
 const svgStyle = css({
-  width: 24,
   height: 'auto',
   strokeWidth: 1,
+  width: 24,
 });
 
 const paragraphStyle = css({
@@ -140,8 +140,8 @@ const seeMoreStyle = css({
     base: 'lg',
     md: 'xl',
   },
-  p: 2,
   mt: 4,
+  p: 2,
   shadow: {
     _hover: {
       base: '3px 3px 10px 0',
