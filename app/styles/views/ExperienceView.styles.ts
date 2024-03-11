@@ -43,6 +43,10 @@ const explanationStyle = vstack({
   },
   fontWeight: 'bold',
   gap: 4,
+  minH: {
+    md: '23vh',
+    xl: '25vh',
+  },
   p: {
     base: 3,
     md: 6,
