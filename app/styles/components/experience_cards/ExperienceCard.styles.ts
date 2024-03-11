@@ -2,9 +2,9 @@ import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
 const svgStyle = css({
-  width: 24,
   height: 'auto',
   strokeWidth: 1,
+  width: 24,
 });
 
 const paragraphStyle = css({
@@ -120,8 +120,8 @@ const seeMoreStyle = css({
     },
   },
   fontSize: 'xl',
-  p: 2,
   mt: 4,
+  p: 2,
   shadow: {
     _hover: {
       base: '3px 3px 10px 0',
