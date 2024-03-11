@@ -27,6 +27,13 @@ type ParagraphProps = {
   cardOrder: 'first' | 'second' | 'third';
 };
 
+/**
+ * Experience card base component
+ *
+ * @param {Slide} slide the current slide information (text)
+ * @param {ReactNode} children the children components (icon, paragraph, button)
+ * @param {'first' | 'second' | 'third'} cardOrder the order of current card in the list
+ */
 export default function ExperienceCard({slide, children, cardOrder}: Props) {
   const {langage} = useLanguage();
 
@@ -39,6 +46,9 @@ export default function ExperienceCard({slide, children, cardOrder}: Props) {
   );
 }
 
+/**
+ * Formation icon svg component
+ */
 ExperienceCard.FormationIcon = function ExperienceCardFormationIcon() {
   return (
     <svg
@@ -56,6 +66,9 @@ ExperienceCard.FormationIcon = function ExperienceCardFormationIcon() {
   );
 };
 
+/**
+ * Speech icon svg component
+ */
 ExperienceCard.SpeechIcon = function ExperienceCardSpeechIcon() {
   return (
     <svg
@@ -71,6 +84,9 @@ ExperienceCard.SpeechIcon = function ExperienceCardSpeechIcon() {
   );
 };
 
+/**
+ * More icon svg component
+ */
 ExperienceCard.MoreIcon = function ExperienceCardMoreIcon() {
   return (
     <svg
@@ -87,6 +103,12 @@ ExperienceCard.MoreIcon = function ExperienceCardMoreIcon() {
   );
 };
 
+/**
+ * Paragraph component for text content
+ *
+ * @param {Slide} slide the current slide information (text)
+ * @param {'first' | 'second' | 'third'} cardOrder the order of current card in the list
+ */
 ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: ParagraphProps) {
   const {langage} = useLanguage();
 
@@ -105,6 +127,9 @@ ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: 
   );
 };
 
+/**
+ * Button (link) to see more experiences, optional in card
+ */
 ExperienceCard.SeeMoreButton = function ExperienceCardSeeMoreButton() {
   const {langage} = useLanguage();
 
