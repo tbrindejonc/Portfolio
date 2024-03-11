@@ -11,6 +11,9 @@ const journeyStyle = vstack({
     _dark: 'neutral.light',
   },
   gap: 4,
+  h: {
+    xl: 'screen',
+  },
   p: {
     base: 4,
     md: 8,
@@ -28,6 +31,9 @@ const journeyTitleStyle = css({
     md: '6xl',
   },
   fontWeight: 'bold',
+  mb: {
+    xl: 2,
+  },
 });
 
 const imageStyle = css({
@@ -36,7 +42,7 @@ const imageStyle = css({
   width: {
     base: 'full',
     md: '1/2',
-    xl: '1/3',
+    xl: '1/4',
   },
 });
 
@@ -53,11 +59,15 @@ const contentWrapperStyle = vstack({
   gap: {
     base: 16,
     md: 24,
+    xl: 10,
   },
   gradientFrom: 'p_purple.main',
   gradientTo: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
+  },
+  h: {
+    xl: 'screen',
   },
   p: {
     base: 4,
@@ -144,7 +154,7 @@ const linkStyle = css({
 
 const paragraphStyle = css({
   fontSize: {
-    xl: '4xl',
+    xl: '3xl',
   },
   width: {
     xl: '1/3',

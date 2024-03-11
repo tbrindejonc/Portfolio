@@ -20,8 +20,8 @@ export default function JourneyView() {
 
   return (
     <section id={'journey'} className={journeyStyle}>
-      <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
       <div className={contentWrapperStyle}>
+        <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
         <div className={textSectionStyle}>
           <p className={paragraphStyle}>{firstParagraph[langage]}</p>
           <Image
