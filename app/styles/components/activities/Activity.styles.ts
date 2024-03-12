@@ -43,7 +43,10 @@ const divHeadingStyle = hstack({
     base: 'neutral.800',
     _dark: 'neutral.200',
   },
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '3xl',
+  },
   gap: 8,
   w: 'full',
 });
@@ -54,7 +57,10 @@ const paragraphStyle = css({
     _dark: 'neutral.light',
   },
   lineHeight: '1.7em',
-  fontSize: 'lg',
+  fontSize: {
+    base: 'lg',
+    md: '2xl',
+  },
   textWrap: 'balance',
 });
 
