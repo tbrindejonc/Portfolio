@@ -4,6 +4,9 @@ import {css, cva} from '@/styled-system/css';
 const containerStyle = vstack({
   gap: 2,
   px: 8,
+  w: {
+    xl: '2/3',
+  },
 });
 
 const svgStyle = css({

@@ -1,7 +1,6 @@
 import {grid, gridItem} from '@/styled-system/patterns';
 
 const activityStyle = grid({
-  alignItems: 'center',
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -9,6 +8,7 @@ const activityStyle = grid({
   columns: {
     base: 1,
     md: 2,
+    xl: 3,
   },
   gap: 12,
   h: {
@@ -27,6 +27,7 @@ const titleStyle = gridItem({
   },
   colSpan: {
     md: 2,
+    xl: 3,
   },
   fontFamily: 'bricolage',
   fontSize: {
@@ -42,6 +43,10 @@ const titleStyle = gridItem({
 });
 
 const projectsLinkStyle = gridItem({
+  alignSelf: {
+    md: 'center',
+    xl: 'start',
+  },
   bgColor: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
@@ -50,6 +55,9 @@ const projectsLinkStyle = gridItem({
   color: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
+  },
+  colSpan: {
+    xl: 3,
   },
   fontFamily: 'bricolage',
   fontSize: {
@@ -65,7 +73,10 @@ const projectsLinkStyle = gridItem({
     md: 4,
   },
   textAlign: 'center',
-  w: '4/5',
+  w: {
+    base: '4/5',
+    xl: '1/5',
+  },
 });
 
 export {activityStyle, titleStyle, projectsLinkStyle};
