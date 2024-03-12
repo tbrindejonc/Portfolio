@@ -1,7 +1,7 @@
 'use client';
 
 import {grid, hstack} from '@/styled-system/patterns';
-import {css} from '@/styled-system/css';
+import {css, cva} from '@/styled-system/css';
 import {Activity, AppText} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
 import {ReactNode} from 'react';
@@ -9,11 +9,13 @@ import {ReactNode} from 'react';
 type Props = {
   activity: Activity;
   children: ReactNode;
+  variant: 'game' | 'dev' | 'discoveries';
 };
 
 type HeadingProps = {
   children: ReactNode;
   title: AppText;
+  variant: 'game' | 'dev' | 'discoveries';
 };
 
 const containerStyle = grid({
@@ -75,13 +77,56 @@ const paragraphStyle = css({
   textWrap: 'balance',
 });
 
+const activityVariants = cva({
+  variants: {
+    separator: {
+      game: {
+        bgGradient: 'to-b',
+        gradientFrom: 'p_blue.main',
+        gradientTo: 'p_purple.main',
+      },
+      dev: {
+        bgColor: 'p_blue.main',
+      },
+      discoveries: {
+        bgColor: 'p_purple.main',
+      },
+    },
+    title: {
+      game: {
+        background: {
+          base: 'linear-gradient(to right, token(colors.p_blue.700), token(colors.p_purple.700))',
+          _dark: 'linear-gradient(to right, token(colors.p_blue.200), token(colors.p_purple.200))',
+        },
+        bgClip: {
+          base: 'text',
+          _dark: 'text',
+        },
+        color: 'transparent',
+      },
+      dev: {
+        color: {
+          base: 'p_blue.700',
+          _dark: 'p_blue.200',
+        },
+      },
+      discoveries: {
+        color: {
+          base: 'p_purple.700',
+          _dark: 'p_purple.200',
+        },
+      },
+    },
+  },
+});
+
 /**
  * Main component for activities
  *
  * @param {Activity} activity the texts corresponding to the activity
  * @param {ReactNode} children the heading for the activity
  */
-export default function Activity({activity, children}: Props) {
+export default function Activity({activity, children, variant}: Props) {
   const {langage} = useLanguage();
 
   return (
@@ -103,14 +148,14 @@ export default function Activity({activity, children}: Props) {
  * @param {ReactNode} children the svg icon to display
  * @param {string} title the title of the activity
  */
-Activity.Heading = function ActivityHeading({children, title}: HeadingProps) {
+Activity.Heading = function ActivityHeading({children, title, variant}: HeadingProps) {
   const {langage} = useLanguage();
 
   return (
     <div className={divHeadingStyle}>
       {children}
-      <div className={dividerStyle}></div>
-      <h3>{title[langage]}</h3>
+      <div className={`${dividerStyle} ${activityVariants({separator: variant})}`}></div>
+      <h3 className={activityVariants({title: variant})}>{title[langage]}</h3>
     </div>
   );
 };
