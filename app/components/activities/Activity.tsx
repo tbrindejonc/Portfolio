@@ -125,6 +125,7 @@ const activityVariants = cva({
  *
  * @param {Activity} activity the texts corresponding to the activity
  * @param {ReactNode} children the heading for the activity
+ * @param {'game' | 'dev' | 'discoveries'} variant the current activity variant
  */
 export default function Activity({activity, children, variant}: Props) {
   const {langage} = useLanguage();
@@ -147,6 +148,7 @@ export default function Activity({activity, children, variant}: Props) {
  *
  * @param {ReactNode} children the svg icon to display
  * @param {string} title the title of the activity
+ * @param {'game' | 'dev' | 'discoveries'} variant the current activity variant
  */
 Activity.Heading = function ActivityHeading({children, title, variant}: HeadingProps) {
   const {langage} = useLanguage();
