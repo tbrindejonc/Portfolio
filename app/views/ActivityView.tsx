@@ -1,8 +1,7 @@
 import {css} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 import Link from 'next/link';
-import Activity from '@components/Activity';
-import activities from '@texts/portfolio/activity/activities';
+import Activities from '@components/activities/Activities';
 
 const activityStyle = vstack({
   bgColor: {
@@ -46,9 +45,7 @@ export default function ActivityView() {
   return (
     <section id={'activity'} className={activityStyle}>
       <h2 className={titleStyle}>Mes activités</h2>
-      <Activity activity={activities[0]} />
-      <Activity activity={activities[1]} />
-      <Activity activity={activities[2]} />
+      <Activities />
       <Link href={'/projects'} className={projectsLinkStyle}>
         Voir mes projets
       </Link>
