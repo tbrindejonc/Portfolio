@@ -58,3 +58,14 @@ export type ExperienceExplanation = {
     lastPart: AppText;
   };
 };
+
+// activity explanation text
+export type Activity = {
+  title: AppText;
+  description: {
+    firstPart: AppText;
+    firstSpan: AppText;
+    secondPart: AppText;
+    secondSpan: AppText;
+  };
+};
