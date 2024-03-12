@@ -117,6 +117,28 @@ const activityVariants = cva({
         },
       },
     },
+    firstSpan: {
+      game: {
+        color: 'p_blue.main',
+      },
+      dev: {
+        color: 'p_blue.main',
+      },
+      discoveries: {
+        color: 'p_purple.main',
+      },
+    },
+    secondSpan: {
+      game: {
+        color: 'p_purple.main',
+      },
+      dev: {
+        color: 'p_blue.main',
+      },
+      discoveries: {
+        color: 'p_purple.main',
+      },
+    },
   },
 });
 
@@ -135,9 +157,9 @@ export default function Activity({activity, children, variant}: Props) {
       {children}
       <p className={paragraphStyle}>
         {activity.description.firstPart[langage]}
-        <span>{activity.description.firstSpan[langage]}</span>
+        <span className={activityVariants({firstSpan: variant})}>{activity.description.firstSpan[langage]}</span>
         {activity.description.secondPart[langage]}
-        <span>{activity.description.secondSpan[langage]}</span>
+        <span className={activityVariants({secondSpan: variant})}>{activity.description.secondSpan[langage]}</span>
       </p>
     </div>
   );
