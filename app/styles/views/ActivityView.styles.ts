@@ -1,12 +1,14 @@
-import {vstack} from '@/styled-system/patterns';
+import {grid} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const activityStyle = vstack({
+const activityStyle = grid({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
+  columns: 1,
   gap: 12,
+  justifyItems: 'center',
   py: 10,
   transition: 'all 0.5s',
 });
