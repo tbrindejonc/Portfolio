@@ -1,9 +1,7 @@
-import {grid, hstack} from '@/styled-system/patterns';
+import {hstack, vstack} from '@/styled-system/patterns';
 import {css, cva} from '@/styled-system/css';
 
-const containerStyle = grid({
-  justifyItems: 'center',
-  columns: 1,
+const containerStyle = vstack({
   gap: 2,
   px: 8,
 });
