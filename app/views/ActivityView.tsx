@@ -5,7 +5,7 @@ import useLanguage from '@hooks/useLanguage';
 import activityTexts from '@texts/portfolio/activity/activityTexts';
 import activities from '@texts/portfolio/activity/activities';
 import Link from 'next/link';
-import Activity from '@components/activities/Activity';
+import Activity from '@components/Activity';
 
 export default function ActivityView() {
   const {langage} = useLanguage();
