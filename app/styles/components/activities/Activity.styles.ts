@@ -7,6 +7,7 @@ const containerStyle = vstack({
   w: {
     xl: '2/3',
   },
+  zIndex: 1,
 });
 
 const svgStyle = css({

@@ -1,6 +1,6 @@
 'use client';
 
-import {activityStyle, projectsLinkStyle, titleStyle} from '@styles/views/ActivityView.styles';
+import {activityStyle, backgroundCircleStyle, projectsLinkStyle, titleStyle} from '@styles/views/ActivityView.styles';
 import useLanguage from '@hooks/useLanguage';
 import activityTexts from '@texts/portfolio/activity/activityTexts';
 import activities from '@texts/portfolio/activity/activities';
@@ -31,6 +31,7 @@ export default function ActivityView() {
       <Link href={'/projects'} className={projectsLinkStyle}>
         {activityTexts.link[langage]}
       </Link>
+      <div id={'activity-bg-circle'} className={backgroundCircleStyle}></div>
     </section>
   );
 }

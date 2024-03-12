@@ -1,4 +1,4 @@
-import {grid, gridItem} from '@/styled-system/patterns';
+import {circle, grid, gridItem} from '@/styled-system/patterns';
 
 const activityStyle = grid({
   bgColor: {
@@ -15,7 +15,11 @@ const activityStyle = grid({
     md: 'screen',
   },
   justifyItems: 'center',
+  overflow: 'hidden',
   py: 10,
+  position: {
+    xl: 'relative',
+  },
   transition: 'all 0.5s',
   w: 'full',
 });
@@ -40,6 +44,7 @@ const titleStyle = gridItem({
   },
   px: 8,
   textAlign: 'center',
+  zIndex: 1,
 });
 
 const projectsLinkStyle = gridItem({
@@ -99,6 +104,26 @@ const projectsLinkStyle = gridItem({
     base: '4/5',
     xl: '1/5',
   },
+  zIndex: 1,
 });
 
-export {activityStyle, titleStyle, projectsLinkStyle};
+const backgroundCircleStyle = circle({
+  bgColor: {
+    base: 'p_purple.light',
+    _dark: 'p_purple.dark',
+  },
+  display: {
+    base: 'none',
+    xl: 'block',
+  },
+  position: 'absolute',
+  shadow: {
+    base: '0 15px 20px 0 token(colors.p_blue.dark)',
+    _dark: '0 15px 20px 0 token(colors.p_blue.light)',
+  },
+  size: '150vw',
+  top: '-208vh',
+  zIndex: 0,
+});
+
+export {activityStyle, titleStyle, projectsLinkStyle, backgroundCircleStyle};
