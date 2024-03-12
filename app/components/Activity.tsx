@@ -2,11 +2,18 @@
 
 import {grid, hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
-import {Activity} from '@appTypes/portfolio';
+import {Activity, AppText} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
+import {ReactNode} from 'react';
 
 type Props = {
   activity: Activity;
+  children: ReactNode;
+};
+
+type HeadingProps = {
+  children: ReactNode;
+  title: AppText;
 };
 
 const containerStyle = grid({
@@ -51,30 +58,18 @@ const paragraphStyle = css({
   textWrap: 'balance',
 });
 
-export default function Activity({activity}: Props) {
+/**
+ * Main component for activities
+ *
+ * @param {Activity} activity the texts corresponding to the activity
+ * @param {ReactNode} children the heading for the activity
+ */
+export default function Activity({activity, children}: Props) {
   const {langage} = useLanguage();
 
   return (
     <div className={containerStyle}>
-      <div className={divHeadingStyle}>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className={svgStyle}
-        >
-          <rect width='18' height='18' x='3' y='3' rx='2' />
-          <path d='m10 10-2 2 2 2' />
-          <path d='m14 14 2-2-2-2' />
-        </svg>
-        <div className={dividerStyle}></div>
-        <h3>{activity.title[langage]}</h3>
-      </div>
+      {children}
       <p className={paragraphStyle}>
         {activity.description.firstPart[langage]}
         <span>{activity.description.firstSpan[langage]}</span>
@@ -84,6 +79,24 @@ export default function Activity({activity}: Props) {
     </div>
   );
 }
+
+/**
+ * Heading for activities
+ *
+ * @param {ReactNode} children the svg icon to display
+ * @param {string} title the title of the activity
+ */
+Activity.Heading = function ActivityHeading({children, title}: HeadingProps) {
+  const {langage} = useLanguage();
+
+  return (
+    <div className={divHeadingStyle}>
+      {children}
+      <div className={dividerStyle}></div>
+      <h3>{title[langage]}</h3>
+    </div>
+  );
+};
 
 /**
  * Icon for video games activity
