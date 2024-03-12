@@ -1,7 +1,17 @@
+'use client';
+
 import {grid, hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
+import {Activity} from '@appTypes/portfolio';
+import useLanguage from '@hooks/useLanguage';
 
-export default function Activity() {
+type Props = {
+  activity: Activity;
+};
+
+export default function Activity({activity}: Props) {
+  const {langage} = useLanguage();
+
   const containerStyle = grid({
     justifyItems: 'center',
     columns: 1,
@@ -63,11 +73,13 @@ export default function Activity() {
           <path d='m14 14 2-2-2-2' />
         </svg>
         <div className={dividerStyle}></div>
-        <h3>Développement</h3>
+        <h3>{activity.title[langage]}</h3>
       </div>
       <p className={paragraphStyle}>
-        En dehors des jeux vidéo, j’adore développer des petits ou gros projets de mon côté, pour apprendre de nouvelles
-        technologies. Ma découverte la plus récente est Next Js.
+        {activity.description.firstPart[langage]}
+        <span>{activity.description.firstSpan[langage]}</span>
+        {activity.description.secondPart[langage]}
+        <span>{activity.description.secondSpan[langage]}</span>
       </p>
     </div>
   );
