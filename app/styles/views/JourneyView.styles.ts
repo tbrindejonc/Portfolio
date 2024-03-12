@@ -12,11 +12,14 @@ const journeyStyle = vstack({
   },
   gap: 4,
   h: {
-    xl: 'screen',
+    md: 'screen',
   },
   p: {
     base: 4,
     md: 8,
+  },
+  pt: {
+    xl: 20,
   },
 });
 
@@ -42,7 +45,7 @@ const imageStyle = css({
   width: {
     base: 'full',
     md: '1/2',
-    xl: '1/4',
+    xl: '1/5',
   },
 });
 
@@ -67,11 +70,12 @@ const contentWrapperStyle = vstack({
     _dark: 'p_purple.dark',
   },
   h: {
-    xl: 'screen',
+    xl: 'full',
   },
   p: {
     base: 4,
     md: 8,
+    xl: 0,
   },
   transition: 'all 0.5s',
 });
@@ -157,7 +161,7 @@ const paragraphStyle = css({
     xl: '3xl',
   },
   width: {
-    xl: '1/3',
+    xl: '2/5',
   },
 });
 

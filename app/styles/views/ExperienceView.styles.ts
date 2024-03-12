@@ -15,7 +15,7 @@ const sectionStyle = vstack({
     md: 12,
   },
   h: {
-    xl: 'screen',
+    md: 'screen',
   },
   overflow: 'hidden',
   pt: 20,
