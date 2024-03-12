@@ -69,3 +69,9 @@ export type Activity = {
     secondSpan: AppText;
   };
 };
+
+// title and link texts for activity section
+export type ActivityTexts = {
+  title: AppText;
+  link: AppText;
+};
