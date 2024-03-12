@@ -2,13 +2,19 @@ import {css} from '@/styled-system/css';
 import {grid, hstack, vstack} from '@/styled-system/patterns';
 
 const activityStyle = vstack({
-  bgColor: 'p_purple.light',
+  bgColor: {
+    base: 'p_purple.light',
+    _dark: 'p_purple.dark',
+  },
   gap: 12,
   pb: 10,
 });
 
 const titleStyle = css({
-  color: 'neutral.800',
+  color: {
+    base: 'neutral.800',
+    _dark: 'neutral.200',
+  },
   fontFamily: 'bricolage',
   fontSize: '4xl',
   fontWeight: 'bold',
@@ -23,7 +29,10 @@ const containerStyle = grid({
 });
 
 const svgStyle = css({
-  stroke: 'neutral.800',
+  stroke: {
+    base: 'neutral.800',
+    _dark: 'neutral.200',
+  },
   height: 12,
   width: 12,
 });
@@ -35,13 +44,20 @@ const dividerStyle = css({
 });
 
 const divHeadingStyle = hstack({
+  color: {
+    base: 'neutral.800',
+    _dark: 'neutral.200',
+  },
   fontSize: '2xl',
   gap: 8,
   w: 'full',
 });
 
 const paragraphStyle = css({
-  color: 'neutral.dark',
+  color: {
+    base: 'neutral.dark',
+    _dark: 'neutral.light',
+  },
   lineHeight: '1.7em',
   fontSize: 'lg',
   textWrap: 'balance',
