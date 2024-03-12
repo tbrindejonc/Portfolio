@@ -1,5 +1,6 @@
 import {css} from '@/styled-system/css';
 import {grid, hstack, vstack} from '@/styled-system/patterns';
+import Link from 'next/link';
 
 const activityStyle = vstack({
   bgColor: {
@@ -61,6 +62,24 @@ const paragraphStyle = css({
   lineHeight: '1.7em',
   fontSize: 'lg',
   textWrap: 'balance',
+});
+
+const projectsLinkStyle = css({
+  bgColor: {
+    base: 'p_purple.dark',
+    _dark: 'p_purple.light',
+  },
+  borderRadius: 'md',
+  color: {
+    base: 'neutral.light',
+    _dark: 'neutral.dark',
+  },
+  fontFamily: 'bricolage',
+  fontSize: '2xl',
+  fontWeight: 'bold',
+  p: 2,
+  textAlign: 'center',
+  w: '4/5',
 });
 
 export default function ActivityView() {
@@ -143,6 +162,9 @@ export default function ActivityView() {
           lectures. Je lis beaucoup de romans, de mangas et de webtoons.
         </p>
       </div>
+      <Link href={'/projects'} className={projectsLinkStyle}>
+        Voir mes projets
+      </Link>
     </section>
   );
 }
