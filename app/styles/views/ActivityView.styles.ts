@@ -7,7 +7,8 @@ const activityStyle = vstack({
     _dark: 'p_purple.dark',
   },
   gap: 12,
-  pb: 10,
+  py: 10,
+  transition: 'all 0.5s',
 });
 
 const titleStyle = css({
