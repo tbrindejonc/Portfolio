@@ -51,6 +51,9 @@ const projectsLinkStyle = gridItem({
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
+  bgGradient: {
+    _hover: 'to-tr',
+  },
   borderRadius: 'md',
   color: {
     base: 'neutral.light',
@@ -65,6 +68,18 @@ const projectsLinkStyle = gridItem({
     md: '3xl',
   },
   fontWeight: 'bold',
+  gradientFrom: {
+    _hover: {
+      base: 'p_purple.800',
+      _dark: 'p_purple.200',
+    },
+  },
+  gradientTo: {
+    _hover: {
+      base: 'p_blue.800',
+      _dark: 'p_blue.200',
+    },
+  },
   h: {
     md: 'fit-content',
   },
@@ -72,7 +87,14 @@ const projectsLinkStyle = gridItem({
     base: 2,
     md: 4,
   },
+  boxShadow: {
+    _hover: {
+      base: '2px 2px 5px token(colors.p_purple.dark)',
+      _dark: '2px 2px 5px token(colors.p_purple.light)',
+    },
+  },
   textAlign: 'center',
+  transition: 'all 0.3s ease-in-out',
   w: {
     base: '4/5',
     xl: '1/5',
