@@ -13,13 +13,14 @@ export default function ContactView() {
       base: 'neutral.dark',
       _dark: 'neutral.light',
     },
-    gap: 2,
-    padding: 2,
-    h: 'screen',
+    gap: 12,
+    padding: 4,
+    pb: 10,
+    h: 'fit',
     transition: 'all 0.5s',
   });
 
-  const imageDivStyle: string = css({
+  const imageDivStyle = css({
     borderRadius: {
       base: 10,
       md: 20,
@@ -33,7 +34,7 @@ export default function ContactView() {
     width: '300px',
   });
 
-  const imageStyle: string = css({
+  const imageStyle = css({
     backgroundSize: 'cover',
     borderRadius: {
       base: 10,
@@ -45,6 +46,45 @@ export default function ContactView() {
       md: '400px',
       xl: '500px',
     },
+  });
+
+  const titleStyle = css({
+    fontFamily: 'bricolage',
+    fontSize: '4xl',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  });
+
+  const contactLinkStyle = css({
+    bgColor: {
+      base: 'p_blue.dark',
+      _dark: 'p_blue.light',
+    },
+    borderRadius: 'lg',
+    color: {
+      base: 'neutral.light',
+      _dark: 'neutral.dark',
+    },
+    fontFamily: 'bricolage',
+    fontSize: '3xl',
+    fontWeight: 'bold',
+    p: 4,
+    textAlign: 'center',
+    transition: 'all 0.5s',
+    w: 'full',
+  });
+
+  const contactLinkContainerStyle = vstack({
+    bgGradient: {
+      base: 'to-r',
+      _hover: 'to-l',
+    },
+    borderRadius: 'xl',
+    gradientFrom: 'p_blue.main',
+    gradientTo: 'p_purple.main',
+    p: 1,
+    transition: 'all 0.5s',
+    w: '4/5',
   });
 
   return (
@@ -59,8 +99,10 @@ export default function ContactView() {
           className={imageStyle}
         />
       </div>
-      <h2>Si vous voulez me contacter, n&apos;hésitez plus !</h2>
-      <Link href={'/contact'}>Me contacter</Link>
+      <h2 className={titleStyle}>Si vous voulez me contacter, n&apos;hésitez plus !</h2>
+      <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
+        <div className={contactLinkStyle}>Me contacter</div>
+      </Link>
     </section>
   );
 }
