@@ -4,7 +4,8 @@ import {css} from '@/styled-system/css';
 import Link from 'next/link';
 
 export default function ContactView() {
-  const contactStyle = vstack({
+  const contactStyle = css({
+    alignItems: 'center',
     bgColor: {
       base: 'p_purple.light',
       _dark: 'p_purple.dark',
@@ -13,6 +14,11 @@ export default function ContactView() {
       base: 'neutral.dark',
       _dark: 'neutral.light',
     },
+    display: 'flex',
+    flexDirection: {
+      base: 'column',
+      xl: 'row-reverse',
+    },
     gap: {
       base: 12,
       md: 16,
@@ -20,11 +26,13 @@ export default function ContactView() {
     padding: {
       base: 4,
       md: 8,
+      xl: 20,
     },
     pb: 10,
     h: {
       base: 'fit',
       md: '80vh',
+      xl: 'screen',
     },
     transition: 'all 0.5s',
   });
@@ -37,6 +45,7 @@ export default function ContactView() {
     height: {
       base: '300px',
       md: '400px',
+      xl: '600px',
     },
     overflow: 'hidden',
     shadow: {
@@ -46,6 +55,7 @@ export default function ContactView() {
     width: {
       base: '300px',
       md: '400px',
+      xl: '600px',
     },
   });
 
@@ -59,7 +69,7 @@ export default function ContactView() {
     width: {
       base: '300px',
       md: '400px',
-      xl: '500px',
+      xl: '600px',
     },
   });
 
@@ -68,9 +78,14 @@ export default function ContactView() {
     fontSize: {
       base: '4xl',
       md: '6xl',
+      xl: '7xl',
     },
     fontWeight: 'bold',
-    textAlign: 'center',
+    letterSpacing: 'wide',
+    textAlign: {
+      base: 'center',
+      xl: 'right',
+    },
   });
 
   const contactLinkStyle = css({
@@ -87,6 +102,7 @@ export default function ContactView() {
     fontSize: {
       base: '3xl',
       md: '4xl',
+      xl: '6xl',
     },
     fontWeight: 'bold',
     p: 4,
@@ -108,7 +124,22 @@ export default function ContactView() {
       md: 2,
     },
     transition: 'all 0.5s',
-    w: '4/5',
+    w: {
+      base: '4/5',
+      xl: '2/3',
+    },
+  });
+
+  const titleAndLinkContainerStyle = vstack({
+    gap: {
+      base: 12,
+      md: 16,
+      xl: 32,
+    },
+    justifyContent: 'center',
+    w: {
+      xl: '1/2',
+    },
   });
 
   return (
@@ -123,10 +154,12 @@ export default function ContactView() {
           className={imageStyle}
         />
       </div>
-      <h2 className={titleStyle}>Si vous voulez me contacter, n&apos;hésitez plus !</h2>
-      <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
-        <div className={contactLinkStyle}>Me contacter</div>
-      </Link>
+      <div className={titleAndLinkContainerStyle}>
+        <h2 className={titleStyle}>Si vous voulez me contacter, n&apos;hésitez plus !</h2>
+        <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
+          <div className={contactLinkStyle}>Me contacter</div>
+        </Link>
+      </div>
     </section>
   );
 }
