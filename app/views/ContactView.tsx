@@ -13,10 +13,19 @@ export default function ContactView() {
       base: 'neutral.dark',
       _dark: 'neutral.light',
     },
-    gap: 12,
-    padding: 4,
+    gap: {
+      base: 12,
+      md: 16,
+    },
+    padding: {
+      base: 4,
+      md: 8,
+    },
     pb: 10,
-    h: 'fit',
+    h: {
+      base: 'fit',
+      md: '80vh',
+    },
     transition: 'all 0.5s',
   });
 
@@ -25,13 +34,19 @@ export default function ContactView() {
       base: 10,
       md: 20,
     },
-    height: '300px',
+    height: {
+      base: '300px',
+      md: '400px',
+    },
     overflow: 'hidden',
     shadow: {
       base: '0px 4px 4px 0 token(colors.p_blue.dark_25)',
       _dark: '0px 4px 4px 0 token(colors.p_blue.light_25)',
     },
-    width: '300px',
+    width: {
+      base: '300px',
+      md: '400px',
+    },
   });
 
   const imageStyle = css({
@@ -50,7 +65,10 @@ export default function ContactView() {
 
   const titleStyle = css({
     fontFamily: 'bricolage',
-    fontSize: '4xl',
+    fontSize: {
+      base: '4xl',
+      md: '6xl',
+    },
     fontWeight: 'bold',
     textAlign: 'center',
   });
@@ -66,7 +84,10 @@ export default function ContactView() {
       _dark: 'neutral.dark',
     },
     fontFamily: 'bricolage',
-    fontSize: '3xl',
+    fontSize: {
+      base: '3xl',
+      md: '4xl',
+    },
     fontWeight: 'bold',
     p: 4,
     textAlign: 'center',
@@ -82,7 +103,10 @@ export default function ContactView() {
     borderRadius: 'xl',
     gradientFrom: 'p_blue.main',
     gradientTo: 'p_purple.main',
-    p: 1,
+    p: {
+      base: 1,
+      md: 2,
+    },
     transition: 'all 0.5s',
     w: '4/5',
   });
