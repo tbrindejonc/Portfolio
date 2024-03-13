@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -9,8 +11,12 @@ import {
   titleAndLinkContainerStyle,
   titleStyle,
 } from '@styles/views/ContactView.styles';
+import useLanguage from '@hooks/useLanguage';
+import titleAndLink from '@texts/portfolio/contact/titleAndLink';
 
 export default function ContactView() {
+  const {langage} = useLanguage();
+
   return (
     <section id={'contact'} className={contactStyle}>
       <div className={imageDivStyle}>
@@ -24,9 +30,9 @@ export default function ContactView() {
         />
       </div>
       <div className={titleAndLinkContainerStyle}>
-        <h2 className={titleStyle}>Si vous voulez me contacter, n&apos;hésitez plus !</h2>
+        <h2 className={titleStyle}>{titleAndLink.title[langage]}</h2>
         <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
-          <div className={contactLinkStyle}>Me contacter</div>
+          <div className={contactLinkStyle}>{titleAndLink.link[langage]}</div>
         </Link>
       </div>
     </section>
