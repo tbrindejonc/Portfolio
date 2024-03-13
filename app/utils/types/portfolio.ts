@@ -75,3 +75,9 @@ export type ActivityTexts = {
   title: AppText;
   link: AppText;
 };
+
+// title and link texts for contact section
+export type ContactTexts = {
+  title: AppText;
+  link: AppText;
+};
