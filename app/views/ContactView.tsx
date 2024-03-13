@@ -21,7 +21,7 @@ export default function ContactView() {
     <section id={'contact'} className={contactStyle}>
       <div className={imageDivStyle}>
         <Image
-          src={'/images/portfolio/landing/profile.jpg'}
+          src={'/images/portfolio/contact/contact.jpg'}
           alt={'me'}
           width={0}
           height={0}
