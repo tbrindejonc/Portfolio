@@ -121,8 +121,8 @@ const backgroundCircleStyle = circle({
     base: '0 15px 20px 0 token(colors.p_blue.dark)',
     _dark: '0 15px 20px 0 token(colors.p_blue.light)',
   },
-  size: '150vw',
-  top: '-208vh',
+  size: '140em',
+  top: '-75em',
   zIndex: 0,
 });
 

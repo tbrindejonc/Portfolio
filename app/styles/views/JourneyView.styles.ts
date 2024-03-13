@@ -18,9 +18,6 @@ const journeyStyle = vstack({
     base: 4,
     md: 8,
   },
-  pt: {
-    xl: 20,
-  },
 });
 
 const journeyTitleStyle = css({
@@ -69,13 +66,9 @@ const contentWrapperStyle = vstack({
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
-  h: {
-    xl: 'full',
-  },
   p: {
     base: 4,
     md: 8,
-    xl: 0,
   },
   transition: 'all 0.5s',
 });
@@ -111,7 +104,6 @@ const linkStyle = css({
   border: {
     base: '3px solid',
     md: '4px solid',
-    xl: '5px solid',
   },
   borderColor: 'transparent',
   borderRadius: {
@@ -140,19 +132,19 @@ const linkStyle = css({
   fontSize: {
     base: '2xl',
     md: '3xl',
-    xl: '4xl',
   },
   fontWeight: 'bold',
   p: {
     base: 2,
     md: 4,
+    xl: 2,
   },
   textAlign: 'center',
   transition: 'all 0.5s',
   width: {
     base: 'full',
     md: '3/5',
-    xl: '1/3',
+    xl: '1/4',
   },
 });
 
