@@ -2,6 +2,10 @@ import type {Metadata} from 'next';
 import './globals.css';
 import {PropsWithChildren} from 'react';
 import {BricolageGroteske, Rubik} from '@assets/fonts/fonts';
+import Navbar from '@components/navbar/Navbar';
+import {css} from '@/styled-system/css';
+import LanguageProvider from '@providers/LanguageProvider';
+import Footer from '@components/Footer';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Portfolio',
@@ -11,7 +15,13 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: PropsWithChildren) {
   return (
     <html lang='fr' className={`${Rubik.variable} ${BricolageGroteske.variable}`}>
-      <body>{children}</body>
+      <body className={css({fontFamily: 'rubik'})}>
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
+      </body>
     </html>
   );
 }
