@@ -11,7 +11,6 @@ import {
 import * as fs from 'node:fs';
 import sendLogoResponse from '@functions/api/sendLogoResponse';
 import sendErrorResponse from '@functions/api/sendErrorResponse';
-import path from 'node:path';
 
 /**
  * Get the gif image for project
@@ -36,7 +35,7 @@ export function GET(request: Request, apiParams: ApiLogoParams): Response {
       );
     }
 
-    const imagePath = path.resolve(LOGO_TECHNOLOGY_PATH, apiParams.params.slug);
+    const imagePath = `${LOGO_TECHNOLOGY_PATH}${apiParams.params.slug}`;
 
     if (!fs.existsSync(imagePath)) {
       return sendJsonResponse<ApiError>(
