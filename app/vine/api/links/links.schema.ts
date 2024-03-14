@@ -30,6 +30,7 @@ export const linksForExperienceSchema = vine.object({
   ...linksSchema.getProperties(),
   description: baseLinkSchema.clone(),
   job_title: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 // links for an association between a technology and an experience
