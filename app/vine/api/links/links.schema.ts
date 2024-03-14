@@ -57,6 +57,7 @@ export const linksForTechnologySchema = vine.object({
   ...linksSchema.getProperties(),
   category: baseLinkSchema.clone(),
   description: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 /* -------------------------------------------------------------------------- */
