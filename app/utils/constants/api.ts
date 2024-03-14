@@ -71,3 +71,6 @@ export const LOGO_CATEGORY_PATH = './logos/categories/';
 
 // path to experiences logos
 export const LOGO_EXPERIENCE_PATH = './logos/experiences/';
+
+// path to technologies logos
+export const LOGO_TECHNOLOGY_PATH = './logos/technologies/';
