@@ -65,3 +65,6 @@ export const JWT_ALG = 'HS256';
 
 // path to projects gifs
 export const LOGO_PROJECT_GIF_PATH = './logos/projects/';
+
+// path to categories logos
+export const LOGO_CATEGORY_PATH = './logos/categories/';
