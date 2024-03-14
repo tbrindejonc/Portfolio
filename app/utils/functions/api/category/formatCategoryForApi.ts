@@ -67,6 +67,10 @@ const formatCategoryForApi = (
           method: 'GET',
           href: `/api/texts/${category.name_id}`,
         },
+        logo: {
+          method: 'GET',
+          href: `/api/logos/categories/${category.logo}`,
+        },
       },
     } as CompleteCategoryFromApi;
   }
@@ -91,6 +95,10 @@ const formatCategoryForApi = (
       name: {
         method: 'GET',
         href: `/api/texts/${category.name_id}`,
+      },
+      logo: {
+        method: 'GET',
+        href: `/api/logos/categories/${category.logo}`,
       },
     },
   } as CategoryFromApi;

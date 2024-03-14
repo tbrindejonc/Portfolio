@@ -22,6 +22,7 @@ export const linksSchema = vine.object({
 export const linksForCategorySchema = vine.object({
   ...linksSchema.getProperties(),
   name: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 // links for an experience resource
