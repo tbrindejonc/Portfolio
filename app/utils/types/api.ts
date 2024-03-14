@@ -33,3 +33,10 @@ export interface ApiLinkParams {
     tech_id: string;
   };
 }
+
+// api logo request parameters
+export interface ApiLogoParams {
+  params: {
+    slug: string;
+  };
+}
