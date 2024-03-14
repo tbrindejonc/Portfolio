@@ -55,3 +55,9 @@ export const SALT_ROUNDS = 10;
 
 // JWT encryption algorithm
 export const JWT_ALG = 'HS256';
+
+/* -------------------------------------------------------------------------- */
+/*                                 Logos paths                                */
+/* -------------------------------------------------------------------------- */
+
+export const LOGO_PROJECT_GIF_PATH = './logos/projects/';
