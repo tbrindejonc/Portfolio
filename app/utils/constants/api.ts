@@ -68,3 +68,6 @@ export const LOGO_PROJECT_GIF_PATH = './logos/projects/';
 
 // path to categories logos
 export const LOGO_CATEGORY_PATH = './logos/categories/';
+
+// path to experiences logos
+export const LOGO_EXPERIENCE_PATH = './logos/experiences/';
