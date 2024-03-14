@@ -72,6 +72,10 @@ const formatTechnologyForApi = (
           method: 'GET',
           href: `/api/texts/${technology.description_id}`,
         },
+        logo: {
+          method: 'GET',
+          href: `/api/logos/technologies/${technology.logo}`,
+        },
       },
     } as CompleteTechnologyFromApi;
   }
@@ -103,6 +107,10 @@ const formatTechnologyForApi = (
       description: {
         method: 'GET',
         href: `/api/texts/${technology.description_id}`,
+      },
+      logo: {
+        method: 'GET',
+        href: `/api/logos/technologies/${technology.logo}`,
       },
     },
   } as TechnologyFromApi;

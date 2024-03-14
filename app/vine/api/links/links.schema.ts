@@ -22,6 +22,7 @@ export const linksSchema = vine.object({
 export const linksForCategorySchema = vine.object({
   ...linksSchema.getProperties(),
   name: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 // links for an experience resource
@@ -29,6 +30,7 @@ export const linksForExperienceSchema = vine.object({
   ...linksSchema.getProperties(),
   description: baseLinkSchema.clone(),
   job_title: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 // links for an association between a technology and an experience
@@ -55,6 +57,7 @@ export const linksForTechnologySchema = vine.object({
   ...linksSchema.getProperties(),
   category: baseLinkSchema.clone(),
   description: baseLinkSchema.clone(),
+  logo: baseLinkSchema.clone(),
 });
 
 /* -------------------------------------------------------------------------- */

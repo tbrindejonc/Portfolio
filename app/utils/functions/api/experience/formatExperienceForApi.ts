@@ -90,6 +90,10 @@ const formatExperienceForApi = (
           method: 'GET',
           href: `/api/texts/${experience.job_description_id}`,
         },
+        logo: {
+          method: 'GET',
+          href: `/api/logos/experiences/${experience.logo}`,
+        },
       },
     } as CompleteExperienceFromApi;
   }
@@ -127,6 +131,10 @@ const formatExperienceForApi = (
       job_description: {
         method: 'GET',
         href: `/api/texts/${experience.job_description_id}`,
+      },
+      logo: {
+        method: 'GET',
+        href: `/api/logos/experiences/${experience.logo}`,
       },
     },
   } as ExperienceFromApi;

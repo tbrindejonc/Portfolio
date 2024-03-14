@@ -42,6 +42,9 @@ export const MSG_INCORRECT_PASSWORD = 'Password is incorrect';
 // foreign key error
 export const MSG_FOREIGN_KEY_ERROR = 'Foreign key error';
 
+// invalid image name
+export const MSG_INVALID_IMAGE = 'Invalid image name';
+
 /* -------------------------------------------------------------------------- */
 /*                               Bcrypt variables                             */
 /* -------------------------------------------------------------------------- */
@@ -55,3 +58,19 @@ export const SALT_ROUNDS = 10;
 
 // JWT encryption algorithm
 export const JWT_ALG = 'HS256';
+
+/* -------------------------------------------------------------------------- */
+/*                                 Logos paths                                */
+/* -------------------------------------------------------------------------- */
+
+// path to projects gifs
+export const LOGO_PROJECT_GIF_PATH = './logos/projects/';
+
+// path to categories logos
+export const LOGO_CATEGORY_PATH = './logos/categories/';
+
+// path to experiences logos
+export const LOGO_EXPERIENCE_PATH = './logos/experiences/';
+
+// path to technologies logos
+export const LOGO_TECHNOLOGY_PATH = './logos/technologies/';
