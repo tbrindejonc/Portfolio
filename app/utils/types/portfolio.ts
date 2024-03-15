@@ -84,11 +84,11 @@ export type ContactTexts = {
 
 // portfolio pages
 export enum Page {
-  HOME = 'home',
-  EXPERIENCES = 'experiences',
-  SKILLS = 'skills',
-  PROJECTS = 'projects',
-  CONTACT = 'contact',
+  HOME = 'Home',
+  EXPERIENCES = 'Experiences',
+  SKILLS = 'Skills',
+  PROJECTS = 'Projects',
+  CONTACT = 'Contact',
 }
 
 // current page context exported utilities
