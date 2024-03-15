@@ -2,13 +2,14 @@
 
 import Link from 'next/link';
 import useLanguage from '@hooks/useLanguage';
-import {useState} from 'react';
 import {divStyle, getLinkStyle, getSelectedLinkStyle} from '@styles/components/navbar/NavMenu.styles';
 import appLinks from '@texts/portfolio/navbar/appLinks';
+import useCurrentPage from '@hooks/useCurrentPage';
+import {Page} from '@/app/utils/types/portfolio';
 
 export default function NavMenu() {
   const {langage} = useLanguage();
-  const [active, setActive] = useState<number>(0);
+  const {currentPage, switchPage} = useCurrentPage();
 
   return (
     <div className={divStyle}>
@@ -17,12 +18,12 @@ export default function NavMenu() {
           <Link
             key={index}
             href={link.href}
-            className={getLinkStyle(active, index)}
+            className={getLinkStyle(currentPage, index)}
             onClick={() => {
-              setActive(index);
+              switchPage(link.title.en as Page);
             }}
           >
-            <div className={getSelectedLinkStyle(active, index)}></div>
+            <div className={getSelectedLinkStyle(currentPage, index)}></div>
             {link.title[langage]}
           </Link>
         );
