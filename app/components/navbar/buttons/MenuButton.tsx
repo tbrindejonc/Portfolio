@@ -1,7 +1,7 @@
 'use client';
 
 import NavMenu from '@components/navbar/NavMenu';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {
   blueCircleStyle,
   getNavMenuContainerStyle,
@@ -14,12 +14,28 @@ import {
 export default function MenuButton() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      if (!target.closest('.menu-button') && !target.closest('.nav-menu')) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      return document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div
-        className={menuButtonStyle}
+        className={`${menuButtonStyle} menu-button`}
         onClick={() => {
-          return setIsActive(!isActive);
+          setIsActive(!isActive);
         }}
       >
         <div className={purpleCircleStyle}></div>
@@ -30,7 +46,12 @@ export default function MenuButton() {
           <div className={menuLineStyle}></div>
         </div>
       </div>
-      <div className={getNavMenuContainerStyle(isActive)}>
+      <div
+        className={`${getNavMenuContainerStyle(isActive)} nav-menu`}
+        onClick={() => {
+          return setIsActive(!isActive);
+        }}
+      >
         <NavMenu />
       </div>
     </>
