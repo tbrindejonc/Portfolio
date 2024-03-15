@@ -5,7 +5,7 @@ import {CurrentPageContextUtils, Page} from '@appTypes/portfolio';
 
 export const CurrentPageContext = createContext<CurrentPageContextUtils | null>(null);
 
-export default function LanguageProvider({children}: PropsWithChildren) {
+export default function CurrentPageProvider({children}: PropsWithChildren) {
   const [currentPage, setCurrentPage] = useState<number>(0);
 
   /**
