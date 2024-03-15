@@ -4,23 +4,11 @@ import Link from 'next/link';
 import useLanguage from '@hooks/useLanguage';
 import {divStyle, getLinkStyle, getSelectedLinkStyle} from '@styles/components/navbar/NavLinks.styles';
 import appLinks from '@texts/portfolio/navbar/appLinks';
-import {AppLink} from '@appTypes/portfolio';
-import {useEffect, useState} from 'react';
-import {usePathname} from 'next/navigation';
+import useCurrentLocation from '@hooks/useCurrentLocation';
 
 export default function NavLinks() {
-  const location = usePathname();
   const {langage} = useLanguage();
-  const [currentPage, setCurrentPage] = useState<number>(0);
-
-  useEffect(() => {
-    const matchedPage: AppLink | undefined = appLinks.find((link: AppLink) => {
-      return link.href.toLowerCase() === location;
-    });
-    const pageIndex: number = appLinks.indexOf(matchedPage as AppLink);
-
-    setCurrentPage(pageIndex);
-  }, [location]);
+  const currentPage: number = useCurrentLocation();
 
   return (
     <div className={divStyle}>
