@@ -6,6 +6,7 @@ import Navbar from '@components/navbar/Navbar';
 import {css} from '@/styled-system/css';
 import LanguageProvider from '@providers/LanguageProvider';
 import Footer from '@components/Footer';
+import CurrentPageProvider from '@providers/CurrentPageProvider';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Portfolio',
@@ -17,9 +18,11 @@ export default function RootLayout({children}: PropsWithChildren) {
     <html lang='fr' className={`${Rubik.variable} ${BricolageGroteske.variable}`}>
       <body className={css({fontFamily: 'rubik'})}>
         <LanguageProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <CurrentPageProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </CurrentPageProvider>
         </LanguageProvider>
       </body>
     </html>
