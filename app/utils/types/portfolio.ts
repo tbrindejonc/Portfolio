@@ -81,3 +81,18 @@ export type ContactTexts = {
   title: AppText;
   link: AppText;
 };
+
+// portfolio pages
+export enum Page {
+  HOME = 'home',
+  EXPERIENCES = 'experiences',
+  SKILLS = 'skills',
+  PROJECTS = 'projects',
+  CONTACT = 'contact',
+}
+
+// current page context exported utilities
+export type CurrentPageContextUtils = {
+  currentPage: number;
+  switchPage: (newPage: Page) => void;
+};
