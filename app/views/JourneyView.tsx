@@ -14,9 +14,12 @@ import {
 } from '@styles/views/JourneyView.styles';
 import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/texts/portfolio/journey/journeyTexts';
 import useLanguage from '@hooks/useLanguage';
+import useCurrentPage from '@hooks/useCurrentPage';
+import {Page} from '@appTypes/portfolio';
 
 export default function JourneyView() {
   const {langage} = useLanguage();
+  const {switchPage} = useCurrentPage();
 
   return (
     <section id={'journey'} className={journeyStyle}>
@@ -44,7 +47,13 @@ export default function JourneyView() {
             className={imageStyle}
           />
         </div>
-        <Link href={'/skills'} className={linkStyle}>
+        <Link
+          href={'/skills'}
+          className={linkStyle}
+          onClick={() => {
+            switchPage(Page.SKILLS);
+          }}
+        >
           {seeButton[langage]}
         </Link>
       </div>

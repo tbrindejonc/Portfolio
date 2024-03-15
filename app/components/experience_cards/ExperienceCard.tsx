@@ -1,6 +1,6 @@
 'use client';
 
-import {Slide} from '@appTypes/portfolio';
+import {Page, Slide} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
 import {css} from '@/styled-system/css';
 import {ReactNode} from 'react';
@@ -15,6 +15,7 @@ import {
   svgStyle,
   titleStyle,
 } from '@styles/components/experience_cards/ExperienceCard.styles';
+import useCurrentPage from '@hooks/useCurrentPage';
 
 type Props = {
   slide: Slide;
@@ -132,9 +133,16 @@ ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: 
  */
 ExperienceCard.SeeMoreButton = function ExperienceCardSeeMoreButton() {
   const {langage} = useLanguage();
+  const {switchPage} = useCurrentPage();
 
   return (
-    <Link href={'/experiences'} className={seeMoreStyle}>
+    <Link
+      href={'/experiences'}
+      className={seeMoreStyle}
+      onClick={() => {
+        switchPage(Page.EXPERIENCES);
+      }}
+    >
       {seeMoreButton[langage]}
     </Link>
   );

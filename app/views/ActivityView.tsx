@@ -6,9 +6,12 @@ import activityTexts from '@texts/portfolio/activity/activityTexts';
 import activities from '@texts/portfolio/activity/activities';
 import Link from 'next/link';
 import Activity from '@components/Activity';
+import useCurrentPage from '@hooks/useCurrentPage';
+import {Page} from '@appTypes/portfolio';
 
 export default function ActivityView() {
   const {langage} = useLanguage();
+  const {switchPage} = useCurrentPage();
 
   return (
     <section id={'activity'} className={activityStyle}>
@@ -28,7 +31,13 @@ export default function ActivityView() {
           <Activity.DiscoveriesIcon />
         </Activity.Heading>
       </Activity>
-      <Link href={'/projects'} className={projectsLinkStyle}>
+      <Link
+        href={'/projects'}
+        className={projectsLinkStyle}
+        onClick={() => {
+          switchPage(Page.PROJECTS);
+        }}
+      >
         {activityTexts.link[langage]}
       </Link>
       <div id={'activity-bg-circle'} className={backgroundCircleStyle}></div>

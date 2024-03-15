@@ -8,10 +8,11 @@ import {
   slideTitleStyle,
   svgStyle,
 } from '@styles/components/carousel/CarouselSlide.styles';
-import {Langage, Slide} from '@appTypes/portfolio';
+import {Langage, Page, Slide} from '@appTypes/portfolio';
 import {css} from '@/styled-system/css';
 import {seeMoreButton} from '@texts/portfolio/experience/experienceSlides';
 import Link from 'next/link';
+import useCurrentPage from '@hooks/useCurrentPage';
 
 type Props = {
   slide: Slide;
@@ -21,6 +22,8 @@ type Props = {
 };
 
 export default function CarouselSlide({slide, index, variant, langage}: Props) {
+  const {switchPage} = useCurrentPage();
+
   return (
     <div id={`slide-${index}`} className={`${slideStyle} ${slidesStyles[index]}`}>
       <h2 className={slideTitleStyle}>{slide.title[langage]}</h2>
@@ -69,7 +72,13 @@ export default function CarouselSlide({slide, index, variant, langage}: Props) {
         </span>
         {slide.content.lastPart[langage]}
       </p>
-      <Link href={'/experiences'} className={`${seeMoreStyle} ${slidesVariants({showMoreButton: variant})}`}>
+      <Link
+        href={'/experiences'}
+        className={`${seeMoreStyle} ${slidesVariants({showMoreButton: variant})}`}
+        onClick={() => {
+          switchPage(Page.EXPERIENCES);
+        }}
+      >
         {seeMoreButton[langage]}
       </Link>
     </div>
