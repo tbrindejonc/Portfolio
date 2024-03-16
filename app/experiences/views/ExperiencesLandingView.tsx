@@ -35,8 +35,6 @@ export default function ExperiencesLandingView() {
             <h2>{landingTexts.link[langage]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='24'
-              height='24'
               viewBox='0 0 24 24'
               fill='none'
               strokeLinecap='round'
