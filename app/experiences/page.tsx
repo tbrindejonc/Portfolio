@@ -1,5 +1,6 @@
-import ExperiencesLandingView from '@app/experiences/views/ExperiencesLandingView';
+import ExperiencesLandingView from './views/ExperiencesLandingView';
 import {Metadata} from 'next';
+import ExperiencesView from './views/ExperiencesView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Experiences',
@@ -10,6 +11,7 @@ export default function Page() {
   return (
     <main>
       <ExperiencesLandingView />
+      <ExperiencesView />
     </main>
   );
 }
