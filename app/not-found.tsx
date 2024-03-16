@@ -1,13 +1,10 @@
 import {Metadata} from 'next';
+import NotFoundView from '@views/NotFoundView';
 
 export const metadata: Metadata = {
-  title: 'Timeuh - Not Found',
+  title: 'Timeuh - Page introuvable',
 };
 
 export default function NotFound() {
-  return (
-    <main>
-      <h1>Not Found</h1>
-    </main>
-  );
+  return <NotFoundView />;
 }
