@@ -17,6 +17,7 @@ const notFoundStyle = vstack({
   h: {
     base: '92.3vh',
     md: '92vh',
+    xl: '94.8vh',
   },
   justifyContent: 'center',
   transition: 'background-color 0.5s',
