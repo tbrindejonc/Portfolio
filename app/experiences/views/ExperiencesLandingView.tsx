@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -8,12 +10,16 @@ import {
   svgStyle,
   textContainerStyle,
   titleStyle,
-} from '@app/experiences/styles/ExperienceLandingView.styles';
+} from '../styles/ExperienceLandingView.styles';
+import landingTexts from '../texts/landingTexts';
+import useLanguage from '@hooks/useLanguage';
 
 export default function ExperiencesLandingView() {
+  const {langage} = useLanguage();
+
   return (
     <section id={'experiences-landing'} className={experiencesLandingStyle}>
-      <h1 className={titleStyle}>Mes Experiences</h1>
+      <h1 className={titleStyle}>{landingTexts.title[langage]}</h1>
       <div className={textContainerStyle}>
         <Image
           src={'/images/portfolio/experiences/costume.jpg'}
@@ -24,12 +30,9 @@ export default function ExperiencesLandingView() {
           className={imageStyle}
         />
         <div className={textContainerStyle}>
-          <p className={paragraphStyle}>
-            Durant mes études et mon temps personnel de transition (les vacances scolaires en l’occurrence), j’ai pu
-            accumuler de l’expérience au travail. Vous pouvez voir ces dernières ci-dessous.
-          </p>
+          <p className={paragraphStyle}>{landingTexts.explanations[langage]}</p>
           <Link href={'#experiences'} className={linkToNextStyle}>
-            <h2>Découvrir</h2>
+            <h2>{landingTexts.link[langage]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='24'
