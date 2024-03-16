@@ -6,6 +6,7 @@ import Navbar from '@components/navbar/Navbar';
 import {css} from '@/styled-system/css';
 import LanguageProvider from '@providers/LanguageProvider';
 import Footer from '@components/Footer';
+import QueryProvider from '@providers/QueryProvider';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Portfolio',
@@ -18,7 +19,7 @@ export default function RootLayout({children}: PropsWithChildren) {
       <body className={css({fontFamily: 'rubik'})}>
         <LanguageProvider>
           <Navbar />
-          {children}
+          <QueryProvider>{children}</QueryProvider>
           <Footer />
         </LanguageProvider>
       </body>
