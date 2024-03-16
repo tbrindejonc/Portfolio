@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   experiencesLandingStyle,
+  globalWrapperStyle,
   imageStyle,
   linkToNextStyle,
   paragraphStyle,
@@ -20,7 +21,7 @@ export default function ExperiencesLandingView() {
   return (
     <section id={'experiences-landing'} className={experiencesLandingStyle}>
       <h1 className={titleStyle}>{landingTexts.title[langage]}</h1>
-      <div className={textContainerStyle}>
+      <div className={globalWrapperStyle}>
         <Image
           src={'/images/portfolio/experiences/costume.jpg'}
           alt={'me'}
