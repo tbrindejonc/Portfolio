@@ -13,13 +13,36 @@ const experiencesLandingStyle = vstack({
   gap: {
     base: 8,
     md: 12,
+    xl: 16,
   },
   h: 'screen',
   justifyContent: 'center',
   transition: 'all 0.5s',
 });
 
+const globalWrapperStyle = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
+  gap: {
+    base: 8,
+    md: 12,
+  },
+  justifyContent: 'center',
+  px: {
+    base: 3,
+    md: 8,
+    xl: 12,
+  },
+});
+
 const textContainerStyle = vstack({
+  alignItems: {
+    xl: 'end',
+  },
   gap: {
     base: 8,
     md: 12,
@@ -36,13 +59,18 @@ const imageStyle: string = css({
   height: {
     base: '250px',
     md: '350px',
+    xl: '500px',
   },
   objectFit: 'cover',
   shadow: {
     base: '4px 4px 5px 2px token(colors.p_blue.dark_25)',
     _dark: '4px 4px 5px 2px token(colors.p_blue.light_25)',
   },
-  width: '50%',
+  width: {
+    base: '80%',
+    md: '50%',
+    xl: '70%',
+  },
 });
 
 const titleStyle = css({
@@ -50,6 +78,7 @@ const titleStyle = css({
   fontSize: {
     base: '4xl',
     md: '6xl',
+    xl: '7xl',
   },
   fontWeight: 'bold',
 });
@@ -62,8 +91,12 @@ const paragraphStyle = css({
   fontSize: {
     base: '1.4em',
     md: '4xl',
+    xl: '5xl',
   },
-  textAlign: 'center',
+  textAlign: {
+    base: 'center',
+    xl: 'right',
+  },
 });
 
 const svgStyle = css({
@@ -112,4 +145,13 @@ const linkToNextStyle = hstack({
   },
 });
 
-export {experiencesLandingStyle, textContainerStyle, imageStyle, titleStyle, paragraphStyle, svgStyle, linkToNextStyle};
+export {
+  experiencesLandingStyle,
+  textContainerStyle,
+  imageStyle,
+  titleStyle,
+  paragraphStyle,
+  svgStyle,
+  linkToNextStyle,
+  globalWrapperStyle,
+};
