@@ -41,6 +41,7 @@ const globalWrapperStyle = css({
 
 const textContainerStyle = vstack({
   alignItems: {
+    base: 'center',
     xl: 'end',
   },
   gap: {
