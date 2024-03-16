@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: PropsWithChildren) {
   return (
     <html lang='fr' className={`${Rubik.variable} ${BricolageGroteske.variable}`}>
-      <body className={css({fontFamily: 'rubik'})}>
+      <body className={css({fontFamily: 'rubik', scrollBehavior: 'smooth'})}>
         <LanguageProvider>
           <Navbar />
           <QueryProvider>{children}</QueryProvider>
