@@ -87,3 +87,10 @@ export type NotFoundTexts = {
   title: AppText;
   link: AppText;
 };
+
+// texts for experience page's landing section
+export type ExperienceLandingTexts = {
+  title: AppText;
+  explanations: AppText;
+  link: AppText;
+};
