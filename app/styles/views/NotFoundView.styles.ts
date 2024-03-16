@@ -10,15 +10,24 @@ const notFoundStyle = vstack({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
-  gap: 12,
-  h: '92.3vh',
+  gap: {
+    base: 12,
+    md: 20,
+  },
+  h: {
+    base: '92.3vh',
+    md: '92vh',
+  },
   justifyContent: 'center',
   transition: 'background-color 0.5s',
 });
 
 const titleStyle = css({
   fontFamily: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
   fontWeight: 'bold',
   textAlign: 'center',
 });
@@ -33,8 +42,14 @@ const returnToHomeStyle = css({
     base: 'neutral.light',
     _dark: 'neutral.dark',
   },
-  fontSize: 'lg',
-  p: 3,
+  fontSize: {
+    base: 'lg',
+    md: '2xl',
+  },
+  p: {
+    base: 3,
+    md: 5,
+  },
   textAlign: 'center',
 });
 
