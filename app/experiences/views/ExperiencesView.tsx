@@ -10,9 +10,9 @@ export default function ExperiencesView() {
   }
 
   return (
-    <div>
+    <section id={'experiences-display'}>
       <h1>Experiences</h1>
       <p>Work experiences</p>
-    </div>
+    </section>
   );
 }

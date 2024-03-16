@@ -32,7 +32,7 @@ export default function ExperiencesLandingView() {
         />
         <div className={textContainerStyle}>
           <p className={paragraphStyle}>{landingTexts.explanations[langage]}</p>
-          <Link href={'#experiences'} className={linkToNextStyle}>
+          <Link href={'#experiences-display'} className={linkToNextStyle}>
             <h2>{landingTexts.link[langage]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
