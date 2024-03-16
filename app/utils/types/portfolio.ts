@@ -81,3 +81,9 @@ export type ContactTexts = {
   title: AppText;
   link: AppText;
 };
+
+// title and link texts for not found page
+export type NotFoundTexts = {
+  title: AppText;
+  link: AppText;
+};
