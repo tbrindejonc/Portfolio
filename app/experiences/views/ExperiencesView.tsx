@@ -12,7 +12,7 @@ import {
   rainbowLooperStyle,
   secondExpStyle,
   topLooperStyle,
-} from '../styles/ExperiencesView.styles';
+} from '../styles/views/ExperiencesView.styles';
 
 export default function ExperiencesView() {
   const {data, isLoading} = useExperiences();

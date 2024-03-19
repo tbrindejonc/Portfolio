@@ -11,7 +11,7 @@ import {
   svgStyle,
   textContainerStyle,
   titleStyle,
-} from '../styles/ExperienceLandingView.styles';
+} from '../styles/views/ExperienceLandingView.styles';
 import landingTexts from '../texts/landingTexts';
 import useLanguage from '@hooks/useLanguage';
 
