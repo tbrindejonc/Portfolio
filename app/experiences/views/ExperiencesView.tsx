@@ -50,10 +50,16 @@ export default function ExperiencesView() {
   const baseLooperStyle: string = css({
     blur: '5px',
     filter: 'auto',
-    height: '150vw',
+    height: {
+      base: '150vw',
+      md: '100vw',
+    },
     objectFit: 'cover',
     position: 'absolute',
-    width: '150vw',
+    width: {
+      base: '150vw',
+      md: '100vw',
+    },
   });
 
   const topLooperStyle: string = css({
@@ -69,10 +75,16 @@ export default function ExperiencesView() {
   const rainbowLooperStyle: string = css({
     blur: '10px',
     filter: 'auto',
-    height: '300vw',
+    height: {
+      base: '300vw',
+      md: '150vw',
+    },
     objectFit: 'cover',
     position: 'absolute',
-    width: '300vw',
+    width: {
+      base: '300vw',
+      md: '150vw',
+    },
   });
 
   const otherBottomLooperStyle: string = css({
