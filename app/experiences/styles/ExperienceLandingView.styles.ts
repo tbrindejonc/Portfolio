@@ -105,11 +105,16 @@ const svgStyle = css({
     base: 7,
     md: 12,
   },
+  rotate: {
+    base: '-90deg',
+    _groupHover: '0deg',
+  },
   stroke: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
   },
   strokeWidth: 4,
+  transition: 'all 0.3s ease-in-out',
   w: {
     base: 7,
     md: 12,
