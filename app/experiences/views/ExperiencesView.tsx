@@ -53,23 +53,37 @@ export default function ExperiencesView() {
     height: {
       base: '150vw',
       md: '100vw',
+      xl: '50vw',
     },
     objectFit: 'cover',
     position: 'absolute',
     width: {
       base: '150vw',
       md: '100vw',
+      xl: '50vw',
     },
   });
 
   const topLooperStyle: string = css({
-    top: '-15vh',
-    right: '-25vw',
+    top: {
+      base: '-15vh',
+      xl: '-25vh',
+    },
+    right: {
+      base: '-25vw',
+      xl: '-10vw',
+    },
   });
 
   const bottomLooperStyle: string = css({
-    bottom: '-15vh',
-    left: '-25vw',
+    bottom: {
+      base: '-15vh',
+      xl: '-25vh',
+    },
+    left: {
+      base: '-25vw',
+      xl: '-10vw',
+    },
   });
 
   const rainbowLooperStyle: string = css({
@@ -78,23 +92,37 @@ export default function ExperiencesView() {
     height: {
       base: '300vw',
       md: '150vw',
+      xl: '80vw',
     },
     objectFit: 'cover',
     position: 'absolute',
     width: {
       base: '300vw',
       md: '150vw',
+      xl: '80vw',
     },
   });
 
   const otherBottomLooperStyle: string = css({
-    bottom: '-15vh',
-    right: '-25vw',
+    bottom: {
+      base: '-15vh',
+      xl: '-25vh',
+    },
+    right: {
+      base: '-25vw',
+      xl: '-10vw',
+    },
   });
 
   const otherTopLooperStyle: string = css({
-    top: '-15vh',
-    left: '-25vw',
+    top: {
+      base: '-15vh',
+      xl: '-25vh',
+    },
+    left: {
+      base: '-25vw',
+      xl: '-10vw',
+    },
   });
 
   return (
