@@ -145,10 +145,14 @@ const linkToNextStyle = hstack({
     base: 2,
     md: 4,
   },
+  shadow: {
+    _hover: '0 5px 8px 2px token(colors.p_blue.main)',
+  },
   w: {
     base: '4/5',
     md: '1/2',
   },
+  transition: 'all 0.3s ease-in-out',
 });
 
 export {
