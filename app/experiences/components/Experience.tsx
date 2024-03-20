@@ -3,6 +3,8 @@ import React, {ReactNode} from 'react';
 import {Language} from '@appTypes/portfolio';
 import {Technology} from '@prisma/client';
 import Image from 'next/image';
+import {hstack, vstack} from '@/styled-system/patterns';
+import {css} from '@/styled-system/css';
 
 type Props = {
   experience: CompleteExperienceFromApi;
@@ -14,12 +16,171 @@ type CompositionProps = {
   language: Language;
 };
 
+const containerStyle = vstack({
+  gap: {
+    base: 6,
+    md: 8,
+    xl: 6,
+  },
+});
+
+const baseLoadingStyle = css({
+  bgColor: {
+    base: 'p_blue.800/25',
+    _dark: 'p_blue.200/25',
+  },
+  borderRadius: 'md',
+  w: 'full',
+  animation: 'pulse',
+});
+
+const titleLoadingStyle = css({
+  h: {
+    base: 6,
+    md: 14,
+    xl: 10,
+  },
+});
+
+const paragraphLoadingStyle = css({
+  h: {
+    base: 16,
+    md: 32,
+    xl: 24,
+  },
+});
+
+const experienceStyle = css({
+  alignItems: 'center',
+  bgColor: {
+    base: 'neutral.light/50',
+    _dark: 'neutral.dark/50',
+  },
+  backdropBlur: {
+    base: '10px',
+    _dark: '20px',
+  },
+  backdropFilter: 'auto',
+  borderRadius: '2xl',
+  display: 'flex',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
+  gap: {
+    base: 8,
+    md: 12,
+    xl: 8,
+  },
+  h: '80vh',
+  justifyContent: 'center',
+  p: {
+    base: 6,
+    md: 8,
+  },
+  w: {
+    base: '90vw',
+    xl: '80vw',
+  },
+  transition: 'all 0.5s',
+});
+
+const experienceContainerStyle = css({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: {
+    base: 12,
+    md: 20,
+    xl: 12,
+  },
+  h: 'fit',
+  w: 'full',
+});
+
+const loadingTechsStyle = hstack({
+  gap: 4,
+});
+
+const loadingTechItemStyle = css({
+  animation: 'pulse',
+  bgColor: {
+    base: 'p_blue.800/25',
+    _dark: 'p_blue.200/25',
+  },
+  borderRadius: 'md',
+  h: {
+    base: 14,
+    md: 20,
+  },
+  w: {
+    base: 14,
+    md: 20,
+  },
+});
+
+const loadingImageStyle = css({
+  animation: 'pulse',
+  bgColor: {
+    base: 'p_blue.800/25',
+    _dark: 'p_blue.200/25',
+  },
+  borderRadius: 'md',
+  h: {
+    base: 24,
+    md: 40,
+    xl: 72,
+  },
+  w: {
+    base: '2/5',
+    xl: '3/5',
+  },
+});
+
+const logoAndTitleStyle = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: {
+    base: 'row',
+    xl: 'column',
+  },
+  gap: {
+    base: 4,
+    md: 8,
+  },
+  justifyContent: {
+    base: 'flex-start',
+    xl: 'center',
+  },
+  w: 'full',
+});
+
+const companyTitleStyle = css({
+  animation: 'pulse',
+  bgColor: {
+    base: 'p_blue.800/25',
+    _dark: 'p_blue.200/25',
+  },
+  borderRadius: 'md',
+  h: {
+    base: 16,
+    md: 24,
+  },
+  w: {
+    base: '3/5',
+    xl: '2/5',
+  },
+});
+
 export default function Experience({experience, children}: Props) {
-  return <div id={`experience-${experience.id}`}>{children}</div>;
+  return (
+    <div id={`experience-${experience.id}`} className={experienceStyle}>
+      {children}
+    </div>
+  );
 }
 
 Experience.TextContainer = function ExperienceTextContainer({children}: {children: ReactNode}) {
-  return <div>{children}</div>;
+  return <div className={`experience-container ${experienceContainerStyle}`}>{children}</div>;
 };
 
 Experience.Company = function ExperienceCompany({experience, language}: CompositionProps) {
@@ -33,9 +194,9 @@ Experience.Company = function ExperienceCompany({experience, language}: Composit
 
 Experience.LoadingCompany = function ExperienceLoadingCompany() {
   return (
-    <div>
-      <h2>Loading...</h2>
-      <p>Loading...</p>
+    <div className={`loading-company ${containerStyle}`}>
+      <h2 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
+      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
     </div>
   );
 };
@@ -51,9 +212,9 @@ Experience.Job = function ExperienceJob({experience, language}: CompositionProps
 
 Experience.LoadingJob = function ExperienceLoadingJob() {
   return (
-    <div>
-      <h3>Loading...</h3>
-      <p>Loading...</p>
+    <div className={`loading-job ${containerStyle}`}>
+      <h3 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
+      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
     </div>
   );
 };
@@ -70,12 +231,12 @@ Experience.Technologies = function ExperienceTechnologies({experience, language}
 };
 
 Experience.LoadingTechnologies = function ExperienceLoadingTechnologies() {
-  const fakeTechs = [0, 1, 2, 3, 4, 5];
+  const fakeTechs: number[] = [1, 2, 3, 4, 5];
 
   return (
-    <div>
+    <div className={`loading-techs ${loadingTechsStyle}`}>
       {fakeTechs.map((_: number, index: number) => {
-        return <p key={index}>Loading...</p>;
+        return <div key={index} className={loadingTechItemStyle} />;
       })}
     </div>
   );
@@ -94,9 +255,9 @@ Experience.LogoAndPeriod = function ExperienceLogoAndPeriod({experience, languag
 
 Experience.LoadingLogoAndPeriod = function ExperienceLoadingLogoAndPeriod() {
   return (
-    <div>
-      <div />
-      <h3>Loading...</h3>
+    <div className={logoAndTitleStyle}>
+      <div className={loadingImageStyle} />
+      <h3 className={companyTitleStyle} />
     </div>
   );
 };
