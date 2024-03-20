@@ -33,7 +33,6 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${baseLooperStyle} ${topLooperStyle}`}
         />
-        <ExperienceFactory experience={data.items[0]} isLoading={isLoading} />
         <Image
           src={'/images/portfolio/experiences/looper_purple.png'}
           alt={'me'}
@@ -42,6 +41,7 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${baseLooperStyle} ${bottomLooperStyle}`}
         />
+        <ExperienceFactory experience={data.items[0]} isLoading={isLoading} />
       </div>
       <div id={'second-exp'} className={`${baseContainerStyle} ${secondExpStyle}`}>
         <Image
@@ -63,7 +63,6 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${baseLooperStyle} ${otherTopLooperStyle}`}
         />
-        <ExperienceFactory experience={data.items[2]} isLoading={isLoading} />
         <Image
           src={'/images/portfolio/experiences/looper_purple.png'}
           alt={'me'}
@@ -72,6 +71,7 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${baseLooperStyle} ${otherBottomLooperStyle}`}
         />
+        <ExperienceFactory experience={data.items[2]} isLoading={isLoading} />
       </div>
     </section>
   );
