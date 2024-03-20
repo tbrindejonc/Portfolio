@@ -14,7 +14,7 @@ import {
 import roleTitle from '@texts/portfolio/landing/roleTitle';
 
 export default function LandingView() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <section id={'landing'} className={sectionStyle}>
@@ -32,7 +32,7 @@ export default function LandingView() {
         <h1 className={nameStyle}>Timothée Brindejonc</h1>
       </div>
       <div className={circleStyle}>
-        <h2 className={circleTitleStyle}>{roleTitle[langage]}</h2>
+        <h2 className={circleTitleStyle}>{roleTitle[language]}</h2>
       </div>
     </section>
   );

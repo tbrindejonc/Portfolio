@@ -16,11 +16,11 @@ import landingTexts from '../texts/landingTexts';
 import useLanguage from '@hooks/useLanguage';
 
 export default function ExperiencesLandingView() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <section id={'experiences-landing'} className={experiencesLandingStyle}>
-      <h1 className={titleStyle}>{landingTexts.title[langage]}</h1>
+      <h1 className={titleStyle}>{landingTexts.title[language]}</h1>
       <div className={globalWrapperStyle}>
         <Image
           src={'/images/portfolio/experiences/costume.jpg'}
@@ -31,9 +31,9 @@ export default function ExperiencesLandingView() {
           className={imageStyle}
         />
         <div className={textContainerStyle}>
-          <p className={paragraphStyle}>{landingTexts.explanations[langage]}</p>
+          <p className={paragraphStyle}>{landingTexts.explanations[language]}</p>
           <Link href={'#experiences-display'} className={`${linkToNextStyle} group`}>
-            <h2>{landingTexts.link[langage]}</h2>
+            <h2>{landingTexts.link[language]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'

@@ -4,36 +4,36 @@ import {AppLink} from '@appTypes/portfolio';
 const appLinks: AppLink[] = [
   {
     title: {
-      en: 'Home',
-      fr: 'Accueil',
+      english: 'Home',
+      french: 'Accueil',
     },
     href: '/',
   },
   {
     title: {
-      en: 'Experiences',
-      fr: 'Expériences',
+      english: 'Experiences',
+      french: 'Expériences',
     },
     href: '/experiences',
   },
   {
     title: {
-      en: 'Skills',
-      fr: 'Compétences',
+      english: 'Skills',
+      french: 'Compétences',
     },
     href: '/skills',
   },
   {
     title: {
-      en: 'Projects',
-      fr: 'Projets',
+      english: 'Projects',
+      french: 'Projets',
     },
     href: '/projects',
   },
   {
     title: {
-      en: 'Contact',
-      fr: 'Contact',
+      english: 'Contact',
+      french: 'Contact',
     },
     href: '/contact',
   },

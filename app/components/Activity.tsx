@@ -35,16 +35,16 @@ type HeadingProps = {
  * @param {'game' | 'dev' | 'discoveries'} variant the current activity variant
  */
 export default function Activity({activity, children, variant}: Props) {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <div className={containerStyle}>
       {children}
       <p className={paragraphStyle}>
-        {activity.description.firstPart[langage]}
-        <span className={activityVariants({firstSpan: variant})}>{activity.description.firstSpan[langage]}</span>
-        {activity.description.secondPart[langage]}
-        <span className={activityVariants({secondSpan: variant})}>{activity.description.secondSpan[langage]}</span>
+        {activity.description.firstPart[language]}
+        <span className={activityVariants({firstSpan: variant})}>{activity.description.firstSpan[language]}</span>
+        {activity.description.secondPart[language]}
+        <span className={activityVariants({secondSpan: variant})}>{activity.description.secondSpan[language]}</span>
       </p>
     </div>
   );
@@ -58,13 +58,13 @@ export default function Activity({activity, children, variant}: Props) {
  * @param {'game' | 'dev' | 'discoveries'} variant the current activity variant
  */
 Activity.Heading = function ActivityHeading({children, title, variant}: HeadingProps) {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <div className={divHeadingStyle}>
       {children}
       <div className={`${dividerStyle} ${activityVariants({separator: variant})}`}></div>
-      <h3 className={activityVariants({title: variant})}>{title[langage]}</h3>
+      <h3 className={activityVariants({title: variant})}>{title[language]}</h3>
     </div>
   );
 };

@@ -4,32 +4,32 @@ import {FooterLink} from '@appTypes/portfolio';
 const footerLinks: FooterLink[] = [
   {
     title: {
-      en: 'Contact',
-      fr: 'Contact',
+      english: 'Contact',
+      french: 'Contact',
     },
     span: false,
     href: '/contact',
   },
   {
     title: {
-      en: 'Cookie policy',
-      fr: 'Politique de cookies',
+      english: 'Cookie policy',
+      french: 'Politique de cookies',
     },
     span: false,
     href: '/legal#cookies',
   },
   {
     title: {
-      en: 'Legal notice',
-      fr: 'Mentions légales',
+      english: 'Legal notice',
+      french: 'Mentions légales',
     },
     span: false,
     href: '/legal',
   },
   {
     title: {
-      en: 'Copyright ',
-      fr: 'Copyright ',
+      english: 'Copyright ',
+      french: 'Copyright ',
     },
     span: {
       text: 'Timeuh',
@@ -39,16 +39,16 @@ const footerLinks: FooterLink[] = [
   },
   {
     title: {
-      en: 'Photo credits',
-      fr: 'Crédits photos',
+      english: 'Photo credits',
+      french: 'Crédits photos',
     },
     span: false,
     href: '/legal#photos',
   },
   {
     title: {
-      en: 'Icons by ',
-      fr: 'Icônes par ',
+      english: 'Icons by ',
+      french: 'Icônes par ',
     },
     span: {
       text: 'Lucide',

@@ -7,7 +7,7 @@ import appLinks from '@texts/portfolio/navbar/appLinks';
 import useCurrentLocation from '@hooks/useCurrentLocation';
 
 export default function NavLinks() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
   const currentPage: number = useCurrentLocation();
 
   return (
@@ -16,7 +16,7 @@ export default function NavLinks() {
         return (
           <Link key={index} href={link.href} className={getLinkStyle(currentPage, index)}>
             <div className={getSelectedLinkStyle(currentPage, index)}></div>
-            {link.title[langage]}
+            {link.title[language]}
           </Link>
         );
       })}

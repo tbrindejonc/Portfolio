@@ -9,7 +9,7 @@ import useLanguage from '@hooks/useLanguage';
 export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [slides, setSlides] = useState<Slide[]>(experienceSlides);
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   // in milliseconds
   const transitionDuration = 500;
@@ -63,7 +63,7 @@ export default function Carousel() {
     <>
       <div id={'carousel'} className={carouselStyle}>
         {slides.map((slide: Slide, index: number) => {
-          return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} langage={langage} />;
+          return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} language={language} />;
         })}
       </div>
       <CarouselControls changeSlide={slide} activeSlide={activeSlide} />

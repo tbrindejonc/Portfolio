@@ -8,7 +8,7 @@ import {
   slideTitleStyle,
   svgStyle,
 } from '@styles/components/carousel/CarouselSlide.styles';
-import {Langage, Slide} from '@appTypes/portfolio';
+import {Language, Slide} from '@appTypes/portfolio';
 import {css} from '@/styled-system/css';
 import {seeMoreButton} from '@texts/portfolio/experience/experienceSlides';
 import Link from 'next/link';
@@ -17,13 +17,13 @@ type Props = {
   slide: Slide;
   index: number;
   variant: 'first' | 'second' | 'third';
-  langage: Langage;
+  language: Language;
 };
 
-export default function CarouselSlide({slide, index, variant, langage}: Props) {
+export default function CarouselSlide({slide, index, variant, language}: Props) {
   return (
     <div id={`slide-${index}`} className={`${slideStyle} ${slidesStyles[index]}`}>
-      <h2 className={slideTitleStyle}>{slide.title[langage]}</h2>
+      <h2 className={slideTitleStyle}>{slide.title[language]}</h2>
       <div className={`${separatorStyle} ${slidesVariants({separator: variant})}`}></div>
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -59,18 +59,18 @@ export default function CarouselSlide({slide, index, variant, langage}: Props) {
         <path d='m10 8 4 4-4 4' />
       </svg>
       <p className={paragraphStyle}>
-        {slide.content.firstPart[langage]}{' '}
+        {slide.content.firstPart[language]}{' '}
         <span className={`${css({fontWeight: 'bold'})} ${slidesVariants({firstSpan: variant})}`}>
-          {slide.content.firstSpan[langage]}
+          {slide.content.firstSpan[language]}
         </span>
-        {slide.content.secondPart[langage]}{' '}
+        {slide.content.secondPart[language]}{' '}
         <span className={`${css({fontWeight: 'bold'})} ${slidesVariants({secondSpan: variant})}`}>
-          {slide.content.secondSpan[langage]}
+          {slide.content.secondSpan[language]}
         </span>
-        {slide.content.lastPart[langage]}
+        {slide.content.lastPart[language]}
       </p>
       <Link href={'/experiences'} className={`${seeMoreStyle} ${slidesVariants({showMoreButton: variant})}`}>
-        {seeMoreButton[langage]}
+        {seeMoreButton[language]}
       </Link>
     </div>
   );

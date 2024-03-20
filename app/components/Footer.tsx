@@ -7,14 +7,14 @@ import {footerStyle, getSpanStyle, linkStyle} from '@styles/components/Footer.st
 import footerLinks from '@texts/portfolio/footer/footerLinks';
 
 export default function Footer() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <footer className={footerStyle}>
       {footerLinks.map((link: FooterLink, index: number) => {
         return (
           <Link key={index} href={link.href} className={linkStyle}>
-            {link.title[langage]}
+            {link.title[language]}
             <span className={getSpanStyle(link)}>{!link.span ? '' : link.span.text}</span>
           </Link>
         );

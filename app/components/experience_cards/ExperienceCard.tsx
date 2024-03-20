@@ -35,11 +35,11 @@ type ParagraphProps = {
  * @param {'first' | 'second' | 'third'} cardOrder the order of current card in the list
  */
 export default function ExperienceCard({slide, children, cardOrder}: Props) {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <div className={cardStyle}>
-      <h2 className={titleStyle}>{slide.title[langage]}</h2>
+      <h2 className={titleStyle}>{slide.title[language]}</h2>
       <div className={`${separatorStyle} ${cardVariants({separator: cardOrder})}`}></div>
       {children}
     </div>
@@ -110,19 +110,19 @@ ExperienceCard.MoreIcon = function ExperienceCardMoreIcon() {
  * @param {'first' | 'second' | 'third'} cardOrder the order of current card in the list
  */
 ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: ParagraphProps) {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <p className={paragraphStyle}>
-      {slide.content.firstPart[langage]}{' '}
+      {slide.content.firstPart[language]}{' '}
       <span className={`${css({fontWeight: 'bold'})} ${cardVariants({firstSpan: cardOrder})}`}>
-        {slide.content.firstSpan[langage]}
+        {slide.content.firstSpan[language]}
       </span>
-      {slide.content.secondPart[langage]}{' '}
+      {slide.content.secondPart[language]}{' '}
       <span className={`${css({fontWeight: 'bold'})} ${cardVariants({secondSpan: cardOrder})}`}>
-        {slide.content.secondSpan[langage]}
+        {slide.content.secondSpan[language]}
       </span>
-      {slide.content.lastPart[langage]}
+      {slide.content.lastPart[language]}
     </p>
   );
 };
@@ -131,11 +131,11 @@ ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: 
  * Button (link) to see more experiences, optional in card
  */
 ExperienceCard.SeeMoreButton = function ExperienceCardSeeMoreButton() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <Link href={'/experiences'} className={seeMoreStyle}>
-      {seeMoreButton[langage]}
+      {seeMoreButton[language]}
     </Link>
   );
 };

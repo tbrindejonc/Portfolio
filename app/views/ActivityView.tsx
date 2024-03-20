@@ -8,11 +8,11 @@ import Link from 'next/link';
 import Activity from '@components/Activity';
 
 export default function ActivityView() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <section id={'activity'} className={activityStyle}>
-      <h2 className={titleStyle}>{activityTexts.title[langage]}</h2>
+      <h2 className={titleStyle}>{activityTexts.title[language]}</h2>
       <Activity activity={activities[0]} variant={'game'}>
         <Activity.Heading title={activities[0].title} variant={'game'}>
           <Activity.GameIcon />
@@ -29,7 +29,7 @@ export default function ActivityView() {
         </Activity.Heading>
       </Activity>
       <Link href={'/projects'} className={projectsLinkStyle}>
-        {activityTexts.link[langage]}
+        {activityTexts.link[language]}
       </Link>
       <div id={'activity-bg-circle'} className={backgroundCircleStyle}></div>
     </section>

@@ -1,19 +1,19 @@
 // app theme
 export type Theme = 'light' | 'dark';
 
-// app langage
-export type Langage = 'fr' | 'en';
-
 // base app text
 export type AppText = {
-  en: string;
-  fr: string;
+  english: string;
+  french: string;
 };
 
+// type for app texts language
+export type Language = 'english' | 'french';
+
 // langage context exported utilities
-export type LangageContextUtils = {
-  langage: Langage;
-  setLangage: (langage: Langage) => void;
+export type LanguageContextUtils = {
+  language: Language;
+  setLanguage: (langage: Language) => void;
 };
 
 // app links for nav menu

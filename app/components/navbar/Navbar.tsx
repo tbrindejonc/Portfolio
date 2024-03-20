@@ -1,6 +1,6 @@
 import MenuButton from '@components/navbar/buttons/MenuButton';
 import ThemeButton from '@components/navbar/buttons/ThemeButton';
-import LangageButton from '@components/navbar/buttons/LangageButton';
+import LanguageButton from '@components/navbar/buttons/LanguageButton';
 import NavLinks from '@components/navbar/NavLinks';
 import {divStyle, nameStyle, navStyle} from '@styles/components/navbar/Navbar.styles';
 
@@ -12,7 +12,7 @@ export default function Navbar() {
       <NavLinks />
       <div className={divStyle}>
         <ThemeButton />
-        <LangageButton />
+        <LanguageButton />
       </div>
     </nav>
   );

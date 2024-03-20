@@ -15,7 +15,7 @@ import useLanguage from '@hooks/useLanguage';
 import titleAndLink from '@texts/portfolio/contact/titleAndLink';
 
 export default function ContactView() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <section id={'contact'} className={contactStyle}>
@@ -30,9 +30,9 @@ export default function ContactView() {
         />
       </div>
       <div className={titleAndLinkContainerStyle}>
-        <h2 className={titleStyle}>{titleAndLink.title[langage]}</h2>
+        <h2 className={titleStyle}>{titleAndLink.title[language]}</h2>
         <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
-          <div className={contactLinkStyle}>{titleAndLink.link[langage]}</div>
+          <div className={contactLinkStyle}>{titleAndLink.link[language]}</div>
         </Link>
       </div>
     </section>

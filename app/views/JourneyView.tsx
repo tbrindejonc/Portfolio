@@ -16,14 +16,14 @@ import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/tex
 import useLanguage from '@hooks/useLanguage';
 
 export default function JourneyView() {
-  const {langage} = useLanguage();
+  const {language} = useLanguage();
 
   return (
     <section id={'journey'} className={journeyStyle}>
       <div className={contentWrapperStyle}>
-        <h1 className={journeyTitleStyle}>{journeyTitle[langage]}</h1>
+        <h1 className={journeyTitleStyle}>{journeyTitle[language]}</h1>
         <div className={textSectionStyle}>
-          <p className={paragraphStyle}>{firstParagraph[langage]}</p>
+          <p className={paragraphStyle}>{firstParagraph[language]}</p>
           <Image
             src={'/images/portfolio/journey/scholarship.jpg'}
             alt={'me'}
@@ -34,7 +34,7 @@ export default function JourneyView() {
           />
         </div>
         <div className={reversedTextSectionStyle}>
-          <p className={paragraphStyle}>{secondParagraph[langage]}</p>
+          <p className={paragraphStyle}>{secondParagraph[language]}</p>
           <Image
             src={'/images/portfolio/journey/webdev.jpg'}
             alt={'me'}
@@ -45,7 +45,7 @@ export default function JourneyView() {
           />
         </div>
         <Link href={'/skills'} className={linkStyle}>
-          {seeButton[langage]}
+          {seeButton[language]}
         </Link>
       </div>
     </section>
