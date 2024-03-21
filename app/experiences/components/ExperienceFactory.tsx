@@ -13,11 +13,11 @@ export default function ExperienceFactory({experience, isLoading}: Props) {
   if (isLoading) {
     return (
       <Experience experience={experience}>
-        <Experience.TextContainer>
+        <Experience.LoadingContainer>
           <Experience.LoadingCompany />
           <Experience.LoadingJob />
           <Experience.LoadingTechnologies />
-        </Experience.TextContainer>
+        </Experience.LoadingContainer>
         <Experience.LoadingLogoAndPeriod />
       </Experience>
     );
