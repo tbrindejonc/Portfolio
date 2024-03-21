@@ -55,7 +55,7 @@ const experienceStyle = css({
   gap: {
     base: 8,
     md: 12,
-    xl: 8,
+    xl: 14,
   },
   h: '80vh',
   overflow: 'auto',
@@ -158,18 +158,27 @@ const companyTitleStyle = css({
 
 const companyNameStyle = css({
   font: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '6xl',
+  },
   fontWeight: 'bold',
 });
 
 const expHeadingStyle = css({
   font: 'bricolage',
-  fontSize: 'xl',
+  fontSize: {
+    base: 'xl',
+    md: '4xl',
+  },
   fontWeight: 'bold',
 });
 
 const paragraphStyle = css({
-  fontSize: 'md',
+  fontSize: {
+    base: 'md',
+    md: '2xl',
+  },
 });
 
 const textContainerStyle = vstack({
@@ -181,7 +190,10 @@ const experienceContainerStyle = css({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: 4,
+  gap: {
+    base: 4,
+    md: 8,
+  },
 });
 
 const techItemStyle = vstack({
@@ -190,17 +202,32 @@ const techItemStyle = vstack({
     _dark: 'p_blue.800',
   },
   borderRadius: 'md',
-  fontSize: '15px',
+  fontSize: {
+    base: 'xs',
+    md: 'md',
+  },
   justifyContent: 'center',
   p: 1,
-  w: 20,
-  h: '15vh',
+  w: {
+    base: 20,
+    md: 28,
+  },
+  h: {
+    base: '15vh',
+    md: 28,
+  },
   textAlign: 'center',
 });
 
 const techContainerStyle = grid({
-  gridTemplateColumns: 3,
-  gap: 4,
+  gridTemplateColumns: {
+    base: 3,
+    md: 5,
+  },
+  gap: {
+    base: 4,
+    md: 8,
+  },
 });
 
 const techImageContainer = circle({
@@ -223,11 +250,12 @@ const techsContainerStyle = vstack({
 });
 
 const companyLogoStyle = css({
-  h: 24,
+  h: 'auto',
   w: 32,
 });
 
 const companyLogoAndPeriodStyle = hstack({
+  w: 'full',
   gap: 4,
 });
 
@@ -243,15 +271,30 @@ const companyLogoContainerStyle = vstack({
   },
   borderRadius: 'md',
   justifyContent: 'center',
-  h: 36,
-  w: 36,
-  p: 2,
+  h: {
+    base: 36,
+    md: 48,
+  },
+  w: {
+    base: '3/5',
+    md: '2/5',
+  },
+  p: {
+    base: 4,
+    md: 6,
+  },
 });
 
 const jobPeriodStyle = css({
   fontWeight: 'bold',
   textAlign: 'center',
-  w: 'fit',
+  w: {
+    base: '2/5',
+    xl: '3/5',
+  },
+  fontSize: {
+    md: 'xl',
+  },
 });
 
 export {
