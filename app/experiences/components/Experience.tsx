@@ -3,7 +3,6 @@ import React, {ReactNode} from 'react';
 import {Language} from '@appTypes/portfolio';
 import {Technology} from '@prisma/client';
 import Image from 'next/image';
-import {API_TECH_LOGO_URL} from '@constants/portfolio';
 import {
   baseLoadingStyle,
   companyLogoAndPeriodStyle,
@@ -24,14 +23,12 @@ import {
   paragraphLoadingStyle,
   paragraphStyle,
   techContainerStyle,
-  techImageContainer,
-  techImageStyle,
-  techItemStyle,
   techsContainerStyle,
   textContainerStyle,
   titleLoadingStyle,
 } from '@app/experiences/styles/components/Experience.styles';
 import techsTitle from '@app/experiences/texts/experienceTexts';
+import MiniTechnologyCard from '@components/technology/MiniTechnologyCard';
 
 type Props = {
   experience: CompleteExperienceFromApi;
@@ -79,21 +76,7 @@ Experience.Technologies = function ExperienceTechnologies({experience, language}
       <h3 className={expHeadingStyle}>{techsTitle[language]}</h3>
       <div className={techContainerStyle}>
         {experience.technologies.map((technology: Technology, index: number) => {
-          return (
-            <div key={index} className={techItemStyle}>
-              <div className={techImageContainer}>
-                <Image
-                  src={API_TECH_LOGO_URL + technology.logo}
-                  alt={technology.name}
-                  width={0}
-                  height={0}
-                  sizes={'100vw'}
-                  className={techImageStyle}
-                />
-              </div>
-              <p>{technology.name}</p>
-            </div>
-          );
+          return <MiniTechnologyCard key={index} technology={technology} />;
         })}
       </div>
     </div>
