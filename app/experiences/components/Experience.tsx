@@ -31,6 +31,7 @@ import {
   textContainerStyle,
   titleLoadingStyle,
 } from '@app/experiences/styles/components/Experience.styles';
+import techsTitle from '@app/experiences/texts/experienceTexts';
 
 type Props = {
   experience: CompleteExperienceFromApi;
@@ -75,7 +76,7 @@ Experience.Job = function ExperienceJob({experience, language}: CompositionProps
 Experience.Technologies = function ExperienceTechnologies({experience, language}: CompositionProps) {
   return (
     <div className={techsContainerStyle}>
-      <h3 className={expHeadingStyle}>Les technologies utilisées</h3>
+      <h3 className={expHeadingStyle}>{techsTitle[language]}</h3>
       <div className={techContainerStyle}>
         {experience.technologies.map((technology: Technology, index: number) => {
           return (
@@ -102,9 +103,10 @@ Experience.Technologies = function ExperienceTechnologies({experience, language}
 Experience.LogoAndPeriod = function ExperienceLogoAndPeriod({experience, language}: CompositionProps) {
   const startDate = new Date(experience.start_date);
   const endDate = new Date(experience.end_date);
+  const dateFormat = language === 'french' ? 'fr-FR' : 'en-US';
 
-  const formattedStart = new Intl.DateTimeFormat('fr-FR').format(startDate);
-  const formattedEnd = new Intl.DateTimeFormat('fr-FR').format(endDate);
+  const formattedStart = new Intl.DateTimeFormat(dateFormat).format(startDate);
+  const formattedEnd = new Intl.DateTimeFormat(dateFormat).format(endDate);
 
   return (
     <div className={companyLogoAndPeriodStyle}>
