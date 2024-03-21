@@ -54,10 +54,6 @@ Experience.TextContainer = function ExperienceTextContainer({children}: {childre
   return <div className={experienceContainerStyle}>{children}</div>;
 };
 
-Experience.LoadingContainer = function ExperienceLoadingContainer({children}: {children: ReactNode}) {
-  return <div className={`experience-container ${loadingContainerStyle}`}>{children}</div>;
-};
-
 Experience.Company = function ExperienceCompany({experience, language}: CompositionProps) {
   return (
     <div className={textContainerStyle}>
@@ -67,29 +63,11 @@ Experience.Company = function ExperienceCompany({experience, language}: Composit
   );
 };
 
-Experience.LoadingCompany = function ExperienceLoadingCompany() {
-  return (
-    <div className={`loading-company ${containerStyle}`}>
-      <h2 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
-      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
-    </div>
-  );
-};
-
 Experience.Job = function ExperienceJob({experience, language}: CompositionProps) {
   return (
     <div className={textContainerStyle}>
       <h3 className={expHeadingStyle}>{experience.job_title[language]}</h3>
       <p className={paragraphStyle}>{experience.job_description[language]}</p>
-    </div>
-  );
-};
-
-Experience.LoadingJob = function ExperienceLoadingJob() {
-  return (
-    <div className={`loading-job ${containerStyle}`}>
-      <h3 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
-      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
     </div>
   );
 };
@@ -121,18 +99,6 @@ Experience.Technologies = function ExperienceTechnologies({experience, language}
   );
 };
 
-Experience.LoadingTechnologies = function ExperienceLoadingTechnologies() {
-  const fakeTechs: number[] = [1, 2, 3, 4, 5];
-
-  return (
-    <div className={`loading-techs ${loadingTechsStyle}`}>
-      {fakeTechs.map((_: number, index: number) => {
-        return <div key={index} className={loadingTechItemStyle} />;
-      })}
-    </div>
-  );
-};
-
 Experience.LogoAndPeriod = function ExperienceLogoAndPeriod({experience, language}: CompositionProps) {
   const startDate = new Date(experience.start_date);
   const endDate = new Date(experience.end_date);
@@ -153,6 +119,40 @@ Experience.LogoAndPeriod = function ExperienceLogoAndPeriod({experience, languag
         />
       </div>
       <h3 className={jobPeriodStyle}>{`${formattedStart} - ${formattedEnd}`}</h3>
+    </div>
+  );
+};
+
+Experience.LoadingContainer = function ExperienceLoadingContainer({children}: {children: ReactNode}) {
+  return <div className={`experience-container ${loadingContainerStyle}`}>{children}</div>;
+};
+
+Experience.LoadingCompany = function ExperienceLoadingCompany() {
+  return (
+    <div className={`loading-company ${containerStyle}`}>
+      <h2 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
+      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
+    </div>
+  );
+};
+
+Experience.LoadingJob = function ExperienceLoadingJob() {
+  return (
+    <div className={`loading-job ${containerStyle}`}>
+      <h3 className={`${baseLoadingStyle} ${titleLoadingStyle}`} />
+      <p className={`${baseLoadingStyle} ${paragraphLoadingStyle}`} />
+    </div>
+  );
+};
+
+Experience.LoadingTechnologies = function ExperienceLoadingTechnologies() {
+  const fakeTechs: number[] = [1, 2, 3, 4, 5];
+
+  return (
+    <div className={`loading-techs ${loadingTechsStyle}`}>
+      {fakeTechs.map((_: number, index: number) => {
+        return <div key={index} className={loadingTechItemStyle} />;
+      })}
     </div>
   );
 };
