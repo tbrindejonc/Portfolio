@@ -223,10 +223,12 @@ const techContainerStyle = grid({
   gridTemplateColumns: {
     base: 3,
     md: 5,
+    xl: 8,
   },
   gap: {
     base: 4,
     md: 8,
+    xl: 14,
   },
 });
 
