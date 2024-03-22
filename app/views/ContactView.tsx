@@ -7,7 +7,6 @@ import {
   vContact_buttonBorder,
   vContact_contact,
   vContact_picture,
-  vContact_pictureContainer,
   vContact_title,
   vContact_titleAndButton,
 } from '@styles/views/ContactView.styles';
@@ -19,16 +18,14 @@ export default function ContactView() {
 
   return (
     <section id={'contact'} className={vContact_contact}>
-      <div className={vContact_pictureContainer}>
-        <Image
-          src={'/images/portfolio/contact/contact.jpg'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={vContact_picture}
-        />
-      </div>
+      <Image
+        src={'/images/portfolio/contact/contact.jpg'}
+        alt={'me'}
+        width={0}
+        height={0}
+        sizes={'100vw'}
+        className={vContact_picture}
+      />
       <div className={vContact_titleAndButton}>
         <h2 className={vContact_title}>{titleAndLink.title[language]}</h2>
         <Link href={'/contact'} className={`group ${vContact_buttonBorder}`}>

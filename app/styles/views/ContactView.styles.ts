@@ -34,7 +34,8 @@ const vContact_contact = css({
   transition: 'all 0.5s',
 });
 
-const vContact_pictureContainer = css({
+const vContact_picture = css({
+  bgSize: 'cover',
   borderRadius: {
     base: 10,
     md: 20,
@@ -44,25 +45,12 @@ const vContact_pictureContainer = css({
     md: '400px',
     xl: '600px',
   },
-  overflow: 'hidden',
+  objectFit: 'cover',
+  objectPosition: 'top',
   shadow: {
     base: '0px 4px 4px 0 token(colors.p_blue.dark_25)',
     _dark: '0px 4px 4px 0 token(colors.p_blue.light_25)',
   },
-  w: {
-    base: '300px',
-    md: '400px',
-    xl: '600px',
-  },
-});
-
-const vContact_picture = css({
-  bgSize: 'cover',
-  borderRadius: {
-    base: 10,
-    md: 20,
-  },
-  h: 'auto',
   w: {
     base: '300px',
     md: '400px',
@@ -141,7 +129,6 @@ const vContact_titleAndButton = vstack({
 
 export {
   vContact_contact,
-  vContact_pictureContainer,
   vContact_picture,
   vContact_title,
   vContact_button,
