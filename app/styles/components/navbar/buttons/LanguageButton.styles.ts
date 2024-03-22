@@ -1,7 +1,7 @@
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
-const langageButtonStyle = css({
+const cLanguageButton_languageButton = css({
   bgColor: {
     base: 'p_blue.800',
     _dark: 'p_blue.light',
@@ -22,7 +22,7 @@ const langageButtonStyle = css({
   },
 });
 
-const circleStyle = circle({
+const cLanguageButton_circle = circle({
   bgColor: 'p_blue.main',
   position: 'absolute',
   right: 1,
@@ -34,7 +34,7 @@ const circleStyle = circle({
   top: 1,
 });
 
-const langageContainerStyle = css({
+const cLanguageButton_languageContainer = css({
   alignItems: 'center',
   bgColor: {
     base: 'p_blue.light/70',
@@ -74,7 +74,7 @@ const langageContainerStyle = css({
   },
 });
 
-const langageStyle = css({
+const cLanguageButton_language = css({
   color: {
     base: 'p_blue.800',
     _dark: 'p_blue.light',
@@ -88,4 +88,9 @@ const langageStyle = css({
   transition: 'color 0.5s',
 });
 
-export {langageButtonStyle, circleStyle, langageContainerStyle, langageStyle};
+export {
+  cLanguageButton_languageButton,
+  cLanguageButton_circle,
+  cLanguageButton_languageContainer,
+  cLanguageButton_language,
+};

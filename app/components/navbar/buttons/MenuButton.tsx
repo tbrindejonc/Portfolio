@@ -3,12 +3,12 @@
 import NavMenu from '@components/navbar/NavMenu';
 import {useEffect, useState} from 'react';
 import {
-  blueCircleStyle,
-  getNavMenuContainerStyle,
-  menuButtonStyle,
-  menuContainerStyle,
-  menuLineStyle,
-  purpleCircleStyle,
+  cMenuButton_blueCircle,
+  cMenuButton_getNavMenu,
+  cMenuButton_menu,
+  cMenuButton_menuButton,
+  cMenuButton_menuLine,
+  cMenuButton_purpleCircle,
 } from '@styles/components/navbar/buttons/MenuButton.styles';
 
 export default function MenuButton() {
@@ -33,21 +33,21 @@ export default function MenuButton() {
   return (
     <>
       <div
-        className={`${menuButtonStyle} menu-button`}
+        className={`${cMenuButton_menuButton} menu-button`}
         onClick={() => {
           setIsActive(!isActive);
         }}
       >
-        <div className={purpleCircleStyle}></div>
-        <div className={blueCircleStyle}></div>
-        <div className={menuContainerStyle}>
-          <div className={menuLineStyle}></div>
-          <div className={menuLineStyle}></div>
-          <div className={menuLineStyle}></div>
+        <div className={cMenuButton_purpleCircle}></div>
+        <div className={cMenuButton_blueCircle}></div>
+        <div className={cMenuButton_menu}>
+          <div className={cMenuButton_menuLine}></div>
+          <div className={cMenuButton_menuLine}></div>
+          <div className={cMenuButton_menuLine}></div>
         </div>
       </div>
       <div
-        className={`${getNavMenuContainerStyle(isActive)} nav-menu`}
+        className={`${cMenuButton_getNavMenu(isActive)} nav-menu`}
         onClick={() => {
           return setIsActive(!isActive);
         }}

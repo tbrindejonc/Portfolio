@@ -1,7 +1,7 @@
 import {hstack, vstack} from '@/styled-system/patterns';
 import {css, cva} from '@/styled-system/css';
 
-const containerStyle = vstack({
+const cActivity_activity = vstack({
   gap: 2,
   px: 8,
   w: {
@@ -10,39 +10,39 @@ const containerStyle = vstack({
   zIndex: 1,
 });
 
-const svgStyle = css({
+const cActivity_svgBase = css({
   height: 12,
   width: 12,
 });
 
-const gameIconStyle = css({
+const cActivity_gameIcon = css({
   stroke: {
     base: 'neutral.700',
     _dark: 'neutral.200',
   },
 });
 
-const devIconStyle = css({
+const cActivity_devIcon = css({
   stroke: {
     base: 'p_blue.700',
     _dark: 'p_blue.200',
   },
 });
 
-const discoveriesIconStyle = css({
+const cActivity_discoveriesIcon = css({
   stroke: {
     base: 'p_purple.700',
     _dark: 'p_purple.200',
   },
 });
 
-const dividerStyle = css({
+const cActivity_divider = css({
   bgColor: 'p_purple.main',
   height: '5vh',
   width: 1,
 });
 
-const divHeadingStyle = hstack({
+const cActivity_heading = hstack({
   color: {
     base: 'neutral.800',
     _dark: 'neutral.200',
@@ -55,7 +55,7 @@ const divHeadingStyle = hstack({
   w: 'full',
 });
 
-const paragraphStyle = css({
+const cActivity_paragraph = css({
   color: {
     base: 'neutral.dark',
     _dark: 'neutral.light',
@@ -68,7 +68,7 @@ const paragraphStyle = css({
   textWrap: 'balance',
 });
 
-const activityVariants = cva({
+const cActivity_variants = cva({
   variants: {
     separator: {
       game: {
@@ -134,13 +134,13 @@ const activityVariants = cva({
 });
 
 export {
-  containerStyle,
-  svgStyle,
-  gameIconStyle,
-  devIconStyle,
-  discoveriesIconStyle,
-  dividerStyle,
-  divHeadingStyle,
-  paragraphStyle,
-  activityVariants,
+  cActivity_activity,
+  cActivity_svgBase,
+  cActivity_gameIcon,
+  cActivity_devIcon,
+  cActivity_discoveriesIcon,
+  cActivity_divider,
+  cActivity_heading,
+  cActivity_paragraph,
+  cActivity_variants,
 };

@@ -1,7 +1,7 @@
 import {circle, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const techItemStyle = vstack({
+const cMiniTechCard_miniTechCard = vstack({
   bgColor: {
     base: 'p_blue.300',
     _dark: 'p_blue.800',
@@ -24,7 +24,7 @@ const techItemStyle = vstack({
   textAlign: 'center',
 });
 
-const techImageContainer = circle({
+const cMiniTechCard_iconContainer = circle({
   bgColor: {
     base: 'p_blue.light',
     _dark: 'p_blue.dark',
@@ -32,10 +32,10 @@ const techImageContainer = circle({
   size: 14,
 });
 
-const techImageStyle = css({
+const cMiniTechCard_icon = css({
   w: 10,
   h: 10,
   objectFit: 'cover',
 });
 
-export {techItemStyle, techImageContainer, techImageStyle};
+export {cMiniTechCard_miniTechCard, cMiniTechCard_iconContainer, cMiniTechCard_icon};

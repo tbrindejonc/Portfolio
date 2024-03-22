@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import useLanguage from '@hooks/useLanguage';
-import {divStyle, getLinkStyle, getSelectedLinkStyle} from '@styles/components/navbar/NavMenu.styles';
+import {cNavMenu_getLink, cNavMenu_getSelectedLink, cNavMenu_navMenu} from '@styles/components/navbar/NavMenu.styles';
 import appLinks from '@texts/portfolio/navbar/appLinks';
 import useCurrentLocation from '@hooks/useCurrentLocation';
 
@@ -11,11 +11,11 @@ export default function NavMenu() {
   const currentPage: number = useCurrentLocation();
 
   return (
-    <div className={divStyle}>
+    <div className={cNavMenu_navMenu}>
       {appLinks.map((link, index) => {
         return (
-          <Link key={index} href={link.href} className={getLinkStyle(currentPage, index)}>
-            <div className={getSelectedLinkStyle(currentPage, index)}></div>
+          <Link key={index} href={link.href} className={cNavMenu_getLink(currentPage, index)}>
+            <div className={cNavMenu_getSelectedLink(currentPage, index)}></div>
             {link.title[language]}
           </Link>
         );

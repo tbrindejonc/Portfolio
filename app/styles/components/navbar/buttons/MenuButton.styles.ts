@@ -1,7 +1,7 @@
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
-const menuButtonStyle = css({
+const cMenuButton_menuButton = css({
   bgGradient: 'to-tr',
   borderRadius: 10,
   display: {
@@ -27,7 +27,7 @@ const menuButtonStyle = css({
   },
 });
 
-const blueCircleStyle = circle({
+const cMenuButton_blueCircle = circle({
   bgColor: 'p_blue.main',
   position: 'absolute',
   right: 1,
@@ -38,7 +38,7 @@ const blueCircleStyle = circle({
   top: 1,
 });
 
-const purpleCircleStyle = circle({
+const cMenuButton_purpleCircle = circle({
   bgColor: 'p_purple.main',
   bottom: 1,
   left: 1,
@@ -49,7 +49,7 @@ const purpleCircleStyle = circle({
   },
 });
 
-const menuContainerStyle = css({
+const cMenuButton_menu = css({
   alignItems: 'center',
   bgColor: {
     base: 'p_purple.light/70',
@@ -88,7 +88,7 @@ const menuContainerStyle = css({
   },
 });
 
-const menuLineStyle = css({
+const cMenuButton_menuLine = css({
   borderRadius: 20,
   bgColor: {
     base: 'p_purple.dark',
@@ -99,7 +99,7 @@ const menuLineStyle = css({
   width: '70%',
 });
 
-const getNavMenuContainerStyle = (isActive: boolean) => {
+const cMenuButton_getNavMenu = (isActive: boolean) => {
   return css({
     display: {
       xl: 'none',
@@ -119,10 +119,10 @@ const getNavMenuContainerStyle = (isActive: boolean) => {
 };
 
 export {
-  menuButtonStyle,
-  blueCircleStyle,
-  purpleCircleStyle,
-  menuContainerStyle,
-  menuLineStyle,
-  getNavMenuContainerStyle,
+  cMenuButton_menuButton,
+  cMenuButton_blueCircle,
+  cMenuButton_purpleCircle,
+  cMenuButton_menu,
+  cMenuButton_menuLine,
+  cMenuButton_getNavMenu,
 };

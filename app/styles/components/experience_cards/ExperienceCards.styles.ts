@@ -1,6 +1,6 @@
 import {hstack} from '@/styled-system/patterns';
 
-const experienceCardsStyle = hstack({
+const cExperienceCards_experienceCards = hstack({
   columnGap: 20,
   display: {
     base: 'none',
@@ -9,4 +9,4 @@ const experienceCardsStyle = hstack({
   width: '90vw',
 });
 
-export default experienceCardsStyle;
+export default cExperienceCards_experienceCards;

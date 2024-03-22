@@ -3,7 +3,7 @@ import {Slide} from '@appTypes/portfolio';
 import CarouselControls from '@components/carousel/CarouselControls';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import CarouselSlide from '@components/carousel/CarouselSlide';
-import carouselStyle from '@styles/components/carousel/Carousel.styles';
+import cCarousel_carousel from '@styles/components/carousel/Carousel.styles';
 import useLanguage from '@hooks/useLanguage';
 
 export default function Carousel() {
@@ -61,7 +61,7 @@ export default function Carousel() {
 
   return (
     <>
-      <div id={'carousel'} className={carouselStyle}>
+      <div id={'carousel'} className={cCarousel_carousel}>
         {slides.map((slide: Slide, index: number) => {
           return <CarouselSlide key={index} index={index} slide={slide} variant={slide.variant} language={language} />;
         })}

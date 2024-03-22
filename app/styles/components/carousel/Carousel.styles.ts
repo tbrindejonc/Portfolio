@@ -1,6 +1,6 @@
 import {css} from '@/styled-system/css';
 
-const carouselStyle = css({
+const cCarousel_carousel = css({
   display: {
     base: 'flex',
     xl: 'none',
@@ -9,4 +9,4 @@ const carouselStyle = css({
   overflow: 'hidden',
 });
 
-export default carouselStyle;
+export default cCarousel_carousel;

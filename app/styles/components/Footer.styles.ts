@@ -2,7 +2,7 @@ import {grid} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 import {FooterLink} from '@appTypes/portfolio';
 
-const footerStyle = grid({
+const cFooter_footer = grid({
   bgColor: {
     base: 'p_blue.light',
     _dark: 'p_blue.dark',
@@ -47,14 +47,14 @@ const footerStyle = grid({
   },
 });
 
-const linkStyle = css({
+const cFooter_link = css({
   width: 'fit',
   textDecoration: {
     _hover: 'underline',
   },
 });
 
-const getSpanStyle = (link: FooterLink) => {
+const cFooter_getSpanStyle = (link: FooterLink) => {
   return css({
     display: !link.span ? 'none' : 'inline',
     color: {
@@ -64,4 +64,4 @@ const getSpanStyle = (link: FooterLink) => {
   });
 };
 
-export {footerStyle, linkStyle, getSpanStyle};
+export {cFooter_footer, cFooter_link, cFooter_getSpanStyle};

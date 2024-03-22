@@ -1,7 +1,7 @@
 import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const carouselControlsStyle = hstack({
+const cCarouselControls_carouselControls = hstack({
   display: {
     base: 'flex',
     xl: 'none',
@@ -20,7 +20,7 @@ const carouselControlsStyle = hstack({
   },
 });
 
-const arrowStyle = css({
+const cCarouselControls_arrow = css({
   cursor: 'pointer',
   fill: {
     base: 'p_purple.dark',
@@ -39,7 +39,7 @@ const arrowStyle = css({
   },
 });
 
-const previousStyle = css({
+const cCarouselControls_previous = css({
   filter: 'drop-shadow(-5px 0 5px token(colors.p_purple.main))',
   left: {
     md: '-27vw',
@@ -50,7 +50,7 @@ const previousStyle = css({
   },
 });
 
-const nextStyle = css({
+const cCarouselControls_next = css({
   filter: 'drop-shadow(5px 0 5px token(colors.p_purple.main))',
   right: {
     md: '-27vw',
@@ -61,7 +61,7 @@ const nextStyle = css({
   },
 });
 
-const baseSlideItemStyle = css({
+const cCarouselControls_slideItemBase = css({
   borderRadius: 'xl',
   height: {
     base: 3,
@@ -73,7 +73,7 @@ const baseSlideItemStyle = css({
   },
 });
 
-const activeSlideItemStyle = css({
+const cCarouselControls_activeSlideItem = css({
   bgGradient: 'to-r',
   gradientFrom: 'p_blue.main',
   gradientTo: 'p_purple.main',
@@ -83,7 +83,7 @@ const activeSlideItemStyle = css({
   },
 });
 
-const inactiveSlideItemStyle = css({
+const cCarouselControls_inactiveSlideItem = css({
   bgColor: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
@@ -92,11 +92,11 @@ const inactiveSlideItemStyle = css({
 });
 
 export {
-  carouselControlsStyle,
-  arrowStyle,
-  previousStyle,
-  nextStyle,
-  baseSlideItemStyle,
-  activeSlideItemStyle,
-  inactiveSlideItemStyle,
+  cCarouselControls_carouselControls,
+  cCarouselControls_arrow,
+  cCarouselControls_previous,
+  cCarouselControls_next,
+  cCarouselControls_slideItemBase,
+  cCarouselControls_activeSlideItem,
+  cCarouselControls_inactiveSlideItem,
 };

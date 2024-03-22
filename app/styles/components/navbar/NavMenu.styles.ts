@@ -1,7 +1,7 @@
 import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const divStyle = vstack({
+const cNavMenu_navMenu = vstack({
   borderEndRadius: 'lg',
   bgColor: {
     base: 'p_purple.light',
@@ -19,7 +19,7 @@ const divStyle = vstack({
   },
 });
 
-const getLinkStyle = (active: number, index: number) => {
+const cNavMenu_getLink = (active: number, index: number) => {
   return css({
     color: {
       base: active === index ? 'p_purple.800' : 'neutral.700',
@@ -40,7 +40,7 @@ const getLinkStyle = (active: number, index: number) => {
   });
 };
 
-const getSelectedLinkStyle = (active: number, index: number) => {
+const cNavMenu_getSelectedLink = (active: number, index: number) => {
   return css({
     bgGradient: 'to-r',
     borderEndRadius: 'xl',
@@ -73,4 +73,4 @@ const getSelectedLinkStyle = (active: number, index: number) => {
   });
 };
 
-export {divStyle, getLinkStyle, getSelectedLinkStyle};
+export {cNavMenu_navMenu, cNavMenu_getLink, cNavMenu_getSelectedLink};

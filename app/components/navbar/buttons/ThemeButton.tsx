@@ -3,11 +3,11 @@
 import {useEffect, useState} from 'react';
 import {Theme} from '@appTypes/portfolio';
 import {
-  circleStyle,
-  getMoonStyle,
-  getSunStyle,
-  iconContainerStyle,
-  themeButtonDivStyle,
+  cThemeButton_circle,
+  cThemeButton_getMoon,
+  cThemeButton_getSun,
+  cThemeButton_iconsContainer,
+  cThemeButton_themeButton,
 } from '@styles/components/navbar/buttons/ThemeButton.styles';
 
 export default function ThemeButton() {
@@ -38,9 +38,9 @@ export default function ThemeButton() {
   };
 
   return (
-    <div className={themeButtonDivStyle} onClick={toggleTheme}>
-      <div className={circleStyle}></div>
-      <div className={iconContainerStyle}>
+    <div className={cThemeButton_themeButton} onClick={toggleTheme}>
+      <div className={cThemeButton_circle}></div>
+      <div className={cThemeButton_iconsContainer}>
         <svg
           id={'moon'}
           xmlns='http://www.w3.org/2000/svg'
@@ -51,7 +51,7 @@ export default function ThemeButton() {
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`lucide lucide-moon-star ${getMoonStyle(theme)}`}
+          className={`lucide lucide-moon-star ${cThemeButton_getMoon(theme)}`}
         >
           <path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z' />
           <path d='M19 3v4' />
@@ -66,7 +66,7 @@ export default function ThemeButton() {
           strokeWidth='2'
           strokeLinecap='round'
           strokeLinejoin='round'
-          className={`lucide lucide-sun ${getSunStyle(theme)}`}
+          className={`lucide lucide-sun ${cThemeButton_getSun(theme)}`}
         >
           <circle cx='12' cy='12' r='4' />
           <path d='M12 2v2' />

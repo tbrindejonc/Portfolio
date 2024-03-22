@@ -1,10 +1,10 @@
 import ExperienceCard from '@components/experience_cards/ExperienceCard';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
-import experienceCardsStyle from '@styles/components/experience_cards/ExperienceCards.styles';
+import cExperienceCards_experienceCards from '@styles/components/experience_cards/ExperienceCards.styles';
 
 export default function ExperienceCards() {
   return (
-    <section id={'experience-cards'} className={experienceCardsStyle}>
+    <section id={'experience-cards'} className={cExperienceCards_experienceCards}>
       <ExperienceCard slide={experienceSlides[1]} cardOrder={'first'}>
         <ExperienceCard.FormationIcon />
         <ExperienceCard.Paragraph slide={experienceSlides[1]} cardOrder={'first'} />

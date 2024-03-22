@@ -2,11 +2,11 @@
 
 import useLanguage from '@hooks/useLanguage';
 import {
-  circleStyle,
-  langageButtonStyle,
-  langageContainerStyle,
-  langageStyle,
-} from '@styles/components/navbar/buttons/LangageButton.styles';
+  cLanguageButton_circle,
+  cLanguageButton_language,
+  cLanguageButton_languageButton,
+  cLanguageButton_languageContainer,
+} from '@styles/components/navbar/buttons/LanguageButton.styles';
 
 export default function LanguageButton() {
   const {language, setLanguage} = useLanguage();
@@ -16,10 +16,10 @@ export default function LanguageButton() {
   };
 
   return (
-    <div className={langageButtonStyle} onClick={switchLangage}>
-      <div className={circleStyle}></div>
-      <div className={langageContainerStyle}>
-        <h2 className={langageStyle}>{language.substring(0, 2)}</h2>
+    <div className={cLanguageButton_languageButton} onClick={switchLangage}>
+      <div className={cLanguageButton_circle}></div>
+      <div className={cLanguageButton_languageContainer}>
+        <h2 className={cLanguageButton_language}>{language.substring(0, 2)}</h2>
       </div>
     </div>
   );

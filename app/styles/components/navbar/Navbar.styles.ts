@@ -1,7 +1,7 @@
 import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const navStyle = hstack({
+const cNavbar_navbar = hstack({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -29,7 +29,7 @@ const navStyle = hstack({
   zIndex: 10,
 });
 
-const nameStyle = css({
+const cNavbar_name = css({
   background: {
     base: 'linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.dark))',
     _dark:
@@ -48,8 +48,8 @@ const nameStyle = css({
   fontWeight: 'bold',
 });
 
-const divStyle = hstack({
+const cNavbar_buttonsContainer = hstack({
   gap: 4,
 });
 
-export {navStyle, nameStyle, divStyle};
+export {cNavbar_navbar, cNavbar_name, cNavbar_buttonsContainer};

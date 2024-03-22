@@ -1,11 +1,11 @@
 import {
-  activeSlideItemStyle,
-  arrowStyle,
-  baseSlideItemStyle,
-  carouselControlsStyle,
-  inactiveSlideItemStyle,
-  nextStyle,
-  previousStyle,
+  cCarouselControls_activeSlideItem,
+  cCarouselControls_arrow,
+  cCarouselControls_carouselControls,
+  cCarouselControls_inactiveSlideItem,
+  cCarouselControls_next,
+  cCarouselControls_previous,
+  cCarouselControls_slideItemBase,
 } from '@styles/components/carousel/CarouselControls.styles';
 import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
 import {Slide} from '@appTypes/portfolio';
@@ -17,9 +17,9 @@ type Props = {
 
 export default function CarouselControls({changeSlide, activeSlide}: Props) {
   return (
-    <div className={carouselControlsStyle}>
+    <div className={cCarouselControls_carouselControls}>
       <svg
-        className={`${arrowStyle} ${previousStyle}`}
+        className={`${cCarouselControls_arrow} ${cCarouselControls_previous}`}
         onClick={() => {
           return changeSlide('prev');
         }}
@@ -32,12 +32,12 @@ export default function CarouselControls({changeSlide, activeSlide}: Props) {
         return (
           <div
             key={index}
-            className={`${baseSlideItemStyle} ${activeSlide === index ? activeSlideItemStyle : inactiveSlideItemStyle}`}
+            className={`${cCarouselControls_slideItemBase} ${activeSlide === index ? cCarouselControls_activeSlideItem : cCarouselControls_inactiveSlideItem}`}
           ></div>
         );
       })}
       <svg
-        className={`${arrowStyle} ${nextStyle}`}
+        className={`${cCarouselControls_arrow} ${cCarouselControls_next}`}
         onClick={() => {
           return changeSlide('next');
         }}

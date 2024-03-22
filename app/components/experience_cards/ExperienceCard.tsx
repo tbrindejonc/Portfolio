@@ -7,13 +7,13 @@ import {ReactNode} from 'react';
 import {seeMoreButton} from '@texts/portfolio/experience/experienceSlides';
 import Link from 'next/link';
 import {
-  cardStyle,
-  cardVariants,
-  paragraphStyle,
-  seeMoreStyle,
-  separatorStyle,
-  svgStyle,
-  titleStyle,
+  cExperienceCard_button,
+  cExperienceCard_card,
+  cExperienceCard_paragraph,
+  cExperienceCard_separator,
+  cExperienceCard_svg,
+  cExperienceCard_title,
+  cExperienceCard_variants,
 } from '@styles/components/experience_cards/ExperienceCard.styles';
 
 type Props = {
@@ -38,9 +38,9 @@ export default function ExperienceCard({slide, children, cardOrder}: Props) {
   const {language} = useLanguage();
 
   return (
-    <div className={cardStyle}>
-      <h2 className={titleStyle}>{slide.title[language]}</h2>
-      <div className={`${separatorStyle} ${cardVariants({separator: cardOrder})}`}></div>
+    <div className={cExperienceCard_card}>
+      <h2 className={cExperienceCard_title}>{slide.title[language]}</h2>
+      <div className={`${cExperienceCard_separator} ${cExperienceCard_variants({separator: cardOrder})}`}></div>
       {children}
     </div>
   );
@@ -57,7 +57,7 @@ ExperienceCard.FormationIcon = function ExperienceCardFormationIcon() {
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className={`${svgStyle} ${cardVariants({icon: 'formation'})}`}
+      className={`${cExperienceCard_svg} ${cExperienceCard_variants({icon: 'formation'})}`}
     >
       <path d='M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z' />
       <path d='M22 10v6' />
@@ -77,7 +77,7 @@ ExperienceCard.SpeechIcon = function ExperienceCardSpeechIcon() {
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className={`${svgStyle} ${cardVariants({icon: 'speech'})}`}
+      className={`${cExperienceCard_svg} ${cExperienceCard_variants({icon: 'speech'})}`}
     >
       <path d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z' />
     </svg>
@@ -95,7 +95,7 @@ ExperienceCard.MoreIcon = function ExperienceCardMoreIcon() {
       fill='none'
       strokeLinecap='round'
       strokeLinejoin='round'
-      className={`${svgStyle} ${cardVariants({icon: 'more'})}`}
+      className={`${cExperienceCard_svg} ${cExperienceCard_variants({icon: 'more'})}`}
     >
       <circle cx='12' cy='12' r='10' />
       <path d='m10 8 4 4-4 4' />
@@ -113,13 +113,13 @@ ExperienceCard.Paragraph = function ExperienceCardParagraph({slide, cardOrder}: 
   const {language} = useLanguage();
 
   return (
-    <p className={paragraphStyle}>
+    <p className={cExperienceCard_paragraph}>
       {slide.content.firstPart[language]}{' '}
-      <span className={`${css({fontWeight: 'bold'})} ${cardVariants({firstSpan: cardOrder})}`}>
+      <span className={`${css({fontWeight: 'bold'})} ${cExperienceCard_variants({firstSpan: cardOrder})}`}>
         {slide.content.firstSpan[language]}
       </span>
       {slide.content.secondPart[language]}{' '}
-      <span className={`${css({fontWeight: 'bold'})} ${cardVariants({secondSpan: cardOrder})}`}>
+      <span className={`${css({fontWeight: 'bold'})} ${cExperienceCard_variants({secondSpan: cardOrder})}`}>
         {slide.content.secondSpan[language]}
       </span>
       {slide.content.lastPart[language]}
@@ -134,7 +134,7 @@ ExperienceCard.SeeMoreButton = function ExperienceCardSeeMoreButton() {
   const {language} = useLanguage();
 
   return (
-    <Link href={'/experiences'} className={seeMoreStyle}>
+    <Link href={'/experiences'} className={cExperienceCard_button}>
       {seeMoreButton[language]}
     </Link>
   );

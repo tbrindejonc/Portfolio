@@ -1,17 +1,17 @@
 import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
-const svgStyle = css({
+const cExperienceCard_svg = css({
   height: 'auto',
   strokeWidth: 1,
   width: 24,
 });
 
-const paragraphStyle = css({
+const cExperienceCard_paragraph = css({
   fontSize: '2xl',
 });
 
-const cardStyle = vstack({
+const cExperienceCard_card = vstack({
   border: '3px solid',
   borderColor: {
     base: 'p_blue.dark',
@@ -28,18 +28,18 @@ const cardStyle = vstack({
   w: '1/3',
 });
 
-const separatorStyle = css({
+const cExperienceCard_separator = css({
   height: 1,
   width: '3/4',
 });
 
-const titleStyle = css({
+const cExperienceCard_title = css({
   fontFamily: 'bricolage',
   fontSize: '3xl',
   fontWeight: 'bold',
 });
 
-const cardVariants = cva({
+const cExperienceCard_variants = cva({
   base: {},
   variants: {
     separator: {
@@ -100,7 +100,7 @@ const cardVariants = cva({
   },
 });
 
-const seeMoreStyle = css({
+const cExperienceCard_button = css({
   border: '2px solid',
   borderColor: {
     base: 'p_purple.700',
@@ -132,4 +132,12 @@ const seeMoreStyle = css({
   w: 'full',
 });
 
-export {svgStyle, paragraphStyle, cardStyle, separatorStyle, titleStyle, cardVariants, seeMoreStyle};
+export {
+  cExperienceCard_svg,
+  cExperienceCard_paragraph,
+  cExperienceCard_card,
+  cExperienceCard_separator,
+  cExperienceCard_title,
+  cExperienceCard_variants,
+  cExperienceCard_button,
+};

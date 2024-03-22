@@ -1,7 +1,7 @@
 import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const divStyle = hstack({
+const cNavLink_navLink = hstack({
   display: {
     base: 'none',
     xl: 'flex',
@@ -10,7 +10,7 @@ const divStyle = hstack({
   textAlign: 'center',
 });
 
-const getLinkStyle = (active: number, index: number) => {
+const cNavLink_getLink = (active: number, index: number) => {
   return css({
     color: {
       base: active === index ? 'p_purple.800' : 'neutral.700',
@@ -30,7 +30,7 @@ const getLinkStyle = (active: number, index: number) => {
   });
 };
 
-const getSelectedLinkStyle = (active: number, index: number) => {
+const cNavLink_getSelectedLink = (active: number, index: number) => {
   return css({
     bgGradient: 'to-t',
     borderTopRadius: 'xl',
@@ -57,4 +57,4 @@ const getSelectedLinkStyle = (active: number, index: number) => {
   });
 };
 
-export {divStyle, getLinkStyle, getSelectedLinkStyle};
+export {cNavLink_navLink, cNavLink_getLink, cNavLink_getSelectedLink};

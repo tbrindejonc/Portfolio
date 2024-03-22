@@ -1,7 +1,7 @@
 import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
-const slidesVariants = cva({
+const cCarouselSlide_variants = cva({
   base: {},
   variants: {
     separator: {
@@ -42,7 +42,7 @@ const slidesVariants = cva({
   },
 });
 
-const slidesStyles = [
+const cCarouselSlide_slides = [
   css({
     transform: 'translateX(-100%)',
     zIndex: 1,
@@ -56,7 +56,7 @@ const slidesStyles = [
   }),
 ];
 
-const slideStyle = vstack({
+const cCarouselSlide_slide = vstack({
   bgColor: 'transparent',
   border: '3px solid',
   borderColor: {
@@ -89,7 +89,7 @@ const slideStyle = vstack({
   },
 });
 
-const slideTitleStyle = css({
+const cCarouselSlide_title = css({
   fontFamily: 'bricolage',
   fontSize: {
     base: '2xl',
@@ -98,18 +98,18 @@ const slideTitleStyle = css({
   fontWeight: 'bold',
 });
 
-const separatorStyle = css({
+const cCarouselSlide_separator = css({
   height: '5px',
   width: '2/3',
 });
 
-const svgStyle = css({
+const cCarouselSlide_svg = css({
   height: 'auto',
   strokeWidth: 1,
   width: 24,
 });
 
-const paragraphStyle = css({
+const cCarouselSlide_paragraph = css({
   fontSize: {
     base: 'lg',
     md: '2xl',
@@ -117,7 +117,7 @@ const paragraphStyle = css({
   justifySelf: 'end',
 });
 
-const seeMoreStyle = css({
+const cCarouselSlide_button = css({
   border: '2px solid',
   borderColor: {
     base: 'p_purple.700',
@@ -156,12 +156,12 @@ const seeMoreStyle = css({
 });
 
 export {
-  slidesStyles,
-  slideStyle,
-  slideTitleStyle,
-  separatorStyle,
-  svgStyle,
-  paragraphStyle,
-  slidesVariants,
-  seeMoreStyle,
+  cCarouselSlide_slides,
+  cCarouselSlide_slide,
+  cCarouselSlide_title,
+  cCarouselSlide_separator,
+  cCarouselSlide_svg,
+  cCarouselSlide_paragraph,
+  cCarouselSlide_variants,
+  cCarouselSlide_button,
 };

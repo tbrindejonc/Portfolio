@@ -2,7 +2,7 @@ import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 import {Theme} from '@appTypes/portfolio';
 
-const themeButtonDivStyle = css({
+const cThemeButton_themeButton = css({
   bgColor: {
     base: 'p_purple.800',
     _dark: 'p_purple.light',
@@ -23,7 +23,7 @@ const themeButtonDivStyle = css({
   },
 });
 
-const circleStyle = circle({
+const cThemeButton_circle = circle({
   bgColor: 'p_purple.main',
   bottom: 1,
   left: 1,
@@ -35,7 +35,7 @@ const circleStyle = circle({
   },
 });
 
-const iconContainerStyle = css({
+const cThemeButton_iconsContainer = css({
   alignItems: 'center',
   bgColor: {
     base: 'p_purple.light/70',
@@ -75,7 +75,7 @@ const iconContainerStyle = css({
   },
 });
 
-const getMoonStyle = (theme: Theme) => {
+const cThemeButton_getMoon = (theme: Theme) => {
   return css({
     display: theme === 'light' ? 'block' : 'none',
     height: {
@@ -89,7 +89,7 @@ const getMoonStyle = (theme: Theme) => {
   });
 };
 
-const getSunStyle = (theme: Theme) => {
+const cThemeButton_getSun = (theme: Theme) => {
   return css({
     display: theme === 'dark' ? 'block' : 'none',
     height: {
@@ -105,4 +105,10 @@ const getSunStyle = (theme: Theme) => {
   });
 };
 
-export {themeButtonDivStyle, circleStyle, iconContainerStyle, getMoonStyle, getSunStyle};
+export {
+  cThemeButton_themeButton,
+  cThemeButton_circle,
+  cThemeButton_iconsContainer,
+  cThemeButton_getMoon,
+  cThemeButton_getSun,
+};
