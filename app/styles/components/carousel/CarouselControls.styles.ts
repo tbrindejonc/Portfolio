@@ -26,14 +26,14 @@ const cCarouselControls_arrow = css({
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
-  height: {
+  h: {
     base: 10,
     md: 14,
   },
   position: {
     md: 'absolute',
   },
-  width: {
+  w: {
     base: 10,
     md: 14,
   },
@@ -63,11 +63,11 @@ const cCarouselControls_next = css({
 
 const cCarouselControls_slideItemBase = css({
   borderRadius: 'xl',
-  height: {
+  h: {
     base: 3,
     md: 4,
   },
-  width: {
+  w: {
     base: 14,
     md: 20,
   },
@@ -84,7 +84,7 @@ const cCarouselControls_activeSlideItem = css({
 });
 
 const cCarouselControls_inactiveSlideItem = css({
-  bgColor: {
+  bg: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },

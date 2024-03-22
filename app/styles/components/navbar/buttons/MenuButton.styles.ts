@@ -15,20 +15,20 @@ const cMenuButton_menuButton = css({
     base: 'p_blue.800',
     _dark: 'p_blue.200',
   },
-  height: {
+  h: {
     base: 10,
     md: 14,
   },
   position: 'relative',
   transition: 'all 0.5s',
-  width: {
+  w: {
     base: 10,
     md: 14,
   },
 });
 
 const cMenuButton_blueCircle = circle({
-  bgColor: 'p_blue.main',
+  bg: 'p_blue.main',
   position: 'absolute',
   right: 1,
   size: {
@@ -39,7 +39,7 @@ const cMenuButton_blueCircle = circle({
 });
 
 const cMenuButton_purpleCircle = circle({
-  bgColor: 'p_purple.main',
+  bg: 'p_purple.main',
   bottom: 1,
   left: 1,
   position: 'absolute',
@@ -51,7 +51,7 @@ const cMenuButton_purpleCircle = circle({
 
 const cMenuButton_menu = css({
   alignItems: 'center',
-  bgColor: {
+  bg: {
     base: 'p_purple.light/70',
     _dark: 'p_purple.dark/70',
   },
@@ -67,7 +67,7 @@ const cMenuButton_menu = css({
     base: 1,
     md: '6px',
   },
-  height: {
+  h: {
     base: 7,
     md: 10,
   },
@@ -82,21 +82,21 @@ const cMenuButton_menu = css({
     md: '8px',
   },
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: 7,
     md: 10,
   },
 });
 
 const cMenuButton_menuLine = css({
-  borderRadius: 20,
-  bgColor: {
+  bg: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
-  height: '3px',
+  borderRadius: 20,
+  h: '3px',
   transition: 'background-color 0.5s',
-  width: '70%',
+  w: '70%',
 });
 
 const cMenuButton_getNavMenu = (isActive: boolean) => {
@@ -104,7 +104,7 @@ const cMenuButton_getNavMenu = (isActive: boolean) => {
     display: {
       xl: 'none',
     },
-    height: 'fit-content',
+    h: 'fit-content',
     left: 0,
     position: 'absolute',
     top: {
@@ -114,7 +114,7 @@ const cMenuButton_getNavMenu = (isActive: boolean) => {
     transition: 'all 0.5s',
     translate: 'auto',
     translateX: isActive ? '0' : '-110%',
-    width: 'fit-content',
+    w: 'fit-content',
   });
 };
 

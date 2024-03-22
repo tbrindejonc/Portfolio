@@ -2,20 +2,20 @@ import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
 const cLanguageButton_languageButton = css({
-  bgColor: {
+  bg: {
     base: 'p_blue.800',
     _dark: 'p_blue.light',
   },
   borderRadius: 10,
   cursor: 'pointer',
-  height: {
+  h: {
     base: 10,
     md: 14,
     xl: 12,
   },
   position: 'relative',
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: 10,
     md: 14,
     xl: 12,
@@ -23,7 +23,7 @@ const cLanguageButton_languageButton = css({
 });
 
 const cLanguageButton_circle = circle({
-  bgColor: 'p_blue.main',
+  bg: 'p_blue.main',
   position: 'absolute',
   right: 1,
   size: {
@@ -36,7 +36,7 @@ const cLanguageButton_circle = circle({
 
 const cLanguageButton_languageContainer = css({
   alignItems: 'center',
-  bgColor: {
+  bg: {
     base: 'p_blue.light/70',
     _dark: 'p_blue.dark/70',
   },
@@ -49,7 +49,7 @@ const cLanguageButton_languageContainer = css({
   display: 'flex',
   flexDirection: 'column',
   gap: 1,
-  height: {
+  h: {
     base: 7,
     md: 10,
     xl: 9,
@@ -67,7 +67,7 @@ const cLanguageButton_languageContainer = css({
     xl: '6px',
   },
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: 7,
     md: 10,
     xl: 9,

@@ -11,8 +11,8 @@ const cActivity_activity = vstack({
 });
 
 const cActivity_svgBase = css({
-  height: 12,
-  width: 12,
+  h: 12,
+  w: 12,
 });
 
 const cActivity_gameIcon = css({
@@ -37,9 +37,8 @@ const cActivity_discoveriesIcon = css({
 });
 
 const cActivity_divider = css({
-  bgColor: 'p_purple.main',
-  height: '5vh',
-  width: 1,
+  h: '5vh',
+  w: 1,
 });
 
 const cActivity_heading = hstack({
@@ -60,11 +59,11 @@ const cActivity_paragraph = css({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
-  lineHeight: '1.7em',
   fontSize: {
     base: 'lg',
     md: '2xl',
   },
+  lineHeight: '1.7em',
   textWrap: 'balance',
 });
 
@@ -77,15 +76,15 @@ const cActivity_variants = cva({
         gradientTo: 'p_purple.main',
       },
       dev: {
-        bgColor: 'p_blue.main',
+        bg: 'p_blue.main',
       },
       discoveries: {
-        bgColor: 'p_purple.main',
+        bg: 'p_purple.main',
       },
     },
     title: {
       game: {
-        background: {
+        bg: {
           base: 'linear-gradient(to right, token(colors.p_blue.700), token(colors.p_purple.700))',
           _dark: 'linear-gradient(to right, token(colors.p_blue.200), token(colors.p_purple.200))',
         },

@@ -26,7 +26,7 @@ const cNavLink_getLink = (active: number, index: number) => {
     py: 3,
     position: 'relative',
     transition: 'color 0.5s',
-    width: 'full',
+    w: 'full',
   });
 };
 
@@ -44,7 +44,7 @@ const cNavLink_getSelectedLink = (active: number, index: number) => {
       base: 'p_purple.light',
       _dark: 'p_purple.dark',
     },
-    height: 2,
+    h: 2,
     left: 0,
     position: 'absolute',
     shadow: '2px 0 4px 0',
@@ -53,7 +53,7 @@ const cNavLink_getSelectedLink = (active: number, index: number) => {
       _dark: 'p_purple.light/25',
     },
     transition: 'all 0.5s',
-    width: 'full',
+    w: 'full',
   });
 };
 

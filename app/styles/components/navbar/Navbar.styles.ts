@@ -2,11 +2,11 @@ import {hstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const cNavbar_navbar = hstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
-  height: {
+  h: {
     base: 12,
     md: 20,
     xl: 14,
@@ -15,7 +15,7 @@ const cNavbar_navbar = hstack({
     base: 'space-around',
     xl: 'space-between',
   },
-  paddingX: {
+  px: {
     base: 2,
     xl: 4,
   },
@@ -25,12 +25,12 @@ const cNavbar_navbar = hstack({
     _dark: '0 4px 4px 0 token(colors.p_purple.light_25)',
   },
   transition: 'background-color 0.5s',
-  width: 'full',
+  w: 'full',
   zIndex: 10,
 });
 
 const cNavbar_name = css({
-  background: {
+  bg: {
     base: 'linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.dark))',
     _dark:
       'linear-gradient(to right, token(colors.p_blue.light), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.light))',

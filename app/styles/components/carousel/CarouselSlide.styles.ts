@@ -2,11 +2,10 @@ import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
 const cCarouselSlide_variants = cva({
-  base: {},
   variants: {
     separator: {
-      first: {bgColor: 'p_blue.main'},
-      second: {bgColor: 'p_purple.main'},
+      first: {bg: 'p_blue.main'},
+      second: {bg: 'p_purple.main'},
       third: {bgGradient: 'to-r', gradientFrom: 'p_blue.main', gradientTo: 'p_purple.main'},
     },
     showGraduation: {
@@ -57,7 +56,7 @@ const cCarouselSlide_slides = [
 ];
 
 const cCarouselSlide_slide = vstack({
-  bgColor: 'transparent',
+  bg: 'transparent',
   border: '3px solid',
   borderColor: {
     base: 'p_blue.700',
@@ -83,7 +82,7 @@ const cCarouselSlide_slide = vstack({
   px: {
     md: 8,
   },
-  width: {
+  w: {
     base: '90vw',
     md: '70vw',
   },
@@ -99,14 +98,14 @@ const cCarouselSlide_title = css({
 });
 
 const cCarouselSlide_separator = css({
-  height: '5px',
-  width: '2/3',
+  h: '5px',
+  w: '2/3',
 });
 
 const cCarouselSlide_svg = css({
-  height: 'auto',
+  h: 'auto',
   strokeWidth: 1,
-  width: 24,
+  w: 24,
 });
 
 const cCarouselSlide_paragraph = css({

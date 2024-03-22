@@ -2,18 +2,18 @@ import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const cNavMenu_navMenu = vstack({
-  borderEndRadius: 'lg',
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
+  borderEndRadius: 'lg',
   shadow: {
     base: '4px 4px 4px 0 token(colors.p_purple.dark_25)',
     _dark: '4px 4px 4px 0 token(colors.p_purple.light_25)',
   },
   textAlign: 'center',
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: '50vw',
     md: '40vw',
   },
@@ -30,13 +30,13 @@ const cNavMenu_getLink = (active: number, index: number) => {
       md: '3xl',
     },
     fontWeight: 'bold',
-    paddingY: {
+    py: {
       base: 2,
       md: 4,
     },
     position: 'relative',
     transition: 'color 0.5s',
-    width: 'full',
+    w: 'full',
   });
 };
 
@@ -53,7 +53,7 @@ const cNavMenu_getSelectedLink = (active: number, index: number) => {
       base: 'p_purple.light',
       _dark: 'p_purple.dark',
     },
-    height: {
+    h: {
       base: 10,
       md: '6.5vh',
     },
@@ -66,7 +66,7 @@ const cNavMenu_getSelectedLink = (active: number, index: number) => {
     },
     transition: 'all 0.5s',
     top: 0,
-    width: {
+    w: {
       base: 2,
       md: 4,
     },

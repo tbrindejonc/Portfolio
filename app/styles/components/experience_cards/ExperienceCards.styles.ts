@@ -6,7 +6,7 @@ const cExperienceCards_experienceCards = hstack({
     base: 'none',
     xl: 'flex',
   },
-  width: '90vw',
+  w: '90vw',
 });
 
 export default cExperienceCards_experienceCards;

@@ -3,20 +3,20 @@ import {circle} from '@/styled-system/patterns';
 import {Theme} from '@appTypes/portfolio';
 
 const cThemeButton_themeButton = css({
-  bgColor: {
+  bg: {
     base: 'p_purple.800',
     _dark: 'p_purple.light',
   },
   borderRadius: 10,
   cursor: 'pointer',
-  height: {
+  h: {
     base: 10,
     md: 14,
     xl: 12,
   },
   position: 'relative',
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: 10,
     md: 14,
     xl: 12,
@@ -24,7 +24,7 @@ const cThemeButton_themeButton = css({
 });
 
 const cThemeButton_circle = circle({
-  bgColor: 'p_purple.main',
+  bg: 'p_purple.main',
   bottom: 1,
   left: 1,
   position: 'absolute',
@@ -37,7 +37,7 @@ const cThemeButton_circle = circle({
 
 const cThemeButton_iconsContainer = css({
   alignItems: 'center',
-  bgColor: {
+  bg: {
     base: 'p_purple.light/70',
     _dark: 'p_purple.dark/70',
   },
@@ -50,7 +50,7 @@ const cThemeButton_iconsContainer = css({
   display: 'flex',
   flexDirection: 'column',
   gap: 1,
-  height: {
+  h: {
     base: 7,
     md: 10,
     xl: 9,
@@ -68,7 +68,7 @@ const cThemeButton_iconsContainer = css({
     xl: '6px',
   },
   transition: 'background-color 0.5s',
-  width: {
+  w: {
     base: 7,
     md: 10,
     xl: 9,
@@ -78,12 +78,12 @@ const cThemeButton_iconsContainer = css({
 const cThemeButton_getMoon = (theme: Theme) => {
   return css({
     display: theme === 'light' ? 'block' : 'none',
-    height: {
+    h: {
       md: '30px',
     },
     stroke: 'p_purple.800',
     transition: 'transform 1s',
-    width: {
+    w: {
       md: '30px',
     },
   });
@@ -92,13 +92,13 @@ const cThemeButton_getMoon = (theme: Theme) => {
 const cThemeButton_getSun = (theme: Theme) => {
   return css({
     display: theme === 'dark' ? 'block' : 'none',
-    height: {
+    h: {
       base: '22px',
       md: '30px',
     },
     stroke: 'p_purple.200',
     transition: 'transform 1s',
-    width: {
+    w: {
       base: '22px',
       md: '30px',
     },

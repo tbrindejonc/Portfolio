@@ -3,7 +3,7 @@ import {css} from '@/styled-system/css';
 import {FooterLink} from '@appTypes/portfolio';
 
 const cFooter_footer = grid({
-  bgColor: {
+  bg: {
     base: 'p_blue.light',
     _dark: 'p_blue.dark',
   },
@@ -33,7 +33,7 @@ const cFooter_footer = grid({
     base: 2,
     md: 4,
   },
-  paddingX: {
+  px: {
     md: 12,
     xl: 24,
   },
@@ -48,7 +48,7 @@ const cFooter_footer = grid({
 });
 
 const cFooter_link = css({
-  width: 'fit',
+  w: 'fit',
   textDecoration: {
     _hover: 'underline',
   },

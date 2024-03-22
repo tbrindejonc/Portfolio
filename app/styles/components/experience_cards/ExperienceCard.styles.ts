@@ -2,9 +2,9 @@ import {css, cva} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
 const cExperienceCard_svg = css({
-  height: 'auto',
+  h: 'auto',
   strokeWidth: 1,
-  width: 24,
+  w: 24,
 });
 
 const cExperienceCard_paragraph = css({
@@ -29,8 +29,8 @@ const cExperienceCard_card = vstack({
 });
 
 const cExperienceCard_separator = css({
-  height: 1,
-  width: '3/4',
+  h: 1,
+  w: '3/4',
 });
 
 const cExperienceCard_title = css({
@@ -40,14 +40,13 @@ const cExperienceCard_title = css({
 });
 
 const cExperienceCard_variants = cva({
-  base: {},
   variants: {
     separator: {
       first: {
-        bgColor: 'p_blue.main',
+        bg: 'p_blue.main',
       },
       second: {
-        bgColor: 'p_purple.main',
+        bg: 'p_purple.main',
       },
       third: {
         bgGradient: 'to-r',
