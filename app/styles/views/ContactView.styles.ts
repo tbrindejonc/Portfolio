@@ -3,7 +3,7 @@ import {vstack} from '@/styled-system/patterns';
 
 const vContact_contact = css({
   alignItems: 'center',
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -25,7 +25,7 @@ const vContact_contact = css({
     md: '80vh',
     xl: 'screen',
   },
-  padding: {
+  p: {
     base: 4,
     md: 8,
     xl: 20,
@@ -39,7 +39,7 @@ const vContact_pictureContainer = css({
     base: 10,
     md: 20,
   },
-  height: {
+  h: {
     base: '300px',
     md: '400px',
     xl: '600px',
@@ -49,7 +49,7 @@ const vContact_pictureContainer = css({
     base: '0px 4px 4px 0 token(colors.p_blue.dark_25)',
     _dark: '0px 4px 4px 0 token(colors.p_blue.light_25)',
   },
-  width: {
+  w: {
     base: '300px',
     md: '400px',
     xl: '600px',
@@ -57,13 +57,13 @@ const vContact_pictureContainer = css({
 });
 
 const vContact_picture = css({
-  backgroundSize: 'cover',
+  bgSize: 'cover',
   borderRadius: {
     base: 10,
     md: 20,
   },
-  height: 'auto',
-  width: {
+  h: 'auto',
+  w: {
     base: '300px',
     md: '400px',
     xl: '600px',
@@ -86,7 +86,7 @@ const vContact_title = css({
 });
 
 const vContact_button = css({
-  bgColor: {
+  bg: {
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
   },
@@ -133,7 +133,7 @@ const vContact_titleAndButton = vstack({
     md: 16,
     xl: 32,
   },
-  justifyContent: 'center',
+  justify: 'center',
   w: {
     xl: '1/2',
   },

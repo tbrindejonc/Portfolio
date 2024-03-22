@@ -2,7 +2,7 @@ import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const vNotFound_notFound = vstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -19,7 +19,7 @@ const vNotFound_notFound = vstack({
     md: '92vh',
     xl: '94.8vh',
   },
-  justifyContent: 'center',
+  justify: 'center',
   transition: 'background-color 0.5s',
 });
 
@@ -34,7 +34,7 @@ const vNotFound_title = css({
 });
 
 const vNotFound_button = css({
-  bgColor: {
+  bg: {
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
   },

@@ -2,7 +2,7 @@ import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
 const vLanding_landing: string = css({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -11,20 +11,20 @@ const vLanding_landing: string = css({
     _dark: 'neutral.light',
   },
   fontFamily: 'bricolage',
-  height: 'screen',
+  h: 'screen',
   overflow: 'hidden',
-  paddingTop: {
+  pt: {
     base: 20,
     md: 40,
   },
-  paddingX: {
+  px: {
     base: 2,
     md: 14,
     xl: '10em',
   },
   position: 'relative',
   transition: 'all 0.5s',
-  width: 'full',
+  w: 'full',
 });
 
 const vLanding_imageContainer: string = css({
@@ -32,7 +32,7 @@ const vLanding_imageContainer: string = css({
     base: 10,
     md: 20,
   },
-  height: {
+  h: {
     base: '300px',
     md: '400px',
     xl: '500px',
@@ -46,7 +46,7 @@ const vLanding_imageContainer: string = css({
   top: {
     xl: '15em',
   },
-  width: {
+  w: {
     base: '300px',
     md: '400px',
     xl: '500px',
@@ -55,13 +55,13 @@ const vLanding_imageContainer: string = css({
 });
 
 const vLanding_image: string = css({
-  backgroundSize: 'cover',
+  bgSize: 'cover',
   borderRadius: {
     base: 10,
     md: 20,
   },
-  height: 'auto',
-  width: {
+  h: 'auto',
+  w: {
     base: '300px',
     md: '400px',
     xl: '500px',
@@ -69,7 +69,7 @@ const vLanding_image: string = css({
 });
 
 const vLanding_nameContainer: string = css({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -84,7 +84,7 @@ const vLanding_nameContainer: string = css({
     base: 2,
     xl: 4,
   },
-  paddingX: {
+  px: {
     base: 4,
     md: 6,
   },
@@ -94,13 +94,13 @@ const vLanding_nameContainer: string = css({
     md: '5em',
     xl: '50em',
   },
-  transition: 'all 0.5s',
   top: {
     base: '21em',
     md: '9em',
     xl: '14em',
   },
-  width: {
+  transition: 'all 0.5s',
+  w: {
     base: '90vw',
     md: '45vw',
     xl: '27vw',
@@ -109,7 +109,7 @@ const vLanding_nameContainer: string = css({
 });
 
 const vLanding_name: string = css({
-  background: {
+  bg: {
     base: 'linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.dark))',
     _dark:
       'linear-gradient(to right, token(colors.p_blue.light), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.light))',
@@ -133,7 +133,7 @@ const vLanding_name: string = css({
 });
 
 const vLanding_circle: string = circle({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -176,7 +176,7 @@ const vLanding_circleTitle: string = css({
     md: '5em',
     xl: '4em',
   },
-  width: {
+  w: {
     base: '2/3',
     md: '3/4',
   },

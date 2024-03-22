@@ -2,7 +2,7 @@ import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const vJourney_journey = vstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -38,8 +38,8 @@ const vJourney_title = css({
 
 const vJourney_image = css({
   borderRadius: 'xl',
-  height: 'auto',
-  width: {
+  h: 'auto',
+  w: {
     base: 'full',
     md: '1/2',
     xl: '1/5',
@@ -101,15 +101,6 @@ const vJourney_reversedTextAndImage = css({
 });
 
 const vJourney_button = css({
-  border: {
-    base: '3px solid',
-    md: '4px solid',
-  },
-  borderColor: 'transparent',
-  borderRadius: {
-    base: 'md',
-    md: 'xl',
-  },
   bg: {
     base: 'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.dark)) border-box',
     _dark:
@@ -119,6 +110,15 @@ const vJourney_button = css({
       _dark:
         'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to top, token(colors.p_blue.main), token(colors.p_blue.300), token(colors.p_blue.main)) border-box',
     },
+  },
+  border: {
+    base: '3px solid',
+    md: '4px solid',
+  },
+  borderColor: 'transparent',
+  borderRadius: {
+    base: 'md',
+    md: 'xl',
   },
   color: {
     base: 'p_blue.dark',
@@ -141,7 +141,7 @@ const vJourney_button = css({
   },
   textAlign: 'center',
   transition: 'all 0.5s',
-  width: {
+  w: {
     base: 'full',
     md: '3/5',
     xl: '1/4',
@@ -152,7 +152,7 @@ const vJourney_paragraph = css({
   fontSize: {
     xl: '3xl',
   },
-  width: {
+  w: {
     xl: '2/5',
   },
 });

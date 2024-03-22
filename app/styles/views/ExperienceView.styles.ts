@@ -2,7 +2,7 @@ import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const vExperience_experience = vstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },

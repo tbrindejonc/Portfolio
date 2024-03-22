@@ -1,7 +1,7 @@
 import {circle, grid, gridItem} from '@/styled-system/patterns';
 
 const vActivity_activity = grid({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -52,7 +52,7 @@ const vActivity_button = gridItem({
     md: 'center',
     xl: 'start',
   },
-  bgColor: {
+  bg: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
@@ -60,6 +60,12 @@ const vActivity_button = gridItem({
     _hover: 'to-tr',
   },
   borderRadius: 'md',
+  boxShadow: {
+    _hover: {
+      base: '2px 2px 5px token(colors.p_purple.dark)',
+      _dark: '2px 2px 5px token(colors.p_purple.light)',
+    },
+  },
   color: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
@@ -92,12 +98,6 @@ const vActivity_button = gridItem({
     base: 2,
     md: 4,
   },
-  boxShadow: {
-    _hover: {
-      base: '2px 2px 5px token(colors.p_purple.dark)',
-      _dark: '2px 2px 5px token(colors.p_purple.light)',
-    },
-  },
   textAlign: 'center',
   transition: 'all 0.3s ease-in-out',
   w: {
@@ -108,7 +108,7 @@ const vActivity_button = gridItem({
 });
 
 const vActivity_circle = circle({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
