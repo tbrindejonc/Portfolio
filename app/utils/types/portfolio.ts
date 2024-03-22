@@ -1,4 +1,6 @@
 // app theme
+import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
+
 export type Theme = 'light' | 'dark';
 
 // base app text
@@ -93,4 +95,10 @@ export type ExperienceLandingTexts = {
   title: AppText;
   explanations: AppText;
   link: AppText;
+};
+
+// experience context exported utilities
+export type ExperienceContextUtils = {
+  experience: CompleteExperienceFromApi;
+  language: Language;
 };
