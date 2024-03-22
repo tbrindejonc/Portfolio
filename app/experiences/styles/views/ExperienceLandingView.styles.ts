@@ -1,7 +1,7 @@
 import {hstack, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const experiencesLandingStyle = vstack({
+const exp_vExpLanding_experienceLanding = vstack({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -20,7 +20,7 @@ const experiencesLandingStyle = vstack({
   transition: 'all 0.5s',
 });
 
-const globalWrapperStyle = css({
+const exp_vExpLanding_container = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: {
@@ -39,7 +39,7 @@ const globalWrapperStyle = css({
   },
 });
 
-const textContainerStyle = vstack({
+const exp_vExpLanding_textContainer = vstack({
   alignItems: {
     base: 'center',
     xl: 'end',
@@ -55,7 +55,7 @@ const textContainerStyle = vstack({
   },
 });
 
-const imageStyle: string = css({
+const exp_vExpLanding_image: string = css({
   borderRadius: '2xl',
   height: {
     base: '250px',
@@ -74,7 +74,7 @@ const imageStyle: string = css({
   },
 });
 
-const titleStyle = css({
+const exp_vExpLanding_title = css({
   fontFamily: 'bricolage',
   fontSize: {
     base: '4xl',
@@ -84,7 +84,7 @@ const titleStyle = css({
   fontWeight: 'bold',
 });
 
-const paragraphStyle = css({
+const exp_vExpLanding_paragraph = css({
   color: {
     base: 'neutral.800',
     _dark: 'neutral.200',
@@ -100,7 +100,7 @@ const paragraphStyle = css({
   },
 });
 
-const svgStyle = css({
+const exp_vExpLanding_svg = css({
   h: {
     base: 7,
     md: 12,
@@ -121,7 +121,7 @@ const svgStyle = css({
   },
 });
 
-const linkToNextStyle = hstack({
+const exp_vExpLanding_button = hstack({
   bgColor: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
@@ -156,12 +156,12 @@ const linkToNextStyle = hstack({
 });
 
 export {
-  experiencesLandingStyle,
-  textContainerStyle,
-  imageStyle,
-  titleStyle,
-  paragraphStyle,
-  svgStyle,
-  linkToNextStyle,
-  globalWrapperStyle,
+  exp_vExpLanding_experienceLanding,
+  exp_vExpLanding_textContainer,
+  exp_vExpLanding_image,
+  exp_vExpLanding_title,
+  exp_vExpLanding_paragraph,
+  exp_vExpLanding_svg,
+  exp_vExpLanding_button,
+  exp_vExpLanding_container,
 };

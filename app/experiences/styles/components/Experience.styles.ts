@@ -1,7 +1,7 @@
 import {grid, hstack, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const containerStyle = vstack({
+const exp_cExp_loadingWrapper = vstack({
   gap: {
     base: 6,
     md: 8,
@@ -9,7 +9,7 @@ const containerStyle = vstack({
   },
 });
 
-const baseLoadingStyle = css({
+const exp_cExp_loadingBase = css({
   bgColor: {
     base: 'p_blue.800/25',
     _dark: 'p_blue.200/25',
@@ -19,7 +19,7 @@ const baseLoadingStyle = css({
   animation: 'pulse',
 });
 
-const titleLoadingStyle = css({
+const exp_cExp_loadingTitle = css({
   h: {
     base: 6,
     md: 14,
@@ -27,7 +27,7 @@ const titleLoadingStyle = css({
   },
 });
 
-const paragraphLoadingStyle = css({
+const exp_cExp_loadingParagraph = css({
   h: {
     base: 16,
     md: 32,
@@ -35,7 +35,7 @@ const paragraphLoadingStyle = css({
   },
 });
 
-const experienceStyle = css({
+const exp_cExp_experience = css({
   alignItems: 'center',
   bgColor: {
     base: 'neutral.light/50',
@@ -70,7 +70,7 @@ const experienceStyle = css({
   transition: 'all 0.5s',
 });
 
-const loadingContainerStyle = css({
+const exp_cExp_loadingContainer = css({
   display: 'flex',
   flexDirection: 'column',
   gap: {
@@ -82,11 +82,11 @@ const loadingContainerStyle = css({
   w: 'full',
 });
 
-const loadingTechsStyle = hstack({
+const exp_cExp_loadingTechs = hstack({
   gap: 4,
 });
 
-const loadingTechItemStyle = css({
+const exp_cExp_loadingTechItem = css({
   animation: 'pulse',
   bgColor: {
     base: 'p_blue.800/25',
@@ -103,7 +103,7 @@ const loadingTechItemStyle = css({
   },
 });
 
-const loadingImageStyle = css({
+const exp_cExp_loadingImage = css({
   animation: 'pulse',
   bgColor: {
     base: 'p_blue.800/25',
@@ -121,7 +121,7 @@ const loadingImageStyle = css({
   },
 });
 
-const logoAndTitleStyle = css({
+const exp_cExp_loadingLogoAndPeriod = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: {
@@ -139,7 +139,7 @@ const logoAndTitleStyle = css({
   w: 'full',
 });
 
-const companyTitleStyle = css({
+const exp_cExp_loadingCompanyName = css({
   animation: 'pulse',
   bgColor: {
     base: 'p_blue.800/25',
@@ -156,7 +156,7 @@ const companyTitleStyle = css({
   },
 });
 
-const companyNameStyle = css({
+const exp_cExp_companyName = css({
   font: 'bricolage',
   fontSize: {
     base: '3xl',
@@ -165,7 +165,7 @@ const companyNameStyle = css({
   fontWeight: 'bold',
 });
 
-const expHeadingStyle = css({
+const exp_cExp_heading = css({
   font: 'bricolage',
   fontSize: {
     base: 'xl',
@@ -174,19 +174,19 @@ const expHeadingStyle = css({
   fontWeight: 'bold',
 });
 
-const paragraphStyle = css({
+const exp_cExp_paragraph = css({
   fontSize: {
     base: 'md',
     md: '2xl',
   },
 });
 
-const textContainerStyle = vstack({
+const exp_cExp_textContainer = vstack({
   alignItems: 'start',
   gap: 2,
 });
 
-const experienceContainerStyle = css({
+const exp_cExp_textWrapper = css({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -196,17 +196,17 @@ const experienceContainerStyle = css({
   },
 });
 
-const companyLogoStyle = css({
+const exp_cExp_companyLogo = css({
   h: 'auto',
   w: 32,
 });
 
-const companyLogoAndPeriodStyle = hstack({
+const exp_cExp_logoAndPeriod = hstack({
   w: 'full',
   gap: 4,
 });
 
-const companyLogoContainerStyle = vstack({
+const exp_cExp_logoContainer = vstack({
   bgColor: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
@@ -232,7 +232,7 @@ const companyLogoContainerStyle = vstack({
   },
 });
 
-const jobPeriodStyle = css({
+const exp_cExp_period = css({
   fontWeight: 'bold',
   textAlign: 'center',
   w: {
@@ -244,7 +244,7 @@ const jobPeriodStyle = css({
   },
 });
 
-const techContainerStyle = grid({
+const exp_cExp_techContainer = grid({
   gridTemplateColumns: {
     base: 3,
     md: 5,
@@ -257,32 +257,32 @@ const techContainerStyle = grid({
   },
 });
 
-const techsContainerStyle = vstack({
+const exp_cExp_techsWrapper = vstack({
   alignItems: 'start',
   gap: 4,
 });
 
 export {
-  containerStyle,
-  companyLogoContainerStyle,
-  companyLogoStyle,
-  companyTitleStyle,
-  companyNameStyle,
-  companyLogoAndPeriodStyle,
-  experienceStyle,
-  expHeadingStyle,
-  experienceContainerStyle,
-  jobPeriodStyle,
-  loadingContainerStyle,
-  loadingImageStyle,
-  loadingTechItemStyle,
-  loadingTechsStyle,
-  logoAndTitleStyle,
-  paragraphStyle,
-  paragraphLoadingStyle,
-  techContainerStyle,
-  techsContainerStyle,
-  textContainerStyle,
-  titleLoadingStyle,
-  baseLoadingStyle,
+  exp_cExp_loadingWrapper,
+  exp_cExp_logoContainer,
+  exp_cExp_companyLogo,
+  exp_cExp_loadingCompanyName,
+  exp_cExp_companyName,
+  exp_cExp_logoAndPeriod,
+  exp_cExp_experience,
+  exp_cExp_heading,
+  exp_cExp_textWrapper,
+  exp_cExp_period,
+  exp_cExp_loadingContainer,
+  exp_cExp_loadingImage,
+  exp_cExp_loadingTechItem,
+  exp_cExp_loadingTechs,
+  exp_cExp_loadingLogoAndPeriod,
+  exp_cExp_paragraph,
+  exp_cExp_loadingParagraph,
+  exp_cExp_techContainer,
+  exp_cExp_techsWrapper,
+  exp_cExp_textContainer,
+  exp_cExp_loadingTitle,
+  exp_cExp_loadingBase,
 };

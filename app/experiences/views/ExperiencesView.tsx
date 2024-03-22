@@ -3,15 +3,15 @@
 import useExperiences from '../hooks/useExperiences';
 import Image from 'next/image';
 import {
-  baseContainerStyle,
-  baseLooperStyle,
-  bottomLooperStyle,
-  firstAndThirdExpStyle,
-  otherBottomLooperStyle,
-  otherTopLooperStyle,
-  rainbowLooperStyle,
-  secondExpStyle,
-  topLooperStyle,
+  exp_vExp_bottomLooper,
+  exp_vExp_experience,
+  exp_vExp_looperBase,
+  exp_vExp_otherBottomLooper,
+  exp_vExp_otherTopLooper,
+  exp_vExp_rainbowLooper,
+  exp_vExp_toLeftBackground,
+  exp_vExp_topLooper,
+  exp_vExp_toRightBackground,
 } from '../styles/views/ExperiencesView.styles';
 import ExperienceFactory from '../components/ExperienceFactory';
 
@@ -24,14 +24,14 @@ export default function ExperiencesView() {
 
   return (
     <section id={'experiences-display'}>
-      <div id={'first-exp'} className={`${baseContainerStyle} ${firstAndThirdExpStyle}`}>
+      <div id={'first-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}
           alt={'me'}
           width={0}
           height={0}
           sizes={'100vw'}
-          className={`${baseLooperStyle} ${topLooperStyle}`}
+          className={`${exp_vExp_looperBase} ${exp_vExp_topLooper}`}
         />
         <Image
           src={'/images/portfolio/experiences/looper_purple.png'}
@@ -39,29 +39,29 @@ export default function ExperiencesView() {
           width={0}
           height={0}
           sizes={'100vw'}
-          className={`${baseLooperStyle} ${bottomLooperStyle}`}
+          className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
         />
         <ExperienceFactory experience={data.items[0]} isLoading={isLoading} />
       </div>
-      <div id={'second-exp'} className={`${baseContainerStyle} ${secondExpStyle}`}>
+      <div id={'second-exp'} className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}>
         <Image
           src={'/images/portfolio/experiences/looper_rainbow.png'}
           alt={'me'}
           width={0}
           height={0}
           sizes={'100vw'}
-          className={rainbowLooperStyle}
+          className={exp_vExp_rainbowLooper}
         />
         <ExperienceFactory experience={data.items[1]} isLoading={isLoading} />
       </div>
-      <div id={'third-exp'} className={`${baseContainerStyle} ${firstAndThirdExpStyle}`}>
+      <div id={'third-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}
           alt={'me'}
           width={0}
           height={0}
           sizes={'100vw'}
-          className={`${baseLooperStyle} ${otherTopLooperStyle}`}
+          className={`${exp_vExp_looperBase} ${exp_vExp_otherTopLooper}`}
         />
         <Image
           src={'/images/portfolio/experiences/looper_purple.png'}
@@ -69,7 +69,7 @@ export default function ExperiencesView() {
           width={0}
           height={0}
           sizes={'100vw'}
-          className={`${baseLooperStyle} ${otherBottomLooperStyle}`}
+          className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
         />
         <ExperienceFactory experience={data.items[2]} isLoading={isLoading} />
       </div>

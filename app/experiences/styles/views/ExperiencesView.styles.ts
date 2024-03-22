@@ -1,7 +1,7 @@
 import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const baseContainerStyle = vstack({
+const exp_vExp_experience = vstack({
   bgGradient: 'to-bl',
   color: {
     base: 'neutral.dark',
@@ -14,7 +14,7 @@ const baseContainerStyle = vstack({
   transition: 'all 0.5s',
 });
 
-const firstAndThirdExpStyle: string = css({
+const exp_vExp_toLeftBackground: string = css({
   gradientFrom: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -25,7 +25,7 @@ const firstAndThirdExpStyle: string = css({
   },
 });
 
-const secondExpStyle: string = css({
+const exp_vExp_toRightBackground: string = css({
   gradientFrom: {
     base: 'p_blue.light',
     _dark: 'p_blue.dark',
@@ -36,7 +36,7 @@ const secondExpStyle: string = css({
   },
 });
 
-const baseLooperStyle: string = css({
+const exp_vExp_looperBase: string = css({
   blur: '5px',
   filter: 'auto',
   height: {
@@ -53,7 +53,7 @@ const baseLooperStyle: string = css({
   },
 });
 
-const topLooperStyle: string = css({
+const exp_vExp_topLooper: string = css({
   top: {
     base: '-15vh',
     xl: '-25vh',
@@ -64,7 +64,7 @@ const topLooperStyle: string = css({
   },
 });
 
-const bottomLooperStyle: string = css({
+const exp_vExp_bottomLooper: string = css({
   bottom: {
     base: '-15vh',
     xl: '-25vh',
@@ -75,7 +75,7 @@ const bottomLooperStyle: string = css({
   },
 });
 
-const rainbowLooperStyle: string = css({
+const exp_vExp_rainbowLooper: string = css({
   blur: '10px',
   filter: 'auto',
   height: {
@@ -92,7 +92,7 @@ const rainbowLooperStyle: string = css({
   },
 });
 
-const otherBottomLooperStyle: string = css({
+const exp_vExp_otherBottomLooper: string = css({
   bottom: {
     base: '-15vh',
     xl: '-25vh',
@@ -103,7 +103,7 @@ const otherBottomLooperStyle: string = css({
   },
 });
 
-const otherTopLooperStyle: string = css({
+const exp_vExp_otherTopLooper: string = css({
   top: {
     base: '-15vh',
     xl: '-25vh',
@@ -115,13 +115,13 @@ const otherTopLooperStyle: string = css({
 });
 
 export {
-  baseContainerStyle,
-  firstAndThirdExpStyle,
-  secondExpStyle,
-  baseLooperStyle,
-  topLooperStyle,
-  bottomLooperStyle,
-  rainbowLooperStyle,
-  otherBottomLooperStyle,
-  otherTopLooperStyle,
+  exp_vExp_experience,
+  exp_vExp_toLeftBackground,
+  exp_vExp_toRightBackground,
+  exp_vExp_looperBase,
+  exp_vExp_topLooper,
+  exp_vExp_bottomLooper,
+  exp_vExp_rainbowLooper,
+  exp_vExp_otherBottomLooper,
+  exp_vExp_otherTopLooper,
 };
