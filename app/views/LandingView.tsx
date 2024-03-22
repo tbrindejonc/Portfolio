@@ -6,7 +6,6 @@ import {
   vLanding_circle,
   vLanding_circleTitle,
   vLanding_image,
-  vLanding_imageContainer,
   vLanding_landing,
   vLanding_name,
   vLanding_nameContainer,
@@ -18,16 +17,14 @@ export default function LandingView() {
 
   return (
     <section id={'landing'} className={vLanding_landing}>
-      <div className={vLanding_imageContainer}>
-        <Image
-          src={'/images/portfolio/landing/profile.jpg'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={vLanding_image}
-        />
-      </div>
+      <Image
+        src={'/images/portfolio/landing/profile.jpg'}
+        alt={'me'}
+        width={0}
+        height={0}
+        sizes={'100vw'}
+        className={vLanding_image}
+      />
       <div className={vLanding_nameContainer}>
         <h1 className={vLanding_name}>Timothée Brindejonc</h1>
       </div>

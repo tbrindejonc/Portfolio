@@ -27,7 +27,9 @@ const vLanding_landing: string = css({
   w: 'full',
 });
 
-const vLanding_imageContainer: string = css({
+const vLanding_image: string = css({
+  objectFit: 'cover',
+  objectPosition: 'top',
   borderRadius: {
     base: 10,
     md: 20,
@@ -37,14 +39,10 @@ const vLanding_imageContainer: string = css({
     md: '400px',
     xl: '500px',
   },
-  overflow: 'hidden',
   position: 'absolute',
   shadow: {
     base: '0px 4px 4px 0 token(colors.p_blue.dark_25)',
     _dark: '0px 4px 4px 0 token(colors.p_blue.light_25)',
-  },
-  top: {
-    xl: '15em',
   },
   w: {
     base: '300px',
@@ -52,20 +50,6 @@ const vLanding_imageContainer: string = css({
     xl: '500px',
   },
   zIndex: 1,
-});
-
-const vLanding_image: string = css({
-  bgSize: 'cover',
-  borderRadius: {
-    base: 10,
-    md: 20,
-  },
-  h: 'auto',
-  w: {
-    base: '300px',
-    md: '400px',
-    xl: '500px',
-  },
 });
 
 const vLanding_nameContainer: string = css({
@@ -183,12 +167,4 @@ const vLanding_circleTitle: string = css({
   zIndex: 1,
 });
 
-export {
-  vLanding_landing,
-  vLanding_imageContainer,
-  vLanding_image,
-  vLanding_nameContainer,
-  vLanding_name,
-  vLanding_circle,
-  vLanding_circleTitle,
-};
+export {vLanding_landing, vLanding_image, vLanding_nameContainer, vLanding_name, vLanding_circle, vLanding_circleTitle};
