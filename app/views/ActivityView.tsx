@@ -1,6 +1,11 @@
 'use client';
 
-import {activityStyle, backgroundCircleStyle, projectsLinkStyle, titleStyle} from '@styles/views/ActivityView.styles';
+import {
+  vActivity_activity,
+  vActivity_button,
+  vActivity_circle,
+  vActivity_title,
+} from '@styles/views/ActivityView.styles';
 import useLanguage from '@hooks/useLanguage';
 import activityTexts from '@texts/portfolio/activity/activityTexts';
 import activities from '@texts/portfolio/activity/activities';
@@ -11,8 +16,8 @@ export default function ActivityView() {
   const {language} = useLanguage();
 
   return (
-    <section id={'activity'} className={activityStyle}>
-      <h2 className={titleStyle}>{activityTexts.title[language]}</h2>
+    <section id={'activity'} className={vActivity_activity}>
+      <h2 className={vActivity_title}>{activityTexts.title[language]}</h2>
       <Activity activity={activities[0]} variant={'game'}>
         <Activity.Heading title={activities[0].title} variant={'game'}>
           <Activity.GameIcon />
@@ -28,10 +33,10 @@ export default function ActivityView() {
           <Activity.DiscoveriesIcon />
         </Activity.Heading>
       </Activity>
-      <Link href={'/projects'} className={projectsLinkStyle}>
+      <Link href={'/projects'} className={vActivity_button}>
         {activityTexts.link[language]}
       </Link>
-      <div id={'activity-bg-circle'} className={backgroundCircleStyle}></div>
+      <div id={'activity-bg-circle'} className={vActivity_circle}></div>
     </section>
   );
 }

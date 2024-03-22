@@ -1,7 +1,7 @@
 import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const journeyStyle = vstack({
+const vJourney_journey = vstack({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -20,7 +20,7 @@ const journeyStyle = vstack({
   },
 });
 
-const journeyTitleStyle = css({
+const vJourney_title = css({
   color: {
     base: 'neutral.800',
     _dark: 'neutral.200',
@@ -36,7 +36,7 @@ const journeyTitleStyle = css({
   },
 });
 
-const imageStyle = css({
+const vJourney_image = css({
   borderRadius: 'xl',
   height: 'auto',
   width: {
@@ -46,7 +46,7 @@ const imageStyle = css({
   },
 });
 
-const contentWrapperStyle = vstack({
+const vJourney_contentWrapper = vstack({
   bgGradient: 'to-t',
   borderRadius: {
     base: 'xl',
@@ -73,7 +73,7 @@ const contentWrapperStyle = vstack({
   transition: 'all 0.5s',
 });
 
-const textSectionStyle = css({
+const vJourney_textAndImage = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: {
@@ -86,7 +86,7 @@ const textSectionStyle = css({
   },
 });
 
-const reversedTextSectionStyle = css({
+const vJourney_reversedTextAndImage = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: {
@@ -100,7 +100,7 @@ const reversedTextSectionStyle = css({
   textAlign: 'end',
 });
 
-const linkStyle = css({
+const vJourney_button = css({
   border: {
     base: '3px solid',
     md: '4px solid',
@@ -148,7 +148,7 @@ const linkStyle = css({
   },
 });
 
-const paragraphStyle = css({
+const vJourney_paragraph = css({
   fontSize: {
     xl: '3xl',
   },
@@ -158,12 +158,12 @@ const paragraphStyle = css({
 });
 
 export {
-  journeyStyle,
-  journeyTitleStyle,
-  imageStyle,
-  contentWrapperStyle,
-  textSectionStyle,
-  linkStyle,
-  reversedTextSectionStyle,
-  paragraphStyle,
+  vJourney_journey,
+  vJourney_title,
+  vJourney_image,
+  vJourney_contentWrapper,
+  vJourney_textAndImage,
+  vJourney_button,
+  vJourney_reversedTextAndImage,
+  vJourney_paragraph,
 };

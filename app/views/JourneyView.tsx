@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  contentWrapperStyle,
-  imageStyle,
-  journeyStyle,
-  journeyTitleStyle,
-  linkStyle,
-  paragraphStyle,
-  reversedTextSectionStyle,
-  textSectionStyle,
+  vJourney_button,
+  vJourney_contentWrapper,
+  vJourney_image,
+  vJourney_journey,
+  vJourney_paragraph,
+  vJourney_reversedTextAndImage,
+  vJourney_textAndImage,
+  vJourney_title,
 } from '@styles/views/JourneyView.styles';
 import {firstParagraph, journeyTitle, secondParagraph, seeButton} from '@app/texts/portfolio/journey/journeyTexts';
 import useLanguage from '@hooks/useLanguage';
@@ -19,32 +19,32 @@ export default function JourneyView() {
   const {language} = useLanguage();
 
   return (
-    <section id={'journey'} className={journeyStyle}>
-      <div className={contentWrapperStyle}>
-        <h1 className={journeyTitleStyle}>{journeyTitle[language]}</h1>
-        <div className={textSectionStyle}>
-          <p className={paragraphStyle}>{firstParagraph[language]}</p>
+    <section id={'journey'} className={vJourney_journey}>
+      <div className={vJourney_contentWrapper}>
+        <h1 className={vJourney_title}>{journeyTitle[language]}</h1>
+        <div className={vJourney_textAndImage}>
+          <p className={vJourney_paragraph}>{firstParagraph[language]}</p>
           <Image
             src={'/images/portfolio/journey/scholarship.jpg'}
             alt={'me'}
             width={0}
             height={0}
             sizes={'100vw'}
-            className={imageStyle}
+            className={vJourney_image}
           />
         </div>
-        <div className={reversedTextSectionStyle}>
-          <p className={paragraphStyle}>{secondParagraph[language]}</p>
+        <div className={vJourney_reversedTextAndImage}>
+          <p className={vJourney_paragraph}>{secondParagraph[language]}</p>
           <Image
             src={'/images/portfolio/journey/webdev.jpg'}
             alt={'me'}
             width={0}
             height={0}
             sizes={'100vw'}
-            className={imageStyle}
+            className={vJourney_image}
           />
         </div>
-        <Link href={'/skills'} className={linkStyle}>
+        <Link href={'/skills'} className={vJourney_button}>
           {seeButton[language]}
         </Link>
       </div>

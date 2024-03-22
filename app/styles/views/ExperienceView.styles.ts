@@ -1,7 +1,7 @@
 import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const sectionStyle = vstack({
+const vExperience_experience = vstack({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -22,7 +22,7 @@ const sectionStyle = vstack({
   transition: 'all 0.5s',
 });
 
-const explanationStyle = vstack({
+const vExperience_explanations = vstack({
   alignItems: {
     md: 'start',
   },
@@ -54,7 +54,7 @@ const explanationStyle = vstack({
   w: '90vw',
 });
 
-const explanationTitleStyle = css({
+const vExperience_title = css({
   fontFamily: 'bricolage',
   fontSize: {
     base: '3xl',
@@ -63,12 +63,18 @@ const explanationTitleStyle = css({
   },
 });
 
-const firstSpanStyle = css({
+const vExperience_firstSpan = css({
   color: 'p_blue.main',
 });
 
-const secondSpanStyle = css({
+const vExperience_secondSpan = css({
   color: 'p_purple.main',
 });
 
-export {sectionStyle, explanationStyle, explanationTitleStyle, firstSpanStyle, secondSpanStyle};
+export {
+  vExperience_experience,
+  vExperience_explanations,
+  vExperience_title,
+  vExperience_firstSpan,
+  vExperience_secondSpan,
+};

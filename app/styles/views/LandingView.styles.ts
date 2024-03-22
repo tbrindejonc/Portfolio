@@ -1,7 +1,7 @@
 import {css} from '@/styled-system/css';
 import {circle} from '@/styled-system/patterns';
 
-const sectionStyle: string = css({
+const vLanding_landing: string = css({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -27,7 +27,7 @@ const sectionStyle: string = css({
   width: 'full',
 });
 
-const imageDivStyle: string = css({
+const vLanding_imageContainer: string = css({
   borderRadius: {
     base: 10,
     md: 20,
@@ -54,7 +54,7 @@ const imageDivStyle: string = css({
   zIndex: 1,
 });
 
-const imageStyle: string = css({
+const vLanding_image: string = css({
   backgroundSize: 'cover',
   borderRadius: {
     base: 10,
@@ -68,7 +68,7 @@ const imageStyle: string = css({
   },
 });
 
-const nameDivStyle: string = css({
+const vLanding_nameContainer: string = css({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -108,7 +108,7 @@ const nameDivStyle: string = css({
   zIndex: 1,
 });
 
-const nameStyle: string = css({
+const vLanding_name: string = css({
   background: {
     base: 'linear-gradient(to right, token(colors.p_blue.dark), token(colors.p_blue.main), token(colors.p_purple.main), token(colors.p_purple.dark))',
     _dark:
@@ -132,7 +132,7 @@ const nameStyle: string = css({
   transition: 'all 0.5s',
 });
 
-const circleStyle: string = circle({
+const vLanding_circle: string = circle({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -157,7 +157,7 @@ const circleStyle: string = circle({
   zIndex: 0,
 });
 
-const circleTitleStyle: string = css({
+const vLanding_circleTitle: string = css({
   fontSize: {
     base: '3xl',
     md: '6xl',
@@ -183,4 +183,12 @@ const circleTitleStyle: string = css({
   zIndex: 1,
 });
 
-export {sectionStyle, imageDivStyle, imageStyle, nameDivStyle, nameStyle, circleStyle, circleTitleStyle};
+export {
+  vLanding_landing,
+  vLanding_imageContainer,
+  vLanding_image,
+  vLanding_nameContainer,
+  vLanding_name,
+  vLanding_circle,
+  vLanding_circleTitle,
+};

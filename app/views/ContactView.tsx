@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  contactLinkContainerStyle,
-  contactLinkStyle,
-  contactStyle,
-  imageDivStyle,
-  imageStyle,
-  titleAndLinkContainerStyle,
-  titleStyle,
+  vContact_button,
+  vContact_buttonBorder,
+  vContact_contact,
+  vContact_picture,
+  vContact_pictureContainer,
+  vContact_title,
+  vContact_titleAndButton,
 } from '@styles/views/ContactView.styles';
 import useLanguage from '@hooks/useLanguage';
 import titleAndLink from '@texts/portfolio/contact/titleAndLink';
@@ -18,21 +18,21 @@ export default function ContactView() {
   const {language} = useLanguage();
 
   return (
-    <section id={'contact'} className={contactStyle}>
-      <div className={imageDivStyle}>
+    <section id={'contact'} className={vContact_contact}>
+      <div className={vContact_pictureContainer}>
         <Image
           src={'/images/portfolio/contact/contact.jpg'}
           alt={'me'}
           width={0}
           height={0}
           sizes={'100vw'}
-          className={imageStyle}
+          className={vContact_picture}
         />
       </div>
-      <div className={titleAndLinkContainerStyle}>
-        <h2 className={titleStyle}>{titleAndLink.title[language]}</h2>
-        <Link href={'/contact'} className={`group ${contactLinkContainerStyle}`}>
-          <div className={contactLinkStyle}>{titleAndLink.link[language]}</div>
+      <div className={vContact_titleAndButton}>
+        <h2 className={vContact_title}>{titleAndLink.title[language]}</h2>
+        <Link href={'/contact'} className={`group ${vContact_buttonBorder}`}>
+          <div className={vContact_button}>{titleAndLink.link[language]}</div>
         </Link>
       </div>
     </section>

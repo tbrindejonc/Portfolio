@@ -1,6 +1,6 @@
 import {circle, grid, gridItem} from '@/styled-system/patterns';
 
-const activityStyle = grid({
+const vActivity_activity = grid({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -24,7 +24,7 @@ const activityStyle = grid({
   w: 'full',
 });
 
-const titleStyle = gridItem({
+const vActivity_title = gridItem({
   color: {
     base: 'neutral.800',
     _dark: 'neutral.200',
@@ -47,7 +47,7 @@ const titleStyle = gridItem({
   zIndex: 1,
 });
 
-const projectsLinkStyle = gridItem({
+const vActivity_button = gridItem({
   alignSelf: {
     md: 'center',
     xl: 'start',
@@ -107,7 +107,7 @@ const projectsLinkStyle = gridItem({
   zIndex: 1,
 });
 
-const backgroundCircleStyle = circle({
+const vActivity_circle = circle({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -126,4 +126,4 @@ const backgroundCircleStyle = circle({
   zIndex: 0,
 });
 
-export {activityStyle, titleStyle, projectsLinkStyle, backgroundCircleStyle};
+export {vActivity_activity, vActivity_title, vActivity_button, vActivity_circle};

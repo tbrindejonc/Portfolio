@@ -1,7 +1,7 @@
 import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const notFoundStyle = vstack({
+const vNotFound_notFound = vstack({
   bgColor: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
@@ -23,7 +23,7 @@ const notFoundStyle = vstack({
   transition: 'background-color 0.5s',
 });
 
-const titleStyle = css({
+const vNotFound_title = css({
   fontFamily: 'bricolage',
   fontSize: {
     base: '3xl',
@@ -33,7 +33,7 @@ const titleStyle = css({
   textAlign: 'center',
 });
 
-const returnToHomeStyle = css({
+const vNotFound_button = css({
   bgColor: {
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
@@ -54,4 +54,4 @@ const returnToHomeStyle = css({
   textAlign: 'center',
 });
 
-export {notFoundStyle, titleStyle, returnToHomeStyle};
+export {vNotFound_notFound, vNotFound_title, vNotFound_button};

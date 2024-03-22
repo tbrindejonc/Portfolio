@@ -1,7 +1,7 @@
 import {css} from '@/styled-system/css';
 import {vstack} from '@/styled-system/patterns';
 
-const contactStyle = css({
+const vContact_contact = css({
   alignItems: 'center',
   bgColor: {
     base: 'p_purple.light',
@@ -34,7 +34,7 @@ const contactStyle = css({
   transition: 'all 0.5s',
 });
 
-const imageDivStyle = css({
+const vContact_pictureContainer = css({
   borderRadius: {
     base: 10,
     md: 20,
@@ -56,7 +56,7 @@ const imageDivStyle = css({
   },
 });
 
-const imageStyle = css({
+const vContact_picture = css({
   backgroundSize: 'cover',
   borderRadius: {
     base: 10,
@@ -70,7 +70,7 @@ const imageStyle = css({
   },
 });
 
-const titleStyle = css({
+const vContact_title = css({
   fontFamily: 'bricolage',
   fontSize: {
     base: '4xl',
@@ -85,7 +85,7 @@ const titleStyle = css({
   },
 });
 
-const contactLinkStyle = css({
+const vContact_button = css({
   bgColor: {
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
@@ -108,7 +108,7 @@ const contactLinkStyle = css({
   w: 'full',
 });
 
-const contactLinkContainerStyle = vstack({
+const vContact_buttonBorder = vstack({
   bgGradient: {
     base: 'to-r',
     _hover: 'to-l',
@@ -127,7 +127,7 @@ const contactLinkContainerStyle = vstack({
   },
 });
 
-const titleAndLinkContainerStyle = vstack({
+const vContact_titleAndButton = vstack({
   gap: {
     base: 12,
     md: 16,
@@ -140,11 +140,11 @@ const titleAndLinkContainerStyle = vstack({
 });
 
 export {
-  contactStyle,
-  imageDivStyle,
-  imageStyle,
-  titleStyle,
-  contactLinkStyle,
-  contactLinkContainerStyle,
-  titleAndLinkContainerStyle,
+  vContact_contact,
+  vContact_pictureContainer,
+  vContact_picture,
+  vContact_title,
+  vContact_button,
+  vContact_buttonBorder,
+  vContact_titleAndButton,
 };
