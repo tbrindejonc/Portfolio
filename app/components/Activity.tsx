@@ -13,7 +13,7 @@ import {
   gameIconStyle,
   paragraphStyle,
   svgStyle,
-} from '@styles/components/activities/Activity.styles';
+} from '@styles/components/Activity.styles';
 
 type Props = {
   activity: Activity;
