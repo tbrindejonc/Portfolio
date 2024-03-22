@@ -123,6 +123,7 @@ const vActivity_circle = circle({
   },
   size: '140em',
   top: '-75em',
+  transition: 'all 0.5s',
   zIndex: 0,
 });
 
