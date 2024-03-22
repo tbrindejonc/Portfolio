@@ -2,7 +2,7 @@ import {hstack, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const exp_vExpLanding_experienceLanding = vstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
@@ -57,7 +57,7 @@ const exp_vExpLanding_textContainer = vstack({
 
 const exp_vExpLanding_image: string = css({
   borderRadius: '2xl',
-  height: {
+  h: {
     base: '250px',
     md: '350px',
     xl: '500px',
@@ -67,7 +67,7 @@ const exp_vExpLanding_image: string = css({
     base: '4px 4px 5px 2px token(colors.p_blue.dark_25)',
     _dark: '4px 4px 5px 2px token(colors.p_blue.light_25)',
   },
-  width: {
+  w: {
     base: '80%',
     md: '50%',
     xl: '70%',
@@ -122,7 +122,7 @@ const exp_vExpLanding_svg = css({
 });
 
 const exp_vExpLanding_button = hstack({
-  bgColor: {
+  bg: {
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },

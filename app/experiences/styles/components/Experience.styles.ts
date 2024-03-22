@@ -10,13 +10,13 @@ const exp_cExp_loadingWrapper = vstack({
 });
 
 const exp_cExp_loadingBase = css({
-  bgColor: {
+  animation: 'pulse',
+  bg: {
     base: 'p_blue.800/25',
     _dark: 'p_blue.200/25',
   },
   borderRadius: 'md',
   w: 'full',
-  animation: 'pulse',
 });
 
 const exp_cExp_loadingTitle = css({
@@ -37,7 +37,7 @@ const exp_cExp_loadingParagraph = css({
 
 const exp_cExp_experience = css({
   alignItems: 'center',
-  bgColor: {
+  bg: {
     base: 'neutral.light/50',
     _dark: 'neutral.dark/50',
   },
@@ -63,11 +63,11 @@ const exp_cExp_experience = css({
     base: 6,
     md: 8,
   },
+  transition: 'all 0.5s',
   w: {
     base: '90vw',
     xl: '80vw',
   },
-  transition: 'all 0.5s',
 });
 
 const exp_cExp_loadingContainer = css({
@@ -88,7 +88,7 @@ const exp_cExp_loadingTechs = hstack({
 
 const exp_cExp_loadingTechItem = css({
   animation: 'pulse',
-  bgColor: {
+  bg: {
     base: 'p_blue.800/25',
     _dark: 'p_blue.200/25',
   },
@@ -105,7 +105,7 @@ const exp_cExp_loadingTechItem = css({
 
 const exp_cExp_loadingImage = css({
   animation: 'pulse',
-  bgColor: {
+  bg: {
     base: 'p_blue.800/25',
     _dark: 'p_blue.200/25',
   },
@@ -141,7 +141,7 @@ const exp_cExp_loadingLogoAndPeriod = css({
 
 const exp_cExp_loadingCompanyName = css({
   animation: 'pulse',
-  bgColor: {
+  bg: {
     base: 'p_blue.800/25',
     _dark: 'p_blue.200/25',
   },
@@ -189,11 +189,11 @@ const exp_cExp_textContainer = vstack({
 const exp_cExp_textWrapper = css({
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
   gap: {
     base: 4,
     md: 8,
   },
+  justifyContent: 'center',
 });
 
 const exp_cExp_companyLogo = css({
@@ -202,12 +202,12 @@ const exp_cExp_companyLogo = css({
 });
 
 const exp_cExp_logoAndPeriod = hstack({
-  w: 'full',
   gap: 4,
+  w: 'full',
 });
 
 const exp_cExp_logoContainer = vstack({
-  bgColor: {
+  bg: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
   },
@@ -217,43 +217,43 @@ const exp_cExp_logoContainer = vstack({
     _dark: 'neutral.light',
   },
   borderRadius: 'md',
-  justifyContent: 'center',
   h: {
     base: 36,
     md: 48,
+  },
+  justifyContent: 'center',
+  p: {
+    base: 4,
+    md: 6,
   },
   w: {
     base: '3/5',
     md: '2/5',
   },
-  p: {
-    base: 4,
-    md: 6,
-  },
 });
 
 const exp_cExp_period = css({
+  fontSize: {
+    md: 'xl',
+  },
   fontWeight: 'bold',
   textAlign: 'center',
   w: {
     base: '2/5',
     xl: '3/5',
   },
-  fontSize: {
-    md: 'xl',
-  },
 });
 
 const exp_cExp_techContainer = grid({
-  gridTemplateColumns: {
-    base: 3,
-    md: 5,
-    xl: 8,
-  },
   gap: {
     base: 4,
     md: 8,
     xl: 14,
+  },
+  gridTemplateColumns: {
+    base: 3,
+    md: 5,
+    xl: 8,
   },
 });
 

@@ -39,14 +39,14 @@ const exp_vExp_toRightBackground: string = css({
 const exp_vExp_looperBase: string = css({
   blur: '5px',
   filter: 'auto',
-  height: {
+  h: {
     base: '150vw',
     md: '100vw',
     xl: '50vw',
   },
   objectFit: 'cover',
   position: 'absolute',
-  width: {
+  w: {
     base: '150vw',
     md: '100vw',
     xl: '50vw',
@@ -54,13 +54,13 @@ const exp_vExp_looperBase: string = css({
 });
 
 const exp_vExp_topLooper: string = css({
-  top: {
-    base: '-15vh',
-    xl: '-25vh',
-  },
   right: {
     base: '-25vw',
     xl: '-10vw',
+  },
+  top: {
+    base: '-15vh',
+    xl: '-25vh',
   },
 });
 
@@ -78,14 +78,14 @@ const exp_vExp_bottomLooper: string = css({
 const exp_vExp_rainbowLooper: string = css({
   blur: '10px',
   filter: 'auto',
-  height: {
+  h: {
     base: '300vw',
     md: '150vw',
     xl: '80vw',
   },
   objectFit: 'cover',
   position: 'absolute',
-  width: {
+  w: {
     base: '300vw',
     md: '150vw',
     xl: '80vw',
@@ -104,13 +104,13 @@ const exp_vExp_otherBottomLooper: string = css({
 });
 
 const exp_vExp_otherTopLooper: string = css({
-  top: {
-    base: '-15vh',
-    xl: '-25vh',
-  },
   left: {
     base: '-25vw',
     xl: '-10vw',
+  },
+  top: {
+    base: '-15vh',
+    xl: '-25vh',
   },
 });
 
