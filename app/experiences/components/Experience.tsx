@@ -1,6 +1,4 @@
-import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
-import React, {ReactNode} from 'react';
-import {Language} from '@appTypes/portfolio';
+import React, {PropsWithChildren, ReactNode} from 'react';
 import {Technology} from '@prisma/client';
 import Image from 'next/image';
 import {
@@ -29,18 +27,11 @@ import {
 } from '@app/experiences/styles/components/Experience.styles';
 import techsTitle from '@app/experiences/texts/experienceTexts';
 import MiniTechnologyCard from '@components/technology/MiniTechnologyCard';
+import useExperience from '@app/experiences/hooks/useExperience';
 
-type Props = {
-  experience: CompleteExperienceFromApi;
-  children: ReactNode;
-};
+export default function Experience({children}: PropsWithChildren) {
+  const {experience} = useExperience();
 
-type CompositionProps = {
-  experience: CompleteExperienceFromApi;
-  language: Language;
-};
-
-export default function Experience({experience, children}: Props) {
   return (
     <div id={`experience-${experience.id}`} className={experienceStyle}>
       {children}
@@ -52,7 +43,9 @@ Experience.TextContainer = function ExperienceTextContainer({children}: {childre
   return <div className={experienceContainerStyle}>{children}</div>;
 };
 
-Experience.Company = function ExperienceCompany({experience, language}: CompositionProps) {
+Experience.Company = function ExperienceCompany() {
+  const {experience, language} = useExperience();
+
   return (
     <div className={textContainerStyle}>
       <h2 className={companyNameStyle}>{experience.company}</h2>
@@ -61,7 +54,9 @@ Experience.Company = function ExperienceCompany({experience, language}: Composit
   );
 };
 
-Experience.Job = function ExperienceJob({experience, language}: CompositionProps) {
+Experience.Job = function ExperienceJob() {
+  const {experience, language} = useExperience();
+
   return (
     <div className={textContainerStyle}>
       <h3 className={expHeadingStyle}>{experience.job_title[language]}</h3>
@@ -70,7 +65,9 @@ Experience.Job = function ExperienceJob({experience, language}: CompositionProps
   );
 };
 
-Experience.Technologies = function ExperienceTechnologies({experience, language}: CompositionProps) {
+Experience.Technologies = function ExperienceTechnologies() {
+  const {experience, language} = useExperience();
+
   return (
     <div className={techsContainerStyle}>
       <h3 className={expHeadingStyle}>{techsTitle[language]}</h3>
@@ -83,7 +80,9 @@ Experience.Technologies = function ExperienceTechnologies({experience, language}
   );
 };
 
-Experience.LogoAndPeriod = function ExperienceLogoAndPeriod({experience, language}: CompositionProps) {
+Experience.LogoAndPeriod = function ExperienceLogoAndPeriod() {
+  const {experience, language} = useExperience();
+
   const startDate = new Date(experience.start_date);
   const endDate = new Date(experience.end_date);
   const dateFormat = language === 'french' ? 'fr-FR' : 'en-US';

@@ -1,6 +1,7 @@
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 import useLanguage from '@hooks/useLanguage';
 import Experience from '@app/experiences/components/Experience';
+import ExperienceProvider from '@app/experiences/providers/ExperienceProvider';
 
 type Props = {
   experience: CompleteExperienceFromApi;
@@ -12,25 +13,29 @@ export default function ExperienceFactory({experience, isLoading}: Props) {
 
   if (isLoading) {
     return (
-      <Experience experience={experience}>
-        <Experience.LoadingContainer>
-          <Experience.LoadingCompany />
-          <Experience.LoadingJob />
-          <Experience.LoadingTechnologies />
-        </Experience.LoadingContainer>
-        <Experience.LoadingLogoAndPeriod />
-      </Experience>
+      <ExperienceProvider experience={experience} language={language}>
+        <Experience>
+          <Experience.LoadingContainer>
+            <Experience.LoadingCompany />
+            <Experience.LoadingJob />
+            <Experience.LoadingTechnologies />
+          </Experience.LoadingContainer>
+          <Experience.LoadingLogoAndPeriod />
+        </Experience>
+      </ExperienceProvider>
     );
   }
 
   return (
-    <Experience experience={experience}>
-      <Experience.TextContainer>
-        <Experience.Company language={language} experience={experience} />
-        <Experience.Job language={language} experience={experience} />
-        <Experience.Technologies language={language} experience={experience} />
-      </Experience.TextContainer>
-      <Experience.LogoAndPeriod language={language} experience={experience} />
-    </Experience>
+    <ExperienceProvider experience={experience} language={language}>
+      <Experience>
+        <Experience.TextContainer>
+          <Experience.Company />
+          <Experience.Job />
+          <Experience.Technologies />
+        </Experience.TextContainer>
+        <Experience.LogoAndPeriod />
+      </Experience>
+    </ExperienceProvider>
   );
 }
