@@ -94,25 +94,36 @@ const vContact_button = css({
   textAlign: 'center',
   transition: 'all 0.5s',
   w: 'full',
+  zIndex: 1,
 });
 
 const vContact_buttonBorder = vstack({
-  bgGradient: {
-    base: 'to-r',
-    _hover: 'to-l',
-  },
   borderRadius: 'xl',
-  gradientFrom: 'p_blue.main',
-  gradientTo: 'p_purple.main',
   p: {
     base: 1,
     md: 2,
   },
-  transition: 'all 0.5s',
+  overflow: 'hidden',
+  position: 'relative',
   w: {
     base: '4/5',
     xl: '2/3',
   },
+});
+
+const vContact_buttonBorderHover = css({
+  bgGradient: 'to-r',
+  gradientFrom: 'p_blue.main',
+  gradientTo: 'p_purple.main',
+  position: 'absolute',
+  rotate: {
+    _groupHover: '180deg',
+  },
+  top: '-100%',
+  transition: 'all 0.5s ease-in-out',
+  w: '160%',
+  h: '80vh',
+  zIndex: 0,
 });
 
 const vContact_titleAndButton = vstack({
@@ -133,5 +144,6 @@ export {
   vContact_title,
   vContact_button,
   vContact_buttonBorder,
+  vContact_buttonBorderHover,
   vContact_titleAndButton,
 };

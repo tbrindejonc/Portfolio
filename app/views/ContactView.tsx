@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {
   vContact_button,
   vContact_buttonBorder,
+  vContact_buttonBorderHover,
   vContact_contact,
   vContact_picture,
   vContact_title,
@@ -29,6 +30,7 @@ export default function ContactView() {
       <div className={vContact_titleAndButton}>
         <h2 className={vContact_title}>{titleAndLink.title[language]}</h2>
         <Link href={'/contact'} className={`group ${vContact_buttonBorder}`}>
+          <div className={vContact_buttonBorderHover} />
           <div className={vContact_button}>{titleAndLink.link[language]}</div>
         </Link>
       </div>
