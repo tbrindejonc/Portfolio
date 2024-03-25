@@ -3,10 +3,13 @@ import {css} from '@/styled-system/css';
 
 export default function ExperiencesSidebar() {
   const cExpSidebar_sidebar = vstack({
-    gap: 8,
-    position: 'fixed',
-    right: 4,
-    top: 20,
+    alignItems: 'end',
+    mt: '-100vh',
+    h: 'screen',
+    justifyContent: 'center',
+    pe: 10,
+    position: 'sticky',
+    top: 0,
     zIndex: 2,
   });
 
@@ -17,10 +20,10 @@ export default function ExperiencesSidebar() {
   });
 
   return (
-    <div id={'sidebar'} className={cExpSidebar_sidebar}>
+    <aside id={'sidebar'} className={cExpSidebar_sidebar}>
       <div className={cExpSidebar_sidebarItem} />
       <div className={cExpSidebar_sidebarItem} />
       <div className={cExpSidebar_sidebarItem} />
-    </div>
+    </aside>
   );
 }
