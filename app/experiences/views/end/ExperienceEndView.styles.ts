@@ -57,6 +57,9 @@ const vExpEnd_button = hstack({
     base: 2,
     md: 4,
   },
+  shadow: {
+    _hover: '0 5px 8px 2px token(colors.p_blue.main)',
+  },
   transition: 'all 0.5s',
   w: {
     base: 'full',
