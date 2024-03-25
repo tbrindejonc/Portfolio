@@ -1,6 +1,6 @@
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 import useLanguage from '@hooks/useLanguage';
-import Experience from '@app/experiences/components/Experience';
+import Experience from '@app/experiences/components/experience/Experience';
 import ExperienceProvider from '@app/experiences/providers/ExperienceProvider';
 
 type Props = {

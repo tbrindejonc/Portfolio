@@ -1,6 +1,6 @@
 'use client';
 
-import useExperiences from '../hooks/useExperiences';
+import useExperiences from '../../hooks/useExperiences';
 import Image from 'next/image';
 import {
   exp_vExp_bottomLooper,
@@ -12,8 +12,8 @@ import {
   exp_vExp_toLeftBackground,
   exp_vExp_topLooper,
   exp_vExp_toRightBackground,
-} from '../styles/views/ExperiencesView.styles';
-import ExperienceFactory from '../components/ExperienceFactory';
+} from './ExperiencesView.styles';
+import ExperienceFactory from '../../components/experience_factory/ExperienceFactory';
 
 export default function ExperiencesView() {
   const {data, isLoading} = useExperiences();

@@ -24,7 +24,7 @@ import {
   exp_cExp_techsWrapper,
   exp_cExp_textContainer,
   exp_cExp_textWrapper,
-} from '../styles/components/Experience.styles';
+} from './Experience.styles';
 import techsTitle from '@app/experiences/texts/experienceTexts';
 import MiniTechnologyCard from '@components/technology/mini_technology_card/MiniTechnologyCard';
 import useExperience from '@app/experiences/hooks/useExperience';

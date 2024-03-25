@@ -11,8 +11,8 @@ import {
   exp_vExpLanding_svg,
   exp_vExpLanding_textContainer,
   exp_vExpLanding_title,
-} from '../styles/views/ExperienceLandingView.styles';
-import landingTexts from '../texts/landingTexts';
+} from './ExperienceLandingView.styles';
+import landingTexts from '../../texts/landingTexts';
 import useLanguage from '@hooks/useLanguage';
 
 export default function ExperiencesLandingView() {
