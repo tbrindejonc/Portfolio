@@ -1,5 +1,5 @@
 import {Metadata} from 'next';
-import NotFoundView from '@views/NotFoundView';
+import NotFoundView from '@views/not_found/NotFoundView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Page introuvable',

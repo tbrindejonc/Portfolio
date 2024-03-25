@@ -26,7 +26,7 @@ import {
   exp_cExp_textWrapper,
 } from '../styles/components/Experience.styles';
 import techsTitle from '@app/experiences/texts/experienceTexts';
-import MiniTechnologyCard from '@components/technology/MiniTechnologyCard';
+import MiniTechnologyCard from '@components/technology/mini_technology_card/MiniTechnologyCard';
 import useExperience from '@app/experiences/hooks/useExperience';
 
 export default function Experience({children}: PropsWithChildren) {

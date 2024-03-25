@@ -1,8 +1,8 @@
-import LandingView from '@views/LandingView';
-import JourneyView from '@views/JourneyView';
-import ExperienceView from '@views/ExperienceView';
-import ActivityView from '@views/ActivityView';
-import ContactView from '@views/ContactView';
+import LandingView from '@views/landing/LandingView';
+import JourneyView from '@views/journey/JourneyView';
+import ExperienceView from '@views/experience/ExperienceView';
+import ActivityView from '@views/activity/ActivityView';
+import ContactView from '@views/contact/ContactView';
 
 export default function Home() {
   return (

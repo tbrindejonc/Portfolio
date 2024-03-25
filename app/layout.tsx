@@ -2,10 +2,10 @@ import type {Metadata} from 'next';
 import './globals.css';
 import {PropsWithChildren} from 'react';
 import {BricolageGroteske, Rubik} from '@assets/fonts/fonts';
-import Navbar from '@components/navbar/Navbar';
+import Navbar from '@components/navbar/navbar/Navbar';
 import {css} from '@/styled-system/css';
 import LanguageProvider from '@providers/LanguageProvider';
-import Footer from '@components/Footer';
+import Footer from '@components/footer/Footer';
 import QueryProvider from '@providers/QueryProvider';
 
 export const metadata: Metadata = {
