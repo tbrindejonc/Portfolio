@@ -12,7 +12,10 @@ const vExpEnd_end = css({
     _dark: 'neutral.light',
   },
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
   fontSize: {
     base: '3xl',
     md: '5xl',
@@ -42,9 +45,13 @@ const vExpEnd_button = hstack({
   fontSize: {
     base: '2xl',
     md: '4xl',
+    xl: '5xl',
   },
   fontWeight: 'bold',
-  gap: 4,
+  gap: {
+    base: 4,
+    xl: 8,
+  },
   justifyContent: 'center',
   p: {
     base: 2,
@@ -54,6 +61,7 @@ const vExpEnd_button = hstack({
   w: {
     base: 'full',
     md: '1/2',
+    xl: '1/3',
   },
 });
 
@@ -61,6 +69,7 @@ const vExpEnd_svg = css({
   h: {
     base: 7,
     md: 10,
+    xl: 12,
   },
   stroke: {
     base: 'neutral.light',
@@ -74,7 +83,18 @@ const vExpEnd_svg = css({
   w: {
     base: 7,
     md: 10,
+    xl: 12,
   },
 });
 
-export {vExpEnd_end, vExpEnd_button, vExpEnd_svg};
+const vExpEnd_text = css({
+  textAlign: {
+    xl: 'start',
+  },
+  textWrap: 'balance',
+  w: {
+    xl: '1/2',
+  },
+});
+
+export {vExpEnd_end, vExpEnd_button, vExpEnd_svg, vExpEnd_text};

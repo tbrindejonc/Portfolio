@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import {vExpEnd_button, vExpEnd_end, vExpEnd_svg} from './ExperienceEndView.styles';
+import {vExpEnd_button, vExpEnd_end, vExpEnd_svg, vExpEnd_text} from './ExperienceEndView.styles';
 
 export default function ExperiencesEndView() {
   return (
     <div className={vExpEnd_end}>
-      <h2>
+      <h2 className={vExpEnd_text}>
         Si vous êtes convaincu par ces expériences et que vous souhaitez travailler avec moi, ou que vous voulez en
         savoir plus, n’hésitez pas à me contacter !
       </h2>
