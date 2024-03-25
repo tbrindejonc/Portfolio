@@ -99,7 +99,7 @@ const vActivity_button = gridItem({
     md: 4,
   },
   textAlign: 'center',
-  transition: 'all 0.3s ease-in-out',
+  transition: 'all 0.5s',
   w: {
     base: '4/5',
     xl: '1/5',

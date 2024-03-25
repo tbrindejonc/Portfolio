@@ -106,9 +106,9 @@ const vJourney_button = css({
     _dark:
       'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to right, token(colors.p_blue.300), token(colors.p_blue.300)) border-box',
     _hover: {
-      base: 'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to top, token(colors.p_blue.700), token(colors.p_blue.dark), token(colors.p_blue.700)) border-box',
+      base: 'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to right, token(colors.p_blue.700), token(colors.p_blue.dark), token(colors.p_blue.700)) border-box',
       _dark:
-        'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to top, token(colors.p_blue.main), token(colors.p_blue.300), token(colors.p_blue.main)) border-box',
+        'linear-gradient(token(colors.p_purple.main), token(colors.p_purple.main)) padding-box, linear-gradient(to right, token(colors.p_blue.600), token(colors.p_blue.700), token(colors.p_blue.700)) border-box',
     },
   },
   border: {
@@ -123,10 +123,7 @@ const vJourney_button = css({
   color: {
     base: 'p_blue.dark',
     _dark: 'p_blue.300',
-    _hover: {
-      base: 'p_blue.700',
-      _dark: 'p_blue.400',
-    },
+    _hover: 'p_blue.700',
   },
   fontFamily: 'bricolage',
   fontSize: {

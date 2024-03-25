@@ -128,6 +128,7 @@ const cExperienceCard_button = css({
     },
   },
   textAlign: 'center',
+  transition: 'all 0.5s',
   w: 'full',
 });
 
