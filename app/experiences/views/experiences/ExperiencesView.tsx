@@ -14,6 +14,7 @@ import {
   exp_vExp_toRightBackground,
 } from './ExperiencesView.styles';
 import ExperienceFactory from '../../components/experience_factory/ExperienceFactory';
+import ExperiencesSidebar from '../../components/sidebar/sidebar/ExperiencesSidebar';
 
 export default function ExperiencesView() {
   const {data, isLoading} = useExperiences();
@@ -24,6 +25,7 @@ export default function ExperiencesView() {
 
   return (
     <section id={'experiences-display'}>
+      <ExperiencesSidebar />
       <div id={'first-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}
