@@ -17,7 +17,9 @@ const exp_vExpLanding_experienceLanding = vstack({
   },
   h: 'screen',
   justifyContent: 'center',
+  position: 'relative',
   transition: 'all 0.5s',
+  zIndex: 3,
 });
 
 const exp_vExpLanding_container = css({
