@@ -4,9 +4,10 @@ import {css} from '@/styled-system/css';
 export default function ExperiencesSidebar() {
   const cExpSidebar_sidebar = vstack({
     alignItems: 'end',
-    mt: '-100vh',
+    gap: 12,
     h: 'screen',
     justifyContent: 'center',
+    mt: '-100vh',
     pe: 10,
     position: 'sticky',
     top: 0,
@@ -14,9 +15,14 @@ export default function ExperiencesSidebar() {
   });
 
   const cExpSidebar_sidebarItem = css({
-    bg: 'p_purple.main',
-    h: 12,
-    w: 2,
+    bg: {
+      base: 'neutral.200',
+      _dark: 'neutral.700',
+    },
+    borderRadius: 'xl',
+    h: '15vh',
+    transition: 'all 0.5s',
+    w: 4,
   });
 
   return (
