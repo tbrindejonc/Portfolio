@@ -3,7 +3,7 @@ import {vExpEnd_button, vExpEnd_end, vExpEnd_svg, vExpEnd_text} from './Experien
 
 export default function ExperiencesEndView() {
   return (
-    <div className={vExpEnd_end}>
+    <section className={vExpEnd_end}>
       <h2 className={vExpEnd_text}>
         Si vous êtes convaincu par ces expériences et que vous souhaitez travailler avec moi, ou que vous voulez en
         savoir plus, n’hésitez pas à me contacter !
@@ -22,6 +22,6 @@ export default function ExperiencesEndView() {
           <path d='m19 12-7 7-7-7' />
         </svg>
       </Link>
-    </div>
+    </section>
   );
 }
