@@ -58,7 +58,10 @@ const exp_cExp_experience = css({
     xl: 14,
   },
   h: '80vh',
-  overflow: 'scroll',
+  overflow: {
+    base: 'scroll',
+    md: 'auto',
+  },
   p: {
     base: 6,
     md: 8,
