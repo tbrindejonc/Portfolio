@@ -1,15 +1,18 @@
 import {vstack} from '@/styled-system/patterns';
 
-const cExpNavMenu_container = vstack({
-  alignItems: 'end',
-  gap: 28,
-  h: '100vh',
-  justifyContent: 'end',
-  mt: '-100vh',
-  pointerEvents: 'none',
-  position: 'sticky',
-  top: 0,
-  zIndex: 2,
-});
+const cExpNavMenu_container = (currentActive: number) => {
+  return vstack({
+    alignItems: 'end',
+    display: currentActive === 3 ? 'none' : 'flex',
+    gap: 28,
+    justifyContent: 'end',
+    pointerEvents: 'none',
+    position: 'fixed',
+    bottom: 4,
+    right: 2,
+    transition: 'all 0.5s',
+    zIndex: 2,
+  });
+};
 
 export default cExpNavMenu_container;

@@ -9,6 +9,11 @@ function useScrollPosition() {
       const windowHeight = window.innerHeight;
       const currentY = window.scrollY;
 
+      if (currentY > windowHeight * 3) {
+        setScrollPosition(3);
+        return;
+      }
+
       if (currentY > windowHeight * 2 + appearancePos) {
         setScrollPosition(2);
         return;
