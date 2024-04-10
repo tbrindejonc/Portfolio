@@ -1,5 +1,6 @@
 import {css} from '@/styled-system/css';
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
+import Link from 'next/link';
 
 type Props = {
   index: number;
@@ -57,8 +58,11 @@ export default function ExperiencesSidebarItem({index, currentActive, exp}: Prop
   };
 
   return (
-    <div className={`group ${cExpSidebarItem_item} ${cExpSidebarItem_activeState(index, currentActive)}`}>
+    <Link
+      href={`#${exp.company}-${exp.id}`}
+      className={`group ${cExpSidebarItem_item} ${cExpSidebarItem_activeState(index, currentActive)}`}
+    >
       <h2 className={cExpSidebarItem_title(index, currentActive)}>{exp.company}</h2>
-    </div>
+    </Link>
   );
 }

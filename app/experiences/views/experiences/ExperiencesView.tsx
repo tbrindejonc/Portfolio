@@ -26,7 +26,10 @@ export default function ExperiencesView() {
   return (
     <section id={'experiences-display'}>
       <ExperiencesSidebar data={data} />
-      <div id={'first-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
+      <div
+        id={`${data.items[0].company}-${data.items[0].id}`}
+        className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
+      >
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}
           alt={'me'}
@@ -45,7 +48,10 @@ export default function ExperiencesView() {
         />
         <ExperienceFactory experience={data.items[0]} isLoading={isLoading} />
       </div>
-      <div id={'second-exp'} className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}>
+      <div
+        id={`${data.items[1].company}-${data.items[1].id}`}
+        className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}
+      >
         <Image
           src={'/images/portfolio/experiences/looper_rainbow.png'}
           alt={'me'}
@@ -56,7 +62,10 @@ export default function ExperiencesView() {
         />
         <ExperienceFactory experience={data.items[1]} isLoading={isLoading} />
       </div>
-      <div id={'third-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
+      <div
+        id={`${data.items[2].company}-${data.items[2].id}`}
+        className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
+      >
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}
           alt={'me'}
