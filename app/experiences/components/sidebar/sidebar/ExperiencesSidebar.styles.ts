@@ -2,6 +2,10 @@ import {vstack} from '@/styled-system/patterns';
 
 const cExpSidebar_sidebar = vstack({
   alignItems: 'end',
+  display: {
+    base: 'none',
+    xl: 'flex',
+  },
   gap: 12,
   h: 'screen',
   justifyContent: 'center',
