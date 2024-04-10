@@ -20,7 +20,12 @@ export default function ExperiencesNavMenu({data}: Props) {
 
   return (
     <div className={cExpNavMenu_container(currentActive)}>
-      <ExperiencesNavMenuMenu experiences={data.items} showMenu={showMenu} currentActive={currentActive} />
+      <ExperiencesNavMenuMenu
+        experiences={data.items}
+        showMenu={showMenu}
+        currentActive={currentActive}
+        toggleMenu={toggleMenu}
+      />
       <ExperiencesNavMenuButton toggleMenu={toggleMenu} />
     </div>
   );
