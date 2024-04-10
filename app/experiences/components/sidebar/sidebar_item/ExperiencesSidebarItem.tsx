@@ -1,13 +1,13 @@
 import {css} from '@/styled-system/css';
-import {Slide} from '@appTypes/portfolio';
+import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 
 type Props = {
   index: number;
   currentActive: number;
-  slide: Slide;
+  exp: CompleteExperienceFromApi;
 };
 
-export default function ExperiencesSidebarItem({index, currentActive, slide}: Props) {
+export default function ExperiencesSidebarItem({index, currentActive, exp}: Props) {
   const cExpSidebar_sidebarItem = css({
     borderRadius: 'xl',
     h: '15vh',
@@ -26,5 +26,9 @@ export default function ExperiencesSidebarItem({index, currentActive, slide}: Pr
     });
   };
 
-  return <div className={`${cExpSidebar_sidebarItem} ${cExpSidebar_sidebarItemActive(index, currentActive)}`} />;
+  return (
+    <div className={`${cExpSidebar_sidebarItem} ${cExpSidebar_sidebarItemActive(index, currentActive)}`}>
+      <h2>{exp.company}</h2>
+    </div>
+  );
 }

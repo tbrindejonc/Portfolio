@@ -25,7 +25,7 @@ export default function ExperiencesView() {
 
   return (
     <section id={'experiences-display'}>
-      <ExperiencesSidebar />
+      <ExperiencesSidebar data={data} />
       <div id={'first-exp'} className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
         <Image
           src={'/images/portfolio/experiences/looper_blue.png'}

@@ -1,12 +1,16 @@
 'use client';
 
 import {vstack} from '@/styled-system/patterns';
-import {experienceSlides} from '@texts/portfolio/experience/experienceSlides';
-import {Slide} from '@appTypes/portfolio';
 import useScrollPosition from '../../../hooks/useScrollPosition';
 import ExperiencesSidebarItem from '@app/experiences/components/sidebar/sidebar_item/ExperiencesSidebarItem';
+import {ApiCollection} from '@appTypes/api';
+import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 
-export default function ExperiencesSidebar() {
+type Props = {
+  data: ApiCollection<CompleteExperienceFromApi>;
+};
+
+export default function ExperiencesSidebar({data}: Props) {
   const currentActive = useScrollPosition();
 
   const cExpSidebar_sidebar = vstack({
@@ -23,8 +27,8 @@ export default function ExperiencesSidebar() {
 
   return (
     <aside id={'sidebar'} className={cExpSidebar_sidebar}>
-      {experienceSlides.map((slide: Slide, index: number) => {
-        return <ExperiencesSidebarItem key={index} index={index} currentActive={currentActive} slide={slide} />;
+      {data.items.map((exp: CompleteExperienceFromApi, index: number) => {
+        return <ExperiencesSidebarItem key={index} index={index} currentActive={currentActive} exp={exp} />;
       })}
     </aside>
   );
