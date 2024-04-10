@@ -7,7 +7,10 @@ const cExpNavMenu_button = vstack({
     _dark: 'p_blue.dark',
   },
   borderRadius: 'lg',
-  h: 14,
+  h: {
+    base: 14,
+    md: 20,
+  },
   mb: 4,
   me: 2,
   p: 2,
@@ -15,7 +18,10 @@ const cExpNavMenu_button = vstack({
   rowGap: 2,
   shadow: '0 0 5px 2px token(colors.p_blue.main)',
   transition: 'all 0.5s',
-  w: 14,
+  w: {
+    base: 14,
+    md: 20,
+  },
 });
 
 const cExpNavMenu_buttonLine = css({
@@ -24,8 +30,14 @@ const cExpNavMenu_buttonLine = css({
     _dark: 'p_blue.light',
   },
   borderRadius: 'full',
-  h: 3,
-  w: 1,
+  h: {
+    base: 3,
+    md: 4,
+  },
+  w: {
+    base: 1,
+    md: 1.5,
+  },
 });
 
 export {cExpNavMenu_button, cExpNavMenu_buttonLine};
