@@ -8,6 +8,10 @@ const cExpNavMenuMenu_menu = (showMenu: boolean) => {
       base: 2,
       md: 6,
     },
+    shadow: {
+      base: '0 0 5px 2px token(colors.p_blue.dark_25)',
+      _dark: '0 0 5px 2px token(colors.p_blue.light_25)',
+    },
     translateX: showMenu ? '0' : '120%',
     translate: 'auto',
     transition: 'all 0.5s',
@@ -28,7 +32,7 @@ const cExpNavMenuMenu_item = (index: number, currentActive: number) => {
     borderTop: index !== 0 ? '3px solid' : 'none',
     borderTopRadius: index === 0 ? 'lg' : 'none',
     color: {
-      base: isActive ? 'neutral.light' : 'neutral.700',
+      base: isActive ? 'neutral.light' : 'neutral.dark',
       _dark: isActive ? 'neutral.dark' : 'neutral.light',
     },
     fontFamily: 'bricolage',
