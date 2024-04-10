@@ -1,19 +1,21 @@
 // app theme
-export type Theme = 'light' | 'dark';
+import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 
-// app langage
-export type Langage = 'fr' | 'en';
+export type Theme = 'light' | 'dark';
 
 // base app text
 export type AppText = {
-  en: string;
-  fr: string;
+  english: string;
+  french: string;
 };
 
+// type for app texts language
+export type Language = 'english' | 'french';
+
 // langage context exported utilities
-export type LangageContextUtils = {
-  langage: Langage;
-  setLangage: (langage: Langage) => void;
+export type LanguageContextUtils = {
+  language: Language;
+  setLanguage: (langage: Language) => void;
 };
 
 // app links for nav menu
@@ -80,4 +82,23 @@ export type ActivityTexts = {
 export type ContactTexts = {
   title: AppText;
   link: AppText;
+};
+
+// title and link texts for not found page
+export type NotFoundTexts = {
+  title: AppText;
+  link: AppText;
+};
+
+// texts for experience page's landing section
+export type ExperienceLandingTexts = {
+  title: AppText;
+  explanations: AppText;
+  link: AppText;
+};
+
+// experience context exported utilities
+export type ExperienceContextUtils = {
+  experience: CompleteExperienceFromApi;
+  language: Language;
 };

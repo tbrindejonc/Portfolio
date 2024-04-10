@@ -1,12 +1,12 @@
 'use client';
 
 import {createContext, PropsWithChildren, useState} from 'react';
-import {Langage, LangageContextUtils} from '@appTypes/portfolio';
+import {Language, LanguageContextUtils} from '@appTypes/portfolio';
 
-export const LangageContext = createContext<LangageContextUtils | null>(null);
+export const LanguageContext = createContext<LanguageContextUtils | null>(null);
 
 export default function LanguageProvider({children}: PropsWithChildren) {
-  const [langage, setLangage] = useState<Langage>('fr');
+  const [language, setLanguage] = useState<Language>('french');
 
-  return <LangageContext.Provider value={{langage, setLangage}}>{children}</LangageContext.Provider>;
+  return <LanguageContext.Provider value={{language, setLanguage}}>{children}</LanguageContext.Provider>;
 }
