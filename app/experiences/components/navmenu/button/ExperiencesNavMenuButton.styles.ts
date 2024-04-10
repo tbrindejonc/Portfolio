@@ -19,11 +19,11 @@ const cExpNavMenu_button = vstack({
 });
 
 const cExpNavMenu_buttonLine = css({
-  borderRadius: 'full',
   bg: {
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
   },
+  borderRadius: 'full',
   h: 3,
   w: 1,
 });
