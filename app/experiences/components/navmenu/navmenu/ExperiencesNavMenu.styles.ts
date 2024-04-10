@@ -3,7 +3,10 @@ import {vstack} from '@/styled-system/patterns';
 const cExpNavMenu_container = (currentActive: number) => {
   return vstack({
     alignItems: 'end',
-    display: currentActive === 3 ? 'none' : 'flex',
+    display: {
+      base: currentActive === 3 ? 'none' : 'flex',
+      xl: 'none',
+    },
     gap: {
       base: 28,
       md: 60,
