@@ -2,6 +2,7 @@ import {vstack} from '@/styled-system/patterns';
 
 const cExpNavMenu_container = vstack({
   alignItems: 'end',
+  gap: 28,
   h: '100vh',
   justifyContent: 'end',
   mt: '-100vh',
