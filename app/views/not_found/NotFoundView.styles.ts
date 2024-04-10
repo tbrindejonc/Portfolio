@@ -51,7 +51,15 @@ const vNotFound_button = css({
     base: 3,
     md: 5,
   },
+  shadow: {
+    base: 'none',
+    _hover: {
+      base: '0 0 5px 2px token(colors.p_purple.dark)',
+      _dark: '0 0 5px 2px token(colors.p_purple.light)',
+    },
+  },
   textAlign: 'center',
+  transition: 'box-shadow 0.5s',
 });
 
 export {vNotFound_notFound, vNotFound_title, vNotFound_button};
