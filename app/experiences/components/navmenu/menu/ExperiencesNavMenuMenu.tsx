@@ -1,6 +1,6 @@
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 import Link from 'next/link';
-import {cExpNavMenuMenu_item, cExpNavMenuMenu_menu} from './ExperiencesNavMenuMenu.styles';
+import {cExpNavMenuMenu_endBar, cExpNavMenuMenu_item, cExpNavMenuMenu_menu} from './ExperiencesNavMenuMenu.styles';
 
 type Props = {
   experiences: CompleteExperienceFromApi[];
@@ -20,7 +20,8 @@ export default function ExperiencesNavMenuMenu({experiences, showMenu, currentAc
             key={experience.id}
             className={cExpNavMenuMenu_item(index, currentActive)}
           >
-            {experience.company}
+            <h2>{experience.company}</h2>
+            <div className={cExpNavMenuMenu_endBar(index, currentActive)} />
           </Link>
         );
       })}

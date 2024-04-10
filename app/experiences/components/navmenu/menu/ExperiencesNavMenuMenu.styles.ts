@@ -1,4 +1,4 @@
-import {vstack} from '@/styled-system/patterns';
+import {hstack, vstack} from '@/styled-system/patterns';
 
 const cExpNavMenuMenu_menu = (showMenu: boolean) => {
   return vstack({
@@ -21,8 +21,8 @@ const cExpNavMenuMenu_menu = (showMenu: boolean) => {
 const cExpNavMenuMenu_item = (index: number, currentActive: number) => {
   const isActive = index === currentActive;
 
-  return vstack({
-    alignItems: 'start',
+  return hstack({
+    alignItems: 'center',
     bg: {
       base: isActive ? 'p_blue.700' : 'neutral.200',
       _dark: isActive ? 'p_blue.200' : 'neutral.700',
@@ -44,9 +44,9 @@ const cExpNavMenuMenu_item = (index: number, currentActive: number) => {
       base: 32,
       md: 40,
     },
-    justifyContent: 'center',
-    ps: 10,
+    ps: 6,
     pointerEvents: 'auto',
+    position: 'relative',
     transition: 'all 0.3s',
     w: {
       base: 52,
@@ -55,4 +55,27 @@ const cExpNavMenuMenu_item = (index: number, currentActive: number) => {
   });
 };
 
-export {cExpNavMenuMenu_menu, cExpNavMenuMenu_item};
+const cExpNavMenuMenu_endBar = (index: number, currentActive: number) => {
+  const isActive = index === currentActive;
+
+  return hstack({
+    bg: {
+      base: isActive ? 'p_blue.700' : 'neutral.200',
+      _dark: isActive ? 'p_blue.200' : 'neutral.700',
+    },
+    h: 'full',
+    position: 'absolute',
+    right: 0,
+    shadow: {
+      base: isActive ? '-2px 0 5px 2px token(colors.p_blue.light_25)' : '-2px 0 5px 2px token(colors.p_blue.dark_25)',
+      _dark: isActive ? '-2px 0 5px 2px token(colors.p_blue.dark_25)' : '-2px 0 5px 2px token(colors.p_blue.light_25)',
+    },
+    transition: 'all 0.3s',
+    w: {
+      base: 4,
+      md: 6,
+    },
+  });
+};
+
+export {cExpNavMenuMenu_menu, cExpNavMenuMenu_item, cExpNavMenuMenu_endBar};
