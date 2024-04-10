@@ -15,6 +15,7 @@ import {
 } from './ExperiencesView.styles';
 import ExperienceFactory from '../../components/experience_factory/ExperienceFactory';
 import ExperiencesSidebar from '../../components/sidebar/sidebar/ExperiencesSidebar';
+import ExperiencesNavMenu from '../../components/navmenu/navmenu/ExperiencesNavMenu';
 
 export default function ExperiencesView() {
   const {data, isLoading} = useExperiences();
@@ -26,6 +27,7 @@ export default function ExperiencesView() {
   return (
     <section id={'experiences-display'}>
       <ExperiencesSidebar data={data} />
+      <ExperiencesNavMenu />
       <div
         id={`${data.items[0].company}-${data.items[0].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
