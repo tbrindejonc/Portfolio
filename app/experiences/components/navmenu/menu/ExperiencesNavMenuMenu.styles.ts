@@ -4,8 +4,11 @@ const cExpNavMenuMenu_menu = (showMenu: boolean) => {
   return vstack({
     borderRadius: 'lg',
     gap: 0,
-    me: 2,
-    translateX: showMenu ? '0' : '110%',
+    me: {
+      base: 2,
+      md: 6,
+    },
+    translateX: showMenu ? '0' : '120%',
     translate: 'auto',
     transition: 'all 0.5s',
   });
@@ -29,13 +32,22 @@ const cExpNavMenuMenu_item = (index: number, currentActive: number) => {
       _dark: isActive ? 'neutral.dark' : 'neutral.light',
     },
     fontFamily: 'bricolage',
-    fontSize: 'xl',
-    h: 32,
+    fontSize: {
+      base: 'xl',
+      md: '3xl',
+    },
+    h: {
+      base: 32,
+      md: 40,
+    },
     justifyContent: 'center',
     ps: 10,
     pointerEvents: 'auto',
     transition: 'all 0.3s',
-    w: 52,
+    w: {
+      base: 52,
+      md: 72,
+    },
   });
 };
 

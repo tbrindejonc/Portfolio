@@ -4,7 +4,10 @@ const cExpNavMenu_container = (currentActive: number) => {
   return vstack({
     alignItems: 'end',
     display: currentActive === 3 ? 'none' : 'flex',
-    gap: 28,
+    gap: {
+      base: 28,
+      md: 60,
+    },
     justifyContent: 'end',
     pointerEvents: 'none',
     position: 'fixed',

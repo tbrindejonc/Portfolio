@@ -12,7 +12,10 @@ const cExpNavMenu_button = vstack({
     md: 20,
   },
   mb: 4,
-  me: 2,
+  me: {
+    base: 2,
+    md: 6,
+  },
   p: 2,
   pointerEvents: 'auto',
   rowGap: 2,
