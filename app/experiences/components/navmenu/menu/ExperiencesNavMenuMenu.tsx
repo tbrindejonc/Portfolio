@@ -1,6 +1,11 @@
 import {vstack} from '@/styled-system/patterns';
+import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
 
-export default function ExperiencesNavMenuMenu() {
+type Props = {
+  experiences: CompleteExperienceFromApi[];
+};
+
+export default function ExperiencesNavMenuMenu({experiences}: Props) {
   const cExpNavMenuMenu_menu = vstack({
     gap: 0,
     borderRadius: 'lg',

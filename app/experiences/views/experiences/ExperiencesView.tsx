@@ -27,7 +27,7 @@ export default function ExperiencesView() {
   return (
     <section id={'experiences-display'}>
       <ExperiencesSidebar data={data} />
-      <ExperiencesNavMenu />
+      <ExperiencesNavMenu data={data} />
       <div
         id={`${data.items[0].company}-${data.items[0].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
