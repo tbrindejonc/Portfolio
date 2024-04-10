@@ -5,15 +5,19 @@ import Link from 'next/link';
 
 type Props = {
   experiences: CompleteExperienceFromApi[];
+  showMenu: boolean;
 };
 
-export default function ExperiencesNavMenuMenu({experiences}: Props) {
+export default function ExperiencesNavMenuMenu({experiences, showMenu}: Props) {
   const currentActive = useScrollPosition();
 
   const cExpNavMenuMenu_menu = vstack({
     gap: 0,
     borderRadius: 'lg',
     me: 2,
+    translateX: showMenu ? '0' : '110%',
+    translate: 'auto',
+    transition: 'all 0.5s',
   });
 
   const cExpNavMenuMenu_item = (index: number, currentActive: number) => {

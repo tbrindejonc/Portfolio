@@ -11,6 +11,7 @@ const cExpNavMenu_button = vstack({
   mb: 4,
   me: 2,
   p: 2,
+  pointerEvents: 'auto',
   rowGap: 2,
   shadow: '0 0 5px 2px token(colors.p_blue.main)',
   transition: 'all 0.5s',
