@@ -40,7 +40,7 @@ export default function ExperiencesView() {
             sizes={'100vw'}
             className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
           />
-          <ExperienceFactory isLoading={experiences.isLoading} />
+          <ExperienceFactory isLoading />
         </div>
         <div className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}>
           <Image
@@ -51,7 +51,7 @@ export default function ExperiencesView() {
             sizes={'100vw'}
             className={exp_vExp_rainbowLooper}
           />
-          <ExperienceFactory isLoading={experiences.isLoading} />
+          <ExperienceFactory isLoading />
         </div>
         <div className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
           <Image
@@ -70,7 +70,7 @@ export default function ExperiencesView() {
             sizes={'100vw'}
             className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
           />
-          <ExperienceFactory isLoading={experiences.isLoading} />
+          <ExperienceFactory isLoading />
         </div>
       </section>
     );
