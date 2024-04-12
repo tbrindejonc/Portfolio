@@ -55,6 +55,7 @@ const vSkillsLanding_paragraph = css({
     _dark: 'neutral.200',
   },
   fontSize: 'xl',
+  minH: '23vh',
   px: 4,
   textAlign: 'center',
   textWrap: 'balance',
