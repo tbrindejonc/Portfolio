@@ -1,7 +1,9 @@
+import SkillsLandingView from './views/landing/SkillsLandingView';
+
 export default function Page() {
   return (
     <main>
-      <h1>Skills</h1>
+      <SkillsLandingView />
     </main>
   );
 }
