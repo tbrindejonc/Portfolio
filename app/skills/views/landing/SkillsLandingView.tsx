@@ -8,6 +8,7 @@ import {
   vSkillsLanding_link,
   vSkillsLanding_paragraph,
   vSkillsLanding_svg,
+  vSkillsLanding_textContainer,
   vSkillsLanding_title,
   vSkillsLanding_titleContainer,
   vSkillsLanding_titleDecoration,
@@ -35,7 +36,7 @@ export default function SkillsLandingView() {
           sizes={'100vw'}
           className={vSkillsLanding_image}
         />
-        <div className={vSkillsLanding_contentContainer}>
+        <div className={vSkillsLanding_textContainer}>
           <p className={vSkillsLanding_paragraph}>{skillsLandingTexts.explanations[language]}</p>
           <Link href={'#skills-display'} className={`${vSkillsLanding_link} group`}>
             <h2>{skillsLandingTexts.link[language]}</h2>

@@ -11,6 +11,7 @@ const vSkillsLanding_view = vstack({
     _dark: 'neutral.light',
   },
   gap: {
+    base: 4,
     md: 8,
   },
   h: 'screen',
@@ -22,13 +23,19 @@ const vSkillsLanding_view = vstack({
 
 const vSkillsLanding_image = css({
   borderRadius: 'xl',
-  h: '40vh',
+  h: {
+    base: '40vh',
+    xl: '50vh',
+  },
   objectFit: 'cover',
   shadow: {
     base: '4px 4px 5px 2px token(colors.p_blue.dark_25)',
     _dark: '4px 4px 5px 2px token(colors.p_blue.light_25)',
   },
-  w: '40vh',
+  w: {
+    base: '40vh',
+    xl: '50vh',
+  },
 });
 
 const vSkillsLanding_titleContainer = hstack({
@@ -43,6 +50,7 @@ const vSkillsLanding_titleDecoration = css({
   w: {
     base: 8,
     md: 32,
+    xl: 56,
   },
   h: {
     base: 1,
@@ -55,16 +63,39 @@ const vSkillsLanding_title = css({
   fontSize: {
     base: '3xl',
     md: '5xl',
+    xl: '7xl',
   },
   fontWeight: 'bold',
 });
 
-const vSkillsLanding_contentContainer = vstack({
+const vSkillsLanding_contentContainer = css({
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
+  gap: {
+    base: 8,
+    md: 12,
+    xl: 24,
+  },
+  justifyContent: 'center',
+});
+
+const vSkillsLanding_textContainer = vstack({
+  alignItems: {
+    base: 'center',
+    xl: 'start',
+  },
   gap: {
     base: 8,
     md: 12,
   },
   justifyContent: 'center',
+  w: {
+    xl: '2/5',
+  },
 });
 
 const vSkillsLanding_paragraph = css({
@@ -75,13 +106,17 @@ const vSkillsLanding_paragraph = css({
   fontSize: {
     base: 'xl',
     md: '3xl',
+    xl: '4xl',
   },
   minH: {
     base: '23vh',
     md: '18vh',
   },
   px: 4,
-  textAlign: 'center',
+  textAlign: {
+    base: 'center',
+    md: 'left',
+  },
   textWrap: 'balance',
 });
 
@@ -140,6 +175,7 @@ export {
   vSkillsLanding_link,
   vSkillsLanding_paragraph,
   vSkillsLanding_contentContainer,
+  vSkillsLanding_textContainer,
   vSkillsLanding_title,
   vSkillsLanding_titleDecoration,
   vSkillsLanding_titleContainer,
