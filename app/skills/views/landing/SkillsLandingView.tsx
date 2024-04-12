@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -11,13 +13,17 @@ import {
   vSkillsLanding_titleDecoration,
   vSkillsLanding_view,
 } from './SkillsLandingView.styles';
+import useLanguage from '@hooks/useLanguage';
+import skillsLandingTexts from '@app/skills/texts/landingTexts';
 
 export default function SkillsLandingView() {
+  const {language} = useLanguage();
+
   return (
     <section id={'skills-landing'} className={vSkillsLanding_view}>
       <div className={vSkillsLanding_titleContainer}>
         <div className={vSkillsLanding_titleDecoration} />
-        <h1 className={vSkillsLanding_title}>Mes compétences</h1>
+        <h1 className={vSkillsLanding_title}>{skillsLandingTexts.title[language]}</h1>
         <div className={vSkillsLanding_titleDecoration} />
       </div>
       <div className={vSkillsLanding_contentContainer}>
@@ -30,12 +36,9 @@ export default function SkillsLandingView() {
           className={vSkillsLanding_image}
         />
         <div className={vSkillsLanding_contentContainer}>
-          <p className={vSkillsLanding_paragraph}>
-            A travers mes études et mes expériences professionnelles, j’ai peu apprendre diverses technologies qui me
-            sont très utiles pour développer des sites web
-          </p>
+          <p className={vSkillsLanding_paragraph}>{skillsLandingTexts.explanations[language]}</p>
           <Link href={'#skills-display'} className={`${vSkillsLanding_link} group`}>
-            <h2>Découvrir</h2>
+            <h2>{skillsLandingTexts.link[language]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
