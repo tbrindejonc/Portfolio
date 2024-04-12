@@ -4,11 +4,11 @@ import Experience from '@app/experiences/components/experience/Experience';
 import ExperienceProvider from '@app/experiences/providers/ExperienceProvider';
 
 type Props = {
-  experience: CompleteExperienceFromApi;
-  isLoading: boolean;
+  experience?: CompleteExperienceFromApi;
+  isLoading?: boolean;
 };
 
-export default function ExperienceFactory({experience, isLoading}: Props) {
+export default function ExperienceFactory({experience = {} as CompleteExperienceFromApi, isLoading = false}: Props) {
   const {language} = useLanguage();
 
   if (isLoading) {

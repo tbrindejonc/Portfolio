@@ -18,18 +18,70 @@ import ExperiencesSidebar from '../../components/sidebar/sidebar/ExperiencesSide
 import ExperiencesNavMenu from '../../components/navmenu/navmenu/ExperiencesNavMenu';
 
 export default function ExperiencesView() {
-  const {data, isLoading} = useExperiences();
+  const experiences = useExperiences();
 
-  if (!data) {
-    return;
+  if (!experiences.isSuccess) {
+    return (
+      <section id={'experiences-display'}>
+        <div className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
+          <Image
+            src={'/images/portfolio/experiences/looper_blue.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_topLooper}`}
+          />
+          <Image
+            src={'/images/portfolio/experiences/looper_purple.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
+          />
+          <ExperienceFactory isLoading />
+        </div>
+        <div className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}>
+          <Image
+            src={'/images/portfolio/experiences/looper_rainbow.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={exp_vExp_rainbowLooper}
+          />
+          <ExperienceFactory isLoading />
+        </div>
+        <div className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}>
+          <Image
+            src={'/images/portfolio/experiences/looper_blue.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_otherTopLooper}`}
+          />
+          <Image
+            src={'/images/portfolio/experiences/looper_purple.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
+          />
+          <ExperienceFactory isLoading />
+        </div>
+      </section>
+    );
   }
 
   return (
     <section id={'experiences-display'}>
-      <ExperiencesSidebar data={data} />
-      <ExperiencesNavMenu data={data} />
+      <ExperiencesSidebar data={experiences.data} />
+      <ExperiencesNavMenu data={experiences.data} />
       <div
-        id={`${data.items[0].company}-${data.items[0].id}`}
+        id={`${experiences.data.items[0].company}-${experiences.data.items[0].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
       >
         <Image
@@ -48,10 +100,10 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
         />
-        <ExperienceFactory experience={data.items[0]} isLoading={isLoading} />
+        <ExperienceFactory experience={experiences.data.items[0]} />
       </div>
       <div
-        id={`${data.items[1].company}-${data.items[1].id}`}
+        id={`${experiences.data.items[1].company}-${experiences.data.items[1].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}
       >
         <Image
@@ -62,10 +114,10 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={exp_vExp_rainbowLooper}
         />
-        <ExperienceFactory experience={data.items[1]} isLoading={isLoading} />
+        <ExperienceFactory experience={experiences.data.items[1]} />
       </div>
       <div
-        id={`${data.items[2].company}-${data.items[2].id}`}
+        id={`${experiences.data.items[2].company}-${experiences.data.items[2].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
       >
         <Image
@@ -84,7 +136,7 @@ export default function ExperiencesView() {
           sizes={'100vw'}
           className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
         />
-        <ExperienceFactory experience={data.items[2]} isLoading={isLoading} />
+        <ExperienceFactory experience={experiences.data.items[2]} />
       </div>
     </section>
   );

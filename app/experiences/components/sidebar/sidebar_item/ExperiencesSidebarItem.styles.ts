@@ -10,7 +10,10 @@ const cExpSidebarItem_item = css({
 });
 
 const cExpSidebarItem_activeState = (index: number, currentActive: number) => {
-  const isActive = index === currentActive;
+  let isActive = index === currentActive;
+  if (currentActive === 3 && index === 2) {
+    isActive = true;
+  }
 
   return css({
     bg: {
@@ -26,7 +29,10 @@ const cExpSidebarItem_activeState = (index: number, currentActive: number) => {
 };
 
 const cExpSidebarItem_title = (index: number, currentActive: number) => {
-  const isActive = index === currentActive;
+  let isActive = index === currentActive;
+  if (currentActive === 3 && index === 2) {
+    isActive = true;
+  }
 
   return css({
     bg: {
