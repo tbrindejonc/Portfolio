@@ -10,6 +10,9 @@ const vSkillsLanding_view = vstack({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
+  gap: {
+    md: 8,
+  },
   h: 'screen',
   overflow: 'hidden',
   justifyContent: 'center',
@@ -29,23 +32,38 @@ const vSkillsLanding_image = css({
 });
 
 const vSkillsLanding_titleContainer = hstack({
-  gap: 2,
+  gap: {
+    base: 2,
+    md: 8,
+  },
 });
 
 const vSkillsLanding_titleDecoration = css({
   bg: 'p_blue.main',
-  w: 8,
-  h: 1,
+  w: {
+    base: 8,
+    md: 32,
+  },
+  h: {
+    base: 1,
+    md: 2,
+  },
 });
 
 const vSkillsLanding_title = css({
   fontFamily: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
   fontWeight: 'bold',
 });
 
 const vSkillsLanding_contentContainer = vstack({
-  gap: 8,
+  gap: {
+    base: 8,
+    md: 12,
+  },
   justifyContent: 'center',
 });
 
@@ -54,8 +72,14 @@ const vSkillsLanding_paragraph = css({
     base: 'neutral.800',
     _dark: 'neutral.200',
   },
-  fontSize: 'xl',
-  minH: '23vh',
+  fontSize: {
+    base: 'xl',
+    md: '3xl',
+  },
+  minH: {
+    base: '23vh',
+    md: '18vh',
+  },
   px: 4,
   textAlign: 'center',
   textWrap: 'balance',
@@ -71,19 +95,31 @@ const vSkillsLanding_link = hstack({
     base: 'neutral.light',
     _dark: 'neutral.dark',
   },
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '4xl',
+  },
   fontWeight: 'semibold',
   gap: 4,
   justifyContent: 'center',
-  p: 2,
+  p: {
+    base: 2,
+    md: 3,
+  },
   shadow: {
     _hover: '0 5px 8px 2px token(colors.p_blue.main)',
   },
-  w: '5/6',
+  w: {
+    base: '5/6',
+    md: '3/5',
+  },
 });
 
 const vSkillsLanding_svg = css({
-  h: 7,
+  h: {
+    base: 7,
+    md: 10,
+  },
   rotate: {
     base: '-90deg',
     _groupHover: '0deg',
@@ -94,7 +130,10 @@ const vSkillsLanding_svg = css({
   },
   strokeWidth: 4,
   transition: 'all 0.3s ease-in-out',
-  w: 7,
+  w: {
+    base: 7,
+    md: 10,
+  },
 });
 
 export {
