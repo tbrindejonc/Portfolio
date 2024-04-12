@@ -103,7 +103,7 @@ export default function ExperiencesView() {
         <ExperienceFactory experience={experiences.data.items[0]} />
       </div>
       <div
-        id={`${experiences.data.items[1]}-${experiences.data.items[1]}`}
+        id={`${experiences.data.items[1].company}-${experiences.data.items[1].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}
       >
         <Image
@@ -117,7 +117,7 @@ export default function ExperiencesView() {
         <ExperienceFactory experience={experiences.data.items[1]} />
       </div>
       <div
-        id={`${experiences.data.items[2]}-${experiences.data.items[2]}`}
+        id={`${experiences.data.items[2].company}-${experiences.data.items[2].id}`}
         className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
       >
         <Image
