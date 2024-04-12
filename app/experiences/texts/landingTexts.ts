@@ -1,6 +1,6 @@
-import {ExperienceLandingTexts} from '@appTypes/portfolio';
+import {BaseLandingTexts} from '@appTypes/portfolio';
 
-const landingTexts: ExperienceLandingTexts = {
+const landingTexts: BaseLandingTexts = {
   title: {
     english: 'My Experiences',
     french: 'Mes Experiences',
