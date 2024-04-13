@@ -11,6 +11,7 @@ import {
   cTechnology_textContainer,
   cTechnology_title,
 } from './Technology.styles';
+import linkButtonText from '../../texts/linkButton';
 
 type Props = {
   technology: CompleteTechnologyFromApi;
@@ -35,7 +36,7 @@ export default function Technology({technology, language}: Props) {
         <p className={cTechnology_paragraph}>{technology.description[language]}</p>
       </div>
       <Link href={technology.website} className={cTechnology_link}>
-        Consulter
+        {linkButtonText[language]}
       </Link>
     </div>
   );
