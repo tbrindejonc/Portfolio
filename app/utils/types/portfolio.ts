@@ -1,6 +1,9 @@
-// app theme
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
+import {CompleteTechnologyFromApi} from '@schemas/api/technology/technology.schema';
+import {UseQueryResult} from '@tanstack/react-query';
+import {ApiCollection} from '@appTypes/api';
 
+// app theme
 export type Theme = 'light' | 'dark';
 
 // base app text
@@ -110,3 +113,9 @@ export enum TechCategory {
   LEARNING = 6,
   PLANNED = 7,
 }
+
+// utilities returned by useTechWithCategory hook
+export type TechCategoryUtils = {
+  filteredTechnologies: CompleteTechnologyFromApi[];
+  technologies: UseQueryResult<ApiCollection<CompleteTechnologyFromApi>>;
+};
