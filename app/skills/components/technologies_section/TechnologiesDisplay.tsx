@@ -161,7 +161,7 @@ export default function TechnologiesDisplay({technologies, language, category}: 
                 <h2 className={cTechDisplay_title}>{tech.name}</h2>
                 <p className={cTechDisplay_paragraph}>{tech.description[language]}</p>
               </div>
-              <Link href={'#placeholder'} className={cTechDisplay_link}>
+              <Link href={tech.website} className={cTechDisplay_link}>
                 Consulter
               </Link>
             </div>
