@@ -24,6 +24,9 @@ const vCatTechView_section = (reversed: boolean) => {
       md: 12,
     },
     pb: 8,
+    ps: {
+      xl: 60,
+    },
     transition: 'all 0.5s',
     w: 'full',
   });

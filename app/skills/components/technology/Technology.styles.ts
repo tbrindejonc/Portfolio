@@ -25,6 +25,9 @@ const cTechnology_technology = vstack({
     _dark: '0 0 5px 2px token(colors.p_purple.light)',
   },
   transition: 'all 0.5s',
+  w: {
+    xl: '3/4',
+  },
 });
 
 const cTechnology_imageContainer = circle({
@@ -52,6 +55,7 @@ const cTechnology_title = css({
   fontSize: {
     base: 'lg',
     md: '2xl',
+    xl: '3xl',
   },
   fontWeight: 'semibold',
 });
@@ -63,6 +67,7 @@ const cTechnology_paragraph = css({
   },
   fontSize: {
     md: 'lg',
+    xl: 'xl',
   },
   textWrap: 'balance',
 });

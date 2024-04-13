@@ -73,7 +73,9 @@ const cTechDisplay_technologiesContainer = grid({
   gridTemplateColumns: {
     base: 2,
     md: 3,
+    xl: 4,
   },
+  justifyItems: 'center',
 });
 
 export {
