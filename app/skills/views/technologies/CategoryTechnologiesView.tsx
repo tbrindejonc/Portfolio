@@ -4,7 +4,7 @@ import useTechWithCategory from '@app/skills/hooks/useTechWithCategory';
 import {TechCategory} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
 import TechnologiesDisplay from '../../components/technologies_section/TechnologiesDisplay';
-import {vCatTechView_section} from '@app/skills/views/technologies/CategoryTechnologiesView.styles';
+import {vCatTechView_section} from './CategoryTechnologiesView.styles';
 
 type Props = {
   category: TechCategory;
