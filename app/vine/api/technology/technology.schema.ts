@@ -12,6 +12,7 @@ const baseTechnologySchema = vine.object({
   color: vine.string(),
   logo: vine.string(),
   name: vine.string(),
+  website: vine.string(),
 });
 
 // technology returned by api
