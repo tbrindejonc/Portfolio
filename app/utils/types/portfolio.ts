@@ -102,3 +102,11 @@ export type ExperienceContextUtils = {
   experience: CompleteExperienceFromApi;
   language: Language;
 };
+
+// enum for each tech category ids in the database
+export enum TechCategory {
+  TOOLS = 4,
+  MASTERED = 5,
+  LEARNING = 6,
+  PLANNED = 7,
+}
