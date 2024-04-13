@@ -2,25 +2,27 @@
 
 import useTechWithCategory from '@app/skills/hooks/useTechWithCategory';
 import {TechCategory} from '@appTypes/portfolio';
+import useLanguage from '@hooks/useLanguage';
 
 type Props = {
   category: TechCategory;
 };
 
 export default function TechCategoryView({category}: Props) {
-  const technologies = useTechWithCategory(category);
+  const {filteredTechnologies, technologies} = useTechWithCategory(category);
+  const {language} = useLanguage();
 
-  if (!technologies.isSuccess) {
-    return (
-      <section>
-        <h1>loading</h1>
-      </section>
-    );
-  }
+  const readyToDisplay = technologies.isSuccess && filteredTechnologies.length !== 0;
 
   return (
-    <section>
-      <h1>Technologies</h1>
+    <section id={`skills-${TechCategory[category].toLowerCase()}`}>
+      {readyToDisplay ? (
+        <>
+          <h1>{filteredTechnologies[0].category.name[language]}</h1>
+        </>
+      ) : (
+        <h1>loading</h1>
+      )}
     </section>
   );
 }
