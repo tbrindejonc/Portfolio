@@ -115,7 +115,7 @@ const vSkillsLanding_paragraph = css({
   px: 4,
   textAlign: {
     base: 'center',
-    md: 'left',
+    xl: 'left',
   },
   textWrap: 'balance',
 });

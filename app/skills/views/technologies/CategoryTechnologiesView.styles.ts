@@ -19,7 +19,10 @@ const vCatTechView_section = (reversed: boolean) => {
     h: 'fit',
     justifyContent: 'center',
     minH: 'screen',
-    p: 4,
+    p: {
+      base: 4,
+      md: 12,
+    },
     pb: 8,
     transition: 'all 0.5s',
     w: 'full',

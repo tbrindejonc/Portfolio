@@ -6,10 +6,19 @@ const cTechnology_technology = vstack({
     base: 'p_purple.light',
     _dark: 'p_purple.dark',
   },
-  borderRadius: 'lg',
+  borderRadius: {
+    base: 'lg',
+    md: 'xl',
+  },
   fontSize: 'sm',
-  gap: 4,
-  p: 2,
+  gap: {
+    base: 4,
+    md: 6,
+  },
+  p: {
+    base: 2,
+    md: 4,
+  },
   position: 'relative',
   shadow: {
     base: '0 0 5px 2px token(colors.p_purple.dark)',
@@ -24,17 +33,26 @@ const cTechnology_imageContainer = circle({
     _dark: 'p_purple.light',
   },
   overflow: 'hidden',
-  size: 14,
+  size: {
+    base: 14,
+    md: 20,
+  },
 });
 
 const cTechnology_image = css({
   h: 'auto',
-  w: 10,
+  w: {
+    base: 10,
+    md: 14,
+  },
 });
 
 const cTechnology_title = css({
   alignSelf: 'start',
-  fontSize: 'lg',
+  fontSize: {
+    base: 'lg',
+    md: '2xl',
+  },
   fontWeight: 'semibold',
 });
 
@@ -42,6 +60,9 @@ const cTechnology_paragraph = css({
   color: {
     base: 'neutral.800',
     _dark: 'neutral.200',
+  },
+  fontSize: {
+    md: 'lg',
   },
   textWrap: 'balance',
 });
@@ -52,12 +73,18 @@ const cTechnology_link = css({
     _dark: 'p_purple.light',
   },
   borderRadius: 'full',
-  bottom: 2,
+  bottom: {
+    base: 2,
+    md: 4,
+  },
   color: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
   },
-  fontSize: 'md',
+  fontSize: {
+    base: 'md',
+    md: 'lg',
+  },
   justifySelf: 'end',
   p: 0.5,
   position: 'absolute',
@@ -66,7 +93,10 @@ const cTechnology_link = css({
 });
 
 const cTechnology_textContainer = css({
-  pb: 10,
+  pb: {
+    base: 10,
+    md: 14,
+  },
 });
 
 export {

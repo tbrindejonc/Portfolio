@@ -3,7 +3,10 @@ import {css} from '@/styled-system/css';
 import {TechCategory} from '@appTypes/portfolio';
 
 const cTechDisplay_container = vstack({
-  gap: 8,
+  gap: {
+    base: 8,
+    md: 12,
+  },
   justifyContent: 'center',
 });
 
@@ -13,7 +16,10 @@ const cTechDisplay_headerContainer = vstack({
 
 const cTechDisplay_headerDecorator = css({
   bg: 'p_blue.main',
-  h: 1,
+  h: {
+    base: 1,
+    md: 2,
+  },
   w: '40vw',
 });
 
@@ -47,15 +53,27 @@ const cTechDisplay_headerDecoratorColor = (category: TechCategory, direction: 'l
 
 const cTechDisplay_headerTitle = css({
   fontFamily: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
   fontWeight: 'bold',
-  lineHeight: 1,
+  lineHeight: {
+    base: 1,
+    md: 1.5,
+  },
   textAlign: 'center',
 });
 
 const cTechDisplay_technologiesContainer = grid({
-  gap: 4,
-  gridTemplateColumns: 2,
+  gap: {
+    base: 4,
+    md: 10,
+  },
+  gridTemplateColumns: {
+    base: 2,
+    md: 3,
+  },
 });
 
 export {
