@@ -37,13 +37,14 @@ export default function CategoryTechnologiesView({category, reversed = false}: P
     minH: 'screen',
     p: 4,
     pb: 8,
+    transition: 'all 0.5s',
     w: 'full',
   });
 
   return (
     <section id={`skills-${TechCategory[category].toLowerCase()}`} className={vCatTechView_section}>
       {readyToDisplay ? (
-        <TechnologiesDisplay technologies={filteredTechnologies} language={language} />
+        <TechnologiesDisplay technologies={filteredTechnologies} language={language} category={category} />
       ) : (
         <h1>loading</h1>
       )}
