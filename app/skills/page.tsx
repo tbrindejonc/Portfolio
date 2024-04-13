@@ -6,10 +6,12 @@ export default function Page() {
   return (
     <main>
       <SkillsLandingView />
-      <CategoryTechnologiesView category={TechCategory.TOOLS} />
-      <CategoryTechnologiesView category={TechCategory.MASTERED} />
-      <CategoryTechnologiesView category={TechCategory.LEARNING} />
-      <CategoryTechnologiesView category={TechCategory.PLANNED} />
+      <section id={'skills-display'}>
+        <CategoryTechnologiesView category={TechCategory.TOOLS} />
+        <CategoryTechnologiesView category={TechCategory.MASTERED} reversed />
+        <CategoryTechnologiesView category={TechCategory.LEARNING} />
+        <CategoryTechnologiesView category={TechCategory.PLANNED} reversed />
+      </section>
     </main>
   );
 }
