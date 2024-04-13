@@ -1,15 +1,15 @@
 import SkillsLandingView from './views/landing/SkillsLandingView';
-import TechCategoryView from './views/technologies/TechCategoryView';
+import CategoryTechnologiesView from './views/technologies/CategoryTechnologiesView';
 import {TechCategory} from '@appTypes/portfolio';
 
 export default function Page() {
   return (
     <main>
       <SkillsLandingView />
-      <TechCategoryView category={TechCategory.TOOLS} />
-      <TechCategoryView category={TechCategory.MASTERED} />
-      <TechCategoryView category={TechCategory.LEARNING} />
-      <TechCategoryView category={TechCategory.PLANNED} />
+      <CategoryTechnologiesView category={TechCategory.TOOLS} />
+      <CategoryTechnologiesView category={TechCategory.MASTERED} />
+      <CategoryTechnologiesView category={TechCategory.LEARNING} />
+      <CategoryTechnologiesView category={TechCategory.PLANNED} />
     </main>
   );
 }

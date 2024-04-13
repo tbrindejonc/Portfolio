@@ -8,7 +8,7 @@ type Props = {
   category: TechCategory;
 };
 
-export default function TechCategoryView({category}: Props) {
+export default function CategoryTechnologiesView({category}: Props) {
   const {filteredTechnologies, technologies} = useTechWithCategory(category);
   const {language} = useLanguage();
 
