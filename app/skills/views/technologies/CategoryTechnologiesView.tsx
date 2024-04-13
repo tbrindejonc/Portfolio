@@ -4,7 +4,7 @@ import useTechWithCategory from '@app/skills/hooks/useTechWithCategory';
 import {TechCategory} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
 import TechnologiesDisplay from '../../components/technologies_section/TechnologiesDisplay';
-import {vstack} from '@/styled-system/patterns';
+import {vCatTechView_section} from '@app/skills/views/technologies/CategoryTechnologiesView.styles';
 
 type Props = {
   category: TechCategory;
@@ -17,32 +17,8 @@ export default function CategoryTechnologiesView({category, reversed = false}: P
 
   const readyToDisplay = technologies.isSuccess && filteredTechnologies.length !== 0;
 
-  const vCatTechView_section = vstack({
-    bgGradient: 'to-b',
-    color: {
-      base: 'neutral.dark',
-      _dark: 'neutral.light',
-    },
-    gap: 4,
-    gradientFrom: {
-      base: reversed ? 'p_blue.light' : 'p_purple.light',
-      _dark: reversed ? 'p_blue.dark' : 'p_purple.dark',
-    },
-    gradientTo: {
-      base: reversed ? 'p_purple.light' : 'p_blue.light',
-      _dark: reversed ? 'p_purple.dark' : 'p_blue.dark',
-    },
-    h: 'fit',
-    justifyContent: 'center',
-    minH: 'screen',
-    p: 4,
-    pb: 8,
-    transition: 'all 0.5s',
-    w: 'full',
-  });
-
   return (
-    <section id={`skills-${TechCategory[category].toLowerCase()}`} className={vCatTechView_section}>
+    <section id={`skills-${TechCategory[category].toLowerCase()}`} className={vCatTechView_section(reversed)}>
       {readyToDisplay ? (
         <TechnologiesDisplay technologies={filteredTechnologies} language={language} category={category} />
       ) : (
