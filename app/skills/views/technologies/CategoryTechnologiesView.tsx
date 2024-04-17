@@ -3,8 +3,9 @@
 import useTechWithCategory from '@app/skills/hooks/useTechWithCategory';
 import {TechCategory} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
-import TechnologiesDisplay from '../../components/technologies_section/TechnologiesDisplay';
 import {vCatTechView_section} from './CategoryTechnologiesView.styles';
+import TechnologiesLoading from '@app/skills/components/technologies_loading/TechnologiesLoading';
+import TechnologiesDisplay from '@app/skills/components/technologies_section/TechnologiesDisplay';
 
 type Props = {
   category: TechCategory;
@@ -22,7 +23,7 @@ export default function CategoryTechnologiesView({category, reversed = false}: P
       {readyToDisplay ? (
         <TechnologiesDisplay technologies={filteredTechnologies} language={language} category={category} />
       ) : (
-        <h1>loading</h1>
+        <TechnologiesLoading />
       )}
     </section>
   );
