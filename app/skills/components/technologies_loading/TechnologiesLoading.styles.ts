@@ -5,10 +5,12 @@ const cTechLoading_container = grid({
   gridTemplateColumns: {
     base: 2,
     md: 3,
+    xl: 4,
   },
   gap: {
     base: 6,
     md: 8,
+    xl: 12,
   },
   h: 'screen',
   pb: 8,
@@ -29,10 +31,12 @@ const cTechLoading_loading = vstack({
   h: {
     base: 'full',
     md: '3/4',
+    xl: 'full',
   },
   p: {
     base: 2,
     md: 3,
+    xl: 4,
   },
   position: 'relative',
   shadow: {
@@ -92,11 +96,13 @@ const cTechLoading_button = css({
   bottom: {
     base: 2,
     md: 3,
+    xl: 4,
   },
   borderRadius: 'lg',
   h: {
     base: 4,
     md: 5,
+    xl: 7,
   },
   position: 'absolute',
   w: '90%',
