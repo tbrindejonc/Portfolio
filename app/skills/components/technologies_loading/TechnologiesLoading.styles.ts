@@ -2,8 +2,14 @@ import {circle, grid, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const cTechLoading_container = grid({
-  gridTemplateColumns: 2,
-  gap: 6,
+  gridTemplateColumns: {
+    base: 2,
+    md: 3,
+  },
+  gap: {
+    base: 6,
+    md: 8,
+  },
   h: 'screen',
   pb: 8,
   w: 'full',
@@ -16,9 +22,18 @@ const cTechLoading_loading = vstack({
     _dark: 'p_purple.dark',
   },
   borderRadius: 'lg',
-  gap: 4,
-  h: 'full',
-  p: 2,
+  gap: {
+    base: 4,
+    md: 6,
+  },
+  h: {
+    base: 'full',
+    md: '3/4',
+  },
+  p: {
+    base: 2,
+    md: 3,
+  },
   position: 'relative',
   shadow: {
     base: '0 0 5px 2px token(colors.p_purple.dark)',
@@ -34,7 +49,10 @@ const cTechLoading_circle = circle({
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
-  size: 12,
+  size: {
+    base: 12,
+    md: 16,
+  },
 });
 
 const cTechLoading_title = css({
@@ -44,7 +62,10 @@ const cTechLoading_title = css({
     _dark: 'p_purple.light',
   },
   borderRadius: 'lg',
-  h: 3,
+  h: {
+    base: 3,
+    md: 4,
+  },
   w: '1/2',
 });
 
@@ -55,7 +76,10 @@ const cTechLoading_paragraph = css({
     _dark: 'p_purple.light',
   },
   borderRadius: 'lg',
-  h: 20,
+  h: {
+    base: 20,
+    md: 52,
+  },
   w: 'full',
 });
 
@@ -65,9 +89,15 @@ const cTechLoading_button = css({
     base: 'p_purple.dark',
     _dark: 'p_purple.light',
   },
-  bottom: 2,
+  bottom: {
+    base: 2,
+    md: 3,
+  },
   borderRadius: 'lg',
-  h: 4,
+  h: {
+    base: 4,
+    md: 5,
+  },
   position: 'absolute',
   w: '90%',
 });
