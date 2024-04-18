@@ -119,3 +119,9 @@ export type TechCategoryUtils = {
   filteredTechnologies: CompleteTechnologyFromApi[];
   technologies: UseQueryResult<ApiCollection<CompleteTechnologyFromApi>>;
 };
+
+// texts for the sidebar links in the skills section
+export type SkillsSidebarTexts = {
+  titles: AppText[];
+  links: string[];
+};
