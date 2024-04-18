@@ -1,4 +1,4 @@
-import {circle, vstack} from '@/styled-system/patterns';
+import {vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
 const cSkillSidebar_container = vstack({
@@ -19,43 +19,11 @@ const cSkillSidebar_container = vstack({
   ps: 20,
 });
 
-const cSkillSidebar_item = vstack({
-  borderRadius: 'full',
-  h: 32,
-  justifyContent: 'center',
-  shadow: {
-    base: '0 2px 4px 0 token(colors.p_blue.dark)',
-    _dark: '0 2px 4px 0 token(colors.p_blue.light)',
-  },
-  w: 4,
-  transition: 'all 0.5s',
-});
-
-const cSkillSidebar_circle = circle({
-  shadow: {
-    base: '0 2px 4px 0 token(colors.p_blue.dark)',
-    _dark: '0 2px 4px 0 token(colors.p_blue.light)',
-  },
-  size: 16,
-  transition: 'all 0.5s',
-});
-
 const cSkillSidebar_svg = css({
   h: 10,
   strokeWidth: 1.5,
   w: 10,
 });
-
-const cSkillSidebar_activeItem = (index: number, current: number) => {
-  const currentActive = index === current;
-
-  return css({
-    bg: {
-      base: currentActive ? 'p_purple.700' : 'neutral.light',
-      _dark: currentActive ? 'p_purple.200' : 'neutral.700',
-    },
-  });
-};
 
 const cSkillSidebar_activeSvg = (index: number, current: number) => {
   const currentActive = index === current;
@@ -68,11 +36,4 @@ const cSkillSidebar_activeSvg = (index: number, current: number) => {
   });
 };
 
-export {
-  cSkillSidebar_svg,
-  cSkillSidebar_circle,
-  cSkillSidebar_container,
-  cSkillSidebar_item,
-  cSkillSidebar_activeItem,
-  cSkillSidebar_activeSvg,
-};
+export {cSkillSidebar_container, cSkillSidebar_activeSvg, cSkillSidebar_svg};
