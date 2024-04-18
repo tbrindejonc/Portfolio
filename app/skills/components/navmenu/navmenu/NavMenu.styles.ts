@@ -30,15 +30,24 @@ const cSkillNavMenu_svg = (index: number, current: number) => {
       base: currentActive ? 'neutral.light' : 'neutral.700',
       _dark: currentActive ? 'neutral.dark' : 'neutral.light',
     },
-    h: 14,
+    h: {
+      base: 14,
+      md: 20,
+    },
     transition: 'all 0.3s',
-    w: 14,
+    w: {
+      base: 14,
+      md: 20,
+    },
   });
 };
 
 const cSkillNavMenu_container = vstack({
   alignItems: 'start',
-  gap: 20,
+  gap: {
+    base: 20,
+    md: 32,
+  },
   left: 0,
   position: 'fixed',
   top: '20vh',

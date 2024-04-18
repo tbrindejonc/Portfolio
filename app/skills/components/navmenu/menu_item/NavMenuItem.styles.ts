@@ -25,7 +25,10 @@ const cSkillNavMenu_item = (index: number, currentActive: number) => {
     justifyContent: 'center',
     position: 'relative',
     transition: 'all 0.3s',
-    w: '55vw',
+    w: {
+      base: '55vw',
+      md: '40vw',
+    },
   });
 };
 
@@ -38,7 +41,10 @@ const cSkillNavMenu_textContainer = vstack({
 });
 
 const cSkillNavMenu_text = css({
-  fontSize: 'sm',
+  fontSize: {
+    base: 'sm',
+    md: 'lg',
+  },
   textAlign: 'center',
 });
 
@@ -58,7 +64,10 @@ const cSkillNavMenu_step = (index: number, currentActive: number) => {
       _dark: isActive ? '0 2px 4px 2px token(colors.p_purple.dark)' : '0 2px 4px 2px token(colors.p_blue.light)',
     },
     transition: 'all 0.3s',
-    w: 4,
+    w: {
+      base: 4,
+      md: 6,
+    },
   });
 };
 
