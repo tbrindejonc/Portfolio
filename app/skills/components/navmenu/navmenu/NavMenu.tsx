@@ -14,15 +14,21 @@ import {
   cSkillNavMenu_textContainer,
 } from './NavMenu.styles';
 import NavMenuButton from '../button/NavMenuButton';
+import {useState} from 'react';
 
 export default function NavMenu() {
   const currentActive = useScrollStep();
   const {language} = useLanguage();
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <div className={cSkillNavMenu_container}>
-      <aside className={cSkillNavMenu_menu}>
-        <Link href={sidebarLinks.links[0]} className={cSkillNavMenu_item(0, currentActive)}>
+      <aside className={cSkillNavMenu_menu(showMenu)}>
+        <Link href={sidebarLinks.links[0]} className={cSkillNavMenu_item(0, currentActive)} onClick={toggleMenu}>
           <div className={cSkillNavMenu_step(0, currentActive)} />
           <div className={cSkillNavMenu_textContainer}>
             <svg
@@ -43,7 +49,7 @@ export default function NavMenu() {
             <h2 className={cSkillNavMenu_text}>{sidebarLinks.titles[0][language]}</h2>
           </div>
         </Link>
-        <Link href={sidebarLinks.links[1]} className={cSkillNavMenu_item(1, currentActive)}>
+        <Link href={sidebarLinks.links[1]} className={cSkillNavMenu_item(1, currentActive)} onClick={toggleMenu}>
           <div className={cSkillNavMenu_step(1, currentActive)} />
           <div className={cSkillNavMenu_textContainer}>
             <svg
@@ -64,7 +70,7 @@ export default function NavMenu() {
             <h2 className={cSkillNavMenu_text}>{sidebarLinks.titles[1][language]}</h2>
           </div>
         </Link>
-        <Link href={sidebarLinks.links[2]} className={cSkillNavMenu_item(2, currentActive)}>
+        <Link href={sidebarLinks.links[2]} className={cSkillNavMenu_item(2, currentActive)} onClick={toggleMenu}>
           <div className={cSkillNavMenu_step(2, currentActive)} />
           <div className={cSkillNavMenu_textContainer}>
             <svg
@@ -88,7 +94,7 @@ export default function NavMenu() {
             <h2 className={cSkillNavMenu_text}>{sidebarLinks.titles[2][language]}</h2>
           </div>
         </Link>
-        <Link href={sidebarLinks.links[3]} className={cSkillNavMenu_item(3, currentActive)}>
+        <Link href={sidebarLinks.links[3]} className={cSkillNavMenu_item(3, currentActive)} onClick={toggleMenu}>
           <div className={cSkillNavMenu_step(3, currentActive)} />
           <div className={cSkillNavMenu_textContainer}>
             <svg
@@ -116,7 +122,7 @@ export default function NavMenu() {
           </div>
         </Link>
       </aside>
-      <NavMenuButton />
+      <NavMenuButton toggleMenu={toggleMenu} />
     </div>
   );
 }

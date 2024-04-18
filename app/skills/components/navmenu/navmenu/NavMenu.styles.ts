@@ -1,17 +1,26 @@
 import {hstack, vstack} from '@/styled-system/patterns';
 import {css} from '@/styled-system/css';
 
-const cSkillNavMenu_menu = vstack({
-  alignItems: 'start',
-  borderRightRadius: 'lg',
-  gap: 0,
-  h: 'fit',
-  shadow: {
-    base: '0 2px 4px 2px token(colors.p_blue.dark)',
-    _dark: '0 2px 4px 2px token(colors.p_blue.light)',
-  },
-  w: 'fit',
-});
+const cSkillNavMenu_menu = (showMenu: boolean) => {
+  return vstack({
+    alignItems: 'start',
+    borderRightRadius: 'lg',
+    display: {
+      base: 'flex',
+      xl: 'none',
+    },
+    gap: 0,
+    h: 'fit',
+    shadow: {
+      base: '0 2px 4px 2px token(colors.p_blue.dark)',
+      _dark: '0 2px 4px 2px token(colors.p_blue.light)',
+    },
+    translateX: showMenu ? '0' : '-120%',
+    translate: 'auto',
+    transition: 'all 0.5s',
+    w: 'fit',
+  });
+};
 
 const cSkillNavMenu_item = (index: number, currentActive: number) => {
   const isActive = index === currentActive;
