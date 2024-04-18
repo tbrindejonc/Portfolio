@@ -3,20 +3,21 @@ import {css} from '@/styled-system/css';
 
 const cSkillSidebar_container = vstack({
   alignItems: 'start',
-  justifyContent: 'center',
   bg: 'transparent',
   display: {
     base: 'none',
     xl: 'flex',
   },
   gap: 14,
+  h: 'screen',
+  justifyContent: 'center',
+  mt: '-100vh',
+  pt: 16,
+  ps: 20,
   position: 'sticky',
   top: 0,
   w: 'full',
-  mt: '-100vh',
-  h: 'screen',
-  pt: 16,
-  ps: 20,
+  zIndex: 1,
 });
 
 const cSkillSidebar_svg = css({
