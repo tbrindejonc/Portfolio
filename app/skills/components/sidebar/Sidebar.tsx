@@ -1,10 +1,21 @@
-import {cSkillSidebar_circle, cSkillSidebar_container, cSkillSidebar_item, cSkillSidebar_svg} from './Sidebar.styles';
+'use client';
+
+import {
+  cSkillSidebar_activeItem,
+  cSkillSidebar_circle,
+  cSkillSidebar_container,
+  cSkillSidebar_item,
+  cSkillSidebar_svg,
+} from './Sidebar.styles';
+import useScrollStep from '@app/skills/hooks/useScrollStep';
 
 export default function Sidebar() {
+  const currentActive = useScrollStep();
+
   return (
-    <div className={cSkillSidebar_container}>
-      <div className={cSkillSidebar_item}>
-        <div className={cSkillSidebar_circle}>
+    <aside className={cSkillSidebar_container}>
+      <div className={`${cSkillSidebar_item} ${cSkillSidebar_activeItem(0, currentActive)}`}>
+        <div className={`${cSkillSidebar_circle} ${cSkillSidebar_activeItem(0, currentActive)}`}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -22,8 +33,8 @@ export default function Sidebar() {
           </svg>
         </div>
       </div>
-      <div className={cSkillSidebar_item}>
-        <div className={cSkillSidebar_circle}>
+      <div className={`${cSkillSidebar_item} ${cSkillSidebar_activeItem(1, currentActive)}`}>
+        <div className={`${cSkillSidebar_circle} ${cSkillSidebar_activeItem(1, currentActive)}`}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -41,8 +52,8 @@ export default function Sidebar() {
           </svg>
         </div>
       </div>
-      <div className={cSkillSidebar_item}>
-        <div className={cSkillSidebar_circle}>
+      <div className={`${cSkillSidebar_item} ${cSkillSidebar_activeItem(2, currentActive)}`}>
+        <div className={`${cSkillSidebar_circle} ${cSkillSidebar_activeItem(2, currentActive)}`}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -63,8 +74,8 @@ export default function Sidebar() {
           </svg>
         </div>
       </div>
-      <div className={cSkillSidebar_item}>
-        <div className={cSkillSidebar_circle}>
+      <div className={`${cSkillSidebar_item} ${cSkillSidebar_activeItem(3, currentActive)}`}>
+        <div className={`${cSkillSidebar_circle} ${cSkillSidebar_activeItem(3, currentActive)}`}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='24'
@@ -88,6 +99,6 @@ export default function Sidebar() {
           </svg>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
