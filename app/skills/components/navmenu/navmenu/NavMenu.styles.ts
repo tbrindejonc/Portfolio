@@ -6,15 +6,11 @@ const cSkillNavMenu_menu = vstack({
   borderRightRadius: 'lg',
   gap: 0,
   h: 'fit',
-  left: 0,
-  position: 'fixed',
   shadow: {
     base: '0 2px 4px 2px token(colors.p_blue.dark)',
     _dark: '0 2px 4px 2px token(colors.p_blue.light)',
   },
-  top: '20vh',
   w: 'fit',
-  zIndex: 1,
 });
 
 const cSkillNavMenu_item = (index: number, currentActive: number) => {
@@ -92,6 +88,15 @@ const cSkillNavMenu_step = (index: number, currentActive: number) => {
   });
 };
 
+const cSkillNavMenu_container = vstack({
+  alignItems: 'start',
+  gap: 20,
+  left: 0,
+  position: 'fixed',
+  top: '20vh',
+  zIndex: 1,
+});
+
 export {
   cSkillNavMenu_svg,
   cSkillNavMenu_text,
@@ -99,4 +104,5 @@ export {
   cSkillNavMenu_textContainer,
   cSkillNavMenu_item,
   cSkillNavMenu_menu,
+  cSkillNavMenu_container,
 };
