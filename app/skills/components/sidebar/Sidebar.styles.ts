@@ -20,10 +20,6 @@ const cSkillSidebar_container = vstack({
 });
 
 const cSkillSidebar_item = vstack({
-  bg: {
-    base: 'neutral.light',
-    _dark: 'neutral.700',
-  },
   borderRadius: 'full',
   h: 32,
   justifyContent: 'center',
@@ -36,10 +32,6 @@ const cSkillSidebar_item = vstack({
 });
 
 const cSkillSidebar_circle = circle({
-  bg: {
-    base: 'neutral.light',
-    _dark: 'neutral.700',
-  },
   shadow: {
     base: '0 2px 4px 0 token(colors.p_blue.dark)',
     _dark: '0 2px 4px 0 token(colors.p_blue.light)',
@@ -50,12 +42,37 @@ const cSkillSidebar_circle = circle({
 
 const cSkillSidebar_svg = css({
   h: 10,
-  stroke: {
-    base: 'neutral.700',
-    _dark: 'neutral.light',
-  },
   strokeWidth: 1.5,
   w: 10,
 });
 
-export {cSkillSidebar_svg, cSkillSidebar_circle, cSkillSidebar_container, cSkillSidebar_item};
+const cSkillSidebar_activeItem = (index: number, current: number) => {
+  const currentActive = index === current;
+
+  return css({
+    bg: {
+      base: currentActive ? 'p_purple.700' : 'neutral.light',
+      _dark: currentActive ? 'p_purple.200' : 'neutral.700',
+    },
+  });
+};
+
+const cSkillSidebar_activeSvg = (index: number, current: number) => {
+  const currentActive = index === current;
+
+  return css({
+    stroke: {
+      base: currentActive ? 'neutral.light' : 'neutral.700',
+      _dark: currentActive ? 'neutral.dark' : 'neutral.light',
+    },
+  });
+};
+
+export {
+  cSkillSidebar_svg,
+  cSkillSidebar_circle,
+  cSkillSidebar_container,
+  cSkillSidebar_item,
+  cSkillSidebar_activeItem,
+  cSkillSidebar_activeSvg,
+};

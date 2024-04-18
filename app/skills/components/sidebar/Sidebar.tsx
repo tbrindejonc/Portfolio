@@ -2,6 +2,7 @@
 
 import {
   cSkillSidebar_activeItem,
+  cSkillSidebar_activeSvg,
   cSkillSidebar_circle,
   cSkillSidebar_container,
   cSkillSidebar_item,
@@ -25,7 +26,7 @@ export default function Sidebar() {
             stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
-            className={cSkillSidebar_svg}
+            className={`${cSkillSidebar_svg} ${cSkillSidebar_activeSvg(0, currentActive)}`}
           >
             <path d='m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9' />
             <path d='m18 15 4-4' />
@@ -44,7 +45,7 @@ export default function Sidebar() {
             stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
-            className={cSkillSidebar_svg}
+            className={`${cSkillSidebar_svg} ${cSkillSidebar_activeSvg(1, currentActive)}`}
           >
             <path d='M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z' />
             <path d='M22 10v6' />
@@ -63,7 +64,7 @@ export default function Sidebar() {
             stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
-            className={cSkillSidebar_svg}
+            className={`${cSkillSidebar_svg} ${cSkillSidebar_activeSvg(2, currentActive)}`}
           >
             <path d='M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4' />
             <path d='M2 6h4' />
@@ -85,7 +86,7 @@ export default function Sidebar() {
             stroke='currentColor'
             strokeLinecap='round'
             strokeLinejoin='round'
-            className={cSkillSidebar_svg}
+            className={`${cSkillSidebar_svg} ${cSkillSidebar_activeSvg(3, currentActive)}`}
           >
             <path d='M2 6h4' />
             <path d='M2 10h4' />
