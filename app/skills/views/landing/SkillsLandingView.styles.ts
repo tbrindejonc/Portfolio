@@ -15,10 +15,12 @@ const vSkillsLanding_view = vstack({
     md: 8,
   },
   h: 'screen',
-  overflow: 'hidden',
   justifyContent: 'center',
-  w: 'full',
+  overflow: 'hidden',
+  position: 'relative',
   transition: 'all 0.5s',
+  w: 'full',
+  zIndex: 4,
 });
 
 const vSkillsLanding_image = css({
