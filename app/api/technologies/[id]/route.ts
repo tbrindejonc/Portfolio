@@ -100,6 +100,7 @@ export async function PUT(request: Request, apiParams: ApiParams): Promise<Respo
         },
         logo: parsedBody.logo,
         name: parsedBody.name,
+        website: parsedBody.website,
       },
     });
 

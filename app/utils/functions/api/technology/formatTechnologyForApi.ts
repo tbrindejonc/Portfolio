@@ -28,6 +28,7 @@ const formatTechnologyForApi = (
       id: technology.id,
       logo: technology.logo,
       name: technology.name,
+      website: technology.website,
     } as TechnologyWhenDeleted;
   }
 
@@ -51,6 +52,7 @@ const formatTechnologyForApi = (
       id: technology.id,
       logo: technology.logo,
       name: technology.name,
+      website: technology.website,
       links: {
         self: {
           method: 'GET',
@@ -87,6 +89,7 @@ const formatTechnologyForApi = (
     id: technology.id,
     logo: technology.logo,
     name: technology.name,
+    website: technology.website,
     links: {
       self: {
         method: 'GET',

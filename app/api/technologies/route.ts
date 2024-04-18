@@ -77,6 +77,7 @@ export async function POST(request: Request): Promise<Response> {
         },
         logo: parsedBody.logo,
         name: parsedBody.name,
+        website: parsedBody.website,
       },
     });
 

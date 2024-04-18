@@ -1,6 +1,9 @@
-// app theme
 import {CompleteExperienceFromApi} from '@schemas/api/experience/experience.schema';
+import {CompleteTechnologyFromApi} from '@schemas/api/technology/technology.schema';
+import {UseQueryResult} from '@tanstack/react-query';
+import {ApiCollection} from '@appTypes/api';
 
+// app theme
 export type Theme = 'light' | 'dark';
 
 // base app text
@@ -90,8 +93,8 @@ export type NotFoundTexts = {
   link: AppText;
 };
 
-// texts for experience page's landing section
-export type ExperienceLandingTexts = {
+// texts for a page's landing section
+export type BaseLandingTexts = {
   title: AppText;
   explanations: AppText;
   link: AppText;
@@ -101,4 +104,24 @@ export type ExperienceLandingTexts = {
 export type ExperienceContextUtils = {
   experience: CompleteExperienceFromApi;
   language: Language;
+};
+
+// enum for each tech category ids in the database
+export enum TechCategory {
+  TOOLS = 4,
+  MASTERED = 5,
+  LEARNING = 6,
+  PLANNED = 7,
+}
+
+// utilities returned by useTechWithCategory hook
+export type TechCategoryUtils = {
+  filteredTechnologies: CompleteTechnologyFromApi[];
+  technologies: UseQueryResult<ApiCollection<CompleteTechnologyFromApi>>;
+};
+
+// texts for the sidebar links in the skills section
+export type SkillsSidebarTexts = {
+  titles: AppText[];
+  links: string[];
 };
