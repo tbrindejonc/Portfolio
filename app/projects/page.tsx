@@ -1,4 +1,4 @@
-import ProjectsLandingView from '@app/projects/views/ProjectsLanding/ProjectsLandingView';
+import ProjectsLandingView from './views/landing/ProjectsLandingView';
 import {Metadata} from 'next';
 
 export const metadata: Metadata = {
