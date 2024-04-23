@@ -13,6 +13,7 @@ const vProjLanding_landing = vstack({
   gap: {
     base: 6,
     md: 10,
+    xl: 16,
   },
   h: 'screen',
   overflow: 'hidden',
@@ -40,7 +41,7 @@ const vProjLanding_image: string = css({
   w: {
     base: '80%',
     md: '50%',
-    xl: '70%',
+    xl: '40%',
   },
 });
 
@@ -48,8 +49,12 @@ const vProjLanding_paragraph: string = css({
   fontSize: {
     base: '2xl',
     md: '4xl',
+    xl: '2.5em',
   },
-  textAlign: 'center',
+  textAlign: {
+    base: 'center',
+    xl: 'left',
+  },
   textWrap: 'balance',
   w: {
     base: '90%',
@@ -91,17 +96,28 @@ const vProjLanding_linkSvg = css({
 const vProjLanding_container = css({
   alignItems: 'center',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    xl: 'row-reverse',
+  },
   gap: {
     base: 6,
     md: 10,
   },
+  w: {
+    xl: '80%',
+  },
 });
 
 const vProjLanding_textContainer = vstack({
+  alignItems: {
+    base: 'center',
+    xl: 'start',
+  },
   gap: {
     base: 6,
     md: 10,
+    xl: 16,
   },
   position: 'relative',
 });
@@ -111,7 +127,7 @@ const vProjLanding_link = hstack({
     base: 'p_blue.dark',
     _dark: 'p_blue.light',
   },
-  borderRadius: 'md',
+  borderRadius: 'xl',
   color: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
@@ -141,11 +157,18 @@ const vProjLanding_decoration = hstack({
     base: 'neutral.300',
     _dark: 'neutral.700',
   },
-  h: 32,
+  h: {
+    base: 32,
+    xl: 80,
+  },
+  left: {
+    xl: 44,
+  },
   position: 'absolute',
   top: {
     base: '40vh',
     md: '35vh',
+    xl: '50vh',
   },
   transition: 'all 0.5s',
   w: 10,
