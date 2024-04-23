@@ -30,7 +30,7 @@ export default function ProjectsLandingView() {
             A travers mes études et mes expériences professionnelles, j’ai peu apprendre diverses technologies qui me
             sont très utiles pour développer des sites web
           </p>
-          <Link href={'#project-1'} className={`group ${vProjLanding_link}`}>
+          <Link href={'#projects-display'} className={`group ${vProjLanding_link}`}>
             <h2>Découvrir</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
