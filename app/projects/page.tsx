@@ -1,5 +1,6 @@
-import ProjectsLandingView from './views/landing/ProjectsLandingView';
 import {Metadata} from 'next';
+import ProjectsLandingView from './views/landing/ProjectsLandingView';
+import ProjectsView from './views/projects/ProjectsView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Projets',
@@ -10,6 +11,7 @@ export default function Page() {
   return (
     <main>
       <ProjectsLandingView />
+      <ProjectsView />
     </main>
   );
 }
