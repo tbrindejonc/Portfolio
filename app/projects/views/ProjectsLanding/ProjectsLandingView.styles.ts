@@ -10,11 +10,17 @@ const vProjLanding_landing = vstack({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
-  gap: 6,
+  gap: {
+    base: 6,
+    md: 10,
+  },
   h: 'screen',
   overflow: 'hidden',
   p: 4,
-  pt: 16,
+  pt: {
+    base: 16,
+    md: 28,
+  },
   w: 'full',
   transition: 'all 0.5s',
 });
@@ -23,7 +29,7 @@ const vProjLanding_image: string = css({
   borderRadius: '2xl',
   h: {
     base: '250px',
-    md: '350px',
+    md: '400px',
     xl: '500px',
   },
   objectFit: 'cover',
@@ -39,21 +45,33 @@ const vProjLanding_image: string = css({
 });
 
 const vProjLanding_paragraph: string = css({
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '4xl',
+  },
   textAlign: 'center',
   textWrap: 'balance',
-  w: '90%',
+  w: {
+    base: '90%',
+    md: '70%',
+  },
 });
 
 const vProjLanding_title: string = css({
   fontFamily: 'bricolage',
-  fontSize: '5xl',
+  fontSize: {
+    base: '5xl',
+    md: '7xl',
+  },
   fontWeight: 'bold',
   lineHeight: 1,
 });
 
 const vProjLanding_linkSvg = css({
-  h: 7,
+  h: {
+    base: 7,
+    md: 10,
+  },
   rotate: {
     base: '-90deg',
     _groupHover: '0deg',
@@ -64,18 +82,27 @@ const vProjLanding_linkSvg = css({
   },
   strokeWidth: 4,
   transition: 'all 0.3s ease-in-out',
-  w: 7,
+  w: {
+    base: 7,
+    md: 10,
+  },
 });
 
 const vProjLanding_container = css({
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
-  gap: 6,
+  gap: {
+    base: 6,
+    md: 10,
+  },
 });
 
 const vProjLanding_textContainer = vstack({
-  gap: 6,
+  gap: {
+    base: 6,
+    md: 10,
+  },
   position: 'relative',
 });
 
@@ -90,7 +117,10 @@ const vProjLanding_link = hstack({
     _dark: 'neutral.dark',
   },
   fontFamily: 'bricolage',
-  fontSize: '2xl',
+  fontSize: {
+    base: '2xl',
+    md: '4xl',
+  },
   fontWeight: 'bold',
   gap: 4,
   justifyContent: 'center',
@@ -99,7 +129,10 @@ const vProjLanding_link = hstack({
     _hover: '0 5px 8px 2px token(colors.p_blue.main)',
   },
   transition: 'all 0.3s ease-in-out',
-  w: 'full',
+  w: {
+    base: 'full',
+    md: '50%',
+  },
   zIndex: 1,
 });
 
@@ -108,9 +141,12 @@ const vProjLanding_decoration = hstack({
     base: 'neutral.300',
     _dark: 'neutral.700',
   },
-  h: 20,
+  h: 32,
   position: 'absolute',
-  top: '40vh',
+  top: {
+    base: '40vh',
+    md: '35vh',
+  },
   transition: 'all 0.5s',
   w: 10,
 });
