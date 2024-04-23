@@ -20,3 +20,5 @@ const useProjects = (): UseQueryResult<ApiCollection<CompleteProjectFromApi>> =>
     queryFn: getProjects,
   });
 };
+
+export default useProjects;
