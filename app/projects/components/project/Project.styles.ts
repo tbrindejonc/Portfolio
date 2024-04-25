@@ -23,6 +23,7 @@ const cProject_project = vstack({
   h: '90%',
   overflow: 'scroll',
   p: 4,
+  transition: 'all 0.5s',
   zIndex: 1,
 });
 
