@@ -21,6 +21,7 @@ import {
   cProject_texts,
   cProject_title,
 } from './Project.styles';
+import projectTexts from '@app/projects/texts/projectTexts';
 
 type Props = {
   project: CompleteProjectFromApi;
@@ -47,7 +48,7 @@ export default function Project({project}: Props) {
       </div>
       <div className={cProject_detailsContainer}>
         <div className={cProject_techContainer}>
-          <h2 className={cProject_detailsTitle}>Les technologies utilisées</h2>
+          <h2 className={cProject_detailsTitle}>{projectTexts.techsTitle[language]}</h2>
           <div className={cProject_techHolder}>
             {project.technologies.map((tech: Technology) => {
               return <MiniTechnologyCard key={tech.id} technology={tech} />;
@@ -55,7 +56,7 @@ export default function Project({project}: Props) {
           </div>
         </div>
         <div className={cProject_techContainer}>
-          <h2 className={cProject_detailsTitle}>Consulter le projet</h2>
+          <h2 className={cProject_detailsTitle}>{projectTexts.consultTitle[language]}</h2>
           <div className={cProject_consultContainer}>
             <Link href={project.github} className={cProject_consultItems}>
               <div className={cProject_imageBackground}>
@@ -81,7 +82,7 @@ export default function Project({project}: Props) {
                   className={cProject_consultImage}
                 />
               </div>
-              <h2>Site web</h2>
+              <h2>{projectTexts.websiteTitle[language]}</h2>
             </Link>
           </div>
         </div>
