@@ -22,20 +22,22 @@ import {
   cProject_title,
 } from './Project.styles';
 import projectTexts from '@app/projects/texts/projectTexts';
+import {Direction} from '@appTypes/portfolio';
 
 type Props = {
   project: CompleteProjectFromApi;
+  direction: Direction;
 };
 
-export default function Project({project}: Props) {
+export default function Project({project, direction}: Props) {
   const {language} = useLanguage();
 
   return (
     <div className={cProject_project}>
       <div className={cProject_descriptionContainer}>
-        <div className={cProject_texts}>
+        <div className={cProject_texts(direction)}>
           <h2 className={cProject_title}>{project.name}</h2>
-          <p className={cProject_paragraph}>{project.description[language]}</p>
+          <p className={cProject_paragraph(direction)}>{project.description[language]}</p>
         </div>
         <Image
           src={project.links.gif.href}

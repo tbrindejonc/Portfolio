@@ -13,8 +13,8 @@ export default function ProjectsView() {
 
   return (
     <section id={'projects-display'}>
-      {projects.data.items.map((project: CompleteProjectFromApi) => {
-        return <ProjectSection key={project.id} project={project} />;
+      {projects.data.items.map((project: CompleteProjectFromApi, index: number) => {
+        return <ProjectSection key={project.id} project={project} direction={index % 2 === 0 ? 'left' : 'right'} />;
       })}
     </section>
   );
