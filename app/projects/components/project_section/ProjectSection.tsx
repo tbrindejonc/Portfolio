@@ -6,9 +6,10 @@ import {Direction} from '@appTypes/portfolio';
 type Props = {
   project: CompleteProjectFromApi;
   direction: Direction;
+  index: number;
 };
 
-export default function ProjectSection({project, direction}: Props) {
+export default function ProjectSection({project, direction, index}: Props) {
   return (
     <section className={cProjSection_section}>
       <Project project={project} direction={direction} />
