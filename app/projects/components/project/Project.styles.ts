@@ -1,5 +1,6 @@
 import {css} from '@/styled-system/css';
 import {circle, grid, vstack} from '@/styled-system/patterns';
+import {Direction} from '@appTypes/portfolio';
 
 const cProject_image = css({
   width: 'full',
@@ -41,10 +42,12 @@ const cProject_detailsContainer = css({
   gap: 4,
 });
 
-const cProject_texts = vstack({
-  alignItems: 'start',
-  gap: 2,
-});
+const cProject_texts = (direction: Direction) => {
+  return vstack({
+    alignItems: direction === 'left' ? 'start' : 'end',
+    gap: 2,
+  });
+};
 
 const cProject_title = css({
   fontFamily: 'bricolage',
@@ -52,15 +55,20 @@ const cProject_title = css({
   fontWeight: 'bold',
 });
 
-const cProject_paragraph = css({
-  textWrap: 'balance',
-});
+const cProject_paragraph = (direction: Direction) => {
+  return css({
+    textAlign: direction,
+    textWrap: 'balance',
+  });
+};
 
-const cProject_techContainer = vstack({
-  alignItems: 'start',
-  gap: 4,
-  w: 'full',
-});
+const cProject_techContainer = (direction: Direction) => {
+  return vstack({
+    alignItems: direction === 'left' ? 'start' : 'end',
+    gap: 4,
+    w: 'full',
+  });
+};
 
 const cProject_detailsTitle = css({
   fontFamily: 'bricolage',
@@ -68,19 +76,25 @@ const cProject_detailsTitle = css({
   fontWeight: 'bold',
 });
 
-const cProject_techHolder = grid({
-  gridTemplateColumns: 3,
-  gap: 4,
-  justifyItems: 'center',
-  w: 'full',
-});
+const cProject_techHolder = (direction: Direction) => {
+  return grid({
+    direction: direction === 'left' ? 'ltr' : 'rtl',
+    gridTemplateColumns: 3,
+    gap: 4,
+    justifyItems: 'center',
+    w: 'full',
+  });
+};
 
-const cProject_consultContainer = grid({
-  gap: 4,
-  gridTemplateColumns: 3,
-  justifyItems: 'center',
-  w: 'full',
-});
+const cProject_consultContainer = (direction: Direction) => {
+  return grid({
+    direction: direction === 'left' ? 'ltr' : 'rtl',
+    gridTemplateColumns: 3,
+    gap: 4,
+    justifyItems: 'center',
+    w: 'full',
+  });
+};
 
 const cProject_consultItems = vstack({
   bg: {

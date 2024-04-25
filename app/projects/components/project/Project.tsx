@@ -49,17 +49,17 @@ export default function Project({project, direction}: Props) {
         />
       </div>
       <div className={cProject_detailsContainer}>
-        <div className={cProject_techContainer}>
+        <div className={cProject_techContainer(direction)}>
           <h2 className={cProject_detailsTitle}>{projectTexts.techsTitle[language]}</h2>
-          <div className={cProject_techHolder}>
+          <div className={cProject_techHolder(direction)}>
             {project.technologies.map((tech: Technology) => {
               return <MiniTechnologyCard key={tech.id} technology={tech} />;
             })}
           </div>
         </div>
-        <div className={cProject_techContainer}>
+        <div className={cProject_techContainer(direction)}>
           <h2 className={cProject_detailsTitle}>{projectTexts.consultTitle[language]}</h2>
-          <div className={cProject_consultContainer}>
+          <div className={cProject_consultContainer(direction)}>
             <Link href={project.github} className={cProject_consultItems}>
               <div className={cProject_imageBackground}>
                 <Image
