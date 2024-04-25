@@ -1,5 +1,4 @@
 import {vstack} from '@/styled-system/patterns';
-import {css} from '@/styled-system/css';
 
 const cProjSection_section = vstack({
   bg: {
@@ -17,16 +16,4 @@ const cProjSection_section = vstack({
   transition: 'all 0.5s',
 });
 
-const cProjSection_decoration = css({
-  bg: {
-    base: 'neutral.300',
-    _dark: 'neutral.700',
-  },
-  position: 'absolute',
-  top: 0,
-  h: 'full',
-  transition: 'all 0.5s',
-  w: 10,
-});
-
-export {cProjSection_section, cProjSection_decoration};
+export {cProjSection_section};
