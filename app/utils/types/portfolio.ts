@@ -132,3 +132,6 @@ export type ProjectTexts = {
   consultTitle: AppText;
   websiteTitle: AppText;
 };
+
+// project component content orientation
+export type Direction = 'left' | 'right';
