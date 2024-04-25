@@ -1,8 +1,26 @@
 import {CompleteProjectFromApi} from '@schemas/api/project/project.schema';
 import Image from 'next/image';
-import {css} from '@/styled-system/css';
 import useLanguage from '@hooks/useLanguage';
-import {vstack} from '@/styled-system/patterns';
+import {Technology} from '@prisma/client';
+import MiniTechnologyCard from '@components/technology/mini_technology_card/MiniTechnologyCard';
+import Link from 'next/link';
+import React from 'react';
+import {
+  cProject_consultContainer,
+  cProject_consultImage,
+  cProject_consultItems,
+  cProject_descriptionContainer,
+  cProject_detailsContainer,
+  cProject_detailsTitle,
+  cProject_image,
+  cProject_imageBackground,
+  cProject_paragraph,
+  cProject_project,
+  cProject_techContainer,
+  cProject_techHolder,
+  cProject_texts,
+  cProject_title,
+} from './Project.styles';
 
 type Props = {
   project: CompleteProjectFromApi;
@@ -11,34 +29,12 @@ type Props = {
 export default function Project({project}: Props) {
   const {language} = useLanguage();
 
-  const cProject_image = css({
-    width: '50%',
-    height: '50%',
-    objectFit: 'cover',
-  });
-
-  const cProject_project = vstack({
-    backdropBlur: '10px',
-    backdropFilter: 'auto',
-    bg: {
-      base: 'neutral.light/50',
-      _dark: 'neutral.800/50',
-    },
-    borderRadius: '2xl',
-    color: {
-      base: 'neutral.dark',
-      _dark: 'neutral.light',
-    },
-    h: '80%',
-    zIndex: 1,
-  });
-
   return (
     <div className={cProject_project}>
-      <div>
-        <div>
-          <h2>{project.name}</h2>
-          <p>{project.description[language]}</p>
+      <div className={cProject_descriptionContainer}>
+        <div className={cProject_texts}>
+          <h2 className={cProject_title}>{project.name}</h2>
+          <p className={cProject_paragraph}>{project.description[language]}</p>
         </div>
         <Image
           src={project.links.gif.href}
@@ -49,13 +45,45 @@ export default function Project({project}: Props) {
           className={cProject_image}
         />
       </div>
-      <div>
-        {project.technologies.map((tech) => {
-          return <p key={tech.id}>{tech.name}</p>;
-        })}
-        <div>
-          <h2>{project.github}</h2>
-          <h2>{project.live_version}</h2>
+      <div className={cProject_detailsContainer}>
+        <div className={cProject_techContainer}>
+          <h2 className={cProject_detailsTitle}>Les technologies utilisées</h2>
+          <div className={cProject_techHolder}>
+            {project.technologies.map((tech: Technology) => {
+              return <MiniTechnologyCard key={tech.id} technology={tech} />;
+            })}
+          </div>
+        </div>
+        <div className={cProject_techContainer}>
+          <h2 className={cProject_detailsTitle}>Consulter le projet</h2>
+          <div className={cProject_consultContainer}>
+            <Link href={project.github} className={cProject_consultItems}>
+              <div className={cProject_imageBackground}>
+                <Image
+                  src={'/images/portfolio/projects/github.png'}
+                  alt={'Github'}
+                  width={0}
+                  height={0}
+                  sizes={'100vw'}
+                  className={cProject_consultImage}
+                />
+              </div>
+              <h2>Github</h2>
+            </Link>
+            <Link href={project.live_version} className={cProject_consultItems}>
+              <div className={cProject_imageBackground}>
+                <Image
+                  src={'/images/portfolio/projects/website.png'}
+                  alt={'Live version'}
+                  width={0}
+                  height={0}
+                  sizes={'100vw'}
+                  className={cProject_consultImage}
+                />
+              </div>
+              <h2>Site web</h2>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
