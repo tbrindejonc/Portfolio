@@ -68,7 +68,7 @@ const formatProjectForApi = (
         },
         gif: {
           method: 'GET',
-          href: `/api/logos/gifs/${project.gif}`,
+          href: `/api/logos/gif/${project.gif}`,
         },
         description: {
           method: 'GET',
@@ -100,7 +100,7 @@ const formatProjectForApi = (
       },
       gif: {
         method: 'GET',
-        href: `/api/logos/gifs/${project.gif}`,
+        href: `/api/logos/gif/${project.gif}`,
       },
       description: {
         method: 'GET',
