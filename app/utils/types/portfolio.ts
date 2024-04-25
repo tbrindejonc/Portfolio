@@ -125,3 +125,10 @@ export type SkillsSidebarTexts = {
   titles: AppText[];
   links: string[];
 };
+
+// texts for the project component
+export type ProjectTexts = {
+  techsTitle: AppText;
+  consultTitle: AppText;
+  websiteTitle: AppText;
+};
