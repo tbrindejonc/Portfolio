@@ -33,7 +33,7 @@ export default function Project({project, direction}: Props) {
   const {language} = useLanguage();
 
   return (
-    <div className={cProject_project}>
+    <div className={cProject_project(direction)}>
       <div className={cProject_descriptionContainer}>
         <div className={cProject_texts(direction)}>
           <h2 className={cProject_title}>{project.name}</h2>

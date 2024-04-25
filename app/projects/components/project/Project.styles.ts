@@ -8,25 +8,28 @@ const cProject_image = css({
   objectFit: 'cover',
 });
 
-const cProject_project = vstack({
-  backdropBlur: '10px',
-  backdropFilter: 'auto',
-  bg: {
-    base: 'neutral.light/50',
-    _dark: 'neutral.800/50',
-  },
-  borderRadius: '2xl',
-  color: {
-    base: 'neutral.dark',
-    _dark: 'neutral.light',
-  },
-  gap: 8,
-  h: '90%',
-  overflow: 'scroll',
-  p: 4,
-  transition: 'all 0.5s',
-  zIndex: 1,
-});
+const cProject_project = (direction: Direction) => {
+  return vstack({
+    alignItems: direction === 'left' ? 'start' : 'end',
+    backdropBlur: '10px',
+    backdropFilter: 'auto',
+    bg: {
+      base: 'neutral.light/50',
+      _dark: 'neutral.800/50',
+    },
+    borderRadius: '2xl',
+    color: {
+      base: 'neutral.dark',
+      _dark: 'neutral.light',
+    },
+    gap: 8,
+    h: '90%',
+    overflow: 'scroll',
+    p: 4,
+    transition: 'all 0.5s',
+    zIndex: 1,
+  });
+};
 
 const cProject_descriptionContainer = css({
   alignItems: 'center',
