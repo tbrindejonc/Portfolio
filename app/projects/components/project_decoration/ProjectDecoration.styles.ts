@@ -83,6 +83,49 @@ const cProjDecoration_secondThree = css({
   w: 8,
 });
 
+const cProjDecoration_thirdOne = css({
+  bg: {
+    base: 'neutral.300',
+    _dark: 'neutral.700',
+  },
+  borderBottomLeftRadius: 'xl',
+  h: '98%',
+  left: 9,
+  position: 'absolute',
+  top: 0,
+  transition: 'all 0.5s',
+  w: 8,
+});
+
+const cProjDecoration_thirdTwo = css({
+  bg: {
+    base: 'neutral.300',
+    _dark: 'neutral.700',
+  },
+  borderBottomLeftRadius: 'xl',
+  borderTopRightRadius: 'xl',
+  bottom: 0,
+  h: 8,
+  left: 0,
+  position: 'absolute',
+  transition: 'all 0.5s',
+  w: '80vw',
+});
+
+const cProjDecoration_thirdThree = css({
+  bg: {
+    base: 'neutral.300',
+    _dark: 'neutral.700',
+  },
+  borderTopRightRadius: 'xl',
+  bottom: -6,
+  h: 14,
+  left: '71vw',
+  position: 'absolute',
+  transition: 'all 0.5s',
+  w: 8,
+});
+
 export {
   cProjDecoration_firstOne,
   cProjDecoration_firstTwo,
@@ -90,4 +133,7 @@ export {
   cProjDecoration_secondOne,
   cProjDecoration_secondTwo,
   cProjDecoration_secondThree,
+  cProjDecoration_thirdOne,
+  cProjDecoration_thirdTwo,
+  cProjDecoration_thirdThree,
 };
