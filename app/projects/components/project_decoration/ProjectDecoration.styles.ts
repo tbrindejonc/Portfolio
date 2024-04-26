@@ -1,6 +1,6 @@
 import {css} from '@/styled-system/css';
 
-const cProjDecoration_decoration = css({
+const cProjDecoration_firstOne = css({
   bg: {
     base: 'neutral.300',
     _dark: 'neutral.700',
@@ -13,7 +13,7 @@ const cProjDecoration_decoration = css({
   w: 8,
 });
 
-const cProjDecoration_decorationTwo = css({
+const cProjDecoration_firstTwo = css({
   bg: {
     base: 'neutral.300',
     _dark: 'neutral.700',
@@ -26,7 +26,7 @@ const cProjDecoration_decorationTwo = css({
   w: 32,
 });
 
-const cProjDecoration_decorationThree = css({
+const cProjDecoration_firstThree = css({
   bg: {
     base: 'neutral.300',
     _dark: 'neutral.700',
@@ -40,4 +40,4 @@ const cProjDecoration_decorationThree = css({
   w: 8,
 });
 
-export {cProjDecoration_decoration, cProjDecoration_decorationTwo, cProjDecoration_decorationThree};
+export {cProjDecoration_firstOne, cProjDecoration_firstTwo, cProjDecoration_firstThree};
