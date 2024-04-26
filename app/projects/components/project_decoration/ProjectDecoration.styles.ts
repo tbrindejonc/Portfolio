@@ -7,6 +7,9 @@ const cProjDecoration_firstOne = css({
   },
   borderBottomLeftRadius: 'xl',
   h: '98%',
+  left: {
+    xl: '19.75vw',
+  },
   position: 'absolute',
   top: 0,
   transition: 'all 0.5s',
@@ -32,6 +35,7 @@ const cProjDecoration_firstTwo = css({
   w: {
     base: 32,
     md: '40vw',
+    xl: '70vw',
   },
 });
 
@@ -52,6 +56,7 @@ const cProjDecoration_firstThree = css({
   left: {
     base: 32,
     md: '39vw',
+    xl: '68.9vw',
   },
   position: 'absolute',
   transition: 'all 0.5s',
@@ -96,7 +101,10 @@ const cProjDecoration_secondTwo = css({
   position: 'absolute',
   right: 0,
   transition: 'all 0.5s',
-  w: '80vw',
+  w: {
+    base: '80vw',
+    xl: '70vw',
+  },
 });
 
 const cProjDecoration_secondThree = css({
@@ -111,6 +119,7 @@ const cProjDecoration_secondThree = css({
   right: {
     base: '71vw',
     md: '74.3vw',
+    xl: '67.5vw',
   },
   transition: 'all 0.5s',
   w: {
@@ -129,6 +138,7 @@ const cProjDecoration_thirdOne = css({
   left: {
     base: 9,
     md: '11.9vw',
+    xl: '21.1vw',
   },
   position: 'absolute',
   top: 0,
@@ -154,7 +164,10 @@ const cProjDecoration_thirdTwo = css({
   left: 0,
   position: 'absolute',
   transition: 'all 0.5s',
-  w: '80vw',
+  w: {
+    base: '80vw',
+    xl: '70vw',
+  },
 });
 
 const cProjDecoration_thirdThree = css({
@@ -168,6 +181,7 @@ const cProjDecoration_thirdThree = css({
   left: {
     base: '71vw',
     md: '74.2vw',
+    xl: '67.5vw',
   },
   position: 'absolute',
   transition: 'all 0.5s',
