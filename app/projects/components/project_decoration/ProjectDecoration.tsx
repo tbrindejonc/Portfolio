@@ -41,7 +41,12 @@ export default function ProjectDecoration({index}: Props) {
       );
 
     case 3:
-      return <div className={cProjDecoration_firstOne} />;
+      return (
+        <div className={cProjDecoration_secondOne}>
+          <div className={cProjDecoration_secondTwo} />
+          <div className={cProjDecoration_secondThree} />
+        </div>
+      );
 
     default:
       return <div className={cProjDecoration_firstOne} />;
