@@ -2,6 +2,9 @@ import {
   cProjDecoration_firstOne,
   cProjDecoration_firstThree,
   cProjDecoration_firstTwo,
+  cProjDecoration_secondOne,
+  cProjDecoration_secondThree,
+  cProjDecoration_secondTwo,
 } from './ProjectDecoration.styles';
 
 type Props = {
@@ -19,7 +22,12 @@ export default function ProjectDecoration({index}: Props) {
       );
 
     case 1:
-      return <div className={cProjDecoration_firstOne} />;
+      return (
+        <div className={cProjDecoration_secondOne}>
+          <div className={cProjDecoration_secondTwo} />
+          <div className={cProjDecoration_secondThree} />
+        </div>
+      );
 
     case 2:
       return <div className={cProjDecoration_firstOne} />;
