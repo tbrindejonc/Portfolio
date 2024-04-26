@@ -25,7 +25,10 @@ const cProject_project = (direction: Direction) => {
     gap: 8,
     h: '90%',
     overflow: 'scroll',
-    p: 4,
+    p: {
+      base: 4,
+      md: 8,
+    },
     transition: 'all 0.5s',
     zIndex: 1,
   });
@@ -42,7 +45,10 @@ const cProject_detailsContainer = css({
   alignItems: 'start',
   display: 'flex',
   flexDirection: 'column',
-  gap: 4,
+  gap: {
+    base: 4,
+    md: 8,
+  },
 });
 
 const cProject_texts = (direction: Direction) => {
@@ -54,12 +60,18 @@ const cProject_texts = (direction: Direction) => {
 
 const cProject_title = css({
   fontFamily: 'bricolage',
-  fontSize: '4xl',
+  fontSize: {
+    base: '4xl',
+    md: '6xl',
+  },
   fontWeight: 'bold',
 });
 
 const cProject_paragraph = (direction: Direction) => {
   return css({
+    fontSize: {
+      md: '2xl',
+    },
     textAlign: direction,
     textWrap: 'balance',
   });
@@ -75,15 +87,24 @@ const cProject_techContainer = (direction: Direction) => {
 
 const cProject_detailsTitle = css({
   fontFamily: 'bricolage',
-  fontSize: 'xl',
+  fontSize: {
+    base: 'xl',
+    md: '3xl',
+  },
   fontWeight: 'bold',
 });
 
 const cProject_techHolder = (direction: Direction) => {
   return grid({
     direction: direction === 'left' ? 'ltr' : 'rtl',
-    gridTemplateColumns: 3,
-    gap: 4,
+    gridTemplateColumns: {
+      base: 3,
+      md: 5,
+    },
+    gap: {
+      base: 4,
+      md: 6,
+    },
     justifyItems: 'center',
     w: 'full',
   });
@@ -92,8 +113,14 @@ const cProject_techHolder = (direction: Direction) => {
 const cProject_consultContainer = (direction: Direction) => {
   return grid({
     direction: direction === 'left' ? 'ltr' : 'rtl',
-    gridTemplateColumns: 3,
-    gap: 4,
+    gridTemplateColumns: {
+      base: 3,
+      md: 5,
+    },
+    gap: {
+      base: 4,
+      md: 6,
+    },
     justifyItems: 'center',
     w: 'full',
   });
@@ -105,7 +132,10 @@ const cProject_consultItems = vstack({
     _dark: 'p_blue.800',
   },
   borderRadius: 'md',
-  h: '15vh',
+  h: {
+    base: '15vh',
+    md: 28,
+  },
   justifyContent: 'center',
   w: 'full',
 });
