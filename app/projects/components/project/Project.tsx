@@ -20,6 +20,7 @@ import {
   cProject_techHolder,
   cProject_texts,
   cProject_title,
+  cProject_viewContainer,
 } from './Project.styles';
 import projectTexts from '@app/projects/texts/projectTexts';
 import {Direction} from '@appTypes/portfolio';
@@ -34,7 +35,7 @@ export default function Project({project, direction}: Props) {
 
   return (
     <div className={cProject_project(direction)}>
-      <div className={cProject_descriptionContainer}>
+      <div className={cProject_descriptionContainer(direction)}>
         <div className={cProject_texts(direction)}>
           <h2 className={cProject_title}>{project.name}</h2>
           <p className={cProject_paragraph(direction)}>{project.description[language]}</p>
@@ -57,7 +58,7 @@ export default function Project({project, direction}: Props) {
             })}
           </div>
         </div>
-        <div className={cProject_techContainer(direction)}>
+        <div className={cProject_viewContainer(direction)}>
           <h2 className={cProject_detailsTitle}>{projectTexts.consultTitle[language]}</h2>
           <div className={cProject_consultContainer(direction)}>
             <Link href={project.github} className={cProject_consultItems}>

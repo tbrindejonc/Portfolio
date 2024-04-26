@@ -3,7 +3,10 @@ import {circle, grid, vstack} from '@/styled-system/patterns';
 import {Direction} from '@appTypes/portfolio';
 
 const cProject_image = css({
-  width: 'full',
+  width: {
+    base: 'full',
+    md: '50%',
+  },
   height: 'auto',
   objectFit: 'cover',
 });
@@ -24,7 +27,13 @@ const cProject_project = (direction: Direction) => {
     },
     gap: 8,
     h: '90%',
-    overflow: 'scroll',
+    ms: {
+      xl: '10vw',
+    },
+    overflow: {
+      base: 'scroll',
+      xl: 'hidden',
+    },
     p: {
       base: 4,
       md: 8,
@@ -34,27 +43,53 @@ const cProject_project = (direction: Direction) => {
   });
 };
 
-const cProject_descriptionContainer = css({
-  alignItems: 'center',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 4,
-});
+const cProject_descriptionContainer = (direction: Direction) => {
+  return css({
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: {
+      base: 'column',
+      xl: direction === 'left' ? 'row' : 'row-reverse',
+    },
+    gap: 4,
+    justifyContent: {
+      xl: 'space-between',
+    },
+  });
+};
 
 const cProject_detailsContainer = css({
   alignItems: 'start',
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
   gap: {
     base: 4,
     md: 8,
+  },
+  justifyContent: {
+    xl: 'space-between',
+  },
+  w: {
+    xl: 'full',
   },
 });
 
 const cProject_texts = (direction: Direction) => {
   return vstack({
-    alignItems: direction === 'left' ? 'start' : 'end',
+    alignItems: {
+      base: direction === 'left' ? 'start' : 'end',
+      xl: direction === 'left' ? 'end' : 'start',
+    },
     gap: 2,
+    textAlign: {
+      xl: direction === 'left' ? 'right' : 'left',
+    },
+    w: {
+      xl: '40%',
+    },
   });
 };
 
@@ -72,7 +107,10 @@ const cProject_paragraph = (direction: Direction) => {
     fontSize: {
       md: '2xl',
     },
-    textAlign: direction,
+    textAlign: {
+      base: direction,
+      xl: direction === 'left' ? 'right' : 'left',
+    },
     textWrap: 'balance',
   });
 };
@@ -81,7 +119,21 @@ const cProject_techContainer = (direction: Direction) => {
   return vstack({
     alignItems: direction === 'left' ? 'start' : 'end',
     gap: 4,
-    w: 'full',
+    w: {
+      base: 'full',
+      xl: '80%',
+    },
+  });
+};
+
+const cProject_viewContainer = (direction: Direction) => {
+  return vstack({
+    alignItems: direction === 'left' ? 'start' : 'end',
+    gap: 4,
+    w: {
+      base: 'full',
+      xl: '20%',
+    },
   });
 };
 
@@ -100,6 +152,7 @@ const cProject_techHolder = (direction: Direction) => {
     gridTemplateColumns: {
       base: 3,
       md: 5,
+      xl: 10,
     },
     gap: {
       base: 4,
@@ -116,6 +169,7 @@ const cProject_consultContainer = (direction: Direction) => {
     gridTemplateColumns: {
       base: 3,
       md: 5,
+      xl: 3,
     },
     gap: {
       base: 4,
@@ -169,4 +223,5 @@ export {
   cProject_texts,
   cProject_title,
   cProject_consultImage,
+  cProject_viewContainer,
 };
