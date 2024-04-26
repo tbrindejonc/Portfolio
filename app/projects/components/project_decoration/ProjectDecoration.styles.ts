@@ -10,7 +10,10 @@ const cProjDecoration_firstOne = css({
   position: 'absolute',
   top: 0,
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 const cProjDecoration_firstTwo = css({
@@ -20,10 +23,16 @@ const cProjDecoration_firstTwo = css({
   },
   borderBottomLeftRadius: 'xl',
   bottom: 0,
-  h: 8,
+  h: {
+    base: 8,
+    md: 12,
+  },
   position: 'absolute',
   transition: 'all 0.5s',
-  w: 32,
+  w: {
+    base: 32,
+    md: '40vw',
+  },
 });
 
 const cProjDecoration_firstThree = css({
@@ -32,12 +41,24 @@ const cProjDecoration_firstThree = css({
     _dark: 'neutral.700',
   },
   borderTopRightRadius: 'xl',
-  bottom: -6,
-  h: 14,
-  left: 32,
+  bottom: {
+    base: -6,
+    md: -8,
+  },
+  h: {
+    base: 14,
+    md: 20,
+  },
+  left: {
+    base: 32,
+    md: '39vw',
+  },
   position: 'absolute',
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 const cProjDecoration_secondOne = css({
@@ -48,10 +69,16 @@ const cProjDecoration_secondOne = css({
   borderBottomRightRadius: 'xl',
   h: '98%',
   position: 'absolute',
-  right: 9,
+  right: {
+    base: 9,
+    md: '8.1vw',
+  },
   top: 0,
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 const cProjDecoration_secondTwo = css({
@@ -62,7 +89,10 @@ const cProjDecoration_secondTwo = css({
   borderBottomRightRadius: 'xl',
   borderTopLeftRadius: 'xl',
   bottom: 0,
-  h: 8,
+  h: {
+    base: 8,
+    md: 12,
+  },
   position: 'absolute',
   right: 0,
   transition: 'all 0.5s',
@@ -78,9 +108,15 @@ const cProjDecoration_secondThree = css({
   bottom: -6,
   h: 14,
   position: 'absolute',
-  right: '71vw',
+  right: {
+    base: '71vw',
+    md: '74.3vw',
+  },
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 const cProjDecoration_thirdOne = css({
@@ -90,11 +126,17 @@ const cProjDecoration_thirdOne = css({
   },
   borderBottomLeftRadius: 'xl',
   h: '98%',
-  left: 9,
+  left: {
+    base: 9,
+    md: '11.9vw',
+  },
   position: 'absolute',
   top: 0,
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 const cProjDecoration_thirdTwo = css({
@@ -105,7 +147,10 @@ const cProjDecoration_thirdTwo = css({
   borderBottomLeftRadius: 'xl',
   borderTopRightRadius: 'xl',
   bottom: 0,
-  h: 8,
+  h: {
+    base: 8,
+    md: 12,
+  },
   left: 0,
   position: 'absolute',
   transition: 'all 0.5s',
@@ -120,10 +165,16 @@ const cProjDecoration_thirdThree = css({
   borderTopRightRadius: 'xl',
   bottom: -6,
   h: 14,
-  left: '71vw',
+  left: {
+    base: '71vw',
+    md: '74.2vw',
+  },
   position: 'absolute',
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 export {

@@ -171,7 +171,10 @@ const vProjLanding_decoration = hstack({
     xl: '50vh',
   },
   transition: 'all 0.5s',
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
 export {
