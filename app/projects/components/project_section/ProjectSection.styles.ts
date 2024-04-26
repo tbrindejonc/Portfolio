@@ -11,6 +11,7 @@ const cProjSection_section = vstack({
   },
   h: 'screen',
   justifyContent: 'center',
+  overflow: 'hidden',
   p: 4,
   position: 'relative',
   transition: 'all 0.5s',
