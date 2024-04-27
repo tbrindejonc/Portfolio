@@ -1,6 +1,6 @@
 'use client';
 
-import {Activity, AppText} from '@appTypes/portfolio';
+import {ActivityObject, AppText} from '@appTypes/portfolio';
 import useLanguage from '@hooks/useLanguage';
 import {ReactNode} from 'react';
 import {
@@ -16,7 +16,7 @@ import {
 } from './Activity.styles';
 
 type Props = {
-  activity: Activity;
+  activity: ActivityObject;
   children: ReactNode;
   variant: 'game' | 'dev' | 'discoveries';
 };
@@ -30,7 +30,7 @@ type HeadingProps = {
 /**
  * Main component for activities
  *
- * @param {Activity} activity the texts corresponding to the activity
+ * @param {ActivityObject} activity the texts corresponding to the activity
  * @param {ReactNode} children the heading for the activity
  * @param {'game' | 'dev' | 'discoveries'} variant the current activity variant
  */

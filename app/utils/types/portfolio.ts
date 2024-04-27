@@ -65,7 +65,7 @@ export type ExperienceExplanation = {
 };
 
 // activity explanation text
-export type Activity = {
+export type ActivityObject = {
   title: AppText;
   description: {
     firstPart: AppText;

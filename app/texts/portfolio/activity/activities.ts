@@ -1,6 +1,6 @@
-import {Activity} from '@appTypes/portfolio';
+import {ActivityObject} from '@appTypes/portfolio';
 
-const activities: Activity[] = [
+const activities: ActivityObject[] = [
   {
     title: {
       english: 'Video games',
