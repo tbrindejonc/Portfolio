@@ -30,15 +30,28 @@ const vProjEnd_container = vstack({
 });
 
 const vProjEnd_text = css({
-  alignSelf: 'end',
+  alignSelf: {
+    base: 'end',
+    xl: 'center',
+  },
   fontSize: {
     base: '3xl',
     md: '5xl',
+    xl: '6xl',
   },
-  mb: 14,
+  mb: {
+    base: 14,
+    xl: '20vh',
+  },
+  ms: {
+    xl: '20vw',
+  },
   textAlign: 'right',
   textWrap: 'balance',
-  w: '3/4',
+  w: {
+    base: '3/4',
+    xl: '1/2',
+  },
 });
 
 const vProjEnd_link = hstack({
@@ -63,6 +76,7 @@ const vProjEnd_link = hstack({
   left: {
     base: -4,
     md: -8,
+    xl: '-5vw',
   },
   p: {
     base: 2,
@@ -76,6 +90,7 @@ const vProjEnd_link = hstack({
   w: {
     base: '70vw',
     md: '50vw',
+    xl: '30vw',
   },
   zIndex: 1,
 });
@@ -110,6 +125,7 @@ const vProjEnd_decoration = css({
   left: {
     base: 9,
     md: '11.9vw',
+    xl: '21.1vw',
   },
   position: 'absolute',
   top: 0,
