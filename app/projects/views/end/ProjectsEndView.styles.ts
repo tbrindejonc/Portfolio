@@ -10,18 +10,31 @@ const vProjEnd_end = vstack({
     base: 'neutral.dark',
     _dark: 'neutral.light',
   },
-  gap: 16,
   h: 'screen',
   justifyContent: 'center',
-  p: 4,
+  transition: 'all 0.5s',
+  w: 'full',
+});
+
+const vProjEnd_container = vstack({
+  gap: 16,
+  h: 'full',
+  justifyContent: 'center',
   position: 'relative',
+  p: {
+    base: 4,
+    md: 8,
+  },
   transition: 'all 0.5s',
   w: 'full',
 });
 
 const vProjEnd_text = css({
   alignSelf: 'end',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
   mb: 14,
   textAlign: 'right',
   textWrap: 'balance',
@@ -34,7 +47,7 @@ const vProjEnd_link = hstack({
     _dark: 'p_blue.light',
   },
   borderRadius: 'xl',
-  bottom: -4,
+  bottom: 0,
   color: {
     base: 'neutral.light',
     _dark: 'neutral.dark',
@@ -47,19 +60,31 @@ const vProjEnd_link = hstack({
   fontWeight: 'bold',
   gap: 4,
   justifyContent: 'center',
-  left: -4,
-  p: 2,
+  left: {
+    base: -4,
+    md: -8,
+  },
+  p: {
+    base: 2,
+    md: 4,
+  },
   position: 'absolute',
   shadow: {
     _hover: '0 5px 8px 2px token(colors.p_blue.main)',
   },
   transition: 'all 0.3s ease-in-out',
-  w: '70vw',
+  w: {
+    base: '70vw',
+    md: '50vw',
+  },
   zIndex: 1,
 });
 
 const vProjEnd_svg = css({
-  h: 7,
+  h: {
+    base: 7,
+    md: 10,
+  },
   rotate: {
     base: '0deg',
     _groupHover: '-90deg',
@@ -70,7 +95,10 @@ const vProjEnd_svg = css({
   },
   strokeWidth: 3,
   transition: 'all 0.3s ease-in-out',
-  w: 7,
+  w: {
+    base: 7,
+    md: 10,
+  },
 });
 
 const vProjEnd_decoration = css({
@@ -79,10 +107,16 @@ const vProjEnd_decoration = css({
     _dark: 'neutral.700',
   },
   h: '92%',
-  left: 9,
+  left: {
+    base: 9,
+    md: '11.9vw',
+  },
   position: 'absolute',
   top: 0,
-  w: 8,
+  w: {
+    base: 8,
+    md: 12,
+  },
 });
 
-export {vProjEnd_text, vProjEnd_link, vProjEnd_svg, vProjEnd_decoration, vProjEnd_end};
+export {vProjEnd_text, vProjEnd_link, vProjEnd_svg, vProjEnd_decoration, vProjEnd_end, vProjEnd_container};
