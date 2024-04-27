@@ -13,7 +13,10 @@ const vContact_contact = css({
   },
   display: 'flex',
   flexDirection: 'column',
-  gap: 10,
+  gap: {
+    base: 10,
+    md: 20,
+  },
   h: 'screen',
   justifyContent: 'center',
   transition: 'all 0.5s',
@@ -27,34 +30,61 @@ const vContact_titleContainer = vstack({
 
 const vContact_image: string = css({
   borderRadius: '2xl',
-  h: '60vw',
+  h: {
+    base: '60vw',
+    md: '40vw',
+  },
   objectFit: 'cover',
   shadow: {
     base: '4px 4px 5px 2px token(colors.p_blue.dark_25)',
     _dark: '4px 4px 5px 2px token(colors.p_blue.light_25)',
   },
-  w: '60vw',
+  w: {
+    base: '60vw',
+    md: '40vw',
+  },
 });
 
 const vContact_linkImage = css({
-  h: 16,
+  h: {
+    base: 16,
+    md: 20,
+  },
   objectFit: 'cover',
-  w: 16,
+  w: {
+    base: 16,
+    md: 20,
+  },
 });
 
 const vContact_title = css({
   fontFamily: 'bricolage',
-  fontSize: '3xl',
+  fontSize: {
+    base: '3xl',
+    md: '5xl',
+  },
   fontWeight: 'bold',
 });
 
 const vContact_linksContainer = vstack({
   alignItems: 'center',
-  border: '2px solid',
-  borderColor: 'p_purple.main',
+  border: {
+    base: '2px solid',
+    md: '4px solid',
+  },
+  borderColor: {
+    base: 'p_purple.main',
+    md: 'p_purple.main',
+  },
   borderRadius: 'xl',
-  gap: 6,
-  p: 2,
+  gap: {
+    base: 6,
+    md: 8,
+  },
+  p: {
+    base: 2,
+    md: 4,
+  },
 });
 
 const vContact_link = hstack({
@@ -69,10 +99,22 @@ const vContact_link = hstack({
   },
   borderRadius: 'md',
   fontFamily: 'bricolage',
-  fontSize: '2xl',
-  gap: 6,
-  minW: '70vw',
-  p: 2,
+  fontSize: {
+    base: '2xl',
+    md: '4xl',
+  },
+  gap: {
+    base: 6,
+    md: 8,
+  },
+  minW: {
+    base: '70vw',
+    md: '50vw',
+  },
+  p: {
+    base: 2,
+    md: 4,
+  },
   transition: 'all 0.5s',
 });
 
