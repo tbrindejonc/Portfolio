@@ -1,4 +1,5 @@
 import {Metadata} from 'next';
+import LegalView from './views/legal/LegalView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Mentions légales',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <h1>Legal</h1>
+      <LegalView />
     </main>
   );
 }
