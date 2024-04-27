@@ -5,7 +5,7 @@ import {Direction} from '@appTypes/portfolio';
 const cProject_image = css({
   width: {
     base: 'full',
-    md: '50%',
+    xl: '50%',
   },
   height: 'auto',
   objectFit: 'cover',
