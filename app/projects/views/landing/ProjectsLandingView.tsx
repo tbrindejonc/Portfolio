@@ -1,5 +1,6 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   vProjLanding_container,
   vProjLanding_decoration,
@@ -11,11 +12,16 @@ import {
   vProjLanding_textContainer,
   vProjLanding_title,
 } from './ProjectsLandingView.styles';
+import useLanguage from '@hooks/useLanguage';
+import Link from 'next/link';
+import landingTexts from '../../texts/landingTexts';
 
 export default function ProjectsLandingView() {
+  const {language} = useLanguage();
+
   return (
     <section id={'projects-landing'} className={vProjLanding_landing}>
-      <h1 className={vProjLanding_title}>Mes projets</h1>
+      <h1 className={vProjLanding_title}>{landingTexts.title[language]}</h1>
       <div className={vProjLanding_container}>
         <Image
           src={'/images/portfolio/projects/projects.jpg'}
@@ -26,12 +32,9 @@ export default function ProjectsLandingView() {
           className={vProjLanding_image}
         />
         <div className={vProjLanding_textContainer}>
-          <p className={vProjLanding_paragraph}>
-            A travers mes études et mes expériences professionnelles, j’ai peu apprendre diverses technologies qui me
-            sont très utiles pour développer des sites web
-          </p>
+          <p className={vProjLanding_paragraph}>{landingTexts.paragraph[language]}</p>
           <Link href={'#projects-display'} className={`group ${vProjLanding_link}`}>
-            <h2>Découvrir</h2>
+            <h2>{landingTexts.link[language]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
