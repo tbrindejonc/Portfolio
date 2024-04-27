@@ -63,6 +63,7 @@ const formatExperienceForApi = (
           id: association.technology.id,
           logo: association.technology.logo,
           name: association.technology.name,
+          website: association.technology.website,
         };
       }),
       links: {

@@ -91,6 +91,7 @@ const completeExperienceFromDatabaseSchema = vine.object({
         logo: vine.string(),
         color: vine.string(),
         category_id: vine.number(),
+        website: vine.string(),
       }),
     }),
   ),
