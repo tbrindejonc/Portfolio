@@ -125,3 +125,19 @@ export type SkillsSidebarTexts = {
   titles: AppText[];
   links: string[];
 };
+
+// texts for the project component
+export type ProjectTexts = {
+  techsTitle: AppText;
+  consultTitle: AppText;
+  websiteTitle: AppText;
+};
+
+// project component content orientation
+export type Direction = 'left' | 'right';
+
+// texts for the project end section
+export type ProjectEndTexts = {
+  text: AppText;
+  link: AppText;
+};
