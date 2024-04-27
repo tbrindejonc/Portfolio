@@ -141,3 +141,10 @@ export type ProjectEndTexts = {
   text: AppText;
   link: AppText;
 };
+
+// texts for the contact page links
+export type ContactLink = {
+  imageSrc: string;
+  linkName: string;
+  href: string;
+};
