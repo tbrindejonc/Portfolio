@@ -57,6 +57,7 @@ const vLegal_firstSection = vstack({
   },
   w: {
     md: '70%',
+    xl: '50%',
   },
 });
 
