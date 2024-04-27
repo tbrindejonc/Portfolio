@@ -1,4 +1,5 @@
 import {Metadata} from 'next';
+import ContactView from './views/ContactView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Contact',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <h1>Contact</h1>
+      <ContactView />
     </main>
   );
 }
