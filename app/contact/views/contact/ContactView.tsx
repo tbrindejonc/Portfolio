@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import contactLinks from '../../texts/contactLinks';
@@ -10,12 +12,16 @@ import {
   vContact_title,
   vContact_titleContainer,
 } from './ContactView.styles';
+import contactTitle from '@app/contact/texts/contactTitle';
+import useLanguage from '@hooks/useLanguage';
 
 export default function ContactView() {
+  const {language} = useLanguage();
+
   return (
     <section id={'contact'} className={vContact_contact}>
       <div className={vContact_titleContainer}>
-        <h1 className={vContact_title}>Mes différents liens</h1>
+        <h1 className={vContact_title}>{contactTitle[language]}</h1>
         <Image
           src={'/images/portfolio/contact/phone.jpg'}
           alt={'me'}
