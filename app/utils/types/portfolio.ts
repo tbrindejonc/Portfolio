@@ -155,3 +155,18 @@ export type ContactLink = {
   linkName: string;
   href: string;
 };
+
+// texts for the legal page author section
+export type LegalAuthorTexts = {
+  title: AppText;
+  firstParagraph: AppText;
+  secondParagraphFirstPart: AppText;
+  secondParagraphSecondPart: AppText;
+  farzadLink: AppText;
+  domFouLink: AppText;
+  brankoLink: AppText;
+  scottLink: AppText;
+  huntersLink: AppText;
+  miaBakerLink: AppText;
+  lastParagraph: AppText;
+};
