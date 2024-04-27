@@ -22,8 +22,10 @@ const vProjLanding_landing = vstack({
     base: 16,
     md: 28,
   },
-  w: 'full',
+  position: 'relative',
   transition: 'all 0.5s',
+  w: 'full',
+  zIndex: 4,
 });
 
 const vProjLanding_image: string = css({
