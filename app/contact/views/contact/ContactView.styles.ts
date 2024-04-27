@@ -12,7 +12,10 @@ const vContact_contact = css({
     _dark: 'neutral.light',
   },
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: {
+    base: 'column',
+    xl: 'row',
+  },
   gap: {
     base: 10,
     md: 20,
@@ -33,6 +36,7 @@ const vContact_image: string = css({
   h: {
     base: '60vw',
     md: '40vw',
+    xl: '20vw',
   },
   objectFit: 'cover',
   shadow: {
@@ -42,6 +46,7 @@ const vContact_image: string = css({
   w: {
     base: '60vw',
     md: '40vw',
+    xl: '20vw',
   },
 });
 
@@ -110,6 +115,7 @@ const vContact_link = hstack({
   minW: {
     base: '70vw',
     md: '50vw',
+    xl: '30vw',
   },
   p: {
     base: 2,
