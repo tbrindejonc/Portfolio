@@ -135,3 +135,9 @@ export type ProjectTexts = {
 
 // project component content orientation
 export type Direction = 'left' | 'right';
+
+// texts for the project end section
+export type ProjectEndTexts = {
+  text: AppText;
+  link: AppText;
+};
