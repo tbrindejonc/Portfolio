@@ -170,3 +170,53 @@ export type LegalAuthorTexts = {
   miaBakerLink: AppText;
   lastParagraph: AppText;
 };
+
+// texts for the legal page legal mentions section
+export type LegalMentionsTexts = {
+  title: AppText;
+  firstSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    secondParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  secondSection: {
+    title: AppText;
+    paragraph: AppText;
+  };
+  thirdSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    secondParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  fourthSection: {
+    title: AppText;
+    paragraph: AppText;
+  };
+  fifthSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    secondParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  sixthSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  seventhSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  eighthSection: {
+    title: AppText;
+    firstParagraph: AppText;
+    lastParagraph: AppText;
+  };
+  ninthSection: {
+    title: AppText;
+    paragraph: AppText;
+  };
+};
