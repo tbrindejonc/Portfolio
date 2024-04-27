@@ -1,26 +1,25 @@
 import React from 'react';
 import {
-  cProject_consultContainer,
-  cProject_descriptionContainer,
-  cProject_detailsContainer,
-  cProject_project,
-  cProject_techContainer,
-  cProject_texts,
-  cProject_viewContainer,
-} from '../project/Project.styles';
+  cProjectLoading_image,
+  cProjectLoading_project,
+  cProjectLoading_tech,
+  cProjectLoading_techContainer,
+  cProjectLoading_texts,
+  cProjectLoading_title,
+} from './LoadingProject.styles';
 
 export default function LoadingProject() {
+  const fakeLoading: any[] = new Array(6).fill(null);
+
   return (
-    <div className={cProject_project('left')}>
-      <div className={cProject_descriptionContainer('left')}>
-        <div className={cProject_texts('left')} />
-        <div />
-      </div>
-      <div className={cProject_detailsContainer}>
-        <div className={cProject_techContainer('left')} />
-        <div className={cProject_viewContainer('left')}>
-          <div className={cProject_consultContainer('left')} />
-        </div>
+    <div className={cProjectLoading_project}>
+      <div className={cProjectLoading_title} />
+      <div className={cProjectLoading_texts} />
+      <div className={cProjectLoading_image} />
+      <div className={cProjectLoading_techContainer}>
+        {fakeLoading.map((_, index) => {
+          return <div key={index} className={cProjectLoading_tech} />;
+        })}
       </div>
     </div>
   );
