@@ -12,7 +12,7 @@ type Props = {
 
 export default function ProjectSection({project, direction, index}: Props) {
   return (
-    <section className={cProjSection_section}>
+    <section id={project.name} className={cProjSection_section}>
       <Project project={project} direction={direction} />
       <ProjectDecoration index={index} />
     </section>
