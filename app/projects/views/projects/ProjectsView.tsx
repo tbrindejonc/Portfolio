@@ -12,21 +12,23 @@ export default function ProjectsView() {
   const fakeLoading: any[] = new Array(4).fill(null);
 
   return (
-    <section id={'projects-display'}>
+    <section>
       {projects.isSuccess ? (
         <>
           <ProjectSidebar data={projects.data} />
           <ProjectNavMenu data={projects.data} />
-          {projects.data.items.map((project: CompleteProjectFromApi, index: number) => {
-            return (
-              <ProjectSection
-                key={project.id}
-                project={project}
-                direction={index % 2 === 0 ? 'left' : 'right'}
-                index={index}
-              />
-            );
-          })}
+          <section id={'projects-display'}>
+            {projects.data.items.map((project: CompleteProjectFromApi, index: number) => {
+              return (
+                <ProjectSection
+                  key={project.id}
+                  project={project}
+                  direction={index % 2 === 0 ? 'left' : 'right'}
+                  index={index}
+                />
+              );
+            })}
+          </section>
         </>
       ) : (
         fakeLoading.map((_, index: number) => {

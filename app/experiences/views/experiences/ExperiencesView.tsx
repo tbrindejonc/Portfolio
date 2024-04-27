@@ -77,67 +77,69 @@ export default function ExperiencesView() {
   }
 
   return (
-    <section id={'experiences-display'}>
+    <section>
       <ExperiencesSidebar data={experiences.data} />
       <ExperiencesNavMenu data={experiences.data} />
-      <div
-        id={`${experiences.data.items[0].company}-${experiences.data.items[0].id}`}
-        className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
-      >
-        <Image
-          src={'/images/portfolio/experiences/looper_blue.png'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={`${exp_vExp_looperBase} ${exp_vExp_topLooper}`}
-        />
-        <Image
-          src={'/images/portfolio/experiences/looper_purple.png'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
-        />
-        <ExperienceFactory experience={experiences.data.items[0]} />
-      </div>
-      <div
-        id={`${experiences.data.items[1].company}-${experiences.data.items[1].id}`}
-        className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}
-      >
-        <Image
-          src={'/images/portfolio/experiences/looper_rainbow.png'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={exp_vExp_rainbowLooper}
-        />
-        <ExperienceFactory experience={experiences.data.items[1]} />
-      </div>
-      <div
-        id={`${experiences.data.items[2].company}-${experiences.data.items[2].id}`}
-        className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
-      >
-        <Image
-          src={'/images/portfolio/experiences/looper_blue.png'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={`${exp_vExp_looperBase} ${exp_vExp_otherTopLooper}`}
-        />
-        <Image
-          src={'/images/portfolio/experiences/looper_purple.png'}
-          alt={'me'}
-          width={0}
-          height={0}
-          sizes={'100vw'}
-          className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
-        />
-        <ExperienceFactory experience={experiences.data.items[2]} />
-      </div>
+      <section id={'experiences-display'}>
+        <div
+          id={`${experiences.data.items[0].company}-${experiences.data.items[0].id}`}
+          className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
+        >
+          <Image
+            src={'/images/portfolio/experiences/looper_blue.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_topLooper}`}
+          />
+          <Image
+            src={'/images/portfolio/experiences/looper_purple.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_bottomLooper}`}
+          />
+          <ExperienceFactory experience={experiences.data.items[0]} />
+        </div>
+        <div
+          id={`${experiences.data.items[1].company}-${experiences.data.items[1].id}`}
+          className={`${exp_vExp_experience} ${exp_vExp_toRightBackground}`}
+        >
+          <Image
+            src={'/images/portfolio/experiences/looper_rainbow.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={exp_vExp_rainbowLooper}
+          />
+          <ExperienceFactory experience={experiences.data.items[1]} />
+        </div>
+        <div
+          id={`${experiences.data.items[2].company}-${experiences.data.items[2].id}`}
+          className={`${exp_vExp_experience} ${exp_vExp_toLeftBackground}`}
+        >
+          <Image
+            src={'/images/portfolio/experiences/looper_blue.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_otherTopLooper}`}
+          />
+          <Image
+            src={'/images/portfolio/experiences/looper_purple.png'}
+            alt={'me'}
+            width={0}
+            height={0}
+            sizes={'100vw'}
+            className={`${exp_vExp_looperBase} ${exp_vExp_otherBottomLooper}`}
+          />
+          <ExperienceFactory experience={experiences.data.items[2]} />
+        </div>
+      </section>
     </section>
   );
 }
