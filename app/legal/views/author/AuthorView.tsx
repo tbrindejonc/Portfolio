@@ -20,6 +20,7 @@ export default function AuthorView() {
         {authorTexts.secondParagraphSecondPart[language]}
       </p>
       <Link
+        id={'photos'}
         href={'https://unsplash.com/fr/photos/two-black-computer-monitors-on-black-table-p-xSl33Wxyc'}
         className={vLegal_link}
       >

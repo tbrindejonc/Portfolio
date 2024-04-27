@@ -89,7 +89,7 @@ export default function LegalMentionsView() {
           support quelconque à des tiers, et ce même dans le cas d’un contact par email.
         </p>
       </section>
-      <section className={vLegal_section}>
+      <section id={'cookies'} className={vLegal_section}>
         <h2 className={vLegal_littleHeading}>8. LIENS HYPERTEXTES ET COOKIES.</h2>
         <p>
           Le site timeuh.fr contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec
