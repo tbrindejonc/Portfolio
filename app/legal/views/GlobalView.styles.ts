@@ -26,14 +26,30 @@ const vLegal_bigHeading = css({
   fontWeight: 'bold',
 });
 
+const vLegal_littleHeading = css({
+  color: {
+    base: 'neutral.dark',
+    _dark: 'neutral.400',
+  },
+  fontFamily: 'bricolage',
+  fontSize: 'xl',
+  fontWeight: 'bold',
+});
+
 const vLegal_firstSection = vstack({
   alignItems: 'start',
   gap: 4,
   pt: 12,
 });
 
+const vLegal_section = vstack({
+  alignItems: 'start',
+  gap: 4,
+  pb: 6,
+});
+
 const vLegal_link = css({
   textDecoration: 'underline',
 });
 
-export {vLegal_legal, vLegal_bigHeading, vLegal_firstSection, vLegal_link};
+export {vLegal_legal, vLegal_bigHeading, vLegal_firstSection, vLegal_link, vLegal_littleHeading, vLegal_section};
