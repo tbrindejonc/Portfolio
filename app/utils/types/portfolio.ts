@@ -127,6 +127,13 @@ export type SkillsSidebarTexts = {
 };
 
 // texts for the project component
+export type ProjectLandingTexts = {
+  title: AppText;
+  paragraph: AppText;
+  link: AppText;
+};
+
+// texts for the project component
 export type ProjectTexts = {
   techsTitle: AppText;
   consultTitle: AppText;
