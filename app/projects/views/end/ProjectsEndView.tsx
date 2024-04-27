@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import {
   vProjEnd_container,
@@ -7,18 +9,19 @@ import {
   vProjEnd_svg,
   vProjEnd_text,
 } from './ProjectsEndView.styles';
+import useLanguage from '@hooks/useLanguage';
+import endViewTexts from '@app/projects/texts/endViewTexts';
 
 export default function ProjectsEndView() {
+  const {language} = useLanguage();
+
   return (
     <section id={'projects-end'} className={vProjEnd_end}>
       <div className={vProjEnd_container}>
-        <p className={vProjEnd_text}>
-          Si vous avez envie d’en voir plus sur mes projets, vous pouvez visiter ma page Github, pour consulter mon code
-          et éventuellement les sites liés à mes projets !
-        </p>
+        <p className={vProjEnd_text}>{endViewTexts.text[language]}</p>
         <div className={vProjEnd_decoration}>
           <Link href={'https://github.com/Timeuh'} className={`group ${vProjEnd_link}`}>
-            <h2>En voir plus</h2>
+            <h2>{endViewTexts.link[language]}</h2>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 24 24'
