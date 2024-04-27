@@ -1,5 +1,5 @@
 import {Metadata} from 'next';
-import ContactView from './views/ContactView';
+import ContactView from './views/contact/ContactView';
 
 export const metadata: Metadata = {
   title: 'Timeuh - Contact',
