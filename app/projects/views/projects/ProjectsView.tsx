@@ -5,6 +5,7 @@ import ProjectSection from '../../components/project_section/ProjectSection';
 import {CompleteProjectFromApi} from '@schemas/api/project/project.schema';
 import LoadingProjectSection from '../../components/loading_project_section/LoadingProjectSection';
 import ProjectSidebar from '../../components/project_sidebar/sidebar/ProjectSidebar';
+import ProjectNavMenu from '../../components/project_navmenu/navmenu/ProjectNavMenu';
 
 export default function ProjectsView() {
   const projects = useProjects();
@@ -15,6 +16,7 @@ export default function ProjectsView() {
       {projects.isSuccess ? (
         <>
           <ProjectSidebar data={projects.data} />
+          <ProjectNavMenu data={projects.data} />
           {projects.data.items.map((project: CompleteProjectFromApi, index: number) => {
             return (
               <ProjectSection
