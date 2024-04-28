@@ -28,6 +28,8 @@ services:
     restart: unless-stopped
     ports:
       - "55032:5432"
+    networks:
+      - traefik_web
     env_file:
       - .env.local
 
@@ -37,3 +39,16 @@ services:
     restart: unless-stopped
     ports:
       - "55080:8080"
+    networks:
+      - traefik_web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.admin-portfolio.rule=Host(`admin.portfolio.timeuh.fr`)"
+      - "traefik.http.routers.admin-portfolio.entrypoints=websecure"
+      - "traefik.http.routers.admin-portfolio.tls.certresolver=myresolver"
+
+networks:
+  traefik_web:
+    external: true
+  default:
+    driver: bridge
