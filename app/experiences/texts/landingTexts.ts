@@ -7,9 +7,9 @@ const landingTexts: BaseLandingTexts = {
   },
   explanations: {
     english:
-      'During my studies and my personal transition time (school holidays in this case), I was able to accumulate work experience. You can see these below.',
+      'During my studies and my personal time, I have been able to accumulate experience in both professional and private environments. You can see these below.',
     french:
-      'Durant mes études et mon temps personnel de transition (les vacances scolaires en l’occurrence), j’ai pu accumuler de l’expérience au travail. Vous pouvez voir ces dernières ci-dessous.',
+      'Durant mes études et mon temps personnel, j’ai pu accumuler de l’expérience en milieu professionnel comme privé. Vous pouvez voir ces dernières ci-dessous.',
   },
   link: {
     english: 'Discover',
