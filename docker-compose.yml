@@ -7,7 +7,7 @@ services:
       context: .
       target: production
     restart: unless-stopped
-    env_file: .env.local
+    env_file: .env
     volumes:
       - .:/app
     ports:
@@ -21,7 +21,7 @@ services:
     ports:
       - "55032:5432"
     env_file:
-      - .env.local
+      - .env
 
   adminer:
     image: adminer
