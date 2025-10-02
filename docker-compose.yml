@@ -10,6 +10,7 @@ services:
     env_file: .env
     volumes:
       - .:/app
+      - ./node_modules
     ports:
       - "55111:3000"
     working_dir: /app
