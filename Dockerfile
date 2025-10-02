@@ -7,9 +7,7 @@ RUN apt-get update && apt-get install -y \
     python3 \
     libc6 \
     git \
-    openssl \
-    libssl1.1 \
-    && rm -rf /var/lib/apt/lists/*
+    openssl
 WORKDIR /app
 EXPOSE 3000
 
