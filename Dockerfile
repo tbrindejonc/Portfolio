@@ -2,7 +2,14 @@
 # Step 1 : base
 # -------------------
 FROM node:18-slim AS base
-RUN apk add --no-cache g++ make python3 libc6-compat git
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3 \
+    libc6 \
+    git \
+    openssl \
+    libssl1.1 \
+    && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 EXPOSE 3000
 
