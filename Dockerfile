@@ -1,7 +1,7 @@
 # -------------------
 # Step 1 : base
 # -------------------
-FROM node:18-alpine AS base
+FROM node:18-slim AS base
 RUN apk add --no-cache g++ make python3 libc6-compat git
 WORKDIR /app
 EXPOSE 3000
