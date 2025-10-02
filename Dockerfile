@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install Panda CSS for codegen
-RUN npm install -g @pandacss/cli
+RUN npm install -g @pandacss/dev
 
 # Install dependencies
 COPY . .
