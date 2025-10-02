@@ -1,31 +1,54 @@
-FROM node:18-alpine as base
-RUN apk add --no-cache g++ make py3-pip libc6-compat
+# -------------------
+# Step 1 : base
+# -------------------
+FROM node:18-alpine AS base
+RUN apk add --no-cache g++ make python3 libc6-compat git
 WORKDIR /app
-COPY package*.json ./
 EXPOSE 3000
 
-FROM base as builder
+# -------------------
+# Step 2 : builder
+# -------------------
+FROM base AS builder
 WORKDIR /app
+COPY package*.json ./
+
+# Install Panda CSS for codegen
+RUN npm install -g @pandacss/cli
+
+# Install dependencies
 COPY . .
 RUN npm install
+
+# GENERATE Panda CSS files
+RUN npx panda codegen
+
+# Build Next.js
 RUN npm run build
 
-
-FROM base as production
+# -------------------
+# Step 3 : production
+# -------------------
+FROM base AS production
 WORKDIR /app
-
 ENV NODE_ENV=production
-RUN npm install
 
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+# Copy files
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/public ./public
 
-CMD npm start
+CMD ["npm", "start"]
 
-FROM base as dev
+# -------------------
+# Step 4 : dev
+# -------------------
+FROM base AS dev
+WORKDIR /app
 ENV NODE_ENV=development
+COPY package*.json ./
 RUN npm install
 COPY . .
-CMD npm run dev
+CMD ["npm", "run", "dev"]
+
