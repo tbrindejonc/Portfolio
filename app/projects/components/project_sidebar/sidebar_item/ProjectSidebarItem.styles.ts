@@ -7,6 +7,7 @@ const cProjSidebarItem_item = css({
   position: 'relative',
   transition: 'all 0.5s',
   w: 4,
+  pointerEvents: 'auto',
 });
 
 const cProjSidebarItem_activeState = (index: number, currentActive: number) => {

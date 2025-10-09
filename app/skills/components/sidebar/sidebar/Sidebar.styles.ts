@@ -18,6 +18,7 @@ const cSkillSidebar_container = vstack({
   top: 0,
   w: 'full',
   zIndex: 1,
+  pointerEvents: 'none',
 });
 
 const cSkillSidebar_svg = css({

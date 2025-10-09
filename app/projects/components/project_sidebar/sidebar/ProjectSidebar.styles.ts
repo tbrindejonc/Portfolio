@@ -14,6 +14,7 @@ const cProjSidebar_sidebar = vstack({
   position: 'sticky',
   top: 0,
   zIndex: 2,
+  pointerEvents: 'none',
 });
 
 export {cProjSidebar_sidebar};

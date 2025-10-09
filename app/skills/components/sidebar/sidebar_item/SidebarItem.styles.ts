@@ -23,6 +23,7 @@ const cSkillSidebarItem_item = vstack({
   },
   w: 4,
   transition: 'all 0.5s',
+  pointerEvents: 'auto',
 });
 
 const cSkillSidebarItem_circle = circle({
