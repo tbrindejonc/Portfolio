@@ -1,0 +1,29 @@
+services:
+  app:
+    container_name: portfolio-app-test
+    build:
+      context: .
+      target: dev
+    restart: unless-stopped
+    env_file: .env.local
+    ports:
+      - "55111:3000"
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  database:
+    image: postgres
+    container_name: portfolio-database-test
+    restart: unless-stopped
+    ports:
+      - "55032:5432"
+    env_file:
+      - .env.local
+
+  adminer:
+    image: adminer
+    container_name: portfolio-adminer-test
+    restart: unless-stopped
+    ports:
+      - "55080:8080"

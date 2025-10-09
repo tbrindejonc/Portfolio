@@ -55,6 +55,7 @@ FROM base AS dev
 WORKDIR /app
 ENV NODE_ENV=development
 COPY package*.json ./
+COPY . .
 RUN npm install
 COPY . .
 CMD ["npm", "run", "dev"]
